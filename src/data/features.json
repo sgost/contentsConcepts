@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "PhD Editors",
+    "image": "editors.png"
+  },
+  {
+    "id": 2,
+    "title": "Affordable Prices",
+    "image": "affordable.png"
+  },
+  {
+    "id": 3,
+    "title": "Unlimited Support",
+    "image": "support.png"
+  },
+  {
+    "id": 4,
+    "title": "Confidential",
+    "image": "confidential.png"
+  }
+]

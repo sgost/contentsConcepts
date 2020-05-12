@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   font-size: 13pt;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
+  overflow-y: auto;
   }
 
   body {
@@ -104,7 +105,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-size: 32px;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 39px;
+    color: ${palette.PRIMARY_TXT_COLOR};
   }
 
   h3 {
@@ -208,16 +212,31 @@ export const GlobalStyle = createGlobalStyle`
     border: initial !important;
   }
   .ant-btn {
-    &.active, &:hover {
-      color: #5860AF !important;
-      border-color: #5860AF !important;
+    border-radius: 8px;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    color: ${palette.PRIMARY_TXT_COLOR};
+    padding: 12px 24px;
+    height: 46px;
+    border: 1px solid ${palette.COLOR_DENIM};
+    &.active, &:hover, &:focus {
+      color: ${palette.PRIMARY_TXT_COLOR} !important;
+      border-color: ${palette.COLOR_DENIM} !important;
     }
   }
   .ant-btn-primary {
-    background-color: #5860AF !important;
-    border-color: #5860AF !important;
-    &.active, &:hover {
-      color: #fff !important;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    height: 38px;
+    padding: 8px 28px;
+    background-color: ${palette.BUTTON_PRIMARY} !important;
+    border-color: ${palette.BUTTON_PRIMARY} !important;
+    color: ${palette.WHITE_COLOR} !important;
+    &.active, &:hover, &:focus {
+      color: ${palette.WHITE_COLOR} !important;
+      border-color: ${palette.BUTTON_PRIMARY} !important;
     }
   }
   .ant-input {
@@ -229,5 +248,34 @@ export const GlobalStyle = createGlobalStyle`
   }
   .ant-modal-confirm-body-wrapper {
     padding: 25px;
+  }
+
+  .ant-notification {
+    position: sticky;
+    right: 0;
+    top: 0 !important;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    margin-right: 0;
+    max-width: 100%;
+  }
+  .ant-notification-notice {
+    background: linear-gradient(178.57deg, #8D58D4 0%, #578DC3 100%);
+    padding: 10px 35px;
+    margin-bottom: 0;
+  }
+  .ant-notification-notice-close {
+    top: 12px;
+    right: 35px;
+    color: ${palette.WHITE_COLOR};
+    &:hover {
+      color: ${palette.WHITE_COLOR};
+    }
+  }
+  .ant-notification-notice-message {
+    display: block;
+    margin-bottom: 0;
+    padding-right: 40px !important;
   }
 `;

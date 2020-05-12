@@ -1,11 +1,11 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 
-import { Notification } from "../notification"
+import { Notification } from "../Notification"
 import offerData from "../../data/offers.json"
 import OfferImage from '../../images/offer.svg'
 
-import Header from "../header"
+import Header from "../Header"
 
 const Layout = props => {
 

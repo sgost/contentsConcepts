@@ -1,15 +1,15 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
 
-import Banner from "../components/banner"
+import Banner from "../components/Banner"
 import bannerData from "../data/banner.json"
 
-import Features from "../components/features"
+import Features from "../components/Features"
 import featuresData from "../data/features.json"
 
-import Clients from "../components/clients"
+import Clients from "../components/Clients"
 import clientsData from "../data/clients.json"
 
 const HomePage = () => {

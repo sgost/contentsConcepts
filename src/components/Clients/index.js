@@ -14,7 +14,7 @@ const Clients = props => {
     <ClientsSection>
       <SectionContent>
         <h2>{clientsData.title}</h2>
-        <p class="contentDescription">{clientsData.description}</p>
+        <p className="contentDescription">{clientsData.description}</p>
       </SectionContent>
       <ClientsList>
         {

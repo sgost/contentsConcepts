@@ -8,13 +8,13 @@ import {
 
 const Clients = props => {
 
-  const clientsData = props.data;
+  const clientsData = props.content;
 
   return (
     <ClientsSection>
       <SectionContent>
         <h2>{clientsData.title}</h2>
-        <p className="contentDescription">{clientsData.description}</p>
+        <p>{clientsData.description}</p>
       </SectionContent>
       <ClientsList>
         {

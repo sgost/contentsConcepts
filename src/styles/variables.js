@@ -10,6 +10,9 @@ export const ACCENT_PORTICA = '#F5DA7D';
 export const ACCENT_TEAL = '#98E5E0';
 export const ACCENT_RED = '#FFABAB';
 export const COLOR_DENIM = '#1565C0';
+export const LIGHT_BLUE = '#54A5FF';
+export const SPRING_GREEN = '#07F5AA';
+export const LIGHT_GREY = '#EEEEEE';
 
 // brand colors
 export const APP_BRAND_COLOR = '#5860AF';

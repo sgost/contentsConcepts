@@ -11,7 +11,7 @@ const Features = props => {
     <FeaturesSection>
       <FeaturesList>
         {
-          props.data && props.data.map(dataItem =>
+          props.content && props.content.map(dataItem =>
             <FeatureListItem key={dataItem.id}>
               <div className="imageContainer">
                 <img src={require('../../images/' + dataItem.image)} alt="features" />

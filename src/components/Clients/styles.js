@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import * as palette from '../../styles/variables';
 
 export const ClientsSection = styled.div`
   display: flex;
@@ -10,17 +9,14 @@ export const ClientsSection = styled.div`
 
 export const SectionContent = styled.div`
   max-width: 600px;
-  margin: 25px auto;
+  margin: 0 auto;
+  padding: 25px 20px;
   h2 {
     margin-bottom: 20px;
     text-align: center;
   }
-  .contentDescription {
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
+  p {
     text-align: center;
-    color: ${palette.PRIMARY_TXT_COLOR};
   }
 `;
 
@@ -29,8 +25,9 @@ export const ClientsList = styled.ul`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  margin: 30px 0px;
+  flex-wrap: wrap;
+  padding: 30px 20px;
   li {
-    padding: 20px;
+    margin: 20px 15px;
   }
 `;

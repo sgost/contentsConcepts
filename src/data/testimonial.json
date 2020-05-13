@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Pages Edited",
+    "count": 114524,
+    "themeColor": "#18D7C7"
+  },
+  {
+    "id": 2,
+    "title": "Manuscripts Published",
+    "count": 532,
+    "themeColor": "#FED82B"
+  },
+  {
+    "id": 3,
+    "title": "Years of Experience",
+    "count": 15,
+    "themeColor": "#FF6766"
+  }
+]

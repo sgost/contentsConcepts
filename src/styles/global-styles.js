@@ -105,18 +105,23 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 26px;
     line-height: 39px;
     color: ${palette.PRIMARY_TXT_COLOR};
   }
 
   h3 {
-    font-size: 26px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: ${palette.PRIMARY_TXT_COLOR};
   }
 
   h4 {
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
   }
 
   img {
@@ -124,9 +129,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p {
-  font-family: ${palette.CONTENT_FONT_FAMILY};
-  font-size: 16px;
-  line-height: 1.5;
+    font-family: ${palette.CONTENT_FONT_FAMILY};
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: ${palette.PRIMARY_TXT_COLOR};
   }
   
   .ant-message-notice {
@@ -277,5 +284,16 @@ export const GlobalStyle = createGlobalStyle`
     display: block;
     margin-bottom: 0;
     padding-right: 40px !important;
+  }
+
+  .imageContainer {
+    border-radius: 100%;
+    background: ${palette.ICON_BACKGROUND};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: auto;
+    }
   }
 `;

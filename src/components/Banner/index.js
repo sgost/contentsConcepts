@@ -16,12 +16,12 @@ const Banner = props => {
       <Row>
         <Col sm={12} md={12} lg={12} xl={12} className="contentSection">
           <ContentContainer>
-            <Content>{props.data.title}</Content>
-            <Content dangerouslySetInnerHTML={{__html: props.data.content}} />
+            <Content>{props.content.title}</Content>
+            <Content dangerouslySetInnerHTML={{__html: props.content.content}} />
           </ContentContainer>
           <ServicesList>
             {
-              props.data.services && props.data.services.map(dataItem =>
+              props.content.services && props.content.services.map(dataItem =>
                 <li key={dataItem.id}>
                   <Button>{dataItem.title}</Button>
                 </li>

@@ -10,30 +10,21 @@ export const FeaturesList = styled.ul`
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 30px 0px;
+  padding: 30px;
 `;
 
 export const FeatureListItem = styled.li`
-  padding: 10px 30px;
+  margin: 10px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   .imageContainer {
-    border-radius: 100%;
-    background: ${palette.ICON_BACKGROUND};
-    padding: 10px;
     width: 64px;
     height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: auto;
-    }
   }
   .labelText {
     font-weight: 500;

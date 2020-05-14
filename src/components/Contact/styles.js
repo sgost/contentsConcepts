@@ -5,7 +5,7 @@ export const ContactSection = styled.div`
   background: ${palette.WHITE_COLOR};
   padding: 60px 80px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
-    padding: 45px 60px;
+    padding: 45px 50px;
   }
   @media only screen and (min-width: 576px) and (max-width: 768px) {
     padding: 30px 40px;

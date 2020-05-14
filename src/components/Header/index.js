@@ -1,17 +1,28 @@
 import { Link } from "gatsby"
-import React from "react"
-import { Button } from "antd"
-
+import React, { useState } from "react"
+import { Drawer } from "antd"
+import { MenuFoldOutlined } from '@ant-design/icons';
+import NavigationMenu from './navigationMenu';
 import Logo from '../../images/logo.png';
 import {
   HeaderContainer,
   LogoContainer,
-  NavBarContainer,
-  NavLinkContainer,
-  NavLink
+  MenuIcon,
+  ResNavMenu
 } from './styles';
 
 const Header = props => {
+
+  const [visible, setVisible] = useState(false);
+
+  const showDrawer = () => {
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
+
   return (
     <HeaderContainer>
       <LogoContainer>
@@ -22,26 +33,23 @@ const Header = props => {
           </Link>
         </h1>
       </LogoContainer>
-      <NavBarContainer>
-        <NavLinkContainer>
-          <NavLink>
-            <Link to="/">About</Link>
-          </NavLink>
-          <NavLink>
-            <Link to="/">Services</Link>
-          </NavLink>
-          <NavLink>
-            <Link to="/">Blog</Link>
-          </NavLink>
-          <NavLink>
-            <Link to="/">Pricing</Link>
-          </NavLink>
-          <NavLink>
-            <Link to="/">Contact</Link>
-          </NavLink>
-        </NavLinkContainer>
-        <Button type="primary">Get Quote</Button>
-      </NavBarContainer>
+      <div className="navMenu">
+        <NavigationMenu />
+      </div>
+      <ResNavMenu>
+        <MenuIcon>
+          <MenuFoldOutlined onClick={showDrawer} />
+        </MenuIcon>
+        <Drawer
+          placement="right"
+          closable={false}
+          onClose={onClose}
+          visible={visible}
+          className="drawerNavMenu"
+        >
+          <NavigationMenu />
+        </Drawer>
+      </ResNavMenu>
     </HeaderContainer>
   )
 }

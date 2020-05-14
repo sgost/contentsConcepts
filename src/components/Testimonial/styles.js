@@ -4,6 +4,9 @@ import * as palette from '../../styles/variables';
 export const TestimonialSection = styled.div`
   background: ${palette.PRIMARY_SECTION_BACKGROUND};
   padding: 128px 80px;
+  @media (max-width: 576px) {
+    padding: 70px 50px;
+  }
 `;
 
 export const TestimonialList = styled.ul`
@@ -14,14 +17,17 @@ export const TestimonialList = styled.ul`
   justify-content: space-evenly;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 25px 30px;
   background: ${palette.WHITE_COLOR};
   box-shadow: 0px 0px 8px rgba(0, 8, 77, 0.2);
   border-radius: 16px;
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
 `;
 
 export const TestimonialListItem = styled.li`
-  margin: 0px 20px;
+  margin: 10px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -5,7 +5,7 @@ export const CustomersSection = styled.div`
   background: ${palette.PRIMARY_SECTION_BACKGROUND};
   padding: 60px 80px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
-    padding: 45px 60px;
+    padding: 45px 50px;
   }
   @media only screen and (min-width: 576px) and (max-width: 768px) {
     padding: 30px 40px;
@@ -88,12 +88,18 @@ export const WrapperDetails = styled.div`
   p {
     text-align: center;
   }
+  @media (max-width: 576px) {
+    padding-top: 60px;
+  }
 `;
 
 export const ContentBg = styled.div`
   position: absolute;
   left: 0px;
   top: 55px;
+  @media (max-width: 576px) {
+    top: 30px;
+  }
 `;
 
 export const CustomerDetails = styled.div`

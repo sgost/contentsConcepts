@@ -30,4 +30,10 @@ export const ClientsList = styled.ul`
   li {
     margin: 20px 15px;
   }
+  @media (max-width: 576px) {
+    flex-direction: column;
+    li {
+      margin: 10px;
+    }
+  }
 `;

@@ -27,6 +27,9 @@ import processContent from "../data/process.json"
 import Customers from "../components/Customers"
 import customersContent from "../data/customers.json"
 
+import Contact from "../components/Contact"
+import contactContent from "../data/contact.json"
+
 const HomePage = () => {
   return (
     <Layout>
@@ -39,6 +42,7 @@ const HomePage = () => {
       <Testimonial content={testimonialContent} />
       <Process content={processContent} />
       <Customers content={customersContent} />
+      <Contact content={contactContent} />
     </Layout>
   )
 }

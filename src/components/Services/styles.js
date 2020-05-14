@@ -5,7 +5,7 @@ export const ServicesSection = styled.div`
   background: ${palette.PRIMARY_SECTION_BACKGROUND};
   padding: 60px 80px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
-    padding: 45px 60px;
+    padding: 45px 50px;
   }
   @media only screen and (min-width: 576px) and (max-width: 768px) {
     padding: 30px 40px;
@@ -69,6 +69,12 @@ export const ServiceListItem = styled.li`
   }
   @media (max-width: 576px) {
     max-width: 100%;
-    margin: 15px;
+    margin: 25px 15px;
+    h3 {
+      margin: 12px 0px 8px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
   }
 `;

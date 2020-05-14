@@ -5,7 +5,7 @@ export const SpecializationSection = styled.div`
   background: ${palette.SECONDARY_SECTION_BACKGROUND};
   padding: 60px 80px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
-    padding: 45px 60px;
+    padding: 45px 50px;
   }
   @media only screen and (min-width: 576px) and (max-width: 768px) {
     padding: 30px 40px;
@@ -104,5 +104,6 @@ export const SpecialityList = styled.li`
   }
   @media (max-width: 576px) {
     max-width: 100%;
+    margin: 15px;
   }
 `;

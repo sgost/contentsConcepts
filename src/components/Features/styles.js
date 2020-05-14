@@ -34,4 +34,8 @@ export const FeatureListItem = styled.li`
     color: ${palette.NAVLINK_COLOR};
     margin-top: 12px;
   }
+  @media (max-width: 576px) {
+    height: 135px;
+    width: 200px;
+  }
 `;

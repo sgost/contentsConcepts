@@ -21,9 +21,13 @@ export const MessageContent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-right: 12px;
   img {
     width: 22px;
     height: 22px;
     margin-right: 15px;
+    @media (max-width: 576px) {
+      margin-right: 8px;
+    }
   }
 `;

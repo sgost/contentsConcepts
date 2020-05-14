@@ -18,7 +18,7 @@ const Header = props => {
         <h1>
           <Link to="/">
             <img src={Logo} alt="logo" />
-            Content Concepts
+            ContentConcepts
           </Link>
         </h1>
       </LogoContainer>

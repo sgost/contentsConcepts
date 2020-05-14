@@ -124,6 +124,12 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 27px;
   }
 
+  h5 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+  }
+
   img {
     width: 100%;
   }
@@ -157,20 +163,37 @@ export const GlobalStyle = createGlobalStyle`
   .ant-modal-body {
     padding: 0px !important;
   }
+
   .ant-select {
-    width: 100% !important;
-    max-width: 300px !important;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px !important;
+    color: ${palette.CHARCOAL};
+    .ant-select-arrow {
+      right: 20px;
+    }
   }
-  .ant-select-selection {
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: ${palette.PRIMARY_SECTION_BACKGROUND};
+  }
+  .ant-select-selector {
+    height: 48px !important;
     min-height: 38px !important;
     display: flex !important;
     align-items: center !important;
-    &:focus {
-      border-color: #4255B9 !important;
-      box-shadow: none !important;
-    }
+    box-shadow: 0px 0px 5px rgba(25, 39, 67, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 11px 24px !important;
+    border: 1px solid ${palette.BORDER_COLOR} !important;
     &:hover {
-      border-color: #4255B9 !important;
+      border-color: ${palette.BORDER_COLOR} !important;
+    }
+    .ant-select-selection-search-input {
+      height: 48px !important;
+      text-overflow: ellipsis;
+    }
+    .ant-select-selection-placeholder {
+      color: ${palette.DARK_GREY};
     }
   }
   .ant-select-dropdown-menu-item {
@@ -247,12 +270,22 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   .ant-input {
-    height: 36px !important;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px !important;
+    color: ${palette.CHARCOAL};
+    padding: 11px 24px;
+    box-shadow: 0px 0px 5px rgba(25, 39, 67, 0.1) !important;
+    border-radius: 8px;
     &:focus, &:hover {
-      border: 1px solid #5860AF !important;
-      box-shadow: initial !important;
+      border: 1px solid ${palette.BORDER_COLOR} !important;
+    }
+    &:placeholder-shown {
+      color: ${palette.DARK_GREY};
     }
   }
+
   .ant-modal-confirm-body-wrapper {
     padding: 25px;
   }

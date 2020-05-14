@@ -13,6 +13,9 @@ export const COLOR_DENIM = '#1565C0';
 export const LIGHT_BLUE = '#54A5FF';
 export const SPRING_GREEN = '#07F5AA';
 export const LIGHT_GREY = '#EEEEEE';
+export const CHARCOAL = '#444444';
+export const DARK_GREY = '#AAAAAA';
+export const PALE_BLUE = '#D0D7E2';
 
 // brand colors
 export const APP_BRAND_COLOR = '#5860AF';

@@ -1,13 +1,13 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 
-import { GlobalStyle } from '../../styles/global-styles';
-
 import { Notification } from "../Notification"
 import offerData from "../../data/offers.json"
 import OfferImage from '../../images/offer.svg'
 
 import Header from "../Header"
+import Footer from "../Footer"
+import footerContent from "../../data/footer.json"
 
 const Layout = props => {
 
@@ -21,10 +21,10 @@ const Layout = props => {
 
   return (
     <>
-      <GlobalStyle />
       <div id="notification-wrapper"></div>
       <Header />
       <main>{props.children}</main>
+      <Footer content={footerContent} />
     </>
   )
 }

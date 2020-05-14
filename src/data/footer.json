@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "title": "About Us",
+    "sitemap":[
+      {
+        "id": 1,
+        "title": "Our Editors",
+        "link": "/"
+      },
+      {
+        "id": 2,
+        "title": "Pricing",
+        "link": "/"
+      },
+      {
+        "id": 3,
+        "title": "Contact",
+        "link": "/"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Content Development",
+    "sitemap":[
+      {
+        "id": 1,
+        "title": "Website Content",
+        "link": "/"
+      },
+      {
+        "id": 2,
+        "title": "Marketing Collateral",
+        "link": "/"
+      },
+      {
+        "id": 3,
+        "title": "Resume Writing",
+        "link": "/"
+      },
+      {
+        "id": 4,
+        "title": "UI Content / Microcopy",
+        "link": "/"
+      },
+      {
+        "id": 5,
+        "title": "Blog Content",
+        "link": "/"
+      },
+      {
+        "id": 6,
+        "title": "Social Media Content",
+        "link": "/"
+      },
+      {
+        "id": 7,
+        "title": "Adwords",
+        "link": "/"
+      },
+      {
+        "id": 8,
+        "title": "Facebook Ads",
+        "link": "/"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Academic Editing",
+    "sitemap":[
+      {
+        "id": 1,
+        "title": "Manuscript Editing",
+        "link": "/"
+      },
+      {
+        "id": 2,
+        "title": "Thesis Editing",
+        "link": "/"
+      },
+      {
+        "id": 3,
+        "title": "Proposal Editing",
+        "link": "/"
+      },
+      {
+        "id": 4,
+        "title": "Technical Reports",
+        "link": "/"
+      },
+      {
+        "id": 5,
+        "title": "Essay Editing",
+        "link": "/"
+      },
+      {
+        "id": 6,
+        "title": "Letter Editing",
+        "link": "/"
+      },
+      {
+        "id": 7,
+        "title": "ESL Editing",
+        "link": "/"
+      },
+      {
+        "id": 8,
+        "title": "Book Editing",
+        "link": "/"
+      },
+      {
+        "id": 9,
+        "title": "Resume Editing",
+        "link": "/"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Business Editing",
+    "sitemap":[
+      {
+        "id": 1,
+        "title": "Propsals",
+        "link": "/"
+      },
+      {
+        "id": 2,
+        "title": "Business Plans",
+        "link": "/"
+      },
+      {
+        "id": 3,
+        "title": "Marketing Collateral",
+        "link": "/"
+      },
+      {
+        "id": 4,
+        "title": "Newsletters",
+        "link": "/"
+      },
+      {
+        "id": 5,
+        "title": "Ad copies",
+        "link": "/"
+      },
+      {
+        "id": 6,
+        "title": "Website Content",
+        "link": "/"
+      },
+      {
+        "id": 7,
+        "title": "White Papers",
+        "link": "/"
+      },
+      {
+        "id": 8,
+        "title": "Presentations",
+        "link": "/"
+      },
+      {
+        "id": 9,
+        "title": "Biographies",
+        "link": "/"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Technical Editing",
+    "sitemap":[
+      {
+        "id": 1,
+        "title": "User Manuals",
+        "link": "/"
+      },
+      {
+        "id": 2,
+        "title": "Instructional Guides",
+        "link": "/"
+      },
+      {
+        "id": 3,
+        "title": "Website Contents",
+        "link": "/"
+      },
+      {
+        "id": 4,
+        "title": "Technical Reports",
+        "link": "/"
+      }
+    ]
+  }
+]

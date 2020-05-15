@@ -40,7 +40,7 @@ export const ServiceListContainer = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px;
+      padding: 30px 20px;
       position: relative;
       .ant-btn {
         position: absolute;

@@ -9,6 +9,7 @@ import {
   ServicesList,
   ImageContainer
 } from './styles';
+import Typed from 'react-typed';
 
 const Banner = props => {
   return (
@@ -22,7 +23,17 @@ const Banner = props => {
         <Col xs={24} sm={24} md={12} lg={12} xl={12} className="contentSection">
           <ContentContainer>
             <Content>{props.content.title}</Content>
-            <Content dangerouslySetInnerHTML={{__html: props.content.content}} />
+            <Content>
+              {props.content.content}
+              <Typed
+                strings={props.content.typedWords}
+                typeSpeed={60}
+                backSpeed={60}
+                backDelay={1200}
+                loop
+                className="typeAnimation"
+              />
+            </Content>
           </ContentContainer>
           <ServicesList>
             {

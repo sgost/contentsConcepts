@@ -14,6 +14,9 @@ export const FeaturesList = styled.ul`
   max-width: 1100px;
   margin: 0 auto;
   padding: 30px;
+  @media (max-width: 576px) {
+    padding: 30px 15px;
+  }
 `;
 
 export const FeatureListItem = styled.li`
@@ -22,10 +25,6 @@ export const FeatureListItem = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  .imageContainer {
-    width: 64px;
-    height: 64px;
-  }
   .labelText {
     font-weight: 500;
     font-size: 18px;
@@ -35,7 +34,15 @@ export const FeatureListItem = styled.li`
     margin-top: 12px;
   }
   @media (max-width: 576px) {
-    height: 135px;
-    width: 200px;
+    min-width: 130px;
+    margin: 15px 10px;
+    .imageContainer {
+      width: 40px;
+      height: 40px;
+    }
+    .labelText {
+      font-size: 16px;
+      line-height: 22px;
+    }
   }
 `;

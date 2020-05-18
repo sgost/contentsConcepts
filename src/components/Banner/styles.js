@@ -80,4 +80,5 @@ export const ImageContainer = styled.div`
   position: absolute;
   top: -25%;
   right: 0;
+  z-index: 0;
 `;

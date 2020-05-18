@@ -335,8 +335,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .imageContainer {
-    border-radius: 100%;
-    background: ${palette.ICON_BACKGROUND};
     display: flex;
     align-items: center;
     justify-content: center;

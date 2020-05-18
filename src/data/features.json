@@ -2,21 +2,21 @@
   {
     "id": 1,
     "title": "PhD Editors",
-    "image": "editors.png"
+    "image": "editors.svg"
   },
   {
     "id": 2,
     "title": "Affordable Prices",
-    "image": "affordable.png"
+    "image": "affordable.svg"
   },
   {
     "id": 3,
     "title": "Unlimited Support",
-    "image": "support.png"
+    "image": "support.svg"
   },
   {
     "id": 4,
     "title": "Confidential",
-    "image": "confidential.png"
+    "image": "confidential.svg"
   }
 ]

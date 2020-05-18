@@ -6,19 +6,21 @@ export const HeaderContainer = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 100px;
+  padding: 16px 100px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
   position: relative;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
-    padding: 20px 30px;
+    padding: 16px 30px;
   }
   @media (max-width: 768px) {
     padding: 0;
     flex-direction: column;
     justify-content: center;
   }
-  @media (max-width: 768px) {
-    .navMenu {
+  .navMenu {
+    margin-left: auto;
+    @media (max-width: 768px) {
       display: none;
     }
   }
@@ -110,8 +112,9 @@ export const MenuIcon = styled.div`
   display: none;
   position: absolute;
   right: 30px;
-  top: 26px;
+  top: 20px;
   right: 30px;
+  font-size: 20px;
   @media (max-width: 768px) {
     display: block;
   }

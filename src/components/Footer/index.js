@@ -16,11 +16,11 @@ const Footer = props => {
       <SitemapContainer>
         {
           content && content.map(dataItem =>
-            <SitemapList>
+            <SitemapList key={dataItem.id}>
               <h5>{dataItem.title}</h5>
               {
                 dataItem.sitemap && dataItem.sitemap.map(sitemap =>
-                  <Link to={sitemap.link}>{sitemap.title}</Link>
+                  <Link to={sitemap.link} key={sitemap.id}>{sitemap.title}</Link>
                 )
               }
             </SitemapList>

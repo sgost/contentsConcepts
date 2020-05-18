@@ -33,6 +33,7 @@ export const ProcessList = styled.ul`
   }
   @media (max-width: 576px) {
     flex-direction: column;
+    padding: 10px 0px;
   }
 `;
 

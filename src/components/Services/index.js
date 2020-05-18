@@ -1,11 +1,10 @@
 import React from "react"
-import { Button } from "antd"
+import { Button, Row, Col } from "antd"
 
 import {
   ServicesSection,
   SectionHeading,
-  ServicesList,
-  ServiceListItem
+  ServiceListContainer
 } from './styles';
 
 const Services = props => {
@@ -17,20 +16,22 @@ const Services = props => {
       <SectionHeading>
         <h2>{servicesContent.title}</h2>
       </SectionHeading>
-      <ServicesList>
-        {
-          servicesContent.services && servicesContent.services.map(dataItem =>
-            <ServiceListItem key={dataItem.id}>
-              <div className="imageContainer">
-                <img src={require('../../images/' + dataItem.image)} alt="service" />
-              </div>
-              <h3>{dataItem.title}</h3>
-              <p>{dataItem.description}</p>
-              <Button type="primary">Get Quote</Button>
-            </ServiceListItem>
-          )
-        }
-      </ServicesList>
+      <ServiceListContainer>
+        <Row type="flex" className="servicesList">
+          {
+            servicesContent.services && servicesContent.services.map(dataItem =>
+              <Col xs={24} sm={10} md={8} lg={8} xl={7} className="serviceListItem" key={dataItem.id}>
+                <div className="imageContainer">
+                  <img src={require('../../images/' + dataItem.image)} alt="service" />
+                </div>
+                <h3>{dataItem.title}</h3>
+                <p>{dataItem.description}</p>
+                <Button type="primary">Get Quote</Button>
+              </Col>
+            )
+          }
+        </Row>
+      </ServiceListContainer>
     </ServicesSection>
   )
 }

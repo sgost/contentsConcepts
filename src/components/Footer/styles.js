@@ -51,6 +51,9 @@ export const SitemapList = styled.li`
   a {
     color: ${palette.PALE_BLUE};
     margin: 2px 0px;
+    &:hover {
+      color: ${palette.WHITE_COLOR};
+    }
   }
   @media only screen and (min-width: 992px) and (max-width: 1200px) {
     margin: 0px 18px;

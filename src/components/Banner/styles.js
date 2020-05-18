@@ -5,9 +5,16 @@ export const BannerSection = styled.div`
   overflow: hidden;
   .ant-row {
     flex-wrap: nowrap;
-    .resSection {
-      @media only screen and (min-width: 320px) and (max-width: 768px) {
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+      flex-direction: column;
+      .resSection {
         display: none;
+      }
+    }
+    .mob-banner-illustration {
+      display: none;
+      @media only screen and (min-width: 320px) and (max-width: 768px) {
+        display: block;
       }
     }
   }
@@ -21,7 +28,8 @@ export const BannerSection = styled.div`
     }
     @media only screen and (min-width: 320px) and (max-width: 768px) {
       max-width: unset;
-      padding: 12% 6% 12% 6%;
+      padding: 4% 6% 12% 6%;
+      margin: 0;
     }
   }
 `;
@@ -40,6 +48,9 @@ export const Content = styled.p`
   span {
     color: ${palette.HIGHLIGHT_TEXT};
     font-weight: 600;
+    @media (max-width: 576px) {
+      display: block;
+    }
   }
 `;
 
@@ -54,6 +65,8 @@ export const ServicesList = styled.ul`
   @media (max-width: 576px) {
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
+    margin: 25px 45px 0px;
   }
   li {
     margin-right: 24px;
@@ -81,4 +94,8 @@ export const ImageContainer = styled.div`
   top: -25%;
   right: 0;
   z-index: 0;
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    position: unset;
+    margin-top: -15%;
+  }
 `;

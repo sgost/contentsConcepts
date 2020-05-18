@@ -14,6 +14,11 @@ const Banner = props => {
   return (
     <BannerSection>
       <Row>
+        <Col xs={24} sm={24} className="mob-banner-illustration">
+          <ImageContainer>
+            <img src={BannerImage} alt="banner" />
+          </ImageContainer>
+        </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12} className="contentSection">
           <ContentContainer>
             <Content>{props.content.title}</Content>

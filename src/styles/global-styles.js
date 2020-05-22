@@ -355,4 +355,11 @@ export const GlobalStyle = createGlobalStyle`
       display: none;
     }
   }
+
+  .homeSpin {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;

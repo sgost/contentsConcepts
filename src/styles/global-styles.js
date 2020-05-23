@@ -77,7 +77,7 @@ export const GlobalStyle = createGlobalStyle`
   appearance: none;
   }
   body, input, select, textarea, button {
-  font-family: ${palette.FONT_FAMILY};
+  font-family: ${palette.FONT_FAMILY} !important;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.65;

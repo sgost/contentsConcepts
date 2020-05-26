@@ -14,6 +14,7 @@ import Testimonial from "../components/Testimonial"
 import Process from "../components/Process"
 import Customers from "../components/Customers"
 import Contact from "../components/Contact"
+import MediumArticles from "../components/MediumArticles"
 
 const HomePage = () => {
 
@@ -47,7 +48,7 @@ const HomePage = () => {
       const customersData = await fetch(jsonUrl + 'customers.json').then(res => res.json());
       const contactData = await fetch(jsonUrl + 'contact.json').then(res => res.json());
 
-      setData({
+      setData(data => ({
         ...data,
         banner: bannerData,
         features: featuresData,
@@ -58,7 +59,8 @@ const HomePage = () => {
         process: processData,
         customers: customersData,
         contact: contactData
-      });
+      }));
+
       setLoading(false);
     }
     fetchData()
@@ -79,6 +81,7 @@ const HomePage = () => {
           <Process content={data.process} />
           <Customers content={data.customers} />
           <Contact content={data.contact} />
+          <MediumArticles />
         </Layout>
       }
     </Fragment>

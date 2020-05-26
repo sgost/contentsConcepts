@@ -51,7 +51,13 @@ module.exports = {
         javascriptEnabled: true
       },
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-medium`,
+      options: {
+        username: `@kalaiselvan369`
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

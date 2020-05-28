@@ -45,11 +45,16 @@ export const Content = styled.p`
   font-size: 22px;
   line-height: 40px;
   color: ${palette.PRIMARY_TXT_COLOR};
-  span {
+  .typeAnimation {
+    margin-left: 5px;
     color: ${palette.HIGHLIGHT_TEXT};
     font-weight: 600;
-    @media (max-width: 576px) {
+    .typed-cursor {
+      font-weight: normal;
+    }
+    @media (max-width: 992px) {
       display: block;
+      margin-left: 0px;
     }
   }
 `;

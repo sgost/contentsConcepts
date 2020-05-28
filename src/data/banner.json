@@ -1,6 +1,7 @@
 {
   "title": "Top-notch editing services.",
-  "content": "Customers choose us for <span>Native English Editors<span>",
+  "content": "Customers choose us for",
+  "typedWords": ["Native English Editors", "Content Solution", "Quality"],
   "services": [
     {
       "id": 1,

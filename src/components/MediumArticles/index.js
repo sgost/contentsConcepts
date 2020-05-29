@@ -38,7 +38,7 @@ const MediumArticles = props => {
           {
             mediumPosts.allMediumPost.edges.map(edge =>
               <Col xs={24} sm={8} md={8} lg={8} xl={8} key={edge.node.id}>
-                <a href={`https://medium.com/@kalaiselvan369/${edge.node.uniqueSlug}`} rel="noopener noreferrer" target="_blank">
+                <a href={`https://medium.com/@contentconcepts/${edge.node.uniqueSlug}`} rel="noopener noreferrer" target="_blank">
                   <img src={`https://miro.medium.com/fit/c/700/210/${edge.node.virtuals.previewImage.imageId}`} alt={edge.node.title} />
                   <span>{edge.node.title}</span>
                 </a>

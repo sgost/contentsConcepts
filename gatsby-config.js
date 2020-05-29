@@ -55,7 +55,7 @@ module.exports = {
     {
       resolve: `gatsby-source-medium`,
       options: {
-        username: `@kalaiselvan369`
+        username: `@contentconcepts`
       },
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

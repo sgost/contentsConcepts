@@ -78,6 +78,12 @@ export const ServicesList = styled.ul`
     &:last-child {
       margin-right: 0;
     }
+    .ant-btn a {
+      color: ${palette.PRIMARY_TXT_COLOR} !important;
+      &:hover {
+        color: ${palette.WHITE_COLOR} !important;
+      }
+    }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       .ant-btn {
         padding: 12px 20px;

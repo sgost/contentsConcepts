@@ -357,9 +357,61 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .homeSpin {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .editingMenu {
+    border-right: none;
+  }
+  .editingSubMenu {
+    margin-top: 25px;
+    &:first-child {
+      margin-top: 0;
+    }
+    .ant-menu-submenu-title {
+      padding: 0px 0px 10px 0px !important;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px !important;
+      color: #000;
+      border-bottom: 1px solid #444444;
+      margin: 0;
+      height: auto !important;
+      overflow: unset !important;
+      text-overflow: unset !important;
+      white-space: unset !important;
+      .ant-menu-submenu-arrow {
+        display: none;
+      }
+    }
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+      background: #fff;
+    }
+    .ant-menu-item {
+      padding-left: 10px !important;
+      background: #fff;
+      margin-top: 15px;
+      height: auto !important;
+      line-height: 20px !important;
+      overflow: unset !important;
+      text-overflow: unset !important;
+      a {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #666666;
+        display: inline-block;
+      }
+    }
+    .ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+      color: #1976D2;
+    }
+    .ant-menu-inline .ant-menu-item::after {
+      left: 0;
+      right: unset;
+      border-right: 3px solid #1976D2;
+    }
   }
 `;

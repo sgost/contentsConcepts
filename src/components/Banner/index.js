@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Row, Col, Button } from "antd"
 
 import BannerImage from '../../images/banner_image.png';
@@ -39,7 +40,9 @@ const Banner = props => {
             {
               props.content.services && props.content.services.map(dataItem =>
                 <li key={dataItem.id}>
-                  <Button>{dataItem.title}</Button>
+                  <Button>
+                    <Link to="/manuscript_editing">{dataItem.title}</Link>
+                  </Button>
                 </li>
               )
             }

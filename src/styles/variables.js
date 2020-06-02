@@ -16,6 +16,7 @@ export const LIGHT_GREY = '#EEEEEE';
 export const CHARCOAL = '#444444';
 export const DARK_GREY = '#AAAAAA';
 export const PALE_BLUE = '#D0D7E2';
+export const HAWKES_BLUE = '#DFEEFB';
 
 // brand colors
 export const APP_BRAND_COLOR = '#5860AF';

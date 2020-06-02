@@ -4,19 +4,18 @@ module.exports = {
     description: `Top-notch editing services.`
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout/index.js`),
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/content`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -57,7 +56,8 @@ module.exports = {
       options: {
         username: `@contentconcepts`
       },
-    }
+    },
+    `gatsby-transformer-remark`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

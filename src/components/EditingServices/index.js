@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react"
 import { graphql } from "gatsby"
 import SEO from "../seo"
-import MenuSection from './Menu';
+import MenuSection from './menu';
 import Customers from "../Customers"
 import Contact from "../Contact"
 

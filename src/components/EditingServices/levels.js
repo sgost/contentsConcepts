@@ -11,19 +11,6 @@ const EditingLevels = props => {
 
   const content = props.content;
 
-  const listHeader = (
-    <Row>
-      <Col xs={9} sm={9} md={9} lg={10} xl={10}></Col>
-      {
-        content.levelTypes.map(level => 
-          <Col xs={5} sm={5} md={4} lg={4} xl={4} key={level.id} className="cardCol" style={{background: level.themeColor}}>
-            <span>{level.title}</span>
-          </Col>
-        )
-      }
-    </Row>
-  );
-
   return (
     <LevelsSection>
       <SectionHeading>
@@ -32,7 +19,18 @@ const EditingLevels = props => {
       <LevelsListing>
         <List
           dataSource={content.levels}
-          header={listHeader}
+          header={
+            <Row>
+              <Col xs={9} sm={9} md={9} lg={10} xl={10}></Col>
+              {
+                content.levelTypes && content.levelTypes.map(level =>
+                  <Col xs={5} sm={5} md={4} lg={4} xl={4} key={level.id} className="cardCol" style={{background: level.themeColor}}>
+                    <span>{level.title}</span>
+                  </Col>
+                )
+              }
+            </Row>
+          }
           renderItem={item =>
             <List.Item key={item.id} className="listItemsContainer">
               <Row>

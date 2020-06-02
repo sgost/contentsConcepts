@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react"
 import { Link } from "gatsby"
 import { Layout, Menu } from "antd"
-import MenuContent from './Content';
+import MenuContent from './content';
 import EditingLevels from './levels';
 import EditingSamples from './samples';
 import Highlights from './highlights';
@@ -93,7 +93,7 @@ const MenuSection = props => {
                 <Menu.Item key="newsletters">
                   <Link to="/manuscript_editing">Newsletters</Link>
                 </Menu.Item>
-                <Menu.Item key="ad_copies">
+                <Menu.Item key="adcopies">
                   <Link to="/manuscript_editing">Ad copies</Link>
                 </Menu.Item>
                 <Menu.Item key="website">

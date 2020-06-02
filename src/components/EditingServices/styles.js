@@ -269,12 +269,14 @@ export const TabsContainer = styled.div`
   @media (min-width: 1500px) {
     max-width: 1300px;
   }
-  .ant-tabs-bar {
+  .ant-tabs-top > .ant-tabs-nav::before {
     border-bottom: 1px solid ${palette.DARK_GREY};
-    margin: 0px 16px 16px;
   }
-  .ant-tabs-nav {
+  .ant-tabs-nav-list {
     width: 100%;
+    @media (max-width: 576px) {
+      width: auto;
+    }
     .ant-tabs-tab {
       width: 30%;
       text-align: center;
@@ -283,6 +285,7 @@ export const TabsContainer = styled.div`
       line-height: 35px;
       color: ${palette.CHARCOAL};
       opacity: 0.6;
+      justify-content: center;
       @media only screen and (min-width: 320px) and (max-width: 768px) {
         width: auto;
         padding: 12px;
@@ -294,7 +297,7 @@ export const TabsContainer = styled.div`
     }
   }
   .ant-tabs-ink-bar {
-    background-color: ${palette.BUTTON_PRIMARY};
+    background: ${palette.BUTTON_PRIMARY};
   }
 `;
 

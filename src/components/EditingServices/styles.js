@@ -2,12 +2,11 @@ import styled from 'styled-components';
 import * as palette from '../../styles/variables';
 
 export const MenuContainer = styled.div`
-  padding: 60px 30px;
+  padding: 60px 0px;
   max-width: 1100px;
   margin: 0 auto;
   @media (min-width: 1500px) {
     max-width: 1300px;
-    margin: 0 auto;
   }
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     padding: 45px;
@@ -63,7 +62,7 @@ export const HeadingContainer = styled.div`
     font-weight: normal;
     font-size: 16px;
     line-height: 40px;
-    color: #1976D2;
+    color: ${palette.BUTTON_PRIMARY};
     margin-left: 15px;
   }
   @media only screen and (min-width: 320px) and (max-width: 992px) {
@@ -83,7 +82,7 @@ export const TypesContainer = styled.div`
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
-  color: #333333;
+  color: ${palette.PRIMARY_TXT_COLOR};
   margin: 8px 0px;
 `;
 
@@ -147,6 +146,296 @@ export const ButtonContainer = styled.div`
     .ant-btn {
       width: 100%;
       margin: 10px 0px;
+    }
+  }
+`;
+
+// Levels Section
+export const LevelsListing = styled.div`
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 0px;
+  @media (min-width: 1500px) {
+    max-width: 1300px;
+  }
+  .cardCol {
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(69, 68, 68, 0.15);
+    img {
+      width: 15px;
+      height: 15px;
+    }
+    .hyphen {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      margin: 0px 6px;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+      margin: 0px;
+    }
+    @media (max-width: 576px) {
+      img {
+        width: 12px;
+        height: 12px;
+      }
+      .hyphen {
+        font-size: 12px;
+      }
+    }
+  }
+  .ant-list-header {
+    border: none;
+    padding: 0;
+    .cardCol {
+      padding: 10px;
+      font-weight: 500;
+      color: ${palette.WHITE_COLOR};
+    }
+  }
+  .listItemsContainer {
+    padding: 0px;
+    border: none !important;
+    .ant-row {
+      width: 100%;
+    }
+    .ant-col {
+      padding: 10px;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      color: ${palette.PRIMARY_TXT_COLOR};
+      @media (max-width: 576px) {
+        font-size: 12px;
+      }
+    }
+    .cardCol {
+      background: ${palette.WHITE_COLOR};
+    }
+    &:nth-child(odd) {
+      .cardCol {
+        background: ${palette.HAWKES_BLUE};
+      }
+    }
+  }
+`;
+
+export const LevelsSection = styled.div`
+  background: ${palette.PRIMARY_SECTION_BACKGROUND};
+  padding: 60px 80px;
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    padding: 45px;
+  }
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    padding: 30px 40px;
+  }
+  @media (max-width: 576px) {
+    padding: 30px;
+  }
+`;
+
+export const SectionHeading = styled.div`
+  padding: 20px 0px;
+  text-align: center;
+  span {
+    font-size: 18px;
+    font-weight: normal;
+  }
+`;
+
+//samples section
+export const SamplesSection = styled.div`
+  background: ${palette.WHITE_COLOR};
+  padding: 60px 80px;
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    padding: 45px;
+  }
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    padding: 30px 40px;
+  }
+  @media (max-width: 576px) {
+    padding: 30px;
+  }
+`;
+
+export const TabsContainer = styled.div`
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 0px;
+  @media (min-width: 1500px) {
+    max-width: 1300px;
+  }
+  .ant-tabs-bar {
+    border-bottom: 1px solid ${palette.DARK_GREY};
+    margin: 0px 16px 16px;
+  }
+  .ant-tabs-nav {
+    width: 100%;
+    .ant-tabs-tab {
+      width: 30%;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 35px;
+      color: ${palette.CHARCOAL};
+      opacity: 0.6;
+      @media only screen and (min-width: 320px) and (max-width: 768px) {
+        width: auto;
+        padding: 12px;
+      }
+    }
+    .ant-tabs-tab-active {
+      color: ${palette.BUTTON_PRIMARY};
+      opacity: 1;
+    }
+  }
+  .ant-tabs-ink-bar {
+    background-color: ${palette.BUTTON_PRIMARY};
+  }
+`;
+
+export const TabContent = styled.div`
+  padding: 30px;
+  p {
+    font-size: 18px;
+    line-height: 40px;
+    color: ${palette.CHARCOAL};
+  }
+  .sampleImage {
+    background: ${palette.WHITE_COLOR};
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 30px 0px;
+    img {
+      width: auto;
+    }
+  }
+  @media (max-width: 576px) {
+    padding: 30px 20px 0px;
+    .sampleImage {
+      padding: 20px;
+    }
+    p {
+      line-height: 35px;
+    }
+  }
+`;
+
+//highlights section
+export const HighlightsSection = styled.div`
+  background: ${palette.PRIMARY_SECTION_BACKGROUND};
+  padding: 60px 80px;
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    padding: 45px;
+  }
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    padding: 30px 40px;
+  }
+  @media (max-width: 576px) {
+    padding: 30px;
+  }
+  .highlightsList {
+    max-width: 1100px;
+    margin: 0 auto !important;
+    justify-content: center;
+    padding: 30px 0px;
+    @media (min-width: 1500px) {
+      max-width: 1300px;
+    }
+    .card {
+      padding: 30px;
+      @media only screen and (min-width: 768px) and (max-width: 992px) {
+        padding: 20px;
+      }
+      @media only screen and (min-width: 576px) and (max-width: 768px) {
+        padding: 15px;
+      }
+      @media (max-width: 576px) {
+        padding: 20px;
+      }
+    }
+  }
+`;
+
+export const HighlightCard = styled.div`
+  background: ${palette.WHITE_COLOR};
+  box-shadow: 2px 2px 16px rgba(16, 50, 101, 0.15);
+  border-radius: 8px;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  h3 {
+    margin: 15px 0px;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    padding: 30px;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    padding: 25px;
+  }
+`;
+
+//quality section
+export const QualitySection = styled.div`
+  background: ${palette.SECONDARY_SECTION_BACKGROUND};
+  padding: 60px 80px;
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    padding: 45px;
+  }
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    padding: 30px 40px;
+  }
+  @media (max-width: 576px) {
+    padding: 30px;
+  }
+  .qualityContent {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    @media (max-width: 576px) {
+      padding: 30px 0px;
+    }
+    .qualityBadge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: auto;
+      }
+    }
+    .contentDesc {
+      padding-left: 50px;
+      h2 {
+        font-size: 28px;
+        line-height: 42px;
+        color: ${palette.SPRING_GREEN};
+      }
+      p {
+        font-size: 16px;
+        color: ${palette.LIGHT_GREY};
+        margin-top: 12px;
+      }
+      @media (max-width: 576px) {
+        padding: 20px 0px;
+        h2, p {
+          text-align: center;
+        }
+      }
     }
   }
 `;

@@ -4,9 +4,6 @@ import SEO from "../seo"
 import MenuSection from './Menu';
 import Customers from "../Customers"
 import Contact from "../Contact"
-import {
-  
-} from './styles';
 
 const EditingServices = ({ data }) => {
 
@@ -60,6 +57,43 @@ export const query = graphql`
         features {
           id
           title
+        }
+        editingLevels {
+          title
+          subHeading
+          levelTypes {
+            title
+            themeColor
+          }
+          levels {
+            id
+            title
+            copy
+            substantive
+            developmental
+          }
+        }
+        editingSample {
+          title
+          samples {
+            id
+            title
+            description
+            image
+          }
+        }
+        editingHighlights {
+          title
+          highlights {
+            id
+            title
+            description
+            image
+          }
+        }
+        quality {
+          title
+          description
         }
         key
         parentType

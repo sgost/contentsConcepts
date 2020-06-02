@@ -375,8 +375,8 @@ export const GlobalStyle = createGlobalStyle`
       font-weight: 600;
       font-size: 16px;
       line-height: 24px !important;
-      color: #000;
-      border-bottom: 1px solid #444444;
+      color: ${palette.BLACK_COLOR};
+      border-bottom: 1px solid ${palette.CHARCOAL};
       margin: 0;
       height: auto !important;
       overflow: unset !important;
@@ -387,11 +387,11 @@ export const GlobalStyle = createGlobalStyle`
       }
     }
     .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-      background: #fff;
+      background: ${palette.WHITE_COLOR};
     }
     .ant-menu-item {
       padding-left: 10px !important;
-      background: #fff;
+      background: ${palette.WHITE_COLOR};
       margin-top: 15px;
       height: auto !important;
       line-height: 20px !important;
@@ -401,17 +401,17 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 500;
         font-size: 14px;
         line-height: 20px;
-        color: #666666;
+        color: ${palette.SECONDARY_TXT_COLOR};
         display: inline-block;
       }
     }
     .ant-menu-item-selected a, .ant-menu-item-selected a:hover {
-      color: #1976D2;
+      color: ${palette.BUTTON_PRIMARY};
     }
     .ant-menu-inline .ant-menu-item::after {
       left: 0;
       right: unset;
-      border-right: 3px solid #1976D2;
+      border-right: 3px solid ${palette.BUTTON_PRIMARY};
     }
   }
 `;

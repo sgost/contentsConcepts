@@ -10,9 +10,9 @@ import {
   ButtonContainer
 } from './styles';
 
-const MenuContent = props => {
+const MenuContent = ({ content }) => {
 
-  const content = props.content;
+  // const content = props.content;
 
   return (
     <div>
@@ -21,14 +21,19 @@ const MenuContent = props => {
         <span>({content.highlight})</span>
       </HeadingContainer>
       <TypesContainer>
-        {content.editedTypes.title} -
         {
-          content.editedTypes.types && content.editedTypes.types.map((type, i, arr) => {
-            let divider = i<arr.length-1 && <>, </>;
-            return (
-              <span key={type}>{type}{divider}</span>
-            )
-          })
+          content.editedTypes &&
+          <div>
+            {content.editedTypes.title} -
+            {
+              content.editedTypes.types && content.editedTypes.types.map((type, i, arr) => {
+                let divider = i<arr.length-1 && <>, </>;
+                return (
+                  <span key={type}>{type}{divider}</span>
+                )
+              })
+            }
+          </div>
         }
       </TypesContainer>
       <FeaturesListContainer>

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
+import { graphql, useStaticQuery } from "gatsby"
 
 import { Notification } from "../Notification"
 import OfferImage from '../../images/offer.svg'
@@ -10,21 +11,25 @@ import { GlobalStyle } from '../../styles/global-styles';
 
 const Layout = props => {
 
-  const jsonUrl = 'https://mohanapriya1994.github.io/ContentConceptsData/data/';
+  const data = useStaticQuery(graphql`
+    query {
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/offers.json"}) {
+        childDataJson {
+          offer
+        }
+      }
+    }
+  `);
 
-  const[footerContent, setFooterContent] = useState([]);
+  const offerData = data.file.childDataJson;
 
   useEffect(() => {
     const fetchData = async () => {
-      const offerData = await fetch(jsonUrl + 'offers.json').then(res => res.json());
       Notification({
         description: offerData.offer,
         image: OfferImage,
         linkText: "Check our other offers"
       });
-
-      const footerData = await fetch(jsonUrl + 'footer.json').then(res => res.json());
-      setFooterContent(footerData);
     }
     fetchData()
   }, []);
@@ -35,7 +40,7 @@ const Layout = props => {
       <div id="notification-wrapper"></div>
       <Header />
       <main>{props.children}</main>
-      <Footer content={footerContent} />
+      <Footer />
     </>
   )
 }

@@ -1,5 +1,5 @@
 import React from "react"
-
+import { graphql, useStaticQuery } from "gatsby"
 import {
   ProcessSection,
   SectionHeading,
@@ -11,7 +11,24 @@ import {
 
 const Process = props => {
 
-  const processContent = props.content;
+  const data = useStaticQuery(graphql`
+    query {
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/process.json"}) {
+        childDataJson {
+          title
+          process {
+            id
+            order
+            title
+            description
+            themeColor
+          }
+        }
+      }
+    }
+  `);
+
+  const processContent = data.file.childDataJson;
 
   return (
     <ProcessSection>

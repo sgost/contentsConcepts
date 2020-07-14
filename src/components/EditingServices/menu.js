@@ -56,71 +56,71 @@ const MenuSection = props => {
             >
               <SubMenu key="academic" title="Academic editing and proofreading services" className="editingSubMenu">
                 <Menu.Item key="manuscript_editing">
-                  <Link to="/manuscript_editing">Manuscript Editing</Link>
+                  <Link to="/services/manuscript_editing">Manuscript Editing</Link>
                 </Menu.Item>
                 <Menu.Item key="thesis_editing">
-                  <Link to="/manuscript_editing">Thesis Editing</Link>
+                  <Link to="/services/thesis_editing">Thesis Editing</Link>
                 </Menu.Item>
                 <Menu.Item key="proposal_editing">
-                  <Link to="/manuscript_editing">Proposal Editing</Link>
+                  <Link to="/services/proposal_editing">Proposal Editing</Link>
                 </Menu.Item>
-                <Menu.Item key="essay">
-                  <Link to="/manuscript_editing">Essay Editing</Link>
+                <Menu.Item key="essay_editing">
+                  <Link to="/services/essay_editing">Essay Editing</Link>
                 </Menu.Item>
-                <Menu.Item key="letter">
-                  <Link to="/manuscript_editing">Letter Editing</Link>
+                <Menu.Item key="letter_editing">
+                  <Link to="/services/letter_editing">Letter Editing</Link>
                 </Menu.Item>
-                <Menu.Item key="esl">
-                  <Link to="/manuscript_editing">ESL Editing</Link>
+                <Menu.Item key="esl_editing">
+                  <Link to="/services/esl_editing">ESL Editing</Link>
                 </Menu.Item>
-                <Menu.Item key="book">
-                  <Link to="/manuscript_editing">Book Editing</Link>
+                <Menu.Item key="book_editing">
+                  <Link to="/services/book_editing">Book Editing</Link>
                 </Menu.Item>
-                <Menu.Item key="resume">
-                  <Link to="/manuscript_editing">Resume Editing</Link>
+                <Menu.Item key="resume_editing">
+                  <Link to="/services/resume_editing">Resume Editing</Link>
                 </Menu.Item>
               </SubMenu>
               <SubMenu key="business" title="Business editing and proofreading services" className="editingSubMenu">
                 <Menu.Item key="propsals">
-                  <Link to="/manuscript_editing">Propsals</Link>
+                  <Link to="/services/propsals">Propsals</Link>
                 </Menu.Item>
-                <Menu.Item key="businessplan">
-                  <Link to="/manuscript_editing">Business Plans</Link>
+                <Menu.Item key="business_plans">
+                  <Link to="/services/business_plans">Business Plans</Link>
                 </Menu.Item>
-                <Menu.Item key="marketing">
-                  <Link to="/manuscript_editing">Marketing Collateral</Link>
+                <Menu.Item key="marketing_collateral">
+                  <Link to="/services/marketing_collateral">Marketing Collateral</Link>
                 </Menu.Item>
                 <Menu.Item key="newsletters">
-                  <Link to="/manuscript_editing">Newsletters</Link>
+                  <Link to="/services/newsletters">Newsletters</Link>
                 </Menu.Item>
                 <Menu.Item key="adcopies">
-                  <Link to="/manuscript_editing">Ad copies</Link>
+                  <Link to="/services/adcopies">Ad copies</Link>
                 </Menu.Item>
-                <Menu.Item key="website">
-                  <Link to="/manuscript_editing">Website Content</Link>
+                <Menu.Item key="website_content">
+                  <Link to="/services/website_content">Website Content</Link>
                 </Menu.Item>
-                <Menu.Item key="whitepapers">
-                  <Link to="/manuscript_editing">White Papers</Link>
+                <Menu.Item key="white_papers">
+                  <Link to="/services/white_papers">White Papers</Link>
                 </Menu.Item>
-                <Menu.Item key="presentation">
-                  <Link to="/manuscript_editing">Presentations</Link>
+                <Menu.Item key="presentations">
+                  <Link to="/services/presentations">Presentations</Link>
                 </Menu.Item>
-                <Menu.Item key="biographie">
-                  <Link to="/manuscript_editing">Biographies</Link>
+                <Menu.Item key="biographies">
+                  <Link to="/services/biographies">Biographies</Link>
                 </Menu.Item>
               </SubMenu>
               <SubMenu key="technical" title="Technical Editing" className="editingSubMenu">
-                <Menu.Item key="usermanual">
-                  <Link to="/manuscript_editing">User Manuals</Link>
+                <Menu.Item key="user_manuals">
+                  <Link to="/services/user_manuals">User Manuals</Link>
                 </Menu.Item>
-                <Menu.Item key="instructguide">
-                  <Link to="/manuscript_editing">Instructional Guides</Link>
+                <Menu.Item key="instructional_guides">
+                  <Link to="/services/instructional_guides">Instructional Guides</Link>
                 </Menu.Item>
-                <Menu.Item key="webcontent">
-                  <Link to="/manuscript_editing">Website Contents</Link>
+                <Menu.Item key="website_contents">
+                  <Link to="/services/website_contents">Website Contents</Link>
                 </Menu.Item>
-                <Menu.Item key="techreport">
-                  <Link to="/manuscript_editing">Technical Reports</Link>
+                <Menu.Item key="technical_reports">
+                  <Link to="/services/technical_reports">Technical Reports</Link>
                 </Menu.Item>
               </SubMenu>
             </Menu>

@@ -1,5 +1,5 @@
 import React from "react"
-
+import { graphql, useStaticQuery } from "gatsby"
 import {
   TestimonialSection,
   TestimonialList,
@@ -9,11 +9,29 @@ import {
 } from './styles';
 
 const Testimonial = props => {
+
+  const data = useStaticQuery(graphql`
+    query {
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/testimonial.json"}) {
+        childDataJson {
+          testimonial {
+            id
+            title
+            count
+            themeColor
+          }
+        }
+      }
+    }
+  `);
+
+  const content = data.file.childDataJson;
+
   return (
     <TestimonialSection>
       <TestimonialList>
         {
-          props.content && props.content.map(dataItem =>
+          content.testimonial && content.testimonial.map(dataItem =>
             <TestimonialListItem key={dataItem.id}>
               <CountWrapper>
                 <StatusCircle theme={dataItem.themeColor}></StatusCircle>

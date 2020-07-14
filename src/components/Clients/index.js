@@ -1,14 +1,30 @@
 import React from "react"
-
+import { graphql, useStaticQuery } from "gatsby"
 import {
   ClientsSection,
   SectionContent,
   ClientsList
 } from './styles';
 
-const Clients = props => {
+const Clients = () => {
 
-  const clientsData = props.content;
+  const data = useStaticQuery(graphql`
+    query {
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/clients.json"}) {
+        childDataJson {
+          title
+          description
+          clients {
+            id
+            title
+            image
+          }
+        }
+      }
+    }
+  `);
+
+  const clientsData = data.file.childDataJson;
 
   return (
     <ClientsSection>

@@ -1,6 +1,6 @@
 import React from "react"
 import { Button, Row, Col } from "antd"
-
+import { graphql, useStaticQuery } from "gatsby"
 import {
   ServicesSection,
   SectionHeading,
@@ -9,7 +9,23 @@ import {
 
 const Services = props => {
 
-  const servicesContent = props.content;
+  const data = useStaticQuery(graphql`
+    query {
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/services.json"}) {
+        childDataJson {
+          title
+          services {
+            id
+            title
+            description
+            image
+          }
+        }
+      }
+    }
+  `);
+
+  const servicesContent = data.file.childDataJson;
 
   return (
     <ServicesSection>

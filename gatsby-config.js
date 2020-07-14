@@ -57,7 +57,17 @@ module.exports = {
         username: `@contentconcepts`
       },
     },
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `ContentConceptsData`,
+        remote: `https://github.com/mohanapriya1994/ContentConceptsData.git`,
+        branch: `master`,
+        // // Only import the data folder from a codebase.
+        // patterns: `data`
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -6,35 +6,12 @@ import Customers from "../Customers"
 import Contact from "../Contact"
 
 const EditingServices = ({ data }) => {
-
-  const jsonUrl = 'https://mohanapriya1994.github.io/ContentConceptsData/data/';
-
-  const[data1, setData] = useState({
-    customers: {},
-    contact: {}
-  });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const customersData = await fetch(jsonUrl + 'customers.json').then(res => res.json());
-      const contactData = await fetch(jsonUrl + 'contact.json').then(res => res.json());
-
-      setData(data1 => ({
-        ...data1,
-        customers: customersData,
-        contact: contactData
-      }));
-
-    }
-    fetchData()
-  }, [])
-
   return (
     <Fragment>
       <SEO title="Editing Services" />
       <MenuSection content={data.markdownRemark} />
-      <Customers content={data1.customers} />
-      <Contact content={data1.contact} />
+      <Customers />
+      <Contact />
     </Fragment>
   )
 }

@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import { Form, Input, Button, Select } from 'antd'
 import { CaretDownOutlined } from '@ant-design/icons';
 import Call from '../../images/call.svg'
@@ -13,7 +14,24 @@ import {
 
 const Contact = props => {
 
-  const contactContent = props.content;
+  const data = useStaticQuery(graphql`
+    query {
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/contact.json"}) {
+        childDataJson {
+          title
+          call
+          email
+          categories {
+            id
+            title
+            value
+          }
+        }
+      }
+    }
+  `);
+
+  const contactContent = data.file.childDataJson;
 
   const { Option } = Select;
 

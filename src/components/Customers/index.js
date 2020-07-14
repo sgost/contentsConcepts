@@ -1,6 +1,6 @@
 import React from "react"
 import QuoteLeft from "../../images/quote_left.svg"
-
+import { graphql, useStaticQuery } from "gatsby"
 import {
   CustomersSection,
   SectionHeading,
@@ -14,7 +14,25 @@ import {
 
 const Customers = props => {
 
-  const customersContent = props.content;
+  const data = useStaticQuery(graphql`
+    query {
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/customers.json"}) {
+        childDataJson {
+          title
+          customers {
+            id
+            name
+            comment
+            role
+            company
+            image
+          }
+        }
+      }
+    }
+  `);
+
+  const customersContent = data.file.childDataJson;
 
   return (
     <CustomersSection>

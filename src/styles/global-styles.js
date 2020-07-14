@@ -310,6 +310,7 @@ export const GlobalStyle = createGlobalStyle`
     background: linear-gradient(178.57deg, #8D58D4 0%, #578DC3 100%);
     padding: 10px 35px;
     margin-bottom: 0;
+    width: 100% !important;
     @media (max-width: 576px) {
       padding: 10px 15px;
     }

@@ -16,7 +16,7 @@ const Banner = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/banner.md"}) {
+      file(relativePath: {eq: "home/banner.md"}) {
         childMarkdownRemark {
           frontmatter {
             title

@@ -27,7 +27,7 @@ const EditingSamples = ({ content }) => {
                     <TabContent>
                       <p>{sample.description}</p>
                       <div className="sampleImage">
-                        <img src={require('../../images/' + sample.image)} alt={sample.title} />
+                        <img src={sample.image.childImageSharp.fluid.src} alt={sample.title} />
                       </div>
                     </TabContent>
                   </TabPane>

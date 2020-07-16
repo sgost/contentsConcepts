@@ -24,7 +24,7 @@ const Highlights = ({ content }) => {
                 <Col xs={24} sm={12} md={12} lg={12} xl={12} key={dataItem.id} className="card">
                   <HighlightCard>
                     <div className="imageContainer">
-                      <img src={require('../../images/' + dataItem.image)} alt={dataItem.title} />
+                      <img src={dataItem.image.childImageSharp.fluid.src} alt={dataItem.title} />
                     </div>
                     <h3>{dataItem.title}</h3>
                     <p>{dataItem.description}</p>

@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/content`,
+        path: `${__dirname}/src/pages`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -61,8 +61,8 @@ module.exports = {
     {
       resolve: `gatsby-source-git`,
       options: {
-        name: `ContentConceptsData`,
-        remote: `https://github.com/mohanapriya1994/ContentConceptsData.git`,
+        name: `contentconcepts-data`,
+        remote: `https://github.com/fidisys/contentconcepts-data.git`,
         branch: `master`
       }
     }

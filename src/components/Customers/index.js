@@ -16,7 +16,7 @@ const Customers = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/customers.md"}) {
+      file(relativePath: {eq: "home/customers.md"}) {
         childMarkdownRemark {
           frontmatter {
             title
@@ -26,7 +26,13 @@ const Customers = props => {
               comment
               role
               company
-              image
+              image {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
             }
           }
         }
@@ -46,7 +52,7 @@ const Customers = props => {
           customersContent.customers && customersContent.customers.map(dataItem =>
             <Customer key={dataItem.id}>
               <CircleImage>
-                <img src={require('../../images/' + dataItem.image)} alt={dataItem.name} />
+                <img src={dataItem.image.childImageSharp.fluid.src} alt={dataItem.name} />
               </CircleImage>
               <WrapperDetails>
                 <ContentBg>

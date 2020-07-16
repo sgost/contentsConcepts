@@ -13,7 +13,7 @@ const Layout = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/offers.md"}) {
+      file(relativePath: {eq: "home/offers.md"}) {
         childMarkdownRemark {
           frontmatter {
             offer

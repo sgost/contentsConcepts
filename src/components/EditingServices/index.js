@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react"
+import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import SEO from "../seo"
 import MenuSection from './menu';

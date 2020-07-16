@@ -11,21 +11,23 @@ const Services = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/services.json"}) {
-        childDataJson {
-          title
-          services {
-            id
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/services.md"}) {
+        childMarkdownRemark {
+          frontmatter {
             title
-            description
-            image
+            services {
+              id
+              title
+              description
+              image
+            }
           }
         }
       }
     }
   `);
 
-  const servicesContent = data.file.childDataJson;
+  const servicesContent = data.file.childMarkdownRemark.frontmatter;
 
   return (
     <ServicesSection>

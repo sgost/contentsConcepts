@@ -16,22 +16,24 @@ const Banner = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/banner.json"}) {
-        childDataJson {
-          title
-          typedWords
-          content
-          services {
-            id
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/banner.md"}) {
+        childMarkdownRemark {
+          frontmatter {
             title
-            link
+            typedWords
+            content
+            services {
+              id
+              title
+              link
+            }
           }
         }
       }
     }
   `);
 
-  const content = data.file.childDataJson;
+  const content = data.file.childMarkdownRemark.frontmatter;
 
   return (
     <BannerSection>

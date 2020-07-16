@@ -11,15 +11,17 @@ const Footer = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/footer.json"}) {
-        childDataJson {
-          sitemaps {
-            id
-            title
-            sitemap {
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/footer.md"}) {
+        childMarkdownRemark {
+          frontmatter {
+            sitemapList {
               id
-              link
               title
+              sitemap {
+                id
+                link
+                title
+              }
             }
           }
         }
@@ -27,13 +29,13 @@ const Footer = props => {
     }
   `);
 
-  const content = data.file.childDataJson;
+  const content = data.file.childMarkdownRemark.frontmatter;
 
   return (
     <FooterSection>
       <SitemapContainer>
         {
-          content.sitemaps && content.sitemaps.map(dataItem =>
+          content.sitemapList && content.sitemapList.map(dataItem =>
             <SitemapList key={dataItem.id}>
               <h5>{dataItem.title}</h5>
               {

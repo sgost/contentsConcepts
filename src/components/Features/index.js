@@ -10,13 +10,19 @@ const Features = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/features.md"}) {
+      file(relativePath: {eq: "home/features.md"}) {
         childMarkdownRemark {
           frontmatter {
             features {
               id
               title
-              image
+              image {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
             }
           }
         }
@@ -33,7 +39,7 @@ const Features = () => {
           content.features && content.features.map(dataItem =>
             <FeatureListItem key={dataItem.id}>
               <div className="imageContainer">
-                <img src={require('../../images/' + dataItem.image)} alt="features" />
+                <img src={dataItem.image.childImageSharp.fluid.src} alt="features" />
               </div>
               <span className="labelText">{dataItem.title}</span>
             </FeatureListItem>

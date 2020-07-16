@@ -16,7 +16,7 @@ const Contact = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/contact.md"}) {
+      file(relativePath: {eq: "home/contact.md"}) {
         childMarkdownRemark {
           frontmatter {
             title

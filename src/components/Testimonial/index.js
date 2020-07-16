@@ -12,7 +12,7 @@ const Testimonial = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/testimonial.md"}) {
+      file(relativePath: {eq: "home/testimonial.md"}) {
         childMarkdownRemark {
           frontmatter {
             testimonials {

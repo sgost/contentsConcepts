@@ -13,7 +13,7 @@ const Process = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/process.md"}) {
+      file(relativePath: {eq: "home/process.md"}) {
         childMarkdownRemark {
           frontmatter {
             title

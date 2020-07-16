@@ -56,7 +56,13 @@ export const query = graphql`
             id
             title
             description
-            image
+            image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+            }
           }
         }
         editingHighlights {
@@ -65,7 +71,13 @@ export const query = graphql`
             id
             title
             description
-            image
+            image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+            }
           }
         }
         quality {

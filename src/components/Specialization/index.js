@@ -12,12 +12,18 @@ const Specialization = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/specialization.md"}) {
+      file(relativePath: {eq: "home/specialization.md"}) {
         childMarkdownRemark {
           frontmatter {
             title
             description
-            badge
+            badge {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+            }
             specialities {
               id
               title
@@ -40,7 +46,7 @@ const Specialization = props => {
       </ContentSection>
       <Row className="specialitiesContent">
         <Col xs={24} sm={24} md={3} lg={3} xl={4} className="badgeWrapper">
-          <img src={require('../../images/' + content.badge)} alt="Quality Badge" />
+          <img src={content.badge.childImageSharp.fluid.src} alt="Quality Badge" />
         </Col>
         <Col xs={24} sm={24} md={21} lg={21} xl={20}>
           <SpecialityListWrapper>

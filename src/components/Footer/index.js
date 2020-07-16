@@ -11,7 +11,7 @@ const Footer = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/footer.md"}) {
+      file(relativePath: {eq: "home/footer.md"}) {
         childMarkdownRemark {
           frontmatter {
             sitemapList {

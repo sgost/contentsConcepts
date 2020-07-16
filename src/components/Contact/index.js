@@ -16,22 +16,24 @@ const Contact = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/contact.json"}) {
-        childDataJson {
-          title
-          call
-          email
-          categories {
-            id
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/contact.md"}) {
+        childMarkdownRemark {
+          frontmatter {
             title
-            value
+            call
+            email
+            categories {
+              id
+              title
+              value
+            }
           }
         }
       }
     }
   `);
 
-  const contactContent = data.file.childDataJson;
+  const contactContent = data.file.childMarkdownRemark.frontmatter;
 
   const { Option } = Select;
 

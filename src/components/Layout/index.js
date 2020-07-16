@@ -13,25 +13,24 @@ const Layout = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/offers.json"}) {
-        childDataJson {
-          offer
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/offers.md"}) {
+        childMarkdownRemark {
+          frontmatter {
+            offer
+          }
         }
       }
     }
   `);
 
-  const offerData = data.file.childDataJson;
+  const offerData = data.file.childMarkdownRemark.frontmatter;
 
   useEffect(() => {
-    const fetchData = async () => {
-      Notification({
-        description: offerData.offer,
-        image: OfferImage,
-        linkText: "Check our other offers"
-      });
-    }
-    fetchData()
+    Notification({
+      description: offerData.offer,
+      image: OfferImage,
+      linkText: "Check our other offers"
+    });
   }, []);
 
   return (

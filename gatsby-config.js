@@ -63,9 +63,7 @@ module.exports = {
       options: {
         name: `ContentConceptsData`,
         remote: `https://github.com/mohanapriya1994/ContentConceptsData.git`,
-        branch: `master`,
-        // // Only import the data folder from a codebase.
-        // patterns: `data`
+        branch: `master`
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

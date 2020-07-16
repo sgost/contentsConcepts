@@ -13,22 +13,24 @@ const Process = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/process.json"}) {
-        childDataJson {
-          title
-          process {
-            id
-            order
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/process.md"}) {
+        childMarkdownRemark {
+          frontmatter {
             title
-            description
-            themeColor
+            process {
+              id
+              order
+              title
+              description
+              themeColor
+            }
           }
         }
       }
     }
   `);
 
-  const processContent = data.file.childDataJson;
+  const processContent = data.file.childMarkdownRemark.frontmatter;
 
   return (
     <ProcessSection>

@@ -10,19 +10,21 @@ const Features = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/features.json"}) {
-        childDataJson {
-          features {
-            id
-            title
-            image
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/features.md"}) {
+        childMarkdownRemark {
+          frontmatter {
+            features {
+              id
+              title
+              image
+            }
           }
         }
       }
     }
   `);
 
-  const content = data.file.childDataJson;
+  const content = data.file.childMarkdownRemark.frontmatter;
 
   return (
     <FeaturesSection>

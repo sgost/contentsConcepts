@@ -12,23 +12,25 @@ const Specialization = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/specialization.json"}) {
-        childDataJson {
-          title
-          description
-          badge
-          specialities {
-            id
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/specialization.md"}) {
+        childMarkdownRemark {
+          frontmatter {
             title
             description
-            themeColor
+            badge
+            specialities {
+              id
+              title
+              description
+              themeColor
+            }
           }
         }
       }
     }
   `);
 
-  const content = data.file.childDataJson;
+  const content = data.file.childMarkdownRemark.frontmatter;
 
   return (
     <SpecializationSection>

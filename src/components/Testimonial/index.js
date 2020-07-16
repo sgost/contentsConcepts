@@ -12,26 +12,28 @@ const Testimonial = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "data/testimonial.json"}) {
-        childDataJson {
-          testimonial {
-            id
-            title
-            count
-            themeColor
+      file(sourceInstanceName: {eq: "ContentConceptsData"}, relativePath: {eq: "home/testimonial.md"}) {
+        childMarkdownRemark {
+          frontmatter {
+            testimonials {
+              id
+              title
+              count
+              themeColor
+            }
           }
         }
       }
     }
   `);
 
-  const content = data.file.childDataJson;
+  const content = data.file.childMarkdownRemark.frontmatter;
 
   return (
     <TestimonialSection>
       <TestimonialList>
         {
-          content.testimonial && content.testimonial.map(dataItem =>
+          content.testimonials && content.testimonials.map(dataItem =>
             <TestimonialListItem key={dataItem.id}>
               <CountWrapper>
                 <StatusCircle theme={dataItem.themeColor}></StatusCircle>

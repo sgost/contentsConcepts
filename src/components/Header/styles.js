@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 100px;
+  padding: 0px 100px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1;
   position: relative;
@@ -83,15 +83,32 @@ export const NavLinkContainer = styled.ul`
 `;
 
 export const NavLink = styled.li`
+  margin: 0px 18px;
   a {
     display: inline-block;
-    padding: 8px 18px;
+    padding: 24px 0px;
     font-weight: normal;
     font-size: 16px;
     line-height: 24px;
     color: ${palette.NAVLINK_COLOR};
+    position: relative;
+    &:hover {
+      color: #1976D2;
+    }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       padding: 8px 10px;
+    }
+  }
+  .activeLink {
+    color: #1976D2;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #1976D2;
+      bottom: 0;
+      left: 0;
     }
   }
   @media (max-width: 768px) {

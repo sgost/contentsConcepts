@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import {
   TestimonialSection,
@@ -9,6 +9,8 @@ import {
 } from './styles';
 
 const Testimonial = props => {
+
+  const[content, setContent] = useState({});
 
   const data = useStaticQuery(graphql`
     query {
@@ -27,24 +29,33 @@ const Testimonial = props => {
     }
   `);
 
-  const content = data.file.childMarkdownRemark.frontmatter;
+  useEffect(() => {
+    if(data.file) {
+      setContent(data.file.childMarkdownRemark.frontmatter);
+    }
+  }, [data.file]);
 
   return (
-    <TestimonialSection>
-      <TestimonialList>
-        {
-          content.testimonials && content.testimonials.map(dataItem =>
-            <TestimonialListItem key={dataItem.id}>
-              <CountWrapper>
-                <StatusCircle theme={dataItem.themeColor}></StatusCircle>
-                <h2>{dataItem.count.toLocaleString('en-IN')}<span className="customDot">&bull;</span></h2>
-              </CountWrapper>
-              <span className="titleText">{dataItem.title}</span>
-            </TestimonialListItem>
-          )
-        }
-      </TestimonialList>
-    </TestimonialSection>
+    <Fragment>
+      {
+        data.file &&
+        <TestimonialSection>
+          <TestimonialList>
+            {
+              content.testimonials && content.testimonials.map(dataItem =>
+                <TestimonialListItem key={dataItem.id}>
+                  <CountWrapper>
+                    <StatusCircle theme={dataItem.themeColor}></StatusCircle>
+                    <h2>{dataItem.count.toLocaleString('en-IN')}<span className="customDot">&bull;</span></h2>
+                  </CountWrapper>
+                  <span className="titleText">{dataItem.title}</span>
+                </TestimonialListItem>
+              )
+            }
+          </TestimonialList>
+        </TestimonialSection>
+      }
+    </Fragment>
   )
 }
 

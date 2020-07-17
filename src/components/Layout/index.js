@@ -26,12 +26,14 @@ const Layout = props => {
   const offerData = data.file.childMarkdownRemark.frontmatter;
 
   useEffect(() => {
-    Notification({
-      description: offerData.offer,
-      image: OfferImage,
-      linkText: "Check our other offers"
-    });
-  }, []);
+    if(offerData) {
+      Notification({
+        description: offerData.offer,
+        image: OfferImage,
+        linkText: "Check our other offers"
+      });
+    }
+  }, [offerData]);
 
   return (
     <>

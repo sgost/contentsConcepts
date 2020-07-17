@@ -16,7 +16,7 @@ const NavigationMenu = props => {
           <Link to="/">About</Link>
         </NavLink>
         <NavLink key="services">
-          <Link to="/">Services</Link>
+          <Link to="/services/manuscript_editing" activeClassName="activeLink">Services</Link>
         </NavLink>
         <NavLink key="blog">
           <Link to="/">Blog</Link>

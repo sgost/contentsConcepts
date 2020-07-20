@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Button } from "antd"
 
 import {
@@ -9,6 +9,21 @@ import {
 } from './styles';
 
 const NavigationMenu = props => {
+
+  const[url, setUrl] = useState('');
+
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      setUrl(window.location.href);
+    }
+  });
+
+  const isPartiallyActive = () => {
+    if(url) {
+      return url.indexOf('/services/') >= 0 ? { className: "activeLink" } : null;
+    }
+  }
+
   return (
     <NavBarContainer >
       <NavLinkContainer>
@@ -16,10 +31,10 @@ const NavigationMenu = props => {
           <Link to="/">About</Link>
         </NavLink>
         <NavLink key="services">
-          <Link to="/services/manuscript_editing" activeClassName="activeLink">Services</Link>
+          <Link to="/services/manuscript_editing" getProps={isPartiallyActive} activeClassName="activeLink">Services</Link>
         </NavLink>
         <NavLink key="blog">
-          <Link to="/">Blog</Link>
+          <Link to="/blog" partiallyActive={true} activeClassName="activeLink">Blog</Link>
         </NavLink>
         <NavLink key="pricing">
           <Link to="/">Pricing</Link>

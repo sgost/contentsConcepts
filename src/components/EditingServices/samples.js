@@ -14,7 +14,7 @@ const EditingSamples = ({ content }) => {
   return (
     <Fragment>
       {
-        content && 
+        content &&
         <SamplesSection>
           <SectionHeading>
             <h2>{content.title}</h2>

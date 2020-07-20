@@ -1,6 +1,5 @@
-import { Link } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import {
   FooterSection,
   SitemapContainer,

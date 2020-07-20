@@ -27,26 +27,68 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { createPage } = actions
 
-  const result = await graphql(`
+  const servicesData = graphql(`
     query {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `)
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/components/EditingServices/index.js`),
-      context: {
-        slug: node.fields.slug
-      },
-    })
-  })
+			allMarkdownRemark(
+				filter: { fileAbsolutePath: { regex: "/services/" } }
+			) {
+				edges {
+					node {
+						fields {
+							slug
+						}
+					}
+				}
+			}
+		}
+	`).then(result => {
+		if (result.errors) {
+			Promise.reject(result.errors);
+		}
+
+		// Create services pages
+		result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+			createPage({
+				path: node.fields.slug,
+        component: path.resolve(`./src/components/EditingServices/index.js`),
+        context: {
+          slug: node.fields.slug
+        },
+			});
+		});
+  });
+
+  const blogs = graphql(`
+    query {
+			allMarkdownRemark(
+				filter: { fileAbsolutePath: { regex: "/blog/" } }
+			) {
+				edges {
+					node {
+						fields {
+							slug
+						}
+					}
+				}
+			}
+		}
+	`).then(result => {
+		if (result.errors) {
+			Promise.reject(result.errors);
+		}
+
+		// Create blog pages
+		result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+			createPage({
+				path: node.fields.slug,
+        component: path.resolve(`./src/components/Blog/index.js`),
+        context: {
+          slug: node.fields.slug
+        },
+			});
+		});
+  });
+
+  return Promise.all([servicesData, blogs]);
+
 }

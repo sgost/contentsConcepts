@@ -415,4 +415,55 @@ export const GlobalStyle = createGlobalStyle`
       border-right: 3px solid ${palette.BUTTON_PRIMARY};
     }
   }
+
+  .blogListContainer {
+    max-width: 700px;
+    margin: 48px auto;
+    h2 {
+      font-size: 30px;
+      padding: 24px;
+    }
+    .blogListItem {
+      box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      position: relative;
+      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s, padding 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      &:hover {
+        transform: translateY(-0.25rem);
+        box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 8px, rgba(71, 63, 79, 0.16) 0px 8px 16px;
+      }
+      a {
+        display: inline-block;
+        padding: 48px;
+        @media (max-width: 768px) {
+          padding: 24px;
+        }
+      }
+      .blogHeading {
+        margin-bottom: 24px;
+        font-size: 22px;
+      }
+      .blogExcerpt {
+        margin-bottom: 24px;
+        color: #78757a;
+        font-size: 16px;
+      }
+      .blogInfo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          width: 32px;
+          height: 32px;
+        }
+        span {
+          margin-left: 6px;
+          color: #78757a;
+          font-size: 14px;
+        }
+      }
+    }
+  }
 `;

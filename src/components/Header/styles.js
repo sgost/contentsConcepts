@@ -113,8 +113,9 @@ export const NavLink = styled.li`
   }
   @media (max-width: 768px) {
     width: 100%;
+    text-align: center;
     a {
-      display: block;
+      display: inline-block;
       padding: 10px 18px;
       text-align: center;
       &:hover {

@@ -19,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
   line-height: 1;
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
   background-color: ${palette.APP_BACKGROUND_COLOR} !important;
   }
 
@@ -297,12 +296,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .ant-notification {
-    position: sticky;
-    right: 0;
+    position: relative;
+    overflow: hidden;
     top: 0 !important;
-    bottom: auto;
-    left: 0;
     width: 100%;
+    z-index: 10;
     margin-right: 0;
     max-width: 100%;
   }

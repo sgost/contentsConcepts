@@ -2,14 +2,19 @@ import styled from 'styled-components';
 import * as palette from '../../styles/variables';
 
 export const HeaderContainer = styled.header`
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 5;
+  background: #fff;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0px 100px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-  position: relative;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     padding: 16px 30px;
   }

@@ -28,19 +28,19 @@ const NavigationMenu = props => {
     <NavBarContainer >
       <NavLinkContainer>
         <NavLink key="about">
-          <Link to="/">About</Link>
+          <Link to="/" onClick={props.onClick}>About</Link>
         </NavLink>
         <NavLink key="services">
-          <Link to="/services/manuscript_editing" getProps={isPartiallyActive} activeClassName="activeLink">Services</Link>
+          <Link to="/services/manuscript_editing" getProps={isPartiallyActive} activeClassName="activeLink" onClick={props.onClick}>Services</Link>
         </NavLink>
         <NavLink key="blog">
-          <Link to="/blog" partiallyActive={true} activeClassName="activeLink">Blog</Link>
+          <Link to="/blog" partiallyActive={true} activeClassName="activeLink" onClick={props.onClick}>Blog</Link>
         </NavLink>
         <NavLink key="pricing">
-          <Link to="/">Pricing</Link>
+          <Link to="/" onClick={props.onClick}>Pricing</Link>
         </NavLink>
         <NavLink key="contact">
-          <Link to="/">Contact</Link>
+          <Link to="/" onClick={props.onClick}>Contact</Link>
         </NavLink>
       </NavLinkContainer>
       <Button type="primary">Get Quote</Button>

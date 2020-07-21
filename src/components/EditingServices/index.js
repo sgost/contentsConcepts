@@ -8,7 +8,7 @@ import Contact from "../Contact"
 const EditingServices = ({ data }) => {
   return (
     <Fragment>
-      <SEO title="Editing Services" />
+      <SEO title="Services" />
       <MenuSection content={data.markdownRemark} />
       <Customers />
       <Contact />

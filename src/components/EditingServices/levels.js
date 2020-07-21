@@ -14,7 +14,7 @@ const EditingLevels = ({ content }) => {
   return (
     <Fragment>
       {
-        content && 
+        content &&
         <LevelsSection>
           <SectionHeading>
             <h2>{content.title} <span> - {content.subHeading}</span></h2>

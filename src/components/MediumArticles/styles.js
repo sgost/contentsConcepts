@@ -42,6 +42,11 @@ export const ArticlesList = styled.div`
       span {
         margin-top: 10px;
       }
+      img {
+        width: 330px;
+        height: 100px;
+        object-fit: cover;
+      }
     }
   }
 `;

@@ -16,10 +16,10 @@ export const HeaderContainer = styled.header`
   padding: 0px 100px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   @media only screen and (min-width: 768px) and (max-width: 992px) {
-    padding: 16px 30px;
+    padding: 0px 30px;
   }
   @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    padding: 16px 80px;
+    padding: 0px 80px;
   }
   @media (max-width: 768px) {
     padding: 0;
@@ -102,9 +102,6 @@ export const NavLink = styled.li`
     position: relative;
     &:hover {
       color: ${palette.BUTTON_PRIMARY};
-    }
-    @media only screen and (min-width: 768px) and (max-width: 992px) {
-      padding: 8px 0px;
     }
   }
   .activeLink {

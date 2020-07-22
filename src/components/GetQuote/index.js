@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import { Form, Input, Checkbox, Row, Col, Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import {
@@ -21,40 +22,23 @@ const GetQuote = props => {
     props.onSubmit();
   };
 
-  const category = [
-    {
-      label: 'Academic Editing',
-      value: 'Academic Editing'
-    },
-    {
-      label: 'Business Editing',
-      value: 'Business Editing'
-    },
-    {
-      label: 'Content Development',
-      value: 'Content Development'
-    },
-    {
-      label: 'Content Consulting',
-      value: 'Content Consulting'
-    },
-    {
-      label: 'Resume Writing',
-      value: 'Resume Writing'
-    },
-    {
-      label: 'Social Media Content',
-      value: 'Social Media Content'
-    },
-    {
-      label: 'Marketing Communications',
-      value: 'Marketing Communications'
-    },
-    {
-      label: 'Others',
-      value: 'Others'
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: {eq: "home/quoteCategory.md"}) {
+        childMarkdownRemark {
+          frontmatter {
+            title
+            categories {
+              label
+              value
+            }
+          }
+        }
+      }
     }
-  ];
+  `);
+
+  const categoryData = data.file.childMarkdownRemark.frontmatter;
 
   return (
     <QuoteFormSection>
@@ -104,7 +88,7 @@ const GetQuote = props => {
             <Checkbox.Group style={{ width: '100%' }} className="categoryGroup" id="category">
               <Row>
                 {
-                  category && category.map(item =>
+                  categoryData.categories && categoryData.categories.map(item =>
                     <Col xs={24} sm={12} md={12} lg={12} xl={12} className="categoryItem" key={item.value}>
                       <Checkbox value={item.value}>{item.label}</Checkbox>
                     </Col>

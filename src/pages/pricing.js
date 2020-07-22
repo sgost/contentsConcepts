@@ -27,7 +27,7 @@ export const pageQuery = graphql`
     file(relativePath: {eq: "pricing/index.md"}) {
       childMarkdownRemark {
         frontmatter {
-          title
+          heading
           subHeading
           pricing {
             id

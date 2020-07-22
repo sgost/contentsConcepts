@@ -155,6 +155,7 @@ export const GlobalStyle = createGlobalStyle`
     width: initial !important;
     max-width: 500px;
     top: 90px !important;
+    margin: 0 !important;
   }
   .ant-modal-content {
     border-radius: 0px !important;
@@ -461,6 +462,75 @@ export const GlobalStyle = createGlobalStyle`
           color: #78757a;
           font-size: 14px;
         }
+      }
+    }
+  }
+
+  .ant-modal-mask, .ant-modal-wrap {
+    left: 0 !important;
+  }
+  .ant-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
+    padding: 0 !important;
+  }
+  .ant-modal-title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 42px;
+    color: ${palette.PRIMARY_TXT_COLOR};
+  }
+  .ant-modal-content {
+    background: ${palette.PRIMARY_SECTION_BACKGROUND};
+  }
+  .ant-modal-close {
+    top: 10px;
+    right: 20px;
+  }
+  .ant-modal-close-x {
+    font-size: 20px;
+  }
+  .ant-modal-header {
+    text-align: center;
+    padding: 20px 24px;
+  }
+
+  .ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
+    border-color: ${palette.BUTTON_PRIMARY};
+  }
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: ${palette.BUTTON_PRIMARY};
+    border-color: ${palette.BUTTON_PRIMARY};
+  }
+
+  .uploadBtn {
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    color: ${palette.PRIMARY_TXT_COLOR};
+    padding: 12px 40px;
+    height: 40px;
+    border: 1px solid ${palette.BORDER_COLOR};
+    background: transparent;
+    &:hover, &:focus, &:active {
+      background-color: transparent !important;
+      border-color: ${palette.BORDER_COLOR} !important;
+      color: ${palette.PRIMARY_TXT_COLOR} !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .ant-upload-list-item-card-actions-btn {
+    border: none;
+    &:hover, &:focus, &:active {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      .anticon {
+        color: rgba(0, 0, 0, 0.45)
       }
     }
   }

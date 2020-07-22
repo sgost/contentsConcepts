@@ -47,7 +47,7 @@ const Header = props => {
           visible={visible}
           className="drawerNavMenu"
         >
-          <NavigationMenu />
+          <NavigationMenu onClick={onClose} />
         </Drawer>
       </ResNavMenu>
     </HeaderContainer>

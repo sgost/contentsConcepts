@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as palette from '../../styles/variables';
 
 export const BlogContainer = styled.div`
   max-width: 700px;
@@ -62,7 +63,7 @@ export const BlogContent = styled.div`
   li {
     font-weight: normal;
     font-size: 16px;
-    color: #333333;
+    color: ${palette.PRIMARY_TXT_COLOR};
     margin: 15px 0px;
   }
   blockquote {
@@ -71,7 +72,7 @@ export const BlogContent = styled.div`
   }
   a {
     font-weight: normal;
-    color: #333333;
+    color: ${palette.PRIMARY_TXT_COLOR};
     text-decoration: underline;
   }
 `;
@@ -79,7 +80,7 @@ export const BlogContent = styled.div`
 export const TagsList = styled.div`
   margin-top: 50px;
   font-size: 14px;
-  color: #333;
+  color: ${palette.PRIMARY_TXT_COLOR};
   font-weight: 500;
   padding: 48px 0px;
   border-top: 1px solid #f0f0f2;

@@ -2,19 +2,24 @@ import styled from 'styled-components';
 import * as palette from '../../styles/variables';
 
 export const HeaderContainer = styled.header`
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 5;
+  background: ${palette.WHITE_COLOR};
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0px 100px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-  position: relative;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
-    padding: 16px 30px;
+    padding: 0px 30px;
   }
   @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    padding: 16px 80px;
+    padding: 0px 80px;
   }
   @media (max-width: 768px) {
     padding: 0;
@@ -34,7 +39,7 @@ export const LogoContainer = styled.div`
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
-    color: #000000;
+    color: ${palette.BLACK_COLOR};
     display: flex;
     align-items: center;
     img {
@@ -84,6 +89,9 @@ export const NavLinkContainer = styled.ul`
 
 export const NavLink = styled.li`
   margin: 0px 18px;
+  @media (max-width: 992px) {
+    margin: 0px 8px;
+  }
   a {
     display: inline-block;
     padding: 24px 0px;
@@ -93,20 +101,17 @@ export const NavLink = styled.li`
     color: ${palette.NAVLINK_COLOR};
     position: relative;
     &:hover {
-      color: #1976D2;
-    }
-    @media only screen and (min-width: 768px) and (max-width: 992px) {
-      padding: 8px 10px;
+      color: ${palette.BUTTON_PRIMARY};
     }
   }
   .activeLink {
-    color: #1976D2;
+    color: ${palette.BUTTON_PRIMARY};
     &:after {
       content: '';
       position: absolute;
       width: 100%;
       height: 2px;
-      background-color: #1976D2;
+      background-color: ${palette.BUTTON_PRIMARY};
       bottom: 0;
       left: 0;
     }

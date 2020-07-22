@@ -66,6 +66,12 @@ const Contact = props => {
                 <Form.Item
                   name='name'
                   className="inlineInput"
+                  rules={[
+                    {
+                      required: true,
+                      message: `Can't be blank`,
+                    },
+                  ]}
                 >
                   <Input placeholder="Name" />
                 </Form.Item>
@@ -74,8 +80,9 @@ const Contact = props => {
                   className="inlineInput emailInput"
                   rules={[
                     {
+                      required: true,
                       type: 'email',
-                      message: 'Please enter valid Email ID',
+                      message: `Can't be blank`,
                     },
                   ]}
                 >

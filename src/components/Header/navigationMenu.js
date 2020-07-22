@@ -37,7 +37,7 @@ const NavigationMenu = props => {
           <Link to="/blog" partiallyActive={true} activeClassName="activeLink" onClick={props.onClick}>Blog</Link>
         </NavLink>
         <NavLink key="pricing">
-          <Link to="/" onClick={props.onClick}>Pricing</Link>
+          <Link to="/pricing" activeClassName="activeLink" onClick={props.onClick}>Pricing</Link>
         </NavLink>
         <NavLink key="contact">
           <Link to="/" onClick={props.onClick}>Contact</Link>

@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
   right: 0;
   top: 0;
   z-index: 5;
-  background: #fff;
+  background: ${palette.WHITE_COLOR};
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -39,7 +39,7 @@ export const LogoContainer = styled.div`
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
-    color: #000000;
+    color: ${palette.BLACK_COLOR};
     display: flex;
     align-items: center;
     img {
@@ -89,6 +89,9 @@ export const NavLinkContainer = styled.ul`
 
 export const NavLink = styled.li`
   margin: 0px 18px;
+  @media (max-width: 992px) {
+    margin: 0px 8px;
+  }
   a {
     display: inline-block;
     padding: 24px 0px;
@@ -98,20 +101,20 @@ export const NavLink = styled.li`
     color: ${palette.NAVLINK_COLOR};
     position: relative;
     &:hover {
-      color: #1976D2;
+      color: ${palette.BUTTON_PRIMARY};
     }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
-      padding: 8px 10px;
+      padding: 8px 0px;
     }
   }
   .activeLink {
-    color: #1976D2;
+    color: ${palette.BUTTON_PRIMARY};
     &:after {
       content: '';
       position: absolute;
       width: 100%;
       height: 2px;
-      background-color: #1976D2;
+      background-color: ${palette.BUTTON_PRIMARY};
       bottom: 0;
       left: 0;
     }

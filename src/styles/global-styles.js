@@ -423,7 +423,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     .blogListItem {
       box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
-      background-color: #ffffff;
+      background-color: ${palette.WHITE_COLOR};
       border-radius: 4px;
       margin-bottom: 24px;
       position: relative;

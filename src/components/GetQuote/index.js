@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Form, Input, Checkbox, Row, Col, Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
@@ -7,6 +7,8 @@ import {
 } from './styles';
 
 const GetQuote = props => {
+
+  const [form] = Form.useForm();
 
   const { TextArea } = Input;
 
@@ -17,14 +19,33 @@ const GetQuote = props => {
     return e && e.fileList;
   };
 
+  const[showUpload, setShowUpload] = useState(true);
+
+  const uploadChange = (data) => {
+    if(data.fileList.length > 0) {
+      setShowUpload(false);
+    }
+  };
+
+  const customReqChange = ({ file, onSuccess}) => {
+    setTimeout(() => {
+      onSuccess("ok");
+    }, 0);
+  };
+
+  const removeUploadedFile = () => {
+    setShowUpload(true);
+  };
+
   const onFinish = values => {
     console.log(values);
+    form.resetFields();
     props.onSubmit();
   };
 
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: {eq: "home/quoteCategory.md"}) {
+      file(relativePath: {eq: "quoteCategory.md"}) {
         childMarkdownRemark {
           frontmatter {
             title
@@ -42,7 +63,7 @@ const GetQuote = props => {
 
   return (
     <QuoteFormSection>
-      <Form name="quote-form" onFinish={onFinish} className="quoteForm">
+      <Form name="quote-form" onFinish={onFinish} className="quoteForm" form={form}>
         <Form.Item
           name='name'
           rules={[
@@ -72,9 +93,12 @@ const GetQuote = props => {
             rules={[
               {
                 required: true,
-                type: 'email',
                 message: `Can't be blank`,
               },
+              {
+                type: 'email',
+                message: `Please enter valid Email ID`,
+              }
             ]}
           >
             <Input placeholder="Email ID" />
@@ -105,10 +129,13 @@ const GetQuote = props => {
             valuePropName="fileList"
             getValueFromEvent={normFile}
           >
-            <Upload name="category" listType="picture" id="categoryFile">
-              <Button className="uploadBtn">
-                <UploadOutlined /> Click to upload
-              </Button>
+            <Upload name="category" listType="picture" id="categoryFile" customRequest={customReqChange} onChange={uploadChange} onRemove={removeUploadedFile}>
+              {
+                showUpload &&
+                <Button className="uploadBtn">
+                  <UploadOutlined /> Click to upload
+                </Button>
+              }
             </Upload>
           </Form.Item>
         </div>

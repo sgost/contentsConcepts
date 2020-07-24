@@ -39,16 +39,16 @@ const Team = props => {
     <Fragment>
       {
         data.file &&
-        <TeamSection>
+        <TeamSection id="team">
           <SectionHeading>
             <h2>{teamContent.title}</h2>
           </SectionHeading>
           <TeamMembers>
             {
               teamContent.teamMembers && teamContent.teamMembers.map(member =>
-                <MemberInfo>
+                <MemberInfo key={member.id}>
                   <h3>{member.name}</h3>
-                  <span>({member.role})</span>
+                  <span>{member.role}</span>
                   <p>
                     {member.description}
                   </p>

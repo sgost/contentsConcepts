@@ -20,11 +20,7 @@ const Specialization = props => {
             title
             description
             badge {
-              childImageSharp {
-                fluid {
-                  src
-                }
-              }
+              publicURL
             }
             specialities {
               id
@@ -57,7 +53,7 @@ const Specialization = props => {
             <Col xs={24} sm={24} md={3} lg={3} xl={4} className="badgeWrapper">
               {
                 content.badge &&
-                <img src={content.badge.childImageSharp.fluid.src} alt="Quality Badge" />
+                <img src={content.badge.publicURL} alt="Quality Badge" />
               }
             </Col>
             <Col xs={24} sm={24} md={21} lg={21} xl={20}>

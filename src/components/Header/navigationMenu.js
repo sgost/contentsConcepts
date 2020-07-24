@@ -1,12 +1,13 @@
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import React, { useState, useEffect, Fragment } from "react"
-import { Button, Modal } from "antd"
+import { Button, Modal, Popover } from "antd"
 import GetQuote from "../GetQuote"
 import {
   NavBarContainer,
   NavLinkContainer,
   NavLink
 } from './styles';
+import PopoverContent from './PopoverContent';
 
 const NavigationMenu = props => {
 
@@ -46,6 +47,38 @@ const NavigationMenu = props => {
     }
   }, [showModal]);
 
+  //popover
+
+  const[popoverVisible, setPopoverVisible] = useState(false);
+
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: {eq: "home/footer.md"}) {
+        childMarkdownRemark {
+          frontmatter {
+            sitemapList {
+              id
+              title
+              sitemap {
+                id
+                link
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const popoverLink = () => {
+    setPopoverVisible(false);
+  };
+
+  const onVisibleChange = visible  => {
+    setPopoverVisible(visible);
+  };
+
   return (
     <Fragment>
       <NavBarContainer >
@@ -54,7 +87,34 @@ const NavigationMenu = props => {
             <Link to="/about/" activeClassName="activeLink" onClick={props.onClick}>About</Link>
           </NavLink>
           <NavLink key="services">
-            <Link to="/services/manuscript_editing" getProps={isPartiallyActive} activeClassName="activeLink" onClick={props.onClick}>Services</Link>
+            <Popover
+              overlayClassName="navPopover"
+              content={<PopoverContent content={data.file.childMarkdownRemark.frontmatter} onClick={popoverLink} />}
+              visible={popoverVisible}
+              onVisibleChange={onVisibleChange}
+              placement="bottom"
+            >
+              <Link
+                to="/services/website_content"
+                getProps={isPartiallyActive}
+                activeClassName="activeLink"
+                onClick={props.onClick}
+                onMouseOver={() => setPopoverVisible(true)}
+                onFocus={() => setPopoverVisible(true)}
+                id="mob-service-popover"
+              >
+                Services
+              </Link>
+            </Popover>
+            <Link
+              to="/services/website_content"
+              getProps={isPartiallyActive}
+              activeClassName="activeLink"
+              onClick={props.onClick}
+              id="mob-services-link"
+            >
+              Services
+            </Link>
           </NavLink>
           <NavLink key="blog">
             <Link to="/blog" partiallyActive={true} activeClassName="activeLink" onClick={props.onClick}>Blog</Link>

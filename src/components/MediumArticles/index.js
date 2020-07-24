@@ -11,7 +11,7 @@ const MediumArticles = ({ data }) => {
 
   const mediumPosts = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/blog/"}}, sort: { fields: [frontmatter___date], order: DESC }, limit: 3) {
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(blog)\\/.*\\\\.md$/"}}, sort: { fields: [frontmatter___date], order: DESC }, limit: 3) {
         edges {
           node {
             id

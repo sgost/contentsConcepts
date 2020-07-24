@@ -14,6 +14,7 @@ export const BannerSection = styled.div`
     }
     @media only screen and (min-width: 320px) and (max-width: 768px) {
       flex-direction: column-reverse;
+      align-items: center;
       .resSection {
         margin: 85px 0px 85px 0px;
       }
@@ -22,7 +23,7 @@ export const BannerSection = styled.div`
   .contentSection {
     margin: 0 auto;
     max-width: 600px;
-    padding-left: 50px;
+    padding: 5% 0% 5% 2%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,35 +91,31 @@ export const OverlayContainer = styled.div`
     z-index: 2;
   }
   @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .topBg {
-      width: 90px;
-      height: 90px;
-    }
     .imageContainer {
-      max-width: 350px;
+      max-width: 370px;
     }
     .bottomBg {
-      width: 280px;
-      height: 230px;
-      left: -18%;
-      bottom: -22%;
+      width: 275px;
+      height: 215px;
+      left: -12%;
+      bottom: -15%;
     }
   }
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     .topBg {
       width: 80px;
       height: 80px;
-      right: -15%;
-      top: -22%;
+      right: -12%;
+      top: -16%;
     }
     .imageContainer {
-      max-width: 230px;
+      max-width: 300px;
     }
     .bottomBg {
-      width: 180px;
-      height: 145px;
-      left: -18%;
-      bottom: -22%;
+      width: 250px;
+      height: 192px;
+      left: -14%;
+      bottom: -20%;
     }
   }
   @media (max-width: 576px) {

@@ -38,6 +38,7 @@ export const MenuContainer = styled.div`
   .ant-layout-sider {
     width: 25% !important;
     margin: 0px 30px;
+    background: transparent !important;
     @media only screen and (min-width: 576px) and (max-width: 992px) {
       margin: 0px 10px;
     }

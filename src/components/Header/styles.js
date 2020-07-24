@@ -46,6 +46,7 @@ export const LogoContainer = styled.div`
       width: 32px;
       height: 32px;
       margin-right: 5px;
+      object-fit: contain;
     }
   }
   @media (max-width: 768px) {
@@ -116,9 +117,21 @@ export const NavLink = styled.li`
       left: 0;
     }
   }
+  #mob-services-link {
+    display: none;
+  }
+  #mob-service-popover {
+    display: block;
+  }
   @media (max-width: 768px) {
     width: 100%;
     text-align: center;
+    .navPopover, #mob-service-popover {
+      display: none !important;
+    }
+    #mob-services-link {
+      display: inline-block !important;
+    }
     a {
       display: inline-block;
       padding: 10px 18px;
@@ -143,5 +156,55 @@ export const MenuIcon = styled.div`
   font-size: 20px;
   @media (max-width: 768px) {
     display: block;
+  }
+`;
+
+export const SitemapContainer = styled.ul`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  @media (min-width: 1500px) {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+export const SitemapList = styled.li`
+  display: flex;
+  flex-direction: column;
+  margin: 0px 15px;
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    margin: 15px 30px;
+  }
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    margin: 20px;
+  }
+  @media (max-width: 576px) {
+    margin: 15px;
+    align-items: center;
+  }
+  h5 {
+    color: ${palette.BUTTON_PRIMARY};
+    margin-bottom: 8px;
+    line-height: 25px;
+  }
+  a {
+    color: ${palette.PRIMARY_TXT_COLOR};
+    margin: 2px 0px;
+    font-family: Poppins,sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    margin: 0px 18px;
   }
 `;

@@ -19,11 +19,7 @@ const Features = () => {
               id
               title
               image {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
+                publicURL
               }
             }
           }
@@ -48,7 +44,7 @@ const Features = () => {
               content.features && content.features.map(dataItem =>
                 <FeatureListItem key={dataItem.id}>
                   <div className="imageContainer">
-                    <img src={dataItem.image.childImageSharp.fluid.src} alt="features" />
+                    <img src={dataItem.image.publicURL} alt="features" />
                   </div>
                   <span className="labelText">{dataItem.title}</span>
                 </FeatureListItem>

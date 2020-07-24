@@ -2,6 +2,7 @@ import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import SEO from "../seo"
 import MenuSection from './menu';
+import Process from "../Process"
 import Customers from "../Customers"
 import Contact from "../Contact"
 
@@ -10,6 +11,7 @@ const EditingServices = ({ data }) => {
     <Fragment>
       <SEO title="Services" />
       <MenuSection content={data.markdownRemark} />
+      <Process />
       <Customers />
       <Contact />
     </Fragment>
@@ -72,17 +74,9 @@ export const query = graphql`
             title
             description
             image {
-              childImageSharp {
-                fluid {
-                  src
-                }
-              }
+              publicURL
             }
           }
-        }
-        quality {
-          title
-          description
         }
         key
         parentType

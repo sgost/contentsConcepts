@@ -3,7 +3,7 @@ import * as palette from '../../styles/variables';
 
 export const FooterSection = styled.div`
   background: ${palette.SECONDARY_SECTION_BACKGROUND};
-  padding: 60px 80px;
+  padding: 60px 20px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     padding: 45px 50px;
   }
@@ -33,7 +33,7 @@ export const SitemapContainer = styled.ul`
 export const SitemapList = styled.li`
   display: flex;
   flex-direction: column;
-  margin: 0px 35px;
+  margin: 0px 12px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     margin: 15px 30px;
   }

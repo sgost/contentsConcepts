@@ -48,7 +48,7 @@ export const MemberInfo = styled.li`
     font-size: 14px;
     line-height: 21px;
     color: ${palette.PRIMARY_TXT_COLOR};
-    margin: 10px 0px;
+    margin: 3px 0px 10px;
     display: inline-block;
   }
   p {

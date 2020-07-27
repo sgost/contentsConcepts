@@ -10,7 +10,10 @@ import {
 
 const AboutBanner = () => {
 
-  const[content, setContent] = useState({});
+  const[content, setContent] = useState({
+    title: '',
+    html: ''
+  });
 
   const data = useStaticQuery(graphql`
     query {
@@ -27,7 +30,10 @@ const AboutBanner = () => {
 
   useEffect(() => {
     if(data.file) {
-      setContent(data.file.childMarkdownRemark.frontmatter);
+      setContent({
+        title: data.file.childMarkdownRemark.frontmatter.title,
+        html: data.file.childMarkdownRemark.html
+      });
     }
   }, [data.file]);
 
@@ -40,7 +46,7 @@ const AboutBanner = () => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12} className="contentSection">
               <ContentContainer>
                 <h2>{content.title}</h2>
-                <p dangerouslySetInnerHTML={{ __html: data.file.childMarkdownRemark.html }} />
+                <p dangerouslySetInnerHTML={{ __html: content.html }} />
               </ContentContainer>
             </Col>
             <Col xs={24} sm={24} md={12} lg={12} xl={12} className="resSection">

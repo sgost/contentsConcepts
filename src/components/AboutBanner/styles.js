@@ -10,13 +10,13 @@ export const BannerSection = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 100px 0px 100px 0px;
+      margin: 8% 0% 12% 0%;
     }
     @media only screen and (min-width: 320px) and (max-width: 768px) {
       flex-direction: column-reverse;
       align-items: center;
       .resSection {
-        margin: 85px 0px 85px 0px;
+        margin: 12% 0% 14% 0%;
       }
     }
   }

@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { Drawer } from "antd"
 import { MenuFoldOutlined } from '@ant-design/icons';
 import NavigationMenu from './navigationMenu';
-import Logo from '../../images/logo.png';
+import Logo from '../../images/logo.svg';
 import {
   HeaderContainer,
   LogoContainer,

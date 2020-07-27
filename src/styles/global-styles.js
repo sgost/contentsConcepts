@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   overflow-y: auto;
+  scroll-behavior: smooth;
   }
 
   body {
@@ -425,10 +426,13 @@ export const GlobalStyle = createGlobalStyle`
     .blogListItem {
       box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
       background-color: ${palette.WHITE_COLOR};
-      border-radius: 4px;
+      border-radius: 16px;
       margin-bottom: 24px;
       position: relative;
       transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s, padding 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      @media (max-width: 768px) {
+        margin: 0px 20px 24px 20px;
+      }
       &:hover {
         transform: translateY(-0.25rem);
         box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 8px, rgba(71, 63, 79, 0.16) 0px 8px 16px;
@@ -454,11 +458,11 @@ export const GlobalStyle = createGlobalStyle`
         flex-direction: row;
         align-items: center;
         img {
-          width: 32px;
-          height: 32px;
+          width: 25px;
+          height: 25px;
         }
         span {
-          margin-left: 6px;
+          margin-left: 2px;
           color: #78757a;
           font-size: 14px;
         }
@@ -532,6 +536,21 @@ export const GlobalStyle = createGlobalStyle`
       .anticon {
         color: rgba(0, 0, 0, 0.45)
       }
+    }
+  }
+  .ant-upload-list-item {
+    border-radius: 8px !important;
+  }
+  .ant-upload-list-item-card-actions {
+    right: 8px !important;
+  }
+
+  .navPopover {
+    .ant-popover-arrow {
+      display: none;
+    }
+    .ant-popover-inner {
+      border-radius: 8px;
     }
   }
 `;

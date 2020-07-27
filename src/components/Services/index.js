@@ -23,11 +23,7 @@ const Services = props => {
               title
               description
               image {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
+                publicURL
               }
             }
           }
@@ -75,7 +71,7 @@ const Services = props => {
                 servicesContent.services && servicesContent.services.map(dataItem =>
                   <Col xs={24} sm={10} md={8} lg={8} xl={7} className="serviceListItem" key={dataItem.id}>
                     <div className="imageContainer">
-                      <img src={dataItem.image.childImageSharp.fluid.src} alt="service" />
+                      <img src={dataItem.image.publicURL} alt="service" />
                     </div>
                     <h3>{dataItem.title}</h3>
                     <p>{dataItem.description}</p>

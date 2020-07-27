@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import Pricing from "../components/Pricing"
 import Customers from "../components/Customers"
 import Contact from "../components/Contact"
+import QualityAssurance from "../components/QualityAssurance"
 
 const PricingPage = ({ data }) => {
 
@@ -14,6 +15,7 @@ const PricingPage = ({ data }) => {
     <Fragment>
       <SEO title="Pricing" />
       <Pricing content={pricingContent} />
+      <QualityAssurance />
       <Customers />
       <Contact />
     </Fragment>
@@ -38,10 +40,6 @@ export const pageQuery = graphql`
               usd
             }
             themeColor
-          }
-          quality {
-            title
-            description
           }
         }
       }

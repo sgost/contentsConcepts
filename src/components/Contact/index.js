@@ -56,7 +56,7 @@ const Contact = props => {
             <h2>{contactContent.title}</h2>
           </SectionHeading>
           <FormContainer>
-            <Form name="contact-form" onFinish={onFinish}>
+            <Form name="contact-details" onFinish={onFinish}>
               <Form.Item
                 style={{
                   marginBottom: 0,
@@ -81,9 +81,12 @@ const Contact = props => {
                   rules={[
                     {
                       required: true,
-                      type: 'email',
                       message: `Can't be blank`,
                     },
+                    {
+                      type: 'email',
+                      message: `Please enter valid Email ID`,
+                    }
                   ]}
                 >
                   <Input placeholder="Email ID" />

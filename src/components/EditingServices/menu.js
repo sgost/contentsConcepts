@@ -5,7 +5,7 @@ import MenuContent from './content';
 import EditingLevels from './levels';
 import EditingSamples from './samples';
 import Highlights from './highlights';
-import Quality from './quality';
+import QualityAssurance from '../QualityAssurance';
 import {
   MenuContainer
 } from './styles';
@@ -17,7 +17,7 @@ const MenuSection = props => {
 
   const data = props.content;
 
-  const rootSubmenuKeys = ['academic', 'business', 'technical'];
+  const rootSubmenuKeys = ['content_development', 'academic', 'business', 'technical', 'consulting'];
 
   const [openKeysValue, setOpenKeysValue] = useState([data.frontmatter.parentType]);
 
@@ -54,6 +54,32 @@ const MenuSection = props => {
               selectedKeys={[current]}
               className="editingMenu"
             >
+              <SubMenu key="content_development" title="Content Development" className="editingSubMenu">
+                <Menu.Item key="website_content">
+                  <Link to="/services/website_content">Website Content</Link>
+                </Menu.Item>
+                <Menu.Item key="marketing_collateral">
+                  <Link to="/services/marketing_collateral">Marketing Collateral</Link>
+                </Menu.Item>
+                <Menu.Item key="resume_writing">
+                  <Link to="/services/resume_writing">Resume Writing</Link>
+                </Menu.Item>
+                <Menu.Item key="ui_microcopy">
+                  <Link to="/services/ui_microcopy">UI Content / Microcopy</Link>
+                </Menu.Item>
+                <Menu.Item key="blog_content">
+                  <Link to="/services/blog_content">Blog Content</Link>
+                </Menu.Item>
+                <Menu.Item key="social_media_content">
+                  <Link to="/services/social_media_content">Social Media Content</Link>
+                </Menu.Item>
+                <Menu.Item key="adwords">
+                  <Link to="/services/adwords">Adwords</Link>
+                </Menu.Item>
+                <Menu.Item key="facebook_ads">
+                  <Link to="/services/facebook_ads">Facebook Ads</Link>
+                </Menu.Item>
+              </SubMenu>
               <SubMenu key="academic" title="Academic editing and proofreading services" className="editingSubMenu">
                 <Menu.Item key="manuscript_editing">
                   <Link to="/services/manuscript_editing">Manuscript Editing</Link>
@@ -63,6 +89,9 @@ const MenuSection = props => {
                 </Menu.Item>
                 <Menu.Item key="proposal_editing">
                   <Link to="/services/proposal_editing">Proposal Editing</Link>
+                </Menu.Item>
+                <Menu.Item key="academic_technical_reports">
+                  <Link to="/services/academic_technical_reports">Technical Reports</Link>
                 </Menu.Item>
                 <Menu.Item key="essay_editing">
                   <Link to="/services/essay_editing">Essay Editing</Link>
@@ -87,8 +116,8 @@ const MenuSection = props => {
                 <Menu.Item key="business_plans">
                   <Link to="/services/business_plans">Business Plans</Link>
                 </Menu.Item>
-                <Menu.Item key="marketing_collateral">
-                  <Link to="/services/marketing_collateral">Marketing Collateral</Link>
+                <Menu.Item key="business_marketing_collateral">
+                  <Link to="/services/business_marketing_collateral">Marketing Collateral</Link>
                 </Menu.Item>
                 <Menu.Item key="newsletters">
                   <Link to="/services/newsletters">Newsletters</Link>
@@ -96,8 +125,8 @@ const MenuSection = props => {
                 <Menu.Item key="adcopies">
                   <Link to="/services/adcopies">Ad copies</Link>
                 </Menu.Item>
-                <Menu.Item key="website_content">
-                  <Link to="/services/website_content">Website Content</Link>
+                <Menu.Item key="business_website_content">
+                  <Link to="/services/business_website_content">Website Content</Link>
                 </Menu.Item>
                 <Menu.Item key="white_papers">
                   <Link to="/services/white_papers">White Papers</Link>
@@ -116,11 +145,22 @@ const MenuSection = props => {
                 <Menu.Item key="instructional_guides">
                   <Link to="/services/instructional_guides">Instructional Guides</Link>
                 </Menu.Item>
-                <Menu.Item key="website_contents">
-                  <Link to="/services/website_contents">Website Contents</Link>
+                <Menu.Item key="technical_website_contents">
+                  <Link to="/services/technical_website_contents">Website Contents</Link>
                 </Menu.Item>
                 <Menu.Item key="technical_reports">
                   <Link to="/services/technical_reports">Technical Reports</Link>
+                </Menu.Item>
+              </SubMenu>
+              <SubMenu key="consulting" title="Consulting" className="editingSubMenu">
+                <Menu.Item key="content_strategy">
+                  <Link to="/services/content_strategy">Content Strategy</Link>
+                </Menu.Item>
+                <Menu.Item key="digital_marketing">
+                  <Link to="/services/digital_marketing">Digital Marketing</Link>
+                </Menu.Item>
+                <Menu.Item key="social_media">
+                  <Link to="/services/social_media">Social Media</Link>
                 </Menu.Item>
               </SubMenu>
             </Menu>
@@ -130,7 +170,7 @@ const MenuSection = props => {
       <EditingLevels content={data.frontmatter.editingLevels} />
       <EditingSamples content={data.frontmatter.editingSample} />
       <Highlights content={data.frontmatter.editingHighlights} />
-      <Quality content={data.frontmatter.quality} />
+      <QualityAssurance />
     </Fragment>
   )
 }

@@ -42,7 +42,7 @@ const Process = props => {
     <Fragment>
       {
         data.file &&
-        <ProcessSection>
+        <ProcessSection id="editingProcess">
           <SectionHeading>
             <h2>{processContent.title}</h2>
           </SectionHeading>

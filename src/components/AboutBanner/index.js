@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { Row, Col } from "antd"
 import BannerImage from '../../images/about_banner.png';
 import {
@@ -7,7 +7,6 @@ import {
   ContentContainer,
   OverlayContainer
 } from './styles';
-import Typed from 'react-typed';
 
 const AboutBanner = () => {
 
@@ -19,8 +18,8 @@ const AboutBanner = () => {
         childMarkdownRemark {
           frontmatter {
             title
-            description
           }
+          html
         }
       }
     }
@@ -41,9 +40,7 @@ const AboutBanner = () => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12} className="contentSection">
               <ContentContainer>
                 <h2>{content.title}</h2>
-                <p>
-                  {content.description}
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: data.file.childMarkdownRemark.html }} />
               </ContentContainer>
             </Col>
             <Col xs={24} sm={24} md={12} lg={12} xl={12} className="resSection">

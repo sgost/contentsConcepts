@@ -73,8 +73,8 @@ const MenuContent = ({ content }) => {
         </RefundSection>
         <ButtonContainer>
           <Button type="primary" onClick={getQuote}>Get Quote</Button>
-          <Button>Check Sample</Button>
-          <Button>Editing Process</Button>
+          <Button onClick={() => window.location.href="#editingSample"}>Check Sample</Button>
+          <Button onClick={() => window.location.href="#editingProcess"}>Editing Process</Button>
         </ButtonContainer>
       </div>
       <Modal

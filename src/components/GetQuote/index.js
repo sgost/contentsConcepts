@@ -37,9 +37,58 @@ const GetQuote = props => {
     setShowUpload(true);
   };
 
-  const onFinish = values => {
+  const[disabled, setDisabled] = useState(false);
+
+  const onFinish = async values => {
     console.log(values);
-    form.resetFields();
+
+    setDisabled(true);
+
+    const data = new FormData();
+
+    data.append("name", values.name);
+    data.append("email", values.email);
+
+    if(values.phone === undefined) {
+      data.append("phone", '-');
+    } else {
+      data.append("phone", values.phone);
+    }
+
+    if(values.category === undefined) {
+      data.append("category", '-');
+    } else {
+      data.append("category", values.category);
+    }
+
+    if(values.categoryFile !== undefined) {
+      data.append("file", values.categoryFile[0].thumbUrl);
+      data.append("filename", values.categoryFile[0].name);
+    } else {
+      data.append("filename", '-');
+    }
+
+    if(values.requirement === undefined) {
+      data.append("requirement", '-');
+    } else {
+      data.append("requirement", values.requirement);
+    }
+
+    var url= "https://script.google.com/macros/s/AKfycbytYkB5NkglpS8UXByE30UGD0tEHLqjHIJeWCWGvXZvzj5pKyU/exec";
+
+    await fetch(url, {
+      method: 'POST',
+      body: data,
+      mode: 'no-cors',
+    }).then(function (response) {
+      alert('Thanks! We will contact you soon!');
+      setDisabled(false);
+      form.resetFields();
+    }).catch(function (err) {
+      console.log('error');
+      setDisabled(false);
+    });
+    setShowUpload(true);
     props.onSubmit();
     setShowUpload(true);
   };
@@ -64,7 +113,7 @@ const GetQuote = props => {
 
   return (
     <QuoteFormSection>
-      <Form name="quote-form" onFinish={onFinish} className="quoteForm" form={form}>
+      <Form name="quote-form" onFinish={onFinish} className="quoteForm gform" form={form}>
         <Form.Item
           name='name'
           rules={[
@@ -130,7 +179,7 @@ const GetQuote = props => {
             valuePropName="fileList"
             getValueFromEvent={normFile}
           >
-            <Upload name="category" listType="picture" id="categoryFile" customRequest={customReqChange} onChange={uploadChange} onRemove={removeUploadedFile}>
+            <Upload name="category" listType="picture" id="categoryFile" onChange={uploadChange} onRemove={removeUploadedFile} customRequest={customReqChange} >
               {
                 showUpload &&
                 <Button className="uploadBtn">
@@ -154,7 +203,7 @@ const GetQuote = props => {
           <TextArea rows={4} placeholder="Describe your requirement briefly." />
         </Form.Item>
         <Form.Item className="submitBtn">
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" disabled={disabled}>
             Submit
           </Button>
         </Form.Item>

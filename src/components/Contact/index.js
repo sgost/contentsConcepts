@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Form, Input, Button, Select } from 'antd'
+import { Form, Input, Button, Select, form } from 'antd'
 import { CaretDownOutlined } from '@ant-design/icons';
 import Call from '../../images/call.svg'
 import Email from '../../images/email.svg'
@@ -21,8 +21,43 @@ export const ContactPreviewSection = ({
 
   const { Option } = Select;
 
-  const onFinish = values => {
-    console.log(values);
+  const[disabled, setDisabled] = useState(false);
+
+  const onFinish = async values => {
+
+    setDisabled(true);
+  
+    var saveData = values;
+
+    const data = new FormData();
+
+    data.append("name", saveData.name);
+    data.append("email", saveData.email);
+    if(values.category === undefined) {
+      data.append("category", '-');
+    } else {
+      data.append("category", saveData.category);
+    }
+    if(values.description === undefined) {
+      data.append("description", '-');
+    } else {
+      data.append("description", saveData.description);
+    }
+
+    var url= "https://script.google.com/macros/s/AKfycbwdnICVPWuOGXXyapaZATic8EPHdx_X6CYXBTuPGvZZieTIRhND/exec";
+
+    await fetch(url, {
+      method: 'POST',
+      body: data,
+      mode: 'no-cors',
+    }).then(function (response) {
+      setDisabled(false);
+      alert('Thanks! We will contact you soon!');
+      form.resetFields();
+    }).catch(function (err) {
+      setDisabled(false);
+      console.log('error');
+    });
   };
 
   return (
@@ -82,7 +117,7 @@ export const ContactPreviewSection = ({
             <Input.TextArea rows={4} placeholder="How can we help you?" />
           </Form.Item>
           <Form.Item className="submitButton">
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" disabled={disabled}>
               Submit
             </Button>
           </Form.Item>
@@ -103,6 +138,8 @@ export const ContactPreviewSection = ({
 };
 
 const Contact = props => {
+
+  const [form] = Form.useForm();
 
   const[contactContent, setContactContent] = useState({});
 

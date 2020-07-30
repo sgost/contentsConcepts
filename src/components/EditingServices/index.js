@@ -7,9 +7,10 @@ import Customers from "../Customers"
 import Contact from "../Contact"
 
 const EditingServices = ({ data }) => {
+  console.log(data.markdownRemark.frontmatter.title);
   return (
     <Fragment>
-      <SEO title="Services" />
+      <SEO title={data.markdownRemark.frontmatter.title} />
       <MenuSection content={data.markdownRemark} />
       <Process />
       <Customers />
@@ -29,9 +30,15 @@ export const query = graphql`
       frontmatter {
         title
         highlight
-        editedTypes {
-          title
-          types
+        description
+        message
+        priceCard {
+          pricing {
+            title
+            price
+          }
+          tagContent
+          content
         }
         features {
           id

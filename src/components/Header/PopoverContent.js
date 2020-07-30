@@ -8,7 +8,7 @@ import {
 const PopoverContent = props => {
 
   const content = props.content.sitemapList.filter(sitemap => {
-    return sitemap.id !== 1;
+    return sitemap.title !== 'About Us';
   });
 
   return (

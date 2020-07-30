@@ -1,13 +1,18 @@
 import React, { useState, Fragment } from "react"
 import { Link } from "gatsby"
-import { Layout, Menu } from "antd"
+import { Layout, Menu, Button } from "antd"
 import MenuContent from './content';
 import EditingLevels from './levels';
 import EditingSamples from './samples';
 import Highlights from './highlights';
 import QualityAssurance from '../QualityAssurance';
 import {
-  MenuContainer
+  MenuContainer,
+  ServiceCard,
+  PriceSection,
+  TagContent,
+  DescSection,
+  ButtonSection
 } from './styles';
 
 const { SubMenu } = Menu;
@@ -36,6 +41,9 @@ const MenuSection = props => {
     setCurrent(e.key);
   };
 
+  console.log(data.frontmatter.priceCard);
+
+
   return (
     <Fragment>
       <MenuContainer>
@@ -44,6 +52,34 @@ const MenuSection = props => {
             <MenuContent content={data.frontmatter} />
           </Content>
           <Sider>
+            {
+              data.frontmatter.priceCard &&
+              <ServiceCard>
+                <h3>{data.frontmatter.title}</h3>
+                <PriceSection>
+                  <span className="startingText">{data.frontmatter.priceCard.pricing.title}</span>
+                  <span className="priceValue" dangerouslySetInnerHTML={{__html: data.frontmatter.priceCard.pricing.price}} />
+                </PriceSection>
+                {
+                  data.frontmatter.priceCard.tagContent &&
+                  <TagContent>
+                    <p>
+                      {data.frontmatter.priceCard.tagContent}
+                    </p>
+                  </TagContent>
+                }
+                <DescSection>
+                  <p>{data.frontmatter.priceCard.content}</p>
+                </DescSection>
+                <ButtonSection>
+                  <Button type="primary">
+                    <Link to="/pricing/">Get Started</Link>
+                  </Button>
+                </ButtonSection>
+              </ServiceCard>
+            }
+          </Sider>
+          {/* <Sider>
             <Menu
               mode="inline"
               defaultOpenKeys={[data.frontmatter.parentType]}
@@ -164,7 +200,7 @@ const MenuSection = props => {
                 </Menu.Item>
               </SubMenu>
             </Menu>
-          </Sider>
+          </Sider> */}
         </Layout>
       </MenuContainer>
       <EditingLevels content={data.frontmatter.editingLevels} />

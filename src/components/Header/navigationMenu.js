@@ -95,7 +95,7 @@ const NavigationMenu = props => {
               placement="bottom"
             >
               <Link
-                to="/services/website_content"
+                to="/services/manuscript_editing"
                 getProps={isPartiallyActive}
                 activeClassName="activeLink"
                 onClick={props.onClick}
@@ -107,7 +107,7 @@ const NavigationMenu = props => {
               </Link>
             </Popover>
             <Link
-              to="/services/website_content"
+              to="/services/manuscript_editing"
               getProps={isPartiallyActive}
               activeClassName="activeLink"
               onClick={props.onClick}

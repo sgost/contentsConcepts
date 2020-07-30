@@ -9,7 +9,10 @@ import {
 
 const QualityAssurance = () => {
 
-  const[content, setContent] = useState({});
+  const[content, setContent] = useState({
+    title: '',
+    html: ''
+  });
 
   const data = useStaticQuery(graphql`
     query {
@@ -17,8 +20,8 @@ const QualityAssurance = () => {
         childMarkdownRemark {
           frontmatter {
             title
-            description
           }
+          html
         }
       }
     }
@@ -26,7 +29,10 @@ const QualityAssurance = () => {
 
   useEffect(() => {
     if(data.file) {
-      setContent(data.file.childMarkdownRemark.frontmatter);
+      setContent({
+        title: data.file.childMarkdownRemark.frontmatter.title,
+        html: data.file.childMarkdownRemark.html
+      });
     }
   }, [data.file]);
 
@@ -41,7 +47,7 @@ const QualityAssurance = () => {
             </Col>
             <Col xs={24} sm={18} md={19} lg={19} xl={19} className="contentDesc">
               <h2>{content.title}</h2>
-              <p>{content.description}</p>
+              <p dangerouslySetInnerHTML={{ __html: content.html }} />
             </Col>
           </Row>
         </QualitySection>

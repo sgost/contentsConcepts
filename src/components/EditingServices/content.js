@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect} from 'react'
 import { Button, Modal } from 'antd'
-import Marker from '../../images/marker.svg';
+import Marker from '../../images/tick_filled.svg';
 import GetQuote from "../GetQuote"
 import {
   HeadingContainer,
@@ -39,23 +39,12 @@ const MenuContent = ({ content }) => {
       <div>
         <HeadingContainer>
           <h2>{content.title}</h2>
-          <span>({content.highlight})</span>
+          {
+            content.highlight && <span>({content.highlight})</span>
+          }
         </HeadingContainer>
         <TypesContainer>
-          {
-            content.editedTypes &&
-            <div>
-              {content.editedTypes.title} -
-              {
-                content.editedTypes.types && content.editedTypes.types.map((type, i, arr) => {
-                  let divider = i<arr.length-1 && <>, </>;
-                  return (
-                    <span key={type}>{type}{divider}</span>
-                  )
-                })
-              }
-            </div>
-          }
+          {content.description}
         </TypesContainer>
         <FeaturesListContainer>
           {
@@ -68,8 +57,9 @@ const MenuContent = ({ content }) => {
           }
         </FeaturesListContainer>
         <RefundSection>
-          <p>Not happy with edit?</p>
-          <p className="refundText">100% refund without any condition</p>
+          <p dangerouslySetInnerHTML={{__html: content.message}} />
+          {/* <p>Not happy with edit? <span>100% refund without any condition</span></p>
+          <p className="refundText"></p> */}
         </RefundSection>
         <ButtonContainer>
           <Button type="primary" onClick={getQuote}>Get Quote</Button>

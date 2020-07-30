@@ -20,13 +20,13 @@ export const MenuContainer = styled.div`
   .ant-layout {
     background: ${palette.WHITE_COLOR};
     @media (max-width: 576px) {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
   }
   .ant-layout-content {
     padding: 0px 30px;
     min-height: 280px;
-    width: 75%;
+    width: 70%;
     @media only screen and (min-width: 576px) and (max-width: 992px) {
       padding: 0px 10px;
     }
@@ -36,8 +36,10 @@ export const MenuContainer = styled.div`
     }
   }
   .ant-layout-sider {
-    width: 25% !important;
+    width: 30% !important;
     margin: 0px 30px;
+    flex: unset !important;
+    max-width: 30% !important;
     background: transparent !important;
     @media only screen and (min-width: 576px) and (max-width: 992px) {
       margin: 0px 10px;
@@ -99,7 +101,6 @@ export const FeatureSecList = styled.li`
   img {
     width: 16px;
     height: 16px;
-    opacity: 0.5;
   }
   p {
     font-size: 16px;
@@ -112,9 +113,10 @@ export const RefundSection = styled.div`
     font-size: 20px;
     line-height: 30px;
   }
-  .refundText {
+  span {
     font-weight: 600;
     margin-top: 5px;
+    display: block;
   }
 `;
 
@@ -441,5 +443,61 @@ export const QualitySection = styled.div`
         }
       }
     }
+  }
+`;
+
+//service card
+export const ServiceCard = styled.div`
+  box-shadow: 0 0 15px 0 rgba(0,0,0,.15);
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  padding: 32px 0px;
+  text-align: center;
+  h3 {
+    color: rgba(52, 152, 219, 0.7);
+  }
+`;
+
+export const PriceSection = styled.div`
+  margin: 16px 0px 30px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  .startingText {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .priceValue {
+    span {
+      font-weight: bold;
+      font-size: 22px;
+    }
+  }
+`;
+
+export const TagContent = styled.div`
+  padding: 8px;
+  background: rgb(255, 246, 218);
+  margin-bottom: 30px;
+  p {
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+`;
+
+export const DescSection = styled.div`
+  margin-bottom: 30px;
+  padding: 0px 40px;
+  p {
+    font-size: 14px;
+  }
+`;
+
+export const ButtonSection = styled.div`
+  padding: 15px 45px 0px;
+  button {
+    width: 100%;
   }
 `;

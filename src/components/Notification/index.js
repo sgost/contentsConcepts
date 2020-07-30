@@ -16,7 +16,7 @@ export const Notification = props => {
           <img src={props.image} alt="offer" />
           <p className="messageContent">{props.description}</p>
         </MessageContent>
-        <Link to="/" className="messageContent">{props.linkText}</Link>
+        <Link to={props.link} className="messageContent">{props.linkText}</Link>
       </MessageContainer>
     ),
     closeIcon: <img src={closeIcon} alt="close" />,

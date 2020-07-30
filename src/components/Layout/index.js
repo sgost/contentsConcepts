@@ -17,6 +17,10 @@ const Layout = props => {
         childMarkdownRemark {
           frontmatter {
             offer
+            offerLink {
+              title
+              link
+            }
           }
         }
       }
@@ -30,7 +34,8 @@ const Layout = props => {
       Notification({
         description: offerData.offer,
         image: OfferImage,
-        linkText: "Check our other offers"
+        linkText: offerData.offerLink.title,
+        link: offerData.offerLink.link
       });
     }
   }, [offerData]);

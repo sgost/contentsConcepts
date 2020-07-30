@@ -41,9 +41,6 @@ const MenuSection = props => {
     setCurrent(e.key);
   };
 
-  console.log(data.frontmatter.priceCard);
-
-
   return (
     <Fragment>
       <MenuContainer>

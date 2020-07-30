@@ -58,8 +58,6 @@ const MenuContent = ({ content }) => {
         </FeaturesListContainer>
         <RefundSection>
           <p dangerouslySetInnerHTML={{__html: content.message}} />
-          {/* <p>Not happy with edit? <span>100% refund without any condition</span></p>
-          <p className="refundText"></p> */}
         </RefundSection>
         <ButtonContainer>
           <Button type="primary" onClick={getQuote}>Get Quote</Button>

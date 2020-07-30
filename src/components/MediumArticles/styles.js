@@ -39,6 +39,7 @@ export const ArticlesList = styled.div`
       color: ${palette.PRIMARY_TXT_COLOR};
       display: flex;
       flex-direction: column;
+      align-items: center;
       span {
         margin-top: 10px;
       }

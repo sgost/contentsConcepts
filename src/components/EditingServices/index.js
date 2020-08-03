@@ -11,7 +11,7 @@ const EditingServices = ({ data }) => {
   return (
     <Fragment>
       <SEO title={data.markdownRemark.frontmatter.title} />
-      <MenuSection content={data.markdownRemark} />
+      <MenuSection content={data.markdownRemark.frontmatter} />
       <Process />
       <Customers />
       <Contact />

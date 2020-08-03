@@ -7,6 +7,28 @@ import {
   QualitySection
 } from './styles';
 
+export const QualityAssuranceSection = ({
+  title,
+  html,
+  preview
+}) => {
+  return (
+    <QualitySection>
+      <Row className="qualityContent">
+        <Col xs={24} sm={6} md={5} lg={5} xl={5} className="qualityBadge">
+          <img src={Badge} alt="Quality badge" />
+        </Col>
+        <Col xs={24} sm={18} md={19} lg={19} xl={19} className="contentDesc">
+          <h2>{title}</h2>
+          {
+            preview ? <p>{html}</p> : <p dangerouslySetInnerHTML={{ __html: html }} />
+          }
+        </Col>
+      </Row>
+    </QualitySection>
+  );
+};
+
 const QualityAssurance = () => {
 
   const[content, setContent] = useState({
@@ -40,17 +62,11 @@ const QualityAssurance = () => {
     <Fragment>
       {
         content &&
-        <QualitySection>
-          <Row className="qualityContent">
-            <Col xs={24} sm={6} md={5} lg={5} xl={5} className="qualityBadge">
-              <img src={Badge} alt="Quality badge" />
-            </Col>
-            <Col xs={24} sm={18} md={19} lg={19} xl={19} className="contentDesc">
-              <h2>{content.title}</h2>
-              <p dangerouslySetInnerHTML={{ __html: content.html }} />
-            </Col>
-          </Row>
-        </QualitySection>
+        <QualityAssuranceSection
+          title={content.title}
+          html={content.html}
+          preview={false}
+        />
       }
     </Fragment>
   )

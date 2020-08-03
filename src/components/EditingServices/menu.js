@@ -5,7 +5,6 @@ import MenuContent from './content';
 import EditingLevels from './levels';
 import EditingSamples from './samples';
 import Highlights from './highlights';
-import QualityAssurance from '../QualityAssurance';
 import {
   MenuContainer,
   ServiceCard,
@@ -24,7 +23,7 @@ const MenuSection = props => {
 
   const rootSubmenuKeys = ['content_development', 'academic', 'business', 'technical', 'consulting'];
 
-  const [openKeysValue, setOpenKeysValue] = useState([data.frontmatter.parentType]);
+  const [openKeysValue, setOpenKeysValue] = useState([data.parentType]);
 
   const onOpenChange = openKeys  => {
     const latestOpenKey = openKeys.find(key => openKeysValue.indexOf(key) === -1);
@@ -35,7 +34,7 @@ const MenuSection = props => {
     }
   }
 
-  const[current, setCurrent] = useState(data.frontmatter.key);
+  const[current, setCurrent] = useState(data.key);
 
   const handleClick = e => {
     setCurrent(e.key);
@@ -46,27 +45,27 @@ const MenuSection = props => {
       <MenuContainer>
         <Layout>
           <Content>
-            <MenuContent content={data.frontmatter} />
+            <MenuContent content={data} />
           </Content>
           <Sider>
             {
-              data.frontmatter.priceCard &&
+              data.priceCard &&
               <ServiceCard>
-                <h3>{data.frontmatter.title}</h3>
+                <h3>{data.title}</h3>
                 <PriceSection>
-                  <span className="startingText">{data.frontmatter.priceCard.pricing.title}</span>
-                  <span className="priceValue" dangerouslySetInnerHTML={{__html: data.frontmatter.priceCard.pricing.price}} />
+                  <span className="startingText">{data.priceCard.pricing.title}</span>
+                  <span className="priceValue" dangerouslySetInnerHTML={{__html: data.priceCard.pricing.price}} />
                 </PriceSection>
                 {
-                  data.frontmatter.priceCard.tagContent &&
+                  data.priceCard.tagContent &&
                   <TagContent>
                     <p>
-                      {data.frontmatter.priceCard.tagContent}
+                      {data.priceCard.tagContent}
                     </p>
                   </TagContent>
                 }
                 <DescSection>
-                  <p>{data.frontmatter.priceCard.content}</p>
+                  <p>{data.priceCard.content}</p>
                 </DescSection>
                 <ButtonSection>
                   <Button type="primary">
@@ -200,10 +199,9 @@ const MenuSection = props => {
           </Sider> */}
         </Layout>
       </MenuContainer>
-      <EditingLevels content={data.frontmatter.editingLevels} />
-      <EditingSamples content={data.frontmatter.editingSample} />
-      <Highlights content={data.frontmatter.editingHighlights} />
-      <QualityAssurance />
+      <EditingLevels content={data.editingLevels} />
+      <EditingSamples content={data.editingSample} />
+      <Highlights content={data.editingHighlights} />
     </Fragment>
   )
 }

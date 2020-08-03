@@ -7,6 +7,32 @@ import {
   MemberInfo
 } from './styles';
 
+export const TeamMembersSection = ({
+  title,
+  teamMembers
+}) => {
+  return(
+    <TeamSection id="team">
+      <SectionHeading>
+        <h2>{title}</h2>
+      </SectionHeading>
+      <TeamMembers>
+        {
+          teamMembers && teamMembers.map(member =>
+            <MemberInfo key={member.id}>
+              <h3>{member.name}</h3>
+              <span>{member.role}</span>
+              <p>
+                {member.description}
+              </p>
+            </MemberInfo>
+          )
+        }
+      </TeamMembers>
+    </TeamSection>
+  );
+};
+
 const Team = props => {
 
   const[teamContent, setTeamContent] = useState({});
@@ -38,25 +64,7 @@ const Team = props => {
   return (
     <Fragment>
       {
-        data.file &&
-        <TeamSection id="team">
-          <SectionHeading>
-            <h2>{teamContent.title}</h2>
-          </SectionHeading>
-          <TeamMembers>
-            {
-              teamContent.teamMembers && teamContent.teamMembers.map(member =>
-                <MemberInfo key={member.id}>
-                  <h3>{member.name}</h3>
-                  <span>{member.role}</span>
-                  <p>
-                    {member.description}
-                  </p>
-                </MemberInfo>
-              )
-            }
-          </TeamMembers>
-        </TeamSection>
+        data.file && <TeamMembersSection title={teamContent.title} teamMembers={teamContent.teamMembers} />
       }
     </Fragment>
   )

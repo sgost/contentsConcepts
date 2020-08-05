@@ -12,6 +12,43 @@ import {
   CustomerDetails
 } from './styles';
 
+export const CustomersPreviewSection = ({
+  title,
+  customers
+}) => {
+  return (
+    <CustomersSection>
+      <SectionHeading>
+        <h2>{title}</h2>
+      </SectionHeading>
+      <CustomersList>
+        {
+          customers && customers.map(dataItem =>
+            <Customer key={dataItem.id}>
+              <CircleImage>
+                {
+                  dataItem.image.childImageSharp ? <img src={dataItem.image.childImageSharp.fluid.src} alt={dataItem.name} /> : <img src={dataItem.image} alt={dataItem.name} />
+                }
+              </CircleImage>
+              <WrapperDetails>
+                <ContentBg>
+                  <img src={QuoteLeft} alt="quote background" />
+                </ContentBg>
+                <p>{dataItem.comment}</p>
+                <CustomerDetails>
+                  <h4>{dataItem.name}</h4>
+                  <span>{dataItem.role}</span>
+                  <span>{dataItem.company}</span>
+                </CustomerDetails>
+              </WrapperDetails>
+            </Customer>
+          )
+        }
+      </CustomersList>
+    </CustomersSection>
+  );
+};
+
 const Customers = props => {
 
   const[customersContent, setCustomersContent] = useState({});
@@ -52,33 +89,10 @@ const Customers = props => {
     <Fragment>
       {
         data.file &&
-        <CustomersSection>
-          <SectionHeading>
-            <h2>{customersContent.title}</h2>
-          </SectionHeading>
-          <CustomersList>
-            {
-              customersContent.customers && customersContent.customers.map(dataItem =>
-                <Customer key={dataItem.id}>
-                  <CircleImage>
-                    <img src={dataItem.image.childImageSharp.fluid.src} alt={dataItem.name} />
-                  </CircleImage>
-                  <WrapperDetails>
-                    <ContentBg>
-                      <img src={QuoteLeft} alt="quote background" />
-                    </ContentBg>
-                    <p>{dataItem.comment}</p>
-                    <CustomerDetails>
-                      <h4>{dataItem.name}</h4>
-                      <span>{dataItem.role}</span>
-                      <span>{dataItem.company}</span>
-                    </CustomerDetails>
-                  </WrapperDetails>
-                </Customer>
-              )
-            }
-          </CustomersList>
-        </CustomersSection>
+        <CustomersPreviewSection
+          title={customersContent.title}
+          customers={customersContent.customers}
+        />
       }
     </Fragment>
   )

@@ -53,9 +53,15 @@ export const LevelsSection = styled.div`
 export const SectionHeading = styled.div`
   padding: 20px 0px;
   text-align: center;
+  max-width: 950px;
+  margin: 0 auto;
+  @media (min-width: 1500px) {
+    max-width: 1100px;
+  }
   h3 {
     font-size: 18px;
     font-weight: normal;
+    margin: 15px 0px;
   }
 `;
 

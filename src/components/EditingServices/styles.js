@@ -317,9 +317,6 @@ export const TabContent = styled.div`
     border-radius: 8px;
     padding: 30px;
     margin: 30px 0px;
-    img {
-      width: auto;
-    }
   }
   @media (max-width: 576px) {
     padding: 30px 20px 0px;

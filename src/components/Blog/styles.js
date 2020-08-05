@@ -16,6 +16,11 @@ export const AuthorInfo = styled.div`
   margin-bottom: 40px;
   .author_image {
     margin-right: 8px;
+    width: 64px;
+    height: 64px;
+    img {
+      object-fit: contain;
+    }
   }
   .author_info {
     display: flex;

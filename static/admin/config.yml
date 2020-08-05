@@ -1,0 +1,354 @@
+backend:
+  name: github
+  repo: fidisys/contentconcepts-data
+
+publish_mode: editorial_workflow
+
+media_folder: 'assets'
+public_folder: '/'
+
+collections:
+  - label: Home
+    name: home
+    files:
+      - label: Banner
+        name: homeBanner
+        file: 'home/banner.md'
+        fields:
+          - { label: Title, name: title }
+          - { label: Content, name: content }
+          - { label: Typed Words, name: typedWords, widget: list }
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Link, name: link }
+      - label: Features
+        name: features
+        file: 'home/features.md'
+        public_folder: '../assets/'
+        fields:
+          - { label: Title, name: title }
+          - label: Features
+            name: features
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Image, name: image, widget: image }
+      - label: Clients
+        name: clients
+        file: 'home/clients.md'
+        public_folder: '../assets/'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - label: Clients
+            name: clients
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Image, name: image, widget: image }
+      - label: Services
+        name: homeServices
+        file: 'home/services.md'
+        public_folder: '../assets/'
+        fields:
+          - { label: Title, name: title }
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Description, name: description }
+              - { label: Image, name: image, widget: image }
+      - label: Specialization
+        name: specialization
+        file: 'home/specialization.md'
+        public_folder: '../assets/'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - { label: Badge, name: badge, widget: image }
+          - label: Specialities
+            name: specialities
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Description, name: description }
+              - { label: Theme Color, name: themeColor }
+      - label: Testimonial
+        name: testimonial
+        file: 'home/testimonial.md'
+        fields:
+          - { label: Title, name: title }
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Count, name: count, widget: number }
+              - { label: Theme Color, name: themeColor }
+      - label: Process
+        name: process
+        file: 'home/process.md'
+        fields:
+          - { label: Title, name: title }
+          - label: Process
+            name: process
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Order, name: order }
+              - { label: Title, name: title }
+              - { label: Description, name: description }
+              - { label: Theme Color, name: themeColor }
+      - label: Customers
+        name: customers
+        file: 'home/customers.md'
+        public_folder: '../assets/'
+        fields:
+          - { label: Title, name: title }
+          - label: Customers
+            name: customers
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Name, name: name }
+              - { label: Comment, name: comment }
+              - { label: Role, name: role }
+              - { label: Company, name: company }
+              - { label: Image, name: image, widgte: image }
+      - label: Contact
+        name: contact
+        file: 'home/contact.md'
+        fields:
+          - { label: Title, name: title }
+          - { label: Call, name: call }
+          - { label: Email, name: email }
+          - label: Categories
+            name: categories
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Value, name: value }
+      - label: Footer
+        name: footer
+        file: 'home/footer.md'
+        fields:
+          - { label: Title, name: title }
+          - label: Sitemap List
+            name: sitemapList
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - label: Sitemap
+                name: sitemap
+                widget: list
+                fields:
+                  - { label: id, name: id, widget: number }
+                  - { label: Title, name: title }
+                  - { label: Link, name: link }
+      - label: Offers
+        name: offers
+        file: 'home/offers.md'
+        fields:
+          - { label: Title, name: title }
+          - { label: offer, name: offer }
+          - label: OfferLink
+            name: offerLink
+            widget: object
+            fields:
+              - { label: Title, name: title }
+              - { label: Link, name: link }
+  - label: About
+    name: about
+    files:
+      - label: Banner
+        name: banner
+        file: 'about/banner.md'
+        fields:
+          - {label: Title, name: title}
+          - { name: body, label: Body, widget: markdown }
+      - label: Team
+        name: team
+        file: 'about/team.md'
+        fields:
+          - {label: Title, name: title}
+          - label: Team Members
+            name: teamMembers
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Name, name: name }
+              - { label: Role, name: role }
+              - { label: Description, name: description }
+  - name: services
+    label: Services
+    folder: services
+    create: true
+    public_folder: '../assets/'
+    fields:
+      - { name: title, label: Title }
+      - { name: highlight, label: Highlight }
+      - { name: description, label: Description }
+      - { name: message, label: Message }
+      - label: Price Card
+        name: priceCard
+        widget: object
+        fields:
+          - label: Pricing
+            name: pricing
+            widget: object
+            fields:
+              - { label: Title, name: title }
+              - { label: Price, name: price }
+          - { label: Tag Content, name: tagContent }
+          - { label: Content, name: content }
+      - label: Features
+        name: features
+        widget: list
+        fields:
+          - { label: Title, name: title }
+          - { label: id, name: id, widget: number }
+      - label: Editing Levels
+        name: editingLevels
+        widget: object
+        fields:
+          - { label: Title, name: title, required: false }
+          - { label: SubHeading, name: subHeading, required: false }
+          - label: Level Types
+            name: levelTypes
+            required: false
+            widget: list
+            fields:
+              - { label: Title, name: title }
+              - { label: id, name: id, widget: number }
+              - { label: Theme Color, name: themeColor }
+          - label: Levels
+            name: levels
+            required: false
+            widget: list
+            fields:
+              - { label: Title, name: title }
+              - { label: id, name: id, widget: number }
+              - { label: Copy, name: copy }
+              - { label: Substantive, name: substantive }
+              - { label: Developmental, name: developmental }
+      - label: Editing Sample
+        name: editingSample
+        widget: object
+        fields:
+          - { label: Title, name: title, required: false }
+          - label: Samples
+            name: samples
+            required: false
+            widget: list
+            fields:
+              - { label: Title, name: title }
+              - { label: id, name: id, widget: number }
+              - { label: Description, name: description }
+              - { label: Image, name: image, widget: image }
+      - label: Editing Highlights
+        name: editingHighlights
+        widget: object
+        fields:
+          - { label: Title, name: title }
+          - label: Highlights
+            name: highlights
+            widget: list
+            fields:
+              - { label: Title, name: title }
+              - { label: id, name: id, widget: number }
+              - { label: Description, name: description }
+              - { label: Image, name: image, widget: image }
+      - { label: Key, name: key }
+      - { label: Parent Type, name: parentType }
+  - name: blog
+    label: Blog
+    label_singular: 'Blog'
+    folder: blog
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}/index"
+    create: true
+    media_folder: ''
+    public_folder: ''
+    nested:
+      depth: 100
+      summary: '{{title}}'
+    fields:
+      - { name: author_image, label: Author Image, widget: image }
+      - { name: author, label: Author }
+      - { name: bio, label: Bio }
+      - { name: title, label: Title }
+      - { name: date, label: Date, widget: date, default: ''}
+      - { name: previewImage, label: Preview Image, widget: image }
+      - { name: excerpt, label: Excerpt }
+      - { name: tags, label: Tags, widget: "list" }
+      - { name: body, label: Body, widget: markdown }
+  - name: pricing
+    label: Pricing
+    folder: pricing
+    fields:
+      - { name: title, label: Title }
+      - { name: heading, label: Heading }
+      - { name: subHeading, label: SubHeading }
+      - label: Pricing
+        name: pricing
+        widget: list
+        fields:
+          - { label: id, name: id, widget: number }
+          - { label: Title, name: title }
+          - { label: Editing Services, name: editingServices, widget: list }
+          - label: Price
+            name: price
+            widget: object
+            fields:
+              - { label: inr, name: inr }
+              - { label: usd, name: usd }
+          - { label: Theme Color, name: themeColor }
+  - label: FAQ
+    name: faq
+    files:
+      - label: FAQ
+        name: faq
+        file: 'faq.md'
+        fields:
+          - {label: Title, name: title}
+          - label: Questions
+            name: questions
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Question, name: question }
+              - { label: Answer, name: answer }
+  - label: Quality Assurance
+    name: qualityAssurance
+    files:
+      - label: Quality Assurance
+        name: qualityAssurance
+        file: 'qualityAssurance.md'
+        fields:
+          - { label: Title, name: title }
+          - { name: body, label: Body, widget: markdown }
+  - label: Quote Category
+    name: quoteCategory
+    files:
+      - label: Quote Category
+        name: quoteCategory
+        file: 'quoteCategory.md'
+        fields:
+          - { label: Title, name: title }
+          - label: Categories
+            name: categories
+            widget: list
+            fields:
+              - { label: Label, name: label }
+              - { label: Value, name: value }

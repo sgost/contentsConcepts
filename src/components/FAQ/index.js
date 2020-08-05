@@ -8,9 +8,47 @@ import {
   QuestionList
 } from './styles';
 
-const FAQ = props => {
+export const FAQPreviewSection = ({
+  title,
+  questions,
+  path
+}) => {
 
   const { Panel } = Collapse;
+
+  return (
+    <FAQContainer style={{ background: path === '/' && '#fff'}}>
+      <SectionHeading>
+        <h2>{title}</h2>
+      </SectionHeading>
+      <QuestionList>
+        <Collapse
+          accordion
+          bordered={false}
+          expandIcon={({ isActive }) => isActive ? <MinusOutlined /> : <PlusOutlined />}
+        >
+          {
+            questions && questions.map(item =>
+              <Panel
+                header={
+                  <div>
+                    <span className="quesNumber">{String(item.id).padStart(2, '0')}</span>
+                    <h3>{item.question}</h3>
+                  </div>
+                }
+                key={item.id}
+              >
+                <p>{item.answer}</p>
+              </Panel>
+            )
+          }
+        </Collapse>
+      </QuestionList>
+    </FAQContainer>
+  );
+};
+
+const FAQ = props => {
 
   const[content, setContent] = useState({});
 
@@ -44,34 +82,11 @@ const FAQ = props => {
     <Fragment>
       {
         data.file && data.file.childMarkdownRemark.frontmatter.questions.length > 0 &&
-        <FAQContainer style={{ background: path === '/' && '#fff'}}>
-          <SectionHeading>
-            <h2>{content.title}</h2>
-          </SectionHeading>
-          <QuestionList>
-            <Collapse
-              accordion
-              bordered={false}
-              expandIcon={({ isActive }) => isActive ? <MinusOutlined /> : <PlusOutlined />}
-            >
-              {
-                content.questions && content.questions.map(item =>
-                  <Panel
-                    header={
-                      <div>
-                        <span className="quesNumber">{String(item.id).padStart(2, '0')}</span>
-                        <h3>{item.question}</h3>
-                      </div>
-                    }
-                    key={item.id}
-                  >
-                    <p>{item.answer}</p>
-                  </Panel>
-                )
-              }
-            </Collapse>
-          </QuestionList>
-        </FAQContainer>
+        <FAQPreviewSection
+          title={content.title}
+          questions={content.questions}
+          path={path}
+        />
       }
     </Fragment>
   )

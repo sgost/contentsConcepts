@@ -6,6 +6,30 @@ import {
   FeatureListItem
 } from './styles';
 
+export const HomeFeaturesSection = ({
+  title,
+  features
+}) => {
+  return (
+    <FeaturesSection>
+      <FeaturesList>
+        {
+          features && features.map(dataItem =>
+            <FeatureListItem key={dataItem.id}>
+              <div className="imageContainer">
+                {
+                  dataItem.image.publicURL ? <img src={dataItem.image.publicURL} alt="features" /> : <img src={dataItem.image} alt="features" />
+                }
+              </div>
+              <span className="labelText">{dataItem.title}</span>
+            </FeatureListItem>
+          )
+        }
+      </FeaturesList>
+    </FeaturesSection>
+  );
+};
+
 const Features = () => {
 
   const[content, setContent] = useState({});
@@ -38,20 +62,10 @@ const Features = () => {
     <Fragment>
       {
         data.file &&
-        <FeaturesSection>
-          <FeaturesList>
-            {
-              content.features && content.features.map(dataItem =>
-                <FeatureListItem key={dataItem.id}>
-                  <div className="imageContainer">
-                    <img src={dataItem.image.publicURL} alt="features" />
-                  </div>
-                  <span className="labelText">{dataItem.title}</span>
-                </FeatureListItem>
-              )
-            }
-          </FeaturesList>
-        </FeaturesSection>
+        <HomeFeaturesSection
+          title={content.title}
+          features={content.features}
+        />
       }
     </Fragment>
   )

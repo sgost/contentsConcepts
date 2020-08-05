@@ -11,6 +11,7 @@ const { TabPane } = Tabs;
 
 const EditingSamples = ({ content }) => {
   // const content = props.content;
+  console.log(content);
   return (
     <Fragment>
       {
@@ -27,7 +28,9 @@ const EditingSamples = ({ content }) => {
                     <TabContent>
                       <p>{sample.description}</p>
                       <div className="sampleImage">
-                        <img src={sample.image.childImageSharp.fluid.src} alt={sample.title} />
+                        {
+                          sample.image.childImageSharp ? <img src={sample.image.childImageSharp.fluid.src} alt={sample.title} /> : <img src={sample.image} alt={sample.title} />
+                        }
                       </div>
                     </TabContent>
                   </TabPane>

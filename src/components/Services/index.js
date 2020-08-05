@@ -8,6 +8,68 @@ import {
   ServiceListContainer
 } from './styles';
 
+export const HomeServicesSection = ({
+  title,
+  services
+}) => {
+  //modal
+  const[showModal, setShowModal] = useState(false);
+
+  const handleCancel = e => {
+    setShowModal(false);
+  };
+
+  const getQuote = e => {
+    setShowModal(true);
+  };
+
+  useEffect(() => {
+    if(showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [showModal]);
+
+  return (
+    <Fragment>
+      <ServicesSection>
+        <SectionHeading>
+          <h2>{title}</h2>
+        </SectionHeading>
+        <ServiceListContainer>
+          <Row type="flex" className="servicesList">
+            {
+              services && services.map(dataItem =>
+                <Col xs={24} sm={10} md={8} lg={8} xl={7} className="serviceListItem" key={dataItem.id}>
+                  <div className="imageContainer">
+                    {
+                      dataItem.image.publicURL ? <img src={dataItem.image.publicURL} alt="service" /> : <img src={dataItem.image} alt="service" />
+                    }
+                  </div>
+                  <h3>{dataItem.title}</h3>
+                  <p>{dataItem.description}</p>
+                  <Button type="primary" onClick={getQuote}>Get Quote</Button>
+                </Col>
+              )
+            }
+          </Row>
+        </ServiceListContainer>
+      </ServicesSection>
+      <Modal
+        title="Get Quote"
+        visible={showModal}
+        okButtonProps={{ style: { display: 'none' } }}
+        cancelButtonProps={{ style: { display: 'none' } }}
+        onCancel={handleCancel}
+        getContainer={() => document.getElementById('___gatsby')}
+      >
+        <GetQuote onSubmit={handleCancel} />
+      </Modal>
+    </Fragment>
+  );
+};
+
 const Services = props => {
 
   const[servicesContent, setServicesContent] = useState({});
@@ -38,61 +100,15 @@ const Services = props => {
     }
   }, [data.file]);
 
-  //modal
-  const[showModal, setShowModal] = useState(false);
-
-  const handleCancel = e => {
-    setShowModal(false);
-  };
-
-  const getQuote = e => {
-    setShowModal(true);
-  };
-
-  useEffect(() => {
-    if(showModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [showModal]);
-
   return (
     <Fragment>
       {
         data.file &&
-        <ServicesSection>
-          <SectionHeading>
-            <h2>{servicesContent.title}</h2>
-          </SectionHeading>
-          <ServiceListContainer>
-            <Row type="flex" className="servicesList">
-              {
-                servicesContent.services && servicesContent.services.map(dataItem =>
-                  <Col xs={24} sm={10} md={8} lg={8} xl={7} className="serviceListItem" key={dataItem.id}>
-                    <div className="imageContainer">
-                      <img src={dataItem.image.publicURL} alt="service" />
-                    </div>
-                    <h3>{dataItem.title}</h3>
-                    <p>{dataItem.description}</p>
-                    <Button type="primary" onClick={getQuote}>Get Quote</Button>
-                  </Col>
-                )
-              }
-            </Row>
-          </ServiceListContainer>
-        </ServicesSection>
+        <HomeServicesSection
+          title={servicesContent.title}
+          services={servicesContent.services}
+        />
       }
-      <Modal
-        title="Get Quote"
-        visible={showModal}
-        okButtonProps={{ style: { display: 'none' } }}
-        cancelButtonProps={{ style: { display: 'none' } }}
-        onCancel={handleCancel}
-        getContainer={() => document.getElementById('___gatsby')}
-      >
-        <GetQuote onSubmit={handleCancel} />
-      </Modal>
     </Fragment>
   )
 }

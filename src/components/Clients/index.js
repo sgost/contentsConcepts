@@ -6,6 +6,32 @@ import {
   ClientsList
 } from './styles';
 
+export const HomeClientSection = ({
+  title,
+  description,
+  clients
+}) => {
+  return (
+    <ClientsSection>
+      <SectionContent>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </SectionContent>
+      <ClientsList>
+        {
+          clients && clients.map(dataItem =>
+            <li key={dataItem.id}>
+              {
+                dataItem.image.childImageSharp ? <img src={dataItem.image.childImageSharp.fluid.src} alt="clients" /> : <img src={dataItem.image} alt="clients" />
+              }
+            </li>
+          )
+        }
+      </ClientsList>
+    </ClientsSection>
+  );
+};
+
 const Clients = () => {
 
   const[clientsData, setClientsData] = useState({});
@@ -44,21 +70,11 @@ const Clients = () => {
     <Fragment>
       {
         data.file &&
-        <ClientsSection>
-          <SectionContent>
-            <h2>{clientsData.title}</h2>
-            <p>{clientsData.description}</p>
-          </SectionContent>
-          <ClientsList>
-            {
-              clientsData.clients && clientsData.clients.map(dataItem =>
-                <li key={dataItem.id}>
-                  <img src={dataItem.image.childImageSharp.fluid.src} alt="clients" />
-                </li>
-              )
-            }
-          </ClientsList>
-        </ClientsSection>
+        <HomeClientSection
+          title={clientsData.title}
+          description={clientsData.description}
+          clients={clientsData.clients}
+        />
       }
     </Fragment>
   )

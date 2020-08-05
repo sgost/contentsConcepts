@@ -8,6 +8,36 @@ import {
   OverlayContainer
 } from './styles';
 
+export const AboutBannerSection = ({
+  title,
+  html,
+  preview
+}) => {
+  return (
+    <BannerSection>
+      <Row>
+        <Col xs={24} sm={24} md={12} lg={12} xl={12} className="contentSection">
+          <ContentContainer>
+            <h2>{title}</h2>
+            {
+              preview ? <p>{html}</p> : <p dangerouslySetInnerHTML={{ __html: html }} />
+            }
+          </ContentContainer>
+        </Col>
+        <Col xs={24} sm={24} md={12} lg={12} xl={12} className="resSection">
+          <OverlayContainer>
+            <div className="topBg"></div>
+            <div className="imageContainer">
+              <img src={BannerImage} alt="banner" />
+            </div>
+            <div className="bottomBg"></div>
+          </OverlayContainer>
+        </Col>
+      </Row>
+    </BannerSection>
+  );
+};
+
 const AboutBanner = () => {
 
   const[content, setContent] = useState({
@@ -40,26 +70,7 @@ const AboutBanner = () => {
   return (
     <Fragment>
       {
-        data.file &&
-        <BannerSection>
-          <Row>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12} className="contentSection">
-              <ContentContainer>
-                <h2>{content.title}</h2>
-                <p dangerouslySetInnerHTML={{ __html: content.html }} />
-              </ContentContainer>
-            </Col>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12} className="resSection">
-              <OverlayContainer>
-                <div className="topBg"></div>
-                <div className="imageContainer">
-                  <img src={BannerImage} alt="banner" />
-                </div>
-                <div className="bottomBg"></div>
-              </OverlayContainer>
-            </Col>
-          </Row>
-        </BannerSection>
+        data.file && <AboutBannerSection title={content.title} html={content.html} preview={false} />
       }
     </Fragment>
   )

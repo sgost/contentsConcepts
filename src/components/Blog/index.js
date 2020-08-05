@@ -7,50 +7,83 @@ import {
   TagsList
 } from './styles';
 
-const Blog = ({ data }) => {
+export const BlogPost = ({
+  fields,
+  author_image,
+  author,
+  bio,
+  date,
+  title,
+  html,
+  tags,
+  preview
+}) => {
 
-  const content = data.markdownRemark;
+  // const content = data.markdownRemark;
+  console.log(preview);
 
   return (
     <Fragment>
-      {
-        content &&
-        <BlogContainer>
-          <AuthorInfo>
-            <div className="author_image">
-              <img src={content.frontmatter.author_image.childImageSharp.fluid.src} alt={content.author} />
-            </div>
-            <div className="author_info">
-              <h4>{content.frontmatter.author}</h4>
-              <span>{content.frontmatter.bio}</span>
-              <span>{content.fields.readingTime.text} &middot; {content.frontmatter.date}</span>
-            </div>
-          </AuthorInfo>
-          <BlogContent>
-            <h2 className="blogTitle">{content.frontmatter.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: content.html }} />
-          </BlogContent>
-          {
-            content.frontmatter.tags &&
-            <TagsList>
-              Tagged with
+      <BlogContainer>
+        <AuthorInfo>
+          <div className="author_image">
+            <img src={author_image} alt={author} />
+          </div>
+          <div className="author_info">
+            <h4>{author}</h4>
+            <span>{bio}</span>
+            <div>
               {
-                content.frontmatter.tags.map((type, i, arr) => {
-                  let divider = i<arr.length-1 && <>, </>;
-                  return (
-                    <span key={type}>{type}{divider}</span>
-                  )
-                })
+                fields && <span>{fields.readingTime.text} &middot; </span>
               }
-              {/* {
-                content.frontmatter.tags.map(tag => <span>{tag}</span>)
-              } */}
-            </TagsList>
+              <span>{date}</span>
+            </div>
+          </div>
+        </AuthorInfo>
+        <BlogContent>
+          <h2 className="blogTitle">{title}</h2>
+          {
+            preview ? <p>{html}</p> : <div dangerouslySetInnerHTML={{ __html: html }} />
           }
-        </BlogContainer>
-      }
+        </BlogContent>
+        {
+          tags &&
+          <TagsList>
+            Tagged with
+            {
+              tags.map((type, i, arr) => {
+                let divider = i<arr.length-1 && <>, </>;
+                return (
+                  <span key={type}>{type}{divider}</span>
+                )
+              })
+            }
+            {/* {
+              content.frontmatter.tags.map(tag => <span>{tag}</span>)
+            } */}
+          </TagsList>
+        }
+      </BlogContainer>
     </Fragment>
   )
+}
+
+const Blog = ({ data }) => {
+  const { markdownRemark: post } = data;
+  console.log(post);
+  return (
+      <BlogPost
+        fields={post.fields}
+        author_image={post.frontmatter.author_image.childImageSharp.fluid.src}
+        author={post.frontmatter.author}
+        bio={post.frontmatter.bio}
+        date={post.frontmatter.date}
+        title={post.frontmatter.title}
+        html={post.html}
+        tags={post.frontmatter.tags}
+        preview={false}
+      />
+    )
 }
 
 export default Blog

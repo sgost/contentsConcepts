@@ -15,13 +15,14 @@ export const LevelsSection = styled.div`
   }
   .editingLevelsList {
     max-width: 950px;
-    margin: 25px auto 50px auto;
+    margin: 50px auto;
+    justify-content: center;
     @media (min-width: 1500px) {
       max-width: 1100px;
     }
     @media (max-width: 768px) {
       max-width: 430px;
-      margin: 0 auto;
+      margin: 20px auto;
       .cardCont {
         padding: 15px !important;
         &:nth-child(2) {
@@ -62,6 +63,45 @@ export const SectionHeading = styled.div`
     font-size: 18px;
     font-weight: normal;
     margin: 15px 0px;
+  }
+`;
+
+export const TabsContainer = styled.div`
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px 0px;
+  @media (min-width: 1500px) {
+    max-width: 1100px;
+  }
+  .ant-tabs-top > .ant-tabs-nav::before {
+    border-bottom: 1px solid ${palette.DARK_GREY};
+  }
+  .ant-tabs-nav-list {
+    width: 100%;
+    @media (max-width: 576px) {
+      width: auto;
+    }
+    .ant-tabs-tab {
+      width: 30%;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 35px;
+      color: ${palette.CHARCOAL};
+      opacity: 0.6;
+      justify-content: center;
+      @media only screen and (min-width: 320px) and (max-width: 768px) {
+        width: auto;
+        padding: 12px;
+      }
+    }
+    .ant-tabs-tab-active {
+      color: ${palette.BUTTON_PRIMARY};
+      opacity: 1;
+    }
+  }
+  .ant-tabs-ink-bar {
+    background: ${palette.BUTTON_PRIMARY};
   }
 `;
 

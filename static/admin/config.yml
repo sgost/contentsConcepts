@@ -66,6 +66,7 @@ collections:
               - { label: Title, name: title }
               - { label: Description, name: description }
               - { label: Image, name: image, widget: image }
+              - { label: Link, name: link }
       - label: Specialization
         name: specialization
         file: 'home/specialization.md'
@@ -150,6 +151,7 @@ collections:
             fields:
               - { label: id, name: id, widget: number }
               - { label: Title, name: title }
+              - { label: Link, name: link }
               - label: Sitemap
                 name: sitemap
                 widget: list
@@ -196,11 +198,19 @@ collections:
     folder: services
     create: true
     public_folder: '../assets/'
+    summary: '{{filename}}'
     fields:
       - { name: title, label: Title }
       - { name: highlight, label: Highlight }
       - { name: description, label: Description }
       - { name: message, label: Message }
+      - label: Features
+        name: features
+        widget: list
+        fields:
+          - { label: Title, name: title }
+          - { label: id, name: id, widget: number }
+          - { label: Link, name: link }
       - label: Price Card
         name: priceCard
         widget: object
@@ -210,15 +220,14 @@ collections:
             widget: object
             fields:
               - { label: Title, name: title }
-              - { label: Price, name: price }
+              - label: Price
+                name: price
+                widget: object
+                fields:
+                  - { label: INR, name: inr }
+                  - { label: USD, name: usd }
           - { label: Tag Content, name: tagContent }
           - { label: Content, name: content }
-      - label: Features
-        name: features
-        widget: list
-        fields:
-          - { label: Title, name: title }
-          - { label: id, name: id, widget: number }
       - label: Editing Levels
         name: editingLevels
         widget: object
@@ -270,13 +279,39 @@ collections:
               - { label: id, name: id, widget: number }
               - { label: Description, name: description }
               - { label: Image, name: image, widget: image }
+      - label: Service Process
+        name: serviceProcess
+        widget: object
+        fields:
+          - { label: Title, name: title }
+          - label: Steps
+            name: steps
+            widget: list
+            fields:
+              - { label: Title, name: title }
+              - { label: id, name: id, widget: number }
+              - { label: Order, name: order }
+              - { label: Description, name: description }
+              - { label: ThemeColor, name: themeColor }
+      - label: FAQ
+        name: faq
+        widget: object
+        fields:
+          - {label: Title, name: title}
+          - label: Questions
+            name: questions
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Question, name: question }
+              - { label: Answer, name: answer }
       - { label: Key, name: key }
       - { label: Parent Type, name: parentType }
   - name: blog
     label: Blog
     label_singular: 'Blog'
     folder: blog
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}/index"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}/index'
     create: true
     media_folder: ''
     public_folder: ''
@@ -291,7 +326,7 @@ collections:
       - { name: date, label: Date, widget: date, default: ''}
       - { name: previewImage, label: Preview Image, widget: image }
       - { name: excerpt, label: Excerpt }
-      - { name: tags, label: Tags, widget: "list" }
+      - { name: tags, label: Tags, widget: list }
       - { name: body, label: Body, widget: markdown }
   - name: pricing
     label: Pricing
@@ -300,20 +335,26 @@ collections:
       - { name: title, label: Title }
       - { name: heading, label: Heading }
       - { name: subHeading, label: SubHeading }
-      - label: Pricing
-        name: pricing
+      - label: Types
+        name: types
         widget: list
         fields:
           - { label: id, name: id, widget: number }
           - { label: Title, name: title }
-          - { label: Editing Services, name: editingServices, widget: list }
-          - label: Price
-            name: price
-            widget: object
+          - label: Pricing
+            name: pricing
+            widget: list
             fields:
-              - { label: inr, name: inr }
-              - { label: usd, name: usd }
-          - { label: Theme Color, name: themeColor }
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Editing Services, name: editingServices, widget: list }
+              - label: Price
+                name: price
+                widget: object
+                fields:
+                  - { label: inr, name: inr }
+                  - { label: usd, name: usd }
+              - { label: Theme Color, name: themeColor }
   - label: FAQ
     name: faq
     files:

@@ -5,6 +5,7 @@ import AboutBanner from "../components/AboutBanner"
 import Team from "../components/Team"
 import Testimonial from "../components/Testimonial"
 import Contact from "../components/Contact"
+import FAQ from "../components/FAQ"
 
 const ContactPage = () => {
   return (
@@ -14,6 +15,7 @@ const ContactPage = () => {
       <Team />
       <Testimonial />
       <Contact />
+      <FAQ />
     </Fragment>
   )
 }

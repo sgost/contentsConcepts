@@ -192,8 +192,11 @@ export const SitemapList = styled.li`
     color: ${palette.BUTTON_PRIMARY};
     margin-bottom: 8px;
     line-height: 25px;
+    a:hover {
+      text-decoration: underline;
+    }
   }
-  a {
+  .linkItem {
     color: ${palette.PRIMARY_TXT_COLOR};
     margin: 2px 0px;
     font-family: Poppins,sans-serif;

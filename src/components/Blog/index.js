@@ -20,7 +20,6 @@ export const BlogPost = ({
 }) => {
 
   // const content = data.markdownRemark;
-  console.log(preview);
 
   return (
     <Fragment>
@@ -70,7 +69,6 @@ export const BlogPost = ({
 
 const Blog = ({ data }) => {
   const { markdownRemark: post } = data;
-  console.log(post);
   return (
       <BlogPost
         fields={post.fields}

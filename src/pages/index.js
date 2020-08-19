@@ -11,6 +11,7 @@ import Process from "../components/Process"
 import Customers from "../components/Customers"
 import Contact from "../components/Contact"
 import MediumArticles from "../components/MediumArticles"
+import FAQ from "../components/FAQ"
 
 const IndexPage = () => {
   return (
@@ -26,6 +27,7 @@ const IndexPage = () => {
       <Customers />
       <Contact />
       <MediumArticles />
+      <FAQ path="home" />
     </Fragment>
   )
 }

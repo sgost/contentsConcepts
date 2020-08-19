@@ -45,6 +45,9 @@ export const ServiceListContainer = styled.div`
       .ant-btn {
         position: absolute;
         bottom: 0;
+        a {
+          display: inline-block;
+        }
       }
       h3 {
         margin: 25px 0px 15px;

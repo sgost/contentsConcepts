@@ -5,6 +5,7 @@ import MenuContent from './content';
 import EditingLevels from './levels';
 import EditingSamples from './samples';
 import Highlights from './highlights';
+import { ProcessPreviewSection } from "../Process"
 import {
   MenuContainer,
   ServiceCard,
@@ -54,7 +55,17 @@ const MenuSection = props => {
                 <h3>{data.title}</h3>
                 <PriceSection>
                   <span className="startingText">{data.priceCard.pricing.title}</span>
-                  <span className="priceValue" dangerouslySetInnerHTML={{__html: data.priceCard.pricing.price}} />
+                  {
+                    data.priceCard.pricing.price &&
+                    <div className="priceSec">
+                      {
+                        data.priceCard.pricing.price.inr && <span className="priceValue" dangerouslySetInnerHTML={{__html: data.priceCard.pricing.price.inr}} />
+                      }
+                      {
+                        data.priceCard.pricing.price.usd && <span className="priceValue" dangerouslySetInnerHTML={{__html: data.priceCard.pricing.price.usd}} />
+                      }
+                    </div>
+                  }
                 </PriceSection>
                 {
                   data.priceCard.tagContent &&
@@ -202,6 +213,9 @@ const MenuSection = props => {
       <EditingLevels content={data.editingLevels} />
       <EditingSamples content={data.editingSample} />
       <Highlights content={data.editingHighlights} />
+      {
+        data.serviceProcess && <ProcessPreviewSection title={data.serviceProcess.title} process={data.serviceProcess.steps} />
+      }
     </Fragment>
   )
 }

@@ -6,6 +6,7 @@ import Pricing from "../components/Pricing"
 import Customers from "../components/Customers"
 import Contact from "../components/Contact"
 import QualityAssurance from "../components/QualityAssurance"
+import FAQ from "../components/FAQ"
 
 const PricingPage = ({ data }) => {
 
@@ -18,6 +19,7 @@ const PricingPage = ({ data }) => {
       <QualityAssurance />
       <Customers />
       <Contact />
+      <FAQ />
     </Fragment>
   )
 }
@@ -31,15 +33,19 @@ export const pageQuery = graphql`
         frontmatter {
           heading
           subHeading
-          pricing {
+          types {
             id
             title
-            editingServices
-            price {
-              inr
-              usd
+            pricing {
+              id
+              title
+              editingServices
+              price {
+                inr
+                usd
+              }
+              themeColor
             }
-            themeColor
           }
         }
       }

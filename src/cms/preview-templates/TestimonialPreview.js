@@ -7,8 +7,6 @@ const TestimonialPreview = ({ entry }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   return (
     <TestimonialPreviewSection
       title={data.title}

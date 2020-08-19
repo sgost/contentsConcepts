@@ -16,10 +16,14 @@ export const FooterPreviewSection = ({
         {
           sitemapList && sitemapList.map(dataItem =>
             <SitemapList key={dataItem.id}>
-              <h5>{dataItem.title}</h5>
+              {
+                dataItem.link ?
+                  <h5><Link to={dataItem.link} key={dataItem.id}>{dataItem.title}</Link></h5>
+                : <h5>{dataItem.title}</h5>
+              }
               {
                 dataItem.sitemap && dataItem.sitemap.map(sitemap =>
-                  <Link to={sitemap.link} key={sitemap.id}>{sitemap.title}</Link>
+                  <Link to={sitemap.link} key={sitemap.id} className="linkItem">{sitemap.title}</Link>
                 )
               }
             </SitemapList>
@@ -40,6 +44,7 @@ const Footer = props => {
             sitemapList {
               id
               title
+              link
               sitemap {
                 id
                 link

@@ -47,8 +47,11 @@ export const SitemapList = styled.li`
   h5 {
     color: ${palette.WHITE_COLOR};
     margin-bottom: 8px;
+    a {
+      color: ${palette.WHITE_COLOR};
+    }
   }
-  a {
+  .linkItem {
     color: ${palette.PALE_BLUE};
     margin: 2px 0px;
     &:hover {

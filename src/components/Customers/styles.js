@@ -61,7 +61,7 @@ export const Customer = styled.li`
   }
   @media (max-width: 576px) {
     max-width: 100%;
-    margin: 50px 15px 15px;
+    margin: 90px 15px 15px;
     &:first-child {
       margin-top: 15px;
     }
@@ -76,15 +76,22 @@ export const CircleImage = styled.div`
   width: 100px;
   position: absolute;
   border: 4px solid ${palette.WHITE_COLOR};
-  top: -14%;
-  @media only screen and (min-width: 768px) and (max-width: 992px) {
-    top: -11%;
+  top: -12%;
+  overflow: hidden;
+  img {
+    border-radius: 100%;
+    height: 100%;
+    display: inline-block;
+    object-fit: cover;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1100px) {
+    top: -9%;
   }
 `;
 
 export const WrapperDetails = styled.div`
   position: relative;
-  padding-top: 80px;
+  padding-top: 60px;
   p {
     text-align: center;
   }
@@ -96,9 +103,9 @@ export const WrapperDetails = styled.div`
 export const ContentBg = styled.div`
   position: absolute;
   left: 0px;
-  top: 55px;
+  top: 34px;
   @media (max-width: 576px) {
-    top: 30px;
+    top: 32px;
   }
 `;
 

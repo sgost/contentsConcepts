@@ -7,7 +7,6 @@ import OfferImage from '../../images/offer.svg'
 
 import Header from "../Header"
 import Footer from "../Footer"
-import FAQ from "../FAQ"
 import { GlobalStyle } from '../../styles/global-styles';
 
 const Layout = props => {
@@ -47,7 +46,6 @@ const Layout = props => {
       <div id="notification-wrapper"></div>
       <Header />
       <main>{props.children}</main>
-      <FAQ />
       <Footer />
     </>
   )

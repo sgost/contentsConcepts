@@ -17,7 +17,7 @@ export const FAQPreviewSection = ({
   const { Panel } = Collapse;
 
   return (
-    <FAQContainer style={{ background: path === '/' && '#fff'}}>
+    <FAQContainer style={{ background: path === 'home' && '#fff'}}>
       <SectionHeading>
         <h2>{title}</h2>
       </SectionHeading>
@@ -75,7 +75,7 @@ const FAQ = props => {
     if(data.file) {
       setContent(data.file.childMarkdownRemark.frontmatter);
     }
-    setPath(window.location.pathname);
+    setPath(props.path);
   }, [data.file]);
 
   return (

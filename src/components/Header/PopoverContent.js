@@ -17,10 +17,14 @@ const PopoverContent = props => {
         {
           content && content.map(dataItem =>
             <SitemapList key={dataItem.id}>
-              <h5>{dataItem.title}</h5>
+              {
+                dataItem.link ?
+                  <h5><Link to={dataItem.link} key={dataItem.id} onClick={props.onClick}>{dataItem.title}</Link></h5>
+                : <h5>{dataItem.title}</h5>
+              }
               {
                 dataItem.sitemap && dataItem.sitemap.map(sitemap =>
-                  <Link to={sitemap.link} key={sitemap.id} onClick={props.onClick}>{sitemap.title}</Link>
+                  <Link to={sitemap.link} key={sitemap.id} onClick={props.onClick} className="linkItem">{sitemap.title}</Link>
                 )
               }
             </SitemapList>

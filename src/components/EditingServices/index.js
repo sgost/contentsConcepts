@@ -2,19 +2,24 @@ import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import SEO from "../seo"
 import MenuSection from './menu';
-import Process from "../Process"
 import Customers from "../Customers"
 import Contact from "../Contact"
+import { FAQPreviewSection } from "../FAQ"
 
 const EditingServices = ({ data }) => {
-  console.log(data.markdownRemark.frontmatter.title);
   return (
     <Fragment>
       <SEO title={data.markdownRemark.frontmatter.title} />
       <MenuSection content={data.markdownRemark.frontmatter} />
-      <Process />
       <Customers />
       <Contact />
+      {
+        data.markdownRemark.frontmatter.faq &&
+        <FAQPreviewSection
+          title={data.markdownRemark.frontmatter.faq.title}
+          questions={data.markdownRemark.frontmatter.faq.questions}
+        />
+      }
     </Fragment>
   )
 }
@@ -35,7 +40,10 @@ export const query = graphql`
         priceCard {
           pricing {
             title
-            price
+            price {
+              inr
+              usd
+            }
           }
           tagContent
           content
@@ -43,6 +51,7 @@ export const query = graphql`
         features {
           id
           title
+          link
         }
         editingLevels {
           title
@@ -83,6 +92,24 @@ export const query = graphql`
             image {
               publicURL
             }
+          }
+        }
+        serviceProcess {
+          title
+          steps {
+            id
+            order
+            title
+            description
+            themeColor
+          }
+        }
+        faq {
+          title
+          questions {
+            id
+            question
+            answer
           }
         }
         key

@@ -59,6 +59,7 @@ const NavigationMenu = props => {
             sitemapList {
               id
               title
+              link
               sitemap {
                 id
                 link

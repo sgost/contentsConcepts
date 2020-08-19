@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react"
-import { Button, Row, Col, Modal } from "antd"
-import { graphql, useStaticQuery } from "gatsby"
-import GetQuote from "../GetQuote"
+import { Button, Row, Col } from "antd"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import {
   ServicesSection,
   SectionHeading,
@@ -12,25 +11,6 @@ export const HomeServicesSection = ({
   title,
   services
 }) => {
-  //modal
-  const[showModal, setShowModal] = useState(false);
-
-  const handleCancel = e => {
-    setShowModal(false);
-  };
-
-  const getQuote = e => {
-    setShowModal(true);
-  };
-
-  useEffect(() => {
-    if(showModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [showModal]);
-
   return (
     <Fragment>
       <ServicesSection>
@@ -49,23 +29,15 @@ export const HomeServicesSection = ({
                   </div>
                   <h3>{dataItem.title}</h3>
                   <p>{dataItem.description}</p>
-                  <Button type="primary" onClick={getQuote}>Get Quote</Button>
+                  <Button type="primary">
+                    <Link to={dataItem.link}>Know More</Link>
+                  </Button>
                 </Col>
               )
             }
           </Row>
         </ServiceListContainer>
       </ServicesSection>
-      <Modal
-        title="Get Quote"
-        visible={showModal}
-        okButtonProps={{ style: { display: 'none' } }}
-        cancelButtonProps={{ style: { display: 'none' } }}
-        onCancel={handleCancel}
-        getContainer={() => document.getElementById('___gatsby')}
-      >
-        <GetQuote onSubmit={handleCancel} />
-      </Modal>
     </Fragment>
   );
 };
@@ -87,6 +59,7 @@ const Services = props => {
               image {
                 publicURL
               }
+              link
             }
           }
         }

@@ -12,7 +12,6 @@ const HomeBannerPreview = ({ entry, widgetFor, getAsset }) => {
   return (
     <HomeBannerSection
       title={data.title}
-      content={data.content}
       typedWords={data.typedWords}
       services={data.services}
     />

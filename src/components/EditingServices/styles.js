@@ -57,16 +57,17 @@ export const HeadingContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  flex-wrap: wrap;
   h2 {
     font-size: 32px;
     line-height: 48px;
+    margin-right: 15px;
   }
   span {
     font-weight: normal;
     font-size: 16px;
     line-height: 40px;
     color: ${palette.BUTTON_PRIMARY};
-    margin-left: 15px;
   }
   @media only screen and (min-width: 320px) and (max-width: 992px) {
     flex-direction: column;
@@ -82,11 +83,14 @@ export const HeadingContainer = styled.div`
 `;
 
 export const TypesContainer = styled.div`
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 30px;
-  color: ${palette.PRIMARY_TXT_COLOR};
   margin: 8px 0px;
+  p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    color: ${palette.PRIMARY_TXT_COLOR};
+    margin-bottom: 5px;
+  }
 `;
 
 export const FeaturesListContainer = styled.ul`
@@ -105,6 +109,9 @@ export const FeatureSecList = styled.li`
   p {
     font-size: 16px;
     margin-left: 12px;
+    a:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -452,11 +459,12 @@ export const ServiceCard = styled.div`
   text-align: center;
   h3 {
     color: rgba(52, 152, 219, 0.7);
+    padding: 0px 12px;
   }
 `;
 
 export const PriceSection = styled.div`
-  margin: 16px 0px 30px;
+  margin: 16px 0px 25px;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -464,7 +472,12 @@ export const PriceSection = styled.div`
     display: block;
     margin-bottom: 5px;
   }
+  .priceSec {
+    display: flex;
+    flex-direction: column;
+  }
   .priceValue {
+    margin: 5px 0px;
     span {
       font-weight: bold;
       font-size: 22px;

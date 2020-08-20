@@ -1,5 +1,5 @@
 <h1>
-  Content Concepts
+  ContentConcepts
 </h1>
 <p>Top-notch editing services application.</p>
 <br />

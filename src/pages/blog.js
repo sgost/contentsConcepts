@@ -2,6 +2,7 @@ import React, { Fragment } from "react"
 import { graphql, Link } from "gatsby"
 
 import SEO from "../components/seo"
+import FAQ from "../components/FAQ"
 
 const BlogPage = ({ data }) => {
 
@@ -32,6 +33,7 @@ const BlogPage = ({ data }) => {
           })
         }
       </div>
+      <FAQ />
     </Fragment>
   )
 }

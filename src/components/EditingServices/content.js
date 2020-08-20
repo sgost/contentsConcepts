@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect} from 'react'
+import { Link } from "gatsby"
 import { Button, Modal } from 'antd'
 import Marker from '../../images/tick_filled.svg';
 import GetQuote from "../GetQuote"
@@ -44,15 +45,17 @@ const MenuContent = ({ content }) => {
               content.highlight && <span>({content.highlight})</span>
             }
           </HeadingContainer>
-          <TypesContainer>
-            {content.description}
-          </TypesContainer>
+          <TypesContainer dangerouslySetInnerHTML={{__html: content.description}} />
           <FeaturesListContainer>
             {
               content.features && content.features.map(dataItem =>
                 <FeatureSecList key={dataItem.id}>
                   <img src={Marker} alt="features" />
-                  <p>{dataItem.title}</p>
+                  <p>
+                    {
+                      dataItem.link ? <Link to={dataItem.link}>{dataItem.title}</Link> : dataItem.title
+                    }
+                  </p>
                 </FeatureSecList>
               )
             }

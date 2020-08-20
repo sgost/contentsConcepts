@@ -1,50 +1,71 @@
-import React, { Fragment, useState, useEffect } from "react"
-import QuoteLeft from "../../images/quote_left.svg"
+import React, { Fragment, useState, useEffect, useRef } from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import { Carousel, Row, Col } from 'antd';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import QuoteLeft from "../../images/quote_left.svg"
 import {
   CustomersSection,
   SectionHeading,
-  CustomersList,
-  Customer,
   CircleImage,
   WrapperDetails,
   ContentBg,
-  CustomerDetails
+  CustomerDetails,
+  CarouselContainer,
+  CustomBg
 } from './styles';
 
 export const CustomersPreviewSection = ({
   title,
   customers
 }) => {
+
+  const slider = useRef(null);
+
   return (
     <CustomersSection>
       <SectionHeading>
         <h2>{title}</h2>
       </SectionHeading>
-      <CustomersList>
-        {
-          customers && customers.map(dataItem =>
-            <Customer key={dataItem.id}>
-              <CircleImage>
-                {
-                  dataItem.image.childImageSharp ? <img src={dataItem.image.childImageSharp.fluid.src} alt={dataItem.name} /> : <img src={dataItem.image} alt={dataItem.name} />
-                }
-              </CircleImage>
-              <WrapperDetails>
-                <ContentBg>
-                  <img src={QuoteLeft} alt="quote background" />
-                </ContentBg>
-                <p>{dataItem.comment}</p>
-                <CustomerDetails>
-                  <h4>{dataItem.name}</h4>
-                  <span>{dataItem.role}</span>
-                  <span>{dataItem.company}</span>
-                </CustomerDetails>
-              </WrapperDetails>
-            </Customer>
-          )
-        }
-      </CustomersList>
+      <CarouselContainer>
+        <a className="leftArrow" onClick={() => slider.current.prev()}>
+          <LeftOutlined />
+        </a>
+        <Carousel ref={slider}>
+          {
+            customers && customers.map(dataItem =>
+              <div key={dataItem.id}>
+                <Row className="row">
+                  <Col xs={24} sm={24} md={5} lg={4} xl={4}>
+                    <CustomBg>
+                      <CircleImage>
+                        {
+                          dataItem.image.childImageSharp ? <img src={dataItem.image.childImageSharp.fluid.src} alt={dataItem.name} /> : <img src={dataItem.image} alt={dataItem.name} />
+                        }
+                      </CircleImage>
+                    </CustomBg>
+                  </Col>
+                  <Col xs={24} sm={24} md={19} lg={20} xl={20}>
+                    <WrapperDetails>
+                      <ContentBg>
+                        <img src={QuoteLeft} alt="quote background" />
+                      </ContentBg>
+                      <h3>{dataItem.commentExcerpt}</h3>
+                      <CustomerDetails>
+                        <p>{dataItem.comment}</p>
+                        <h4>{dataItem.name}</h4>
+                        <span>{dataItem.role}, {dataItem.company}</span>
+                      </CustomerDetails>
+                    </WrapperDetails>
+                  </Col>
+                </Row>
+              </div>
+            )
+          }
+        </Carousel>
+        <a className="rightArrow" onClick={() => slider.current.next()}>
+          <RightOutlined />
+        </a>
+      </CarouselContainer>
     </CustomersSection>
   );
 };
@@ -62,6 +83,7 @@ const Customers = props => {
             customers {
               id
               name
+              commentExcerpt
               comment
               role
               company

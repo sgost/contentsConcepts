@@ -17,7 +17,7 @@ export const FAQPreviewSection = ({
   const { Panel } = Collapse;
 
   return (
-    <FAQContainer style={{ background: path === '/' && '#fff'}}>
+    <FAQContainer style={{ background: path === 'home' && '#fff'}}>
       <SectionHeading>
         <h2>{title}</h2>
       </SectionHeading>
@@ -69,13 +69,10 @@ const FAQ = props => {
     }
   `);
 
-  const[path, setPath] = useState('');
-
   useEffect(() => {
     if(data.file) {
       setContent(data.file.childMarkdownRemark.frontmatter);
     }
-    setPath(window.location.pathname);
   }, [data.file]);
 
   return (
@@ -85,7 +82,7 @@ const FAQ = props => {
         <FAQPreviewSection
           title={content.title}
           questions={content.questions}
-          path={path}
+          path={props.path}
         />
       }
     </Fragment>

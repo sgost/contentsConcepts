@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   left: 0;
   right: 0;
   top: 0;
-  z-index: 5;
+  z-index: 20;
   background: ${palette.WHITE_COLOR};
   width: 100%;
   display: flex;
@@ -192,8 +192,11 @@ export const SitemapList = styled.li`
     color: ${palette.BUTTON_PRIMARY};
     margin-bottom: 8px;
     line-height: 25px;
+    a:hover {
+      text-decoration: underline;
+    }
   }
-  a {
+  .linkItem {
     color: ${palette.PRIMARY_TXT_COLOR};
     margin: 2px 0px;
     font-family: Poppins,sans-serif;

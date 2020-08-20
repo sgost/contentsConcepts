@@ -11,7 +11,6 @@ const { TabPane } = Tabs;
 
 const EditingSamples = ({ content }) => {
   // const content = props.content;
-  console.log(content);
   return (
     <Fragment>
       {
@@ -21,7 +20,7 @@ const EditingSamples = ({ content }) => {
             <h2>{content.title}</h2>
           </SectionHeading>
           <TabsContainer>
-            <Tabs defaultActiveKey="1">
+            <Tabs defaultActiveKey="1" animated={{tabPane: true}}>
               {
                 content.samples && content.samples.map(sample =>
                   <TabPane tab={sample.title} key={sample.id}>

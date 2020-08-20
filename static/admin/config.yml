@@ -125,7 +125,7 @@ collections:
               - { label: Comment, name: comment }
               - { label: Role, name: role }
               - { label: Company, name: company }
-              - { label: Image, name: image, widgte: image }
+              - { label: Image, name: image, widget: image }
       - label: Contact
         name: contact
         file: 'home/contact.md'
@@ -151,7 +151,7 @@ collections:
             fields:
               - { label: id, name: id, widget: number }
               - { label: Title, name: title }
-              - { label: Link, name: link }
+              - { label: Link, name: link, required: false }
               - label: Sitemap
                 name: sitemap
                 widget: list
@@ -200,6 +200,7 @@ collections:
     folder: services
     create: true
     public_folder: '../assets/'
+    slug: '{{key}}'
     summary: '{{filename}}'
     fields:
       - { name: title, label: Title }
@@ -212,7 +213,7 @@ collections:
         fields:
           - { label: Title, name: title }
           - { label: id, name: id, widget: number }
-          - { label: Link, name: link }
+          - { label: Link, name: link, required: false }
       - label: Price Card
         name: priceCard
         widget: object
@@ -226,8 +227,8 @@ collections:
                 name: price
                 widget: object
                 fields:
-                  - { label: INR, name: inr }
-                  - { label: USD, name: usd }
+                  - { label: INR, name: inr, required: false }
+                  - { label: USD, name: usd, required: false }
           - { label: Tag Content, name: tagContent }
           - { label: Content, name: content }
       - label: Editing Levels
@@ -272,9 +273,10 @@ collections:
         name: editingHighlights
         widget: object
         fields:
-          - { label: Title, name: title }
+          - { label: Title, name: title, required: false }
           - label: Highlights
             name: highlights
+            required: false
             widget: list
             fields:
               - { label: Title, name: title }
@@ -285,9 +287,10 @@ collections:
         name: serviceProcess
         widget: object
         fields:
-          - { label: Title, name: title }
+          - { label: Title, name: title, required: false }
           - label: Steps
             name: steps
+            required: false
             widget: list
             fields:
               - { label: Title, name: title }
@@ -299,9 +302,10 @@ collections:
         name: faq
         widget: object
         fields:
-          - {label: Title, name: title}
+          - {label: Title, name: title, required: false}
           - label: Questions
             name: questions
+            required: false
             widget: list
             fields:
               - { label: id, name: id, widget: number }

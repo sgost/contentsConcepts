@@ -190,24 +190,13 @@ export const CarouselContainer = styled.div`
   }
   @media (max-width: 768px) {
     .leftArrow, .rightArrow {
-      width: 25px;
-      height: 25px;
-      padding: 5px;
-      .anticon {
-        font-size: 12px;
-      }
-    }
-    .leftArrow {
-      left: 12px;
-    }
-    .rightArrow {
-      right: 12px;
+      display: none;
     }
     .ant-carousel .slick-list .slick-slide > div > div {
       padding: 40px 20px 20px;
     }
     .row {
-      margin: 0 20px;
+      margin: 0;
       .ant-col {
         display: flex;
         justify-content: center;

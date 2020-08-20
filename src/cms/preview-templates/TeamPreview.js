@@ -9,6 +9,16 @@ const TeamPreview = ({ entry, widgetFor, getAsset }) => {
 
   console.log(data);
 
+  if(data.hasOwnProperty('teamMembers')) {
+    if(data.teamMembers) {
+      data.teamMembers.map(member => {
+        var getImage = getAsset(member.image);
+        member.image = getImage.toString();
+        return member;
+      });
+    }
+  }
+
   return (
     <TeamMembersSection
       title={data.title}

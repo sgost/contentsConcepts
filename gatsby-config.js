@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Content Concepts`,
+    title: `ContentConcepts`,
     description: `Top-notch editing services.`
   },
   plugins: [

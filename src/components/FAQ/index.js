@@ -69,13 +69,10 @@ const FAQ = props => {
     }
   `);
 
-  const[path, setPath] = useState('');
-
   useEffect(() => {
     if(data.file) {
       setContent(data.file.childMarkdownRemark.frontmatter);
     }
-    setPath(props.path);
   }, [data.file]);
 
   return (
@@ -85,7 +82,7 @@ const FAQ = props => {
         <FAQPreviewSection
           title={content.title}
           questions={content.questions}
-          path={path}
+          path={props.path}
         />
       }
     </Fragment>

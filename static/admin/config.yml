@@ -16,7 +16,6 @@ collections:
         file: 'home/banner.md'
         fields:
           - { label: Title, name: title }
-          - { label: Content, name: content }
           - { label: Typed Words, name: typedWords, widget: list }
           - label: Services
             name: services
@@ -122,6 +121,7 @@ collections:
             fields:
               - { label: id, name: id, widget: number }
               - { label: Name, name: name }
+              - { label: Excerpt, name: commentExcerpt }
               - { label: Comment, name: comment }
               - { label: Role, name: role }
               - { label: Company, name: company }
@@ -193,6 +193,8 @@ collections:
               - { label: Name, name: name }
               - { label: Role, name: role }
               - { label: Description, name: description }
+              - { label: Image, name: image, widget: image }
+              - { label: Theme Color, name: themeColor }
   - name: services
     label: Services
     folder: services

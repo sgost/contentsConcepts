@@ -31,6 +31,9 @@ export const BannerSection = styled.div`
       padding: 4% 6% 12% 6%;
       margin: 0;
     }
+    @media (min-width: 1500px) {
+      max-width: 700px;
+    }
   }
 `;
 
@@ -41,18 +44,18 @@ export const ContentContainer = styled.div`
 `;
 
 export const Content = styled.p`
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 40px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
   color: ${palette.PRIMARY_TXT_COLOR};
   .typeAnimation {
-    margin-left: 5px;
+    margin-left: 8px;
     color: ${palette.HIGHLIGHT_TEXT};
     font-weight: 600;
     .typed-cursor {
       font-weight: normal;
     }
-    @media (max-width: 992px) {
+    @media (max-width: 768px) {
       display: block;
       margin-left: 0px;
     }
@@ -63,7 +66,7 @@ export const ServicesList = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 40px;
   @media only screen and (min-width: 576px) and (max-width: 768px) {
     justify-content: center;
   }
@@ -71,7 +74,7 @@ export const ServicesList = styled.ul`
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 25px 45px 0px;
+    margin: 30px 45px 0px;
   }
   li {
     margin-right: 24px;

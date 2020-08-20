@@ -14,7 +14,6 @@ import Typed from 'react-typed';
 
 export const HomeBannerSection = ({
   title,
-  content,
   typedWords,
   services
 }) => {
@@ -28,9 +27,8 @@ export const HomeBannerSection = ({
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12} className="contentSection">
           <ContentContainer>
-            <Content>{title}</Content>
             <Content>
-              {content}
+              {title}
               {
                 typedWords &&
                 <Typed
@@ -77,7 +75,6 @@ const Banner = () => {
           frontmatter {
             title
             typedWords
-            content
             services {
               id
               title
@@ -101,7 +98,6 @@ const Banner = () => {
         data.file &&
         <HomeBannerSection
           title={content.title}
-          content={content.content}
           typedWords={content.typedWords}
           services={content.services}
         />

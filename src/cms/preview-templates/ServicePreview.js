@@ -31,13 +31,16 @@ const ServicePreview = ({ entry, getAsset }) => {
 
   return (
     <Fragment>
-      <MenuSection
-        content={data}
-      />
-      <FAQPreviewSection
-        title={data.faq.title}
-        questions={data.faq.questions}
-      />
+      {
+        data.title && <MenuSection content={data} />
+      }
+      {
+        data.faq &&
+        <FAQPreviewSection
+          title={data.faq.title}
+          questions={data.faq.questions}
+        />
+      }
     </Fragment>
   );
 

@@ -553,4 +553,28 @@ export const GlobalStyle = createGlobalStyle`
       border-radius: 8px;
     }
   }
+
+  .ant-input-number {
+    text-overflow: ellipsis;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px !important;
+    color: ${palette.CHARCOAL};
+    padding: 8px 0px;
+    box-shadow: 0px 0px 5px rgba(25,39,67,0.1) !important;
+    border-radius: 8px;
+    width: 150px;
+    &:focus, &:hover, &:active {
+      border: 1px solid ${palette.BORDER_COLOR} !important;
+    }
+    .ant-input-number-handler-wrap {
+      border-radius: 0px 8px 8px 0px;
+      .ant-input-number-handler-up {
+        border-top-right-radius: 8px;
+      }
+      .ant-input-number-handler-down {
+        border-bottom-right-radius: 8px;
+      }
+    }
+  }
 `;

@@ -68,20 +68,26 @@ const GetQuote = props => {
       data.append("filename", '-');
     }
 
+    if(values.wordCount === undefined) {
+      data.append("wordCount", '-');
+    } else {
+      data.append("wordCount", values.wordCount);
+    }
+
     if(values.requirement === undefined) {
       data.append("requirement", '-');
     } else {
       data.append("requirement", values.requirement);
     }
 
-    var url= "https://script.google.com/macros/s/AKfycbytYkB5NkglpS8UXByE30UGD0tEHLqjHIJeWCWGvXZvzj5pKyU/exec";
+    var url= "https://script.google.com/macros/s/AKfycbxPQYfAmU27Vfted5BMWK3Rmn8t6NMWFORuB9Q0X6umaZEpE2Oz/exec";
 
     await fetch(url, {
       method: 'POST',
       body: data,
       mode: 'no-cors',
     }).then(function (response) {
-      alert('Thanks! We will contact you soon!');
+      alert('Thank you. We will get back to you as quick as humanly possible :)');
       setDisabled(false);
       form.resetFields();
     }).catch(function (err) {

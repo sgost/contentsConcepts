@@ -21,6 +21,8 @@ export const ContactPreviewSection = ({
 
   const { Option } = Select;
 
+  const [form] = Form.useForm();
+
   const[disabled, setDisabled] = useState(false);
 
   const onFinish = async values => {
@@ -44,7 +46,7 @@ export const ContactPreviewSection = ({
       data.append("description", saveData.description);
     }
 
-    var url= "https://script.google.com/macros/s/AKfycbwdnICVPWuOGXXyapaZATic8EPHdx_X6CYXBTuPGvZZieTIRhND/exec";
+    var url= "https://script.google.com/macros/s/AKfycbzgamfGMQw7ObORSWE9BI2lna9wCo-auMrz08qNdNqTjQqkAOpV/exec";
 
     await fetch(url, {
       method: 'POST',
@@ -52,11 +54,11 @@ export const ContactPreviewSection = ({
       mode: 'no-cors',
     }).then(function (response) {
       setDisabled(false);
-      alert('Thanks! We will contact you soon!');
+      alert('Thank you. We will get back to you as quick as humanly possible :)');
       form.resetFields();
     }).catch(function (err) {
       setDisabled(false);
-      console.log('error');
+      console.log('error', err);
     });
   };
 
@@ -66,7 +68,7 @@ export const ContactPreviewSection = ({
         <h2>{title}</h2>
       </SectionHeading>
       <FormContainer>
-        <Form name="contact-details" onFinish={onFinish}>
+        <Form name="contact-details" onFinish={onFinish} form={form}>
           <Form.Item
             style={{
               marginBottom: 0,

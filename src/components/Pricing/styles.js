@@ -38,6 +38,12 @@ export const LevelsSection = styled.div`
     }
     .cardCont {
       padding: 20px;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
       &:nth-child(2) {
         margin: -24px 0px;
         .levelCard {
@@ -82,18 +88,15 @@ export const TabsContainer = styled.div`
       width: auto;
     }
     .ant-tabs-tab {
-      width: 30%;
+      width: 50%;
       text-align: center;
       font-weight: 600;
-      font-size: 16px;
-      line-height: 35px;
+      font-size: 20px;
+      line-height: 32px;
       color: ${palette.CHARCOAL};
       opacity: 0.6;
       justify-content: center;
-      @media only screen and (min-width: 320px) and (max-width: 768px) {
-        width: auto;
-        padding: 12px;
-      }
+      padding: 14px 0;
     }
     .ant-tabs-tab-active {
       color: ${palette.BUTTON_PRIMARY};

@@ -15,6 +15,8 @@ export const FeaturesList = styled.ul`
   margin: 0 auto;
   padding: 30px;
   @media (max-width: 576px) {
+    display: grid;
+    grid-template-columns: 50% 50%;
     padding: 30px 15px;
   }
 `;

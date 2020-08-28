@@ -140,17 +140,14 @@ const GetQuote = props => {
             </Upload>
           </Form.Item>
         </div>
-        {
-          !showUpload &&
-          <div>
-            <label className="formLabel"  htmlFor="wordCount">Word Count</label>
-            <Form.Item
-              name='wordCount'
-            >
-              <InputNumber min={0} id="wordCount" />
-            </Form.Item>
-          </div>
-        }
+        <div>
+          <label className="formLabel" htmlFor="wordCount">Word Count</label>
+          <Form.Item
+            name='wordCount'
+          >
+            <InputNumber min={0} id="wordCount" placeholder="Word Count" />
+          </Form.Item>
+        </div>
         <Form.Item
           name="requirement"
         >

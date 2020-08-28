@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Col } from 'antd';
 import * as palette from '../../styles/variables';
 
 export const MenuContainer = styled.div`
@@ -205,6 +206,16 @@ export const LevelsListing = styled.div`
       padding: 10px;
       font-weight: 500;
       color: ${palette.WHITE_COLOR};
+      border-radius: 8px 8px 0px 0px;
+    }
+  }
+  .ant-list-footer {
+    padding: 30px 0px;
+    .cardCol {
+      box-shadow: none !important;
+      .ant-btn {
+        border: 1px solid transparent !important;
+      }
     }
   }
   .listItemsContainer {
@@ -221,6 +232,11 @@ export const LevelsListing = styled.div`
       color: ${palette.PRIMARY_TXT_COLOR};
       @media (max-width: 576px) {
         font-size: 12px;
+      }
+    }
+    &:last-child {
+      .cardCol {
+        border-radius: 0px 0px 8px 8px;
       }
     }
     .cardCol {
@@ -509,5 +525,14 @@ export const ButtonSection = styled.div`
   padding: 15px 45px 0px;
   button {
     width: 100%;
+  }
+`;
+
+export const FooterCol = styled(Col)`
+  .ant-btn {
+    background-color: ${props => props.theme} !important;
+    &:hover, &:focus, &:active {
+      background-color: ${props => props.theme} !important;
+    }
   }
 `;

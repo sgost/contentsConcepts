@@ -12,7 +12,7 @@ import {
   ButtonContainer
 } from './styles';
 
-const MenuContent = ({ content }) => {
+const MenuContent = ({ content, description, preview }) => {
 
   // const content = props.content;
 
@@ -45,7 +45,11 @@ const MenuContent = ({ content }) => {
               content.highlight && <span>({content.highlight})</span>
             }
           </HeadingContainer>
-          <TypesContainer dangerouslySetInnerHTML={{__html: content.description}} />
+          <TypesContainer>
+            {
+              preview ? <p>{description}</p> : <p dangerouslySetInnerHTML={{ __html: description }} />
+            }
+          </TypesContainer>
           <FeaturesListContainer>
             {
               content.features && content.features.map(dataItem =>

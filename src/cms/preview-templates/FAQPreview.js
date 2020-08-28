@@ -7,8 +7,6 @@ const FAQPreview = ({ entry }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   return (
     <FAQPreviewSection
       title={data.title}

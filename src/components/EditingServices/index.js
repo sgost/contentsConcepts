@@ -10,7 +10,7 @@ const EditingServices = ({ data }) => {
   return (
     <Fragment>
       <SEO title={data.markdownRemark.frontmatter.title} />
-      <MenuSection content={data.markdownRemark.frontmatter} />
+      <MenuSection content={data.markdownRemark.frontmatter} description={data.markdownRemark.html} />
       <Customers />
       <Contact />
       {
@@ -32,6 +32,7 @@ export const query = graphql`
       fields {
         slug
       }
+      html
       frontmatter {
         title
         highlight

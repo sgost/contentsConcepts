@@ -7,8 +7,6 @@ const QuoteCategoryPreview = ({ entry }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   const container = {
     background: '#FFFFFF',
     border: '1px solid #CCCCCC',

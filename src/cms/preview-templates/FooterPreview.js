@@ -7,8 +7,6 @@ const FooterPreview = ({ entry }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   return (
     <FooterPreviewSection
       title={data.title}

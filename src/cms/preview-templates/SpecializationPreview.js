@@ -7,8 +7,6 @@ const SpecializationPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   if(data.badge) {
     var getImage = getAsset(data.badge);
     var badge = getImage.toString();

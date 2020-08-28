@@ -40,7 +40,6 @@ const GetQuote = props => {
   const[disabled, setDisabled] = useState(false);
 
   const onFinish = async values => {
-    console.log(values);
 
     setDisabled(true);
 
@@ -91,7 +90,6 @@ const GetQuote = props => {
       setDisabled(false);
       form.resetFields();
     }).catch(function (err) {
-      console.log('error');
       setDisabled(false);
     });
     setShowUpload(true);

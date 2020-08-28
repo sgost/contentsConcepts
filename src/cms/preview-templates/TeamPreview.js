@@ -7,8 +7,6 @@ const TeamPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   if(data.hasOwnProperty('teamMembers')) {
     if(data.teamMembers) {
       data.teamMembers.map(member => {

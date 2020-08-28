@@ -4,11 +4,9 @@ import PropTypes from "prop-types";
 import MenuSection from "../../components/EditingServices/menu.js";
 import { FAQPreviewSection } from "../../components/FAQ";
 
-const ServicePreview = ({ entry, getAsset }) => {
+const ServicePreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
-
-  console.log(data);
 
   if(data.hasOwnProperty('editingSample')) {
     if(data.editingSample.samples) {
@@ -32,7 +30,7 @@ const ServicePreview = ({ entry, getAsset }) => {
   return (
     <Fragment>
       {
-        data.title && <MenuSection content={data} />
+        data.title && <MenuSection content={data} description={widgetFor('body')} preview={true} />
       }
       {
         data.faq &&

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Form, Input, Button, Select, form } from 'antd'
+import { Form, Input, Button, Select } from 'antd'
 import { CaretDownOutlined } from '@ant-design/icons';
 import Call from '../../images/call.svg'
 import Email from '../../images/email.svg'
@@ -58,7 +58,6 @@ export const ContactPreviewSection = ({
       form.resetFields();
     }).catch(function (err) {
       setDisabled(false);
-      console.log('error', err);
     });
   };
 
@@ -140,8 +139,6 @@ export const ContactPreviewSection = ({
 };
 
 const Contact = props => {
-
-  const [form] = Form.useForm();
 
   const[contactContent, setContactContent] = useState({});
 

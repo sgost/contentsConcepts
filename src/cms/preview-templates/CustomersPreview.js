@@ -7,8 +7,6 @@ const CustomersPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   if(data.hasOwnProperty('customers')) {
     if(data.customers) {
       data.customers.map(customer => {

@@ -7,8 +7,6 @@ const QualityAssurancePreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   return (
     <QualityAssuranceSection
       title={data.title}

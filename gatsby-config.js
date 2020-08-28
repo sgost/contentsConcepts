@@ -1,9 +1,20 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
   siteMetadata: {
     title: `ContentConcepts`,
     description: `Top-notch editing services.`
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || "none",
+        head: true
+      }
+    },
     {
       resolve: `gatsby-plugin-layout`,
       options: {

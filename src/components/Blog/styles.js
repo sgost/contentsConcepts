@@ -18,8 +18,11 @@ export const AuthorInfo = styled.div`
     margin-right: 8px;
     width: 64px;
     height: 64px;
+    border-radius: 100%;
+    overflow: hidden;
     img {
-      object-fit: contain;
+      object-fit: cover;
+      height: 100%;
     }
   }
   .author_info {

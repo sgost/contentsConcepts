@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Form, Input, Checkbox, Row, Col, Upload, Button } from 'antd';
+import { Form, Input, Checkbox, Row, Col, Upload, Button, InputNumber } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import {
   QuoteFormSection
@@ -41,6 +41,7 @@ const GetQuote = props => {
     console.log(values);
     form.resetFields();
     props.onSubmit();
+    setShowUpload(true);
   };
 
   const data = useStaticQuery(graphql`
@@ -123,7 +124,7 @@ const GetQuote = props => {
           </Form.Item>
         </div>
         <div>
-          <label className="formLabel"  htmlFor="categoryFile">Select Category</label>
+          <label className="formLabel" htmlFor="categoryFile">Select your file to upload</label>
           <Form.Item
             name='categoryFile'
             valuePropName="fileList"
@@ -137,6 +138,14 @@ const GetQuote = props => {
                 </Button>
               }
             </Upload>
+          </Form.Item>
+        </div>
+        <div>
+          <label className="formLabel" htmlFor="wordCount">Word Count</label>
+          <Form.Item
+            name='wordCount'
+          >
+            <InputNumber min={0} id="wordCount" placeholder="Word Count" />
           </Form.Item>
         </div>
         <Form.Item

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Form, Input, Button, Select } from 'antd'
+import { Form, Input, Button, Select, form } from 'antd'
 import { CaretDownOutlined } from '@ant-design/icons';
 import Call from '../../images/call.svg'
 import Email from '../../images/email.svg'
@@ -21,8 +21,45 @@ export const ContactPreviewSection = ({
 
   const { Option } = Select;
 
-  const onFinish = values => {
-    console.log(values);
+  const [form] = Form.useForm();
+
+  const[disabled, setDisabled] = useState(false);
+
+  const onFinish = async values => {
+
+    setDisabled(true);
+  
+    var saveData = values;
+
+    const data = new FormData();
+
+    data.append("name", saveData.name);
+    data.append("email", saveData.email);
+    if(values.category === undefined) {
+      data.append("category", '-');
+    } else {
+      data.append("category", saveData.category);
+    }
+    if(values.description === undefined) {
+      data.append("description", '-');
+    } else {
+      data.append("description", saveData.description);
+    }
+
+    var url= "https://script.google.com/macros/s/AKfycbzgamfGMQw7ObORSWE9BI2lna9wCo-auMrz08qNdNqTjQqkAOpV/exec";
+
+    await fetch(url, {
+      method: 'POST',
+      body: data,
+      mode: 'no-cors',
+    }).then(function (response) {
+      setDisabled(false);
+      alert('Thank you. We will get back to you as quick as humanly possible :)');
+      form.resetFields();
+    }).catch(function (err) {
+      setDisabled(false);
+      console.log('error', err);
+    });
   };
 
   return (
@@ -31,7 +68,7 @@ export const ContactPreviewSection = ({
         <h2>{title}</h2>
       </SectionHeading>
       <FormContainer>
-        <Form name="contact-details" onFinish={onFinish}>
+        <Form name="contact-details" onFinish={onFinish} form={form}>
           <Form.Item
             style={{
               marginBottom: 0,
@@ -82,7 +119,7 @@ export const ContactPreviewSection = ({
             <Input.TextArea rows={4} placeholder="How can we help you?" />
           </Form.Item>
           <Form.Item className="submitButton">
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" disabled={disabled}>
               Submit
             </Button>
           </Form.Item>
@@ -103,6 +140,8 @@ export const ContactPreviewSection = ({
 };
 
 const Contact = props => {
+
+  const [form] = Form.useForm();
 
   const[contactContent, setContactContent] = useState({});
 

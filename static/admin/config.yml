@@ -201,11 +201,10 @@ collections:
     create: true
     public_folder: '../assets/'
     slug: '{{key}}'
-    summary: '{{filename}}'
     fields:
       - { name: title, label: Title }
       - { name: highlight, label: Highlight }
-      - { name: description, label: Description }
+      - { name: body, label: Description, widget: markdown }
       - { name: message, label: Message }
       - label: Features
         name: features

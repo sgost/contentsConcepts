@@ -7,8 +7,6 @@ const HomeServicesPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   if(data.hasOwnProperty('services')) {
     if(data.services) {
       data.services.map(service => {

@@ -7,8 +7,6 @@ const OffersPreview = ({ entry, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   const offerContainer = {
     background: 'linear-gradient(178.57deg,#8D58D4 0%,#578DC3 100%)',
     padding: '10px 35px',

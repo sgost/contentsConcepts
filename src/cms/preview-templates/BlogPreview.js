@@ -4,21 +4,12 @@ import moment  from 'moment';
 
 import { BlogPost } from "../../components/Blog";
 
-var MarkdownIt = require('markdown-it');
-
 const BlogPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   if(data.date) {
     var date = moment(data.date).format("MMMM DD YYYY")
-  }
-
-  var md = new MarkdownIt();
-  if(data.body) {
-    var result = md.render(data.body);
   }
 
   var image = entry.getIn(['data', 'author_image']);

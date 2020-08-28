@@ -7,8 +7,6 @@ const ContactPreview = ({ entry }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   return (
     <ContactPreviewSection
       title={data.title}

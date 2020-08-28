@@ -525,6 +525,9 @@ export const ButtonSection = styled.div`
   padding: 15px 45px 0px;
   button {
     width: 100%;
+    @media (max-width: 992px) {
+      width: auto;
+    }
   }
 `;
 

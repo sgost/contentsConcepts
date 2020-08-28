@@ -7,8 +7,6 @@ const FeaturesPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   if(data.hasOwnProperty('features')) {
     if(data.features) {
       data.features.map(feature => {

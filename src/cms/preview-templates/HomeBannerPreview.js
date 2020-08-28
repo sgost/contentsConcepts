@@ -7,8 +7,6 @@ const HomeBannerPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  console.log(data);
-
   return (
     <HomeBannerSection
       title={data.title}

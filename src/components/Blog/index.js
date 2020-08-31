@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
+import SEO from "../seo"
 import {
   BlogContainer,
   AuthorInfo,
@@ -68,8 +69,14 @@ export const BlogPost = ({
 }
 
 const Blog = ({ data }) => {
-  const { markdownRemark: post } = data;
+
+  const { blogpost: post } = data;
+
+  const seoData = data.seoData.childMarkdownRemark.frontmatter;
+
   return (
+    <Fragment>
+      <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <BlogPost
         fields={post.fields}
         author_image={post.frontmatter.author_image.childImageSharp.fluid.src}
@@ -81,6 +88,7 @@ const Blog = ({ data }) => {
         tags={post.frontmatter.tags}
         preview={false}
       />
+    </Fragment>
     )
 }
 
@@ -88,7 +96,7 @@ export default Blog
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    blogpost: markdownRemark(fields: { slug: { eq: $slug } }) {
       fields {
         slug
         readingTime {
@@ -110,6 +118,15 @@ export const query = graphql`
         tags
       }
       html
+    }
+    seoData: file(relativePath: {eq: "seoBlog.md"}) {
+      childMarkdownRemark {
+        frontmatter {
+          title
+          description
+          keywords
+        }
+      }
     }
   }
 `

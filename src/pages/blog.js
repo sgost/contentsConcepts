@@ -6,11 +6,13 @@ import FAQ from "../components/FAQ"
 
 const BlogPage = ({ data }) => {
 
-  const blogList = data.allMarkdownRemark.edges;
+  const blogList = data.blogData.edges;
+
+  const seoData = data.seoData.childMarkdownRemark.frontmatter;
 
   return (
     <Fragment>
-      <SEO title="Blog" />
+      <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <div className="blogListContainer">
         <h2>Blog</h2>
         {
@@ -42,7 +44,7 @@ export default BlogPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(blog)\\/.*\\\\.md$/"}}, sort: { fields: [frontmatter___date], order: DESC }) {
+    blogData: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(blog)\\/.*\\\\.md$/"}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id
@@ -62,6 +64,15 @@ export const pageQuery = graphql`
             }
             date(formatString: "MMMM DD, YYYY")
           }
+        }
+      }
+    }
+    seoData: file(relativePath: {eq: "seoBlog.md"}) {
+      childMarkdownRemark {
+        frontmatter {
+          title
+          description
+          keywords
         }
       }
     }

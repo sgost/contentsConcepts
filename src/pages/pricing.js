@@ -10,11 +10,13 @@ import FAQ from "../components/FAQ"
 
 const PricingPage = ({ data }) => {
 
-  const pricingContent = data.file.childMarkdownRemark.frontmatter;
+  const pricingContent = data.pageData.childMarkdownRemark.frontmatter;
+
+  const seoData = data.seoData.childMarkdownRemark.frontmatter;
 
   return (
     <Fragment>
-      <SEO title="Pricing" />
+      <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <Pricing content={pricingContent} />
       <QualityAssurance />
       <Customers />
@@ -28,7 +30,7 @@ export default PricingPage
 
 export const pageQuery = graphql`
   query {
-    file(relativePath: {eq: "pricing/index.md"}) {
+    pageData: file(relativePath: {eq: "pricing/index.md"}) {
       childMarkdownRemark {
         frontmatter {
           heading
@@ -47,6 +49,15 @@ export const pageQuery = graphql`
               themeColor
             }
           }
+        }
+      }
+    }
+    seoData: file(relativePath: {eq: "pricing/seo.md"}) {
+      childMarkdownRemark {
+        frontmatter {
+          title
+          description
+          keywords
         }
       }
     }

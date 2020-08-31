@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, keywords }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,13 +18,22 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
+            keywords
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
+
+  let allKeywords;
+
+  if(keywords.length > 0) {
+    allKeywords = keywords;
+  } else {
+    allKeywords = site.siteMetadata.keywords;
+  }
 
   return (
     <Helmet
@@ -32,11 +41,15 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s`}
       meta={[
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: "keywords",
+          content: allKeywords.join(", "),
         },
         {
           property: `og:title`,
@@ -71,6 +84,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  keywords: []
 }
 
 SEO.propTypes = {
@@ -78,6 +92,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  keywords: PropTypes.array
 }
 
 export default SEO

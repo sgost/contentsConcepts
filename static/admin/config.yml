@@ -109,6 +109,13 @@ collections:
               - { label: Title, name: title }
               - { label: Description, name: description }
               - { label: Theme Color, name: themeColor }
+      - label: SEO
+        name: seoHome
+        file: 'home/seo.md'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - { label: Keywords, name: keywords, widget: list }
       - label: Customers
         name: customers
         file: 'home/customers.md'
@@ -180,6 +187,13 @@ collections:
         fields:
           - {label: Title, name: title}
           - { name: body, label: Body, widget: markdown }
+      - label: SEO
+        name: seoAbout
+        file: 'about/seo.md'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - { label: Keywords, name: keywords, widget: list }
       - label: Team
         name: team
         file: 'about/team.md'
@@ -312,6 +326,13 @@ collections:
               - { label: Answer, name: answer }
       - { label: Key, name: key }
       - { label: Parent Type, name: parentType }
+      - label: SEO
+        name: seo
+        widget: object
+        fields:
+          - { name: title, label: Title }
+          - { name: description, label: Description }
+          - { name: keywords, label: Keywords, widget: list }
   - name: blog
     label: Blog
     label_singular: 'Blog'
@@ -335,31 +356,41 @@ collections:
       - { name: body, label: Body, widget: markdown }
   - name: pricing
     label: Pricing
-    folder: pricing
-    fields:
-      - { name: title, label: Title }
-      - { name: heading, label: Heading }
-      - { name: subHeading, label: SubHeading }
-      - label: Types
-        name: types
-        widget: list
+    files:
+      - label: Pricing
+        name: pricing
+        file: 'pricing/index.md'
         fields:
-          - { label: id, name: id, widget: number }
-          - { label: Title, name: title }
-          - label: Pricing
-            name: pricing
+          - { name: title, label: Title }
+          - { name: heading, label: Heading }
+          - { name: subHeading, label: SubHeading }
+          - label: Types
+            name: types
             widget: list
             fields:
               - { label: id, name: id, widget: number }
               - { label: Title, name: title }
-              - { label: Editing Services, name: editingServices, widget: list }
-              - label: Price
-                name: price
-                widget: object
+              - label: Pricing
+                name: pricing
+                widget: list
                 fields:
-                  - { label: inr, name: inr }
-                  - { label: usd, name: usd }
-              - { label: Theme Color, name: themeColor }
+                  - { label: id, name: id, widget: number }
+                  - { label: Title, name: title }
+                  - { label: Editing Services, name: editingServices, widget: list }
+                  - label: Price
+                    name: price
+                    widget: object
+                    fields:
+                      - { label: inr, name: inr }
+                      - { label: usd, name: usd }
+                  - { label: Theme Color, name: themeColor }
+      - label: SEO
+        name: seoAbout
+        file: 'pricing/seo.md'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - { label: Keywords, name: keywords, widget: list }
   - label: FAQ
     name: faq
     files:
@@ -398,3 +429,13 @@ collections:
             fields:
               - { label: Label, name: label }
               - { label: Value, name: value }
+  - label: SEO Contact Page
+    name: seoContact
+    files:
+      - label: SEO Contact
+        name: seoContact
+        file: 'seoContact.md'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - { label: Keywords, name: keywords }

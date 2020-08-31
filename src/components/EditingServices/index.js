@@ -9,7 +9,9 @@ import { FAQPreviewSection } from "../FAQ"
 const EditingServices = ({ data }) => {
   return (
     <Fragment>
-      <SEO title={data.markdownRemark.frontmatter.title} />
+      {
+        data.markdownRemark.frontmatter.seo && <SEO title={data.markdownRemark.frontmatter.seo.title} description={data.markdownRemark.frontmatter.seo.description} keywords={data.markdownRemark.frontmatter.seo.keywords} />
+      }
       <MenuSection content={data.markdownRemark.frontmatter} description={data.markdownRemark.html} />
       <Customers />
       <Contact />
@@ -115,6 +117,11 @@ export const query = graphql`
         }
         key
         parentType
+        seo {
+          title
+          description
+          keywords
+        }
       }
     }
   }

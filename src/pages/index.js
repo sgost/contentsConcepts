@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { graphql, useStaticQuery } from "gatsby"
 
 import SEO from "../components/seo"
 import Banner from "../components/Banner"
@@ -14,9 +15,26 @@ import MediumArticles from "../components/MediumArticles"
 import FAQ from "../components/FAQ"
 
 const IndexPage = () => {
+
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: {eq: "home/seo.md"}) {
+        childMarkdownRemark {
+          frontmatter {
+            title
+            description
+            keywords
+          }
+        }
+      }
+    }
+  `);
+
+  const seoData = data.file.childMarkdownRemark.frontmatter;
+
   return (
     <Fragment>
-      <SEO title="Home" />
+      <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <Banner />
       <Features />
       <Clients />

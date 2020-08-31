@@ -37,6 +37,17 @@ const GetQuote = props => {
     setShowUpload(true);
   };
 
+  function transformFile(file) {
+    return new Promise(resolve => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (e) => {
+        file.base64 =  e.target.result;
+        resolve(e.target.result);
+      };
+    });
+  }
+
   const[disabled, setDisabled] = useState(false);
 
   const onFinish = async values => {
@@ -61,7 +72,7 @@ const GetQuote = props => {
     }
 
     if(values.categoryFile !== undefined) {
-      data.append("file", values.categoryFile[0].thumbUrl);
+      data.append("file", values.categoryFile[0].base64)
       data.append("filename", values.categoryFile[0].name);
     } else {
       data.append("filename", '-');
@@ -183,7 +194,7 @@ const GetQuote = props => {
             valuePropName="fileList"
             getValueFromEvent={normFile}
           >
-            <Upload name="category" listType="picture" id="categoryFile" onChange={uploadChange} onRemove={removeUploadedFile} customRequest={customReqChange} >
+            <Upload name="category" listType="picture" id="categoryFile" onChange={uploadChange} onRemove={removeUploadedFile} customRequest={customReqChange} transformFile={transformFile} >
               {
                 showUpload &&
                 <Button className="uploadBtn">

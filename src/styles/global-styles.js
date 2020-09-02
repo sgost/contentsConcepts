@@ -141,10 +141,6 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 24px;
     color: ${palette.PRIMARY_TXT_COLOR};
   }
-  
-  .ant-message-notice {
-    text-align: right;
-  }
 
   .ant-modal-mask {
     background-color: rgba(0, 0, 0, 0.70) !important;
@@ -297,7 +293,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 25px;
   }
 
-  .ant-notification {
+  #notification-wrapper .ant-notification {
     position: relative;
     overflow: hidden;
     top: 0 !important;
@@ -306,7 +302,7 @@ export const GlobalStyle = createGlobalStyle`
     margin-right: 0;
     max-width: 100%;
   }
-  .ant-notification-notice {
+  #notification-wrapper .ant-notification-notice {
     background: linear-gradient(178.57deg, #8D58D4 0%, #578DC3 100%);
     padding: 10px 35px;
     margin-bottom: 0;
@@ -315,7 +311,7 @@ export const GlobalStyle = createGlobalStyle`
       padding: 10px 15px;
     }
   }
-  .ant-notification-notice-close {
+  #notification-wrapper .ant-notification-notice-close {
     top: 12px;
     right: 35px;
     color: ${palette.WHITE_COLOR};
@@ -326,7 +322,7 @@ export const GlobalStyle = createGlobalStyle`
       right: 15px;
     }
   }
-  .ant-notification-notice-message {
+  #notification-wrapper .ant-notification-notice-message {
     display: block;
     margin-bottom: 0;
     padding-right: 40px !important;
@@ -575,6 +571,13 @@ export const GlobalStyle = createGlobalStyle`
       .ant-input-number-handler-down {
         border-bottom-right-radius: 8px;
       }
+    }
+  }
+
+  .messageCont {
+    .ant-message-notice-content {
+      padding: 20px 30px;
+      border-radius: 8px;
     }
   }
 `;

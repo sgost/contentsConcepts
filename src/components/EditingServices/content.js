@@ -47,7 +47,7 @@ const MenuContent = ({ content, description, preview }) => {
           </HeadingContainer>
           <TypesContainer>
             {
-              preview ? <p>{description}</p> : <p dangerouslySetInnerHTML={{ __html: description }} />
+              preview ? <div>{description}</div> : <div dangerouslySetInnerHTML={{ __html: description }} />
             }
           </TypesContainer>
           <FeaturesListContainer>
@@ -65,7 +65,7 @@ const MenuContent = ({ content, description, preview }) => {
             }
           </FeaturesListContainer>
           <RefundSection>
-            <p dangerouslySetInnerHTML={{__html: content.message}} />
+            <div dangerouslySetInnerHTML={{__html: content.message}} />
           </RefundSection>
           <ButtonContainer>
             <Button type="primary" onClick={getQuote}>Get Quote</Button>

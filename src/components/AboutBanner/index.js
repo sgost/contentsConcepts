@@ -20,7 +20,7 @@ export const AboutBannerSection = ({
           <ContentContainer>
             <h2>{title}</h2>
             {
-              preview ? <p>{html}</p> : <p dangerouslySetInnerHTML={{ __html: html }} />
+              preview ? <div>{html}</div> : <div dangerouslySetInnerHTML={{ __html: html }} />
             }
           </ContentContainer>
         </Col>

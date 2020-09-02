@@ -5,6 +5,9 @@ export const BannerSection = styled.div`
   overflow: hidden;
   .ant-row {
     flex-wrap: nowrap;
+    .resSection {
+      position: relative;
+    }
     @media only screen and (min-width: 320px) and (max-width: 768px) {
       flex-direction: column;
       .resSection {
@@ -105,11 +108,10 @@ export const ServicesList = styled.ul`
 
 export const ImageContainer = styled.div`
   position: absolute;
-  top: -25%;
+  top: 0;
   right: 0;
   z-index: 0;
   @media only screen and (min-width: 320px) and (max-width: 768px) {
     position: unset;
-    margin-top: -15%;
   }
 `;

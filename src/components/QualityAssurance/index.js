@@ -21,7 +21,7 @@ export const QualityAssuranceSection = ({
         <Col xs={24} sm={18} md={19} lg={19} xl={19} className="contentDesc">
           <h2>{title}</h2>
           {
-            preview ? <p>{html}</p> : <p dangerouslySetInnerHTML={{ __html: html }} />
+            preview ? <div>{html}</div> : <div dangerouslySetInnerHTML={{ __html: html }} />
           }
         </Col>
       </Row>

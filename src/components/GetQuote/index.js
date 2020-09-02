@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Form, Input, Checkbox, Row, Col, Upload, Button, InputNumber } from 'antd';
+import { Form, Input, Checkbox, Row, Col, Upload, Button, InputNumber, message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import {
   QuoteFormSection
@@ -97,7 +97,10 @@ const GetQuote = props => {
       body: data,
       mode: 'no-cors',
     }).then(function (response) {
-      alert('Thank you. We will get back to you as quick as humanly possible :)');
+      message.success({
+        content: 'Thank you. We will get back to you as quick as humanly possible.',
+        className: 'messageCont'
+      });
       setDisabled(false);
       form.resetFields();
     }).catch(function (err) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Form, Input, Checkbox, Row, Col, Upload, Button, InputNumber, message } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined, SmileOutlined } from '@ant-design/icons';
 import {
   QuoteFormSection
 } from './styles';
@@ -99,15 +99,20 @@ const GetQuote = props => {
     }).then(function (response) {
       message.success({
         content: 'Thank you. We will get back to you as quick as humanly possible.',
-        className: 'messageCont'
+        className: 'messageCont',
+        icon: <SmileOutlined />
       });
       setDisabled(false);
       form.resetFields();
+      props.onSubmit();
     }).catch(function (err) {
+      message.error({
+        content: err.message,
+        className: 'messageCont',
+        icon: <SmileOutlined rotate={180} />
+      });
       setDisabled(false);
     });
-    setShowUpload(true);
-    props.onSubmit();
     setShowUpload(true);
   };
 

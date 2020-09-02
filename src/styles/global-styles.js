@@ -576,8 +576,39 @@ export const GlobalStyle = createGlobalStyle`
 
   .messageCont {
     .ant-message-notice-content {
-      padding: 20px 30px;
+      padding: 0px;
       border-radius: 8px;
+      width: 550px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      @media (max-width: 576px) {
+        width: auto;
+      }
+    }
+    .ant-message-success {
+      background-color: #f6ffed;
+    }
+    .ant-message-error {
+      background-color: #fff2f0;
+    }
+    .ant-message-custom-content {
+      display: flex;
+      align-items: flex-start;
+      padding: 40px;
+      border-radius: 8px;
+      @media (max-width: 576px) {
+        padding: 20px;
+      }
+      span {
+        &:last-child {
+          text-align: left;
+          margin-left: 8px;
+          font-size: 16px;
+          line-height: 28px;
+        }
+      }
+    }
+    .anticon {
+      font-size: 24px;
     }
   }
 `;

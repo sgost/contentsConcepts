@@ -136,6 +136,7 @@ const NavigationMenu = props => {
         cancelButtonProps={{ style: { display: 'none' } }}
         onCancel={handleCancel}
         getContainer={() => document.getElementById('___gatsby')}
+        destroyOnClose={true}
       >
         <GetQuote onSubmit={handleCancel} />
       </Modal>

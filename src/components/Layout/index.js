@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 
@@ -40,13 +40,26 @@ const Layout = props => {
     }
   }, [offerData]);
 
+  const[showFooter, setShowFooter] = useState(true);
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      if(window.location.pathname === '/sitemap/') {
+        setShowFooter(false);
+      } else {
+        setShowFooter(true);
+      }
+    }
+  });
+
   return (
     <>
       <GlobalStyle />
       <div id="notification-wrapper"></div>
       <Header />
       <main>{props.children}</main>
-      <Footer />
+      {
+        showFooter &&  <Footer />
+      }
     </>
   )
 }

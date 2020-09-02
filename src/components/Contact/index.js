@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Form, Input, Button, Select, message } from 'antd'
-import { CaretDownOutlined } from '@ant-design/icons';
+import { CaretDownOutlined, SmileOutlined } from '@ant-design/icons';
 import Call from '../../images/call.svg'
 import Email from '../../images/email.svg'
 
@@ -55,11 +55,17 @@ export const ContactPreviewSection = ({
     }).then(function (response) {
       message.success({
         content: 'Thank you. We will get back to you as quick as humanly possible.',
-        className: 'messageCont'
+        className: 'messageCont',
+        icon: <SmileOutlined />
       });
       setDisabled(false);
       form.resetFields();
     }).catch(function (err) {
+      message.error({
+        content: err.message,
+        className: 'messageCont',
+        icon: <SmileOutlined rotate={180} />
+      });
       setDisabled(false);
     });
   };

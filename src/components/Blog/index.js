@@ -43,7 +43,7 @@ export const BlogPost = ({
         <BlogContent>
           <h2 className="blogTitle">{title}</h2>
           {
-            preview ? <p>{html}</p> : <div dangerouslySetInnerHTML={{ __html: html }} />
+            preview ? <div>{html}</div> : <div dangerouslySetInnerHTML={{ __html: html }} />
           }
         </BlogContent>
         {

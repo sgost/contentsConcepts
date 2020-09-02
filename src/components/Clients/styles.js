@@ -29,6 +29,8 @@ export const ClientsList = styled.ul`
   padding: 30px 20px;
   li {
     margin: 20px 15px;
+    width: 250px;
+    height: 120px;
   }
   @media (max-width: 576px) {
     flex-direction: column;

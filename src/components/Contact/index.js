@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Form, Input, Button, Select } from 'antd'
+import { Form, Input, Button, Select, message } from 'antd'
 import { CaretDownOutlined } from '@ant-design/icons';
 import Call from '../../images/call.svg'
 import Email from '../../images/email.svg'
@@ -28,7 +28,7 @@ export const ContactPreviewSection = ({
   const onFinish = async values => {
 
     setDisabled(true);
-  
+
     var saveData = values;
 
     const data = new FormData();
@@ -53,8 +53,11 @@ export const ContactPreviewSection = ({
       body: data,
       mode: 'no-cors',
     }).then(function (response) {
+      message.success({
+        content: 'Thank you. We will get back to you as quick as humanly possible.',
+        className: 'messageCont'
+      });
       setDisabled(false);
-      alert('Thank you. We will get back to you as quick as humanly possible :)');
       form.resetFields();
     }).catch(function (err) {
       setDisabled(false);

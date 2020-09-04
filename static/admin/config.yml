@@ -53,7 +53,7 @@ collections:
               - { label: Image, name: image, widget: image }
       - label: Services
         name: homeServices
-        file: 'home/services.md'
+        file: 'home/ourServices.md'
         public_folder: '../assets/'
         fields:
           - { label: Title, name: title }

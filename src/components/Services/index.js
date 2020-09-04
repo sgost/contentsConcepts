@@ -48,7 +48,7 @@ const Services = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: {eq: "home/services.md"}) {
+      file(relativePath: {eq: "home/ourServices.md"}) {
         childMarkdownRemark {
           frontmatter {
             title

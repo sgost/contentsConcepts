@@ -31,6 +31,9 @@ export const ClientsList = styled.ul`
     margin: 20px 15px;
     width: 250px;
     height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   @media (max-width: 576px) {
     flex-direction: column;

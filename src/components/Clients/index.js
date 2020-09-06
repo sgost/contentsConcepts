@@ -20,9 +20,10 @@ export const HomeClientSection = ({
       <ClientsList>
         {
           clients && clients.map(dataItem =>
+            dataItem.image !== null &&
             <li key={dataItem.id}>
               {
-                dataItem.image.childImageSharp ? <img src={dataItem.image.childImageSharp.fluid.src} alt="clients" /> : <img src={dataItem.image} alt="clients" />
+                dataItem.image !== null && dataItem.image.childImageSharp ? <img src={dataItem.image.childImageSharp.fluid.src} alt="clients" /> : <img src={dataItem.image} alt={dataItem.title} />
               }
             </li>
           )

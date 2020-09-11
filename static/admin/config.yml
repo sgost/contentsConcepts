@@ -197,6 +197,7 @@ collections:
       - label: Team
         name: team
         file: 'about/team.md'
+        public_folder: '../assets/'
         fields:
           - {label: Title, name: title}
           - label: Team Members

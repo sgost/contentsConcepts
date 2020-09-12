@@ -443,7 +443,7 @@ collections:
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
-          - { label: Keywords, name: keywords }
+          - { label: Keywords, name: keywords, widget: list }
   - label: SEO Blog Page
     name: seoBlog
     files:
@@ -453,4 +453,4 @@ collections:
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
-          - { label: Keywords, name: keywords }
+          - { label: Keywords, name: keywords, widget: list }

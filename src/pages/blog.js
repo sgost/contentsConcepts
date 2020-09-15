@@ -25,7 +25,11 @@ const BlogPage = ({ data }) => {
                     {blogItem.node.frontmatter.excerpt}
                   </p>
                   <div className="blogInfo">
-                    <img src={blogItem.node.frontmatter.author_image.childImageSharp.fluid.src} alt={blogItem.node.frontmatter.author} />
+                    {
+                      blogItem.node.frontmatter.author_image.extension === 'svg' && !blogItem.node.frontmatter.author_image.childImageSharp ?
+                        <img src={blogItem.node.frontmatter.author_image.publicURL} alt={blogItem.node.frontmatter.author} /> :
+                        <img src={blogItem.node.frontmatter.author_image.childImageSharp.fluid.src} alt={blogItem.node.frontmatter.author} />
+                    }
                     <span className="blogAuthor">{blogItem.node.frontmatter.author}</span>
                     <span>on {blogItem.node.frontmatter.date}</span>
                   </div>
@@ -61,6 +65,8 @@ export const pageQuery = graphql`
                   src
                 }
               }
+              extension
+              publicURL
             }
             date(formatString: "MMMM DD, YYYY")
           }

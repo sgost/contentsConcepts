@@ -20,10 +20,6 @@ export const AuthorInfo = styled.div`
     height: 64px;
     border-radius: 100%;
     overflow: hidden;
-    img {
-      object-fit: cover;
-      height: 100%;
-    }
   }
   .author_info {
     display: flex;

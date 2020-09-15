@@ -456,6 +456,7 @@ export const GlobalStyle = createGlobalStyle`
         img {
           width: 25px;
           height: 25px;
+          border-radius: 100%;
         }
         span {
           margin-left: 2px;

@@ -72,14 +72,21 @@ const Blog = ({ data }) => {
 
   const { blogpost: post } = data;
 
-  const seoData = data.seoData.childMarkdownRemark.frontmatter;
+  const seoData = post.frontmatter.seo;
+
+  let authorImage;
+  if(post.frontmatter.author_image.extension === 'svg' && !post.frontmatter.author_image.childImageSharp) {
+    authorImage = post.frontmatter.author_image.publicURL;
+  } else {
+    authorImage = post.frontmatter.author_image.childImageSharp.fluid.src;
+  }
 
   return (
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <BlogPost
         fields={post.fields}
-        author_image={post.frontmatter.author_image.childImageSharp.fluid.src}
+        author_image={authorImage}
         author={post.frontmatter.author}
         bio={post.frontmatter.bio}
         date={post.frontmatter.date}
@@ -111,11 +118,18 @@ export const query = graphql`
               src
             }
           }
+          extension
+          publicURL
         }
         bio
         date(formatString: "MMMM DD, YYYY")
         title
         tags
+        seo {
+          title
+          description
+          keywords
+        }
       }
       html
     }

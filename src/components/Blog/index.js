@@ -75,7 +75,7 @@ const Blog = ({ data }) => {
   const seoData = post.frontmatter.seo;
 
   let authorImage;
-  if(post.frontmatter.author_image.extension === 'svg' && !post.frontmatter.author_image.childImageSharp) {
+  if(post.frontmatter.author_image.extension === 'svg' && post.frontmatter.author_image.childImageSharp === null) {
     authorImage = post.frontmatter.author_image.publicURL;
   } else {
     authorImage = post.frontmatter.author_image.childImageSharp.fluid.src;

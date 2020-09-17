@@ -453,10 +453,13 @@ export const GlobalStyle = createGlobalStyle`
         display: flex;
         flex-direction: row;
         align-items: center;
-        img {
+        .authorImage {
           width: 25px;
-          height: 25px;
           border-radius: 100%;
+        }
+        img {
+          height: 100%;
+          display: block;
         }
         span {
           margin-left: 2px;
@@ -610,6 +613,24 @@ export const GlobalStyle = createGlobalStyle`
     }
     .anticon {
       font-size: 24px;
+    }
+  }
+
+  .whatsappContainer {
+    position: fixed;
+    bottom: 4%;
+    right: 2%;
+    width: 56px;
+    height: 56px;
+    background: #48C857;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    a {
+      display: flex;
+      align-items: center;
     }
   }
 `;

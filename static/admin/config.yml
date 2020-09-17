@@ -342,7 +342,7 @@ collections:
     label: Blog
     label_singular: 'Blog'
     folder: blog
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}/index'
+    slug: '{{slug}}'
     create: true
     media_folder: ''
     public_folder: ''
@@ -359,6 +359,13 @@ collections:
       - { name: excerpt, label: Excerpt }
       - { name: tags, label: Tags, widget: list }
       - { name: body, label: Body, widget: markdown }
+      - label: SEO
+        name: seo
+        widget: object
+        fields:
+          - { name: title, label: Title }
+          - { name: description, label: Description }
+          - { name: keywords, label: Keywords, widget: list }
   - name: pricing
     label: Pricing
     files:

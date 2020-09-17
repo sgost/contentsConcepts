@@ -3,15 +3,15 @@ import * as palette from '../../styles/variables';
 
 export const FooterSection = styled.div`
   background: ${palette.SECONDARY_SECTION_BACKGROUND};
-  padding: 60px 20px;
+  padding: 60px 20px 80px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
-    padding: 45px 50px;
+    padding: 45px 50px 80px;
   }
   @media only screen and (min-width: 576px) and (max-width: 768px) {
-    padding: 30px 40px;
+    padding: 30px 40px 70px;
   }
   @media (max-width: 576px) {
-    padding: 30px;
+    padding: 30px 30px 70px;
   }
 `;
 

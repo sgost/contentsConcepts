@@ -13,7 +13,7 @@ export const AuthorInfo = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   .author_image {
     margin-right: 8px;
     width: 64px;
@@ -37,12 +37,12 @@ export const AuthorInfo = styled.div`
 
 export const BlogContent = styled.div`
   .blogTitle {
-    font-size: 52px;
-    line-height: 64px;
-    margin-bottom: 40px;
+    font-size: 36px;
+    line-height: 48px;
+    margin-bottom: 32px;
     @media (max-width: 768px) {
-      font-size: 32px;
-      line-height: 40px;
+      font-size: 30px;
+      line-height: 36px;
     }
   }
   h3 {

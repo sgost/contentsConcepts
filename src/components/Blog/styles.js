@@ -45,6 +45,14 @@ export const BlogContent = styled.div`
       line-height: 36px;
     }
   }
+  h1 {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 10px;
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
   h3 {
     margin-bottom: 24px;
   }

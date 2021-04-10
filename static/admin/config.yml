@@ -342,16 +342,20 @@ collections:
     label: Blog
     label_singular: 'Blog'
     folder: blog
-    slug: '{{slug}}'
-    create: true
     media_folder: ''
     public_folder: ''
+    slug: '{{slug}}'
+    create: true
     nested:
       depth: 100
       summary: '{{title}}'
     fields:
-      - { name: author_image, label: Author Image, widget: image }
-      - { name: author, label: Author }
+      - label: Author Image
+        name: author_image
+        widget: image
+        media_folder: '/blog/'
+        default: 'cc-logo-new.png'
+      - { name: author, label: Author, default: 'ContentConcepts' }
       - { name: bio, label: Bio }
       - { name: title, label: Title }
       - { name: date, label: Date, widget: date, default: ''}

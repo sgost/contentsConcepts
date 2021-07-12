@@ -46,13 +46,14 @@
 }
 #paybtn {
   display: inline-block;
-  padding: 1.7910447761194vw 0.746268656716418vw;
+  padding: 24px 0px;
   font-weight: normal;
-  font-size: 1.19402985074627vw;
-  line-height: 1.7910447761194vw;
+  font-size: 16px;
+  line-height: 24px;
   color: #555555;
   position: relative;
   cursor: pointer;
+  margin: 0 18px;
 }
 #pay_container_block2 h1 {
   font-family: Poppins;

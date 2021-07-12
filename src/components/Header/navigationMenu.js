@@ -17,7 +17,7 @@ const NavigationMenu = props => {
     if(typeof window !== 'undefined') {
       setUrl(window.location.href);
     }
-  });
+  }, []);
 
   const isPartiallyActive = () => {
     if(url) {

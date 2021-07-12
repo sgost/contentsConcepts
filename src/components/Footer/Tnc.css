@@ -163,3 +163,27 @@
   margin:5vw auto 0 auto;
 }
 }
+@media (max-width:450px){
+  #footer_minidiv_block2 h1 {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: 5vw;
+    cursor: pointer;
+}
+}
+@media (max-width:350px){
+  #footer_minidiv_block2 h1 {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: 5vw;
+    cursor: pointer;
+}
+}

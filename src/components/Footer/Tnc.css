@@ -47,8 +47,8 @@
 }
 #tncpop_top img {
   position: relative;
-  width: 2.15827338129496vw;
-  height: 2.15827338129496vw;
+  width: 30px;
+  height: 30px;
   color: white;
   left: 93vw;
   cursor: pointer;
@@ -137,7 +137,6 @@
     color: white;
     left: 89%;
     cursor: pointer;
-    top: 20px;
   }
   #tncpop_top {
     position: fixed;

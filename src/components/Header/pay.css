@@ -38,6 +38,7 @@
   height: fit-content;
   margin: auto auto auto 3vw;
   text-align: left;
+  padding-top: 3vw;
 }
 #paybtndiv {
   height: 100%;

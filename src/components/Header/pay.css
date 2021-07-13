@@ -59,10 +59,10 @@
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 2.6865671641791vw;
-  line-height: 3.58208955223881vw;
-  color: #222222;
-  width: 33.4328358208955vw;
+  font-size: 1.5vw;
+  line-height: 2vw;
+  color: #222;
+  width: 35vw;
 }
 #pay_container_block2 #note {
   font-family: Poppins;
@@ -102,13 +102,13 @@
     display: flex;
     flex-direction: column;
   }
+  #pay_container_block2{
+    padding:0 3vw;
+  }
   #pay_container_block2 h1 {
-    font-family: Poppins;
-    font-style: normal;
     font-weight: 600;
-    font-size: 5vw;
-    line-height: auto;
-    color: #222222;
+    font-size: 3vw;
+    line-height: initial;
     width: 100%;
     margin-top: 5vw;
   }

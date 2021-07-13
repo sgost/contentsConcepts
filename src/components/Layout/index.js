@@ -50,7 +50,7 @@ const Layout = props => {
         setShowFooter(true);
       }
     }
-  });
+  }, []);
 
   return (
     <>

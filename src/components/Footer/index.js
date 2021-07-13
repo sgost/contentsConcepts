@@ -5,6 +5,15 @@ import {
   SitemapContainer,
   SitemapList
 } from './styles';
+import f1 from "../../images/fimg1.svg";
+import f2 from "../../images/fimg2.svg";
+import f3 from "../../images/fimg3.svg";
+import f4 from "../../images/fimg4.svg";
+import f5 from "../../images/fimg5.svg";
+import f6 from "../../images/fimg6.svg";
+import "./Tnc.css";
+import tnc from "./tnc.pdf";
+import pri from "./pp.pdf";
 
 export const FooterPreviewSection = ({
   title,
@@ -19,7 +28,7 @@ export const FooterPreviewSection = ({
               {
                 dataItem.link ?
                   <h5><Link to={dataItem.link} key={dataItem.id}>{dataItem.title}</Link></h5>
-                : <h5>{dataItem.title}</h5>
+                  : <h5>{dataItem.title}</h5>
               }
               {
                 dataItem.sitemap && dataItem.sitemap.map(sitemap =>
@@ -30,6 +39,20 @@ export const FooterPreviewSection = ({
           )
         }
       </SitemapContainer>
+      <div id="footer_minidiv">
+        <div id="footer_minidiv_block1">
+          <img src={f1} alt="img" />
+          <img src={f2} alt="img" />
+          <img src={f3} alt="img" />
+          <img src={f4} alt="img" />
+          <img src={f5} alt="img" />
+          <img src={f6} alt="img" />
+        </div>
+        <div id="footer_minidiv_block2">
+          <a href={tnc} target="_blank" rel="​noopener noreferrer" id="a">Terms of Service</a>
+          <a href={pri} target="_blank" rel="​noopener noreferrer" id="a">Privacy Policy</a>
+        </div>
+      </div>
     </FooterSection>
   );
 };

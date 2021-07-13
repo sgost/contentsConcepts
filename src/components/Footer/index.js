@@ -49,8 +49,8 @@ export const FooterPreviewSection = ({
           <img src={f6} alt="img" />
         </div>
         <div id="footer_minidiv_block2">
-          <a href={tnc}>Terms of Service</a>
-          <a href={pri}>Privacy Policy</a>
+          <a href={tnc} target="_blank" rel="​noopener noreferrer" id="a">Terms of Service</a>
+          <a href={pri} target="_blank" rel="​noopener noreferrer" id="a">Privacy Policy</a>
         </div>
       </div>
     </FooterSection>

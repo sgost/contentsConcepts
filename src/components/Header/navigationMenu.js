@@ -152,12 +152,14 @@ const NavigationMenu = props => {
                 <img src={qr} alt="qr" id="payqr" />
               </div>
               <div id="pay_container_block2">
-                <h1>Scan the QR Code to make Payment</h1>
-                <p>Note:</p>
-                <p>If you don’t have UPI, Please use the below mentioned bank details</p>
-                <p>Account Holder Name: <span>Content Concepts</span></p>
-                <p>Account Number: <span>25340150IFSC*****</span></p>
-                <p>Code: ICIC0002348</p>
+                <h1>UPI - Pay to the following UPI account - contentconcepts@icici  (Via PhonePe, Google Pay or any other payment app or from your bank mobile app)</h1>
+                <p id="note">Note:</p>
+                <p>You can pay to the following bank account via online banking</p>
+                <p>Account Holder Name: <span>DHANALAKSHMI N</span></p>
+                <p>Account Number: <span>034201526268*****</span></p>
+                <p>Bank: <span>ICICI Bank</span></p>
+                <p>Branch: <span>RS Puram Coimbatore</span></p>
+                <p>Code: ICIC0000342</p>
               </div>
             </div>
           </div>

@@ -83,8 +83,8 @@ export const FooterPreviewSection = ({
           <img src={f6} alt="img" />
         </div>
         <div id="footer_minidiv_block2">
-          <h1 onClick={handleClickOpen('paper')}>Terms of Service</h1>
-          <h1 onClick={handleClickOpens('paper')}>Privacy Policy</h1>
+          <h1 onClick={handleClickOpen('paper')} role="presentation">Terms of Service</h1>
+          <h1 onClick={handleClickOpens('paper')} role="presentation">Privacy Policy</h1>
         </div>
         <Dialog
           open={open}
@@ -96,7 +96,7 @@ export const FooterPreviewSection = ({
         >
           <div id="tncpop">
             <div id="tncpop_top">
-              <img src={close} alt="img" onClick={handleClose} />
+              <img src={close} alt="img" onClick={handleClose} role="presentation"/>
             </div>
             <h1>Terms Of Service</h1>
             <h2>README FIRST</h2>

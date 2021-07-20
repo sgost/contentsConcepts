@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Form, Input, Checkbox, Row, Col, Upload, Button, InputNumber, message } from 'antd';
+import { Form, Input, Radio, Row, Col, Upload, Button, InputNumber, message } from 'antd';
 import { UploadOutlined, SmileOutlined } from '@ant-design/icons';
 import {
   QuoteFormSection
@@ -19,15 +19,15 @@ const GetQuote = props => {
     return e && e.fileList;
   };
 
-  const[showUpload, setShowUpload] = useState(true);
+  const [showUpload, setShowUpload] = useState(true);
 
   const uploadChange = (data) => {
-    if(data.fileList.length > 0) {
+    if (data.fileList.length > 0) {
       setShowUpload(false);
     }
   };
 
-  const customReqChange = ({ file, onSuccess}) => {
+  const customReqChange = ({ file, onSuccess }) => {
     setTimeout(() => {
       onSuccess("ok");
     }, 0);
@@ -42,13 +42,13 @@ const GetQuote = props => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = (e) => {
-        file.base64 =  e.target.result;
+        file.base64 = e.target.result;
         resolve(e.target.result);
       };
     });
   }
 
-  const[disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const onFinish = async values => {
 
@@ -59,38 +59,38 @@ const GetQuote = props => {
     data.append("name", values.name);
     data.append("email", values.email);
 
-    if(values.phone === undefined) {
+    if (values.phone === undefined) {
       data.append("phone", '-');
     } else {
       data.append("phone", values.phone);
     }
 
-    if(values.category === undefined) {
+    if (values.category === undefined) {
       data.append("category", '-');
     } else {
       data.append("category", values.category);
     }
 
-    if(values.categoryFile !== undefined) {
+    if (values.categoryFile !== undefined) {
       data.append("file", values.categoryFile[0].base64)
       data.append("filename", values.categoryFile[0].name);
     } else {
       data.append("filename", '-');
     }
 
-    if(values.wordCount === undefined) {
+    if (values.wordCount === undefined) {
       data.append("wordCount", '-');
     } else {
       data.append("wordCount", values.wordCount);
     }
 
-    if(values.requirement === undefined) {
+    if (values.requirement === undefined) {
       data.append("requirement", '-');
     } else {
       data.append("requirement", values.requirement);
     }
 
-    var url= "https://script.google.com/macros/s/AKfycbxPQYfAmU27Vfted5BMWK3Rmn8t6NMWFORuB9Q0X6umaZEpE2Oz/exec";
+    var url = "https://script.google.com/macros/s/AKfycbxPQYfAmU27Vfted5BMWK3Rmn8t6NMWFORuB9Q0X6umaZEpE2Oz/exec";
 
     await fetch(url, {
       method: 'POST',
@@ -133,66 +133,95 @@ const GetQuote = props => {
   `);
 
   const categoryData = data.file.childMarkdownRemark.frontmatter;
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+
+  const [errors, setErrors] = useState("");
+  const validation = () => {
+    let errors = {};
+    if (!name || name.length < 3) {
+      errors.color = "red"
+    } if (!email) {
+      errors.color = "red"
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.color = "red"
+    }
+    return errors;
+  }
+  const signnn = () => {
+    setErrors(validation())
+  }
 
   return (
     <QuoteFormSection>
       <Form name="quote-form" onFinish={onFinish} className="quoteForm gform" form={form}>
-        <Form.Item
-          name='name'
-          rules={[
-            {
-              required: true,
-              message: `Can't be blank`,
-            },
-          ]}
-        >
-          <Input placeholder="Name" />
-        </Form.Item>
+        <div>
+          <label className="formLabel" htmlFor="categoryFile">Name{(!name) ? (<span style={{ color: (errors.color) }}>*</span>) : (<span>*</span>)}</label>
+          <Form.Item
+            name='name'
+            rules={[
+              {
+                required: true,
+                message: `Can't be blank`,
+              },
+            ]}
+            value={name}
+            onChange={e => setName(e.target.value)}
+          >
+            <Input placeholder="Name" />
+          </Form.Item>
+        </div>
         <Form.Item
           style={{
             marginBottom: 0,
           }}
           className="inputGroupBlock"
         >
-          <Form.Item
-            name='phone'
-            className="inlineInput"
-          >
-            <Input placeholder="Phone" />
-          </Form.Item>
-          <Form.Item
-            name='email'
-            className="inlineInput emailInput"
-            rules={[
-              {
-                required: true,
-                message: `Can't be blank`,
-              },
-              {
-                type: 'email',
-                message: `Please enter valid Email ID`,
-              }
-            ]}
-          >
-            <Input placeholder="Email ID" />
-          </Form.Item>
+          <div className="inlineInput">
+            <label className="formLabel" htmlFor="category">Phone Number</label>
+            <Form.Item
+              name='phone'
+            >
+              <Input placeholder="Phone" />
+            </Form.Item>
+          </div>
+          <div className="inlineInput emailInput">
+            <label className="formLabel" htmlFor="category">Email ID {(!email) ? (<span style={{ color: (errors.color) }}>*</span>) : (<span>*</span>)}</label>
+            <Form.Item
+              name='email'
+              rules={[
+                {
+                  required: true,
+                  message: `Can't be blank`,
+                },
+                {
+                  type: 'email',
+                  message: `Please enter valid Email ID`,
+                }
+              ]}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            >
+              <Input placeholder="Email ID" />
+            </Form.Item>
+          </div>
         </Form.Item>
         <div>
           <label className="formLabel" htmlFor="category">Select Category</label>
           <Form.Item
             name='category'
           >
-            <Checkbox.Group style={{ width: '100%' }} className="categoryGroup" id="category">
+            <Radio.Group style={{ width: '100%' }} className="categoryGroup" id="category">
               <Row>
                 {
                   categoryData.categories && categoryData.categories.map(item =>
                     <Col xs={24} sm={12} md={12} lg={12} xl={12} className="categoryItem" key={item.value}>
-                      <Checkbox value={item.value}>{item.label}</Checkbox>
+                      <Radio value={item.value}>{item.label}</Radio>
                     </Col>
                   )
                 }
               </Row>
-            </Checkbox.Group>
+            </Radio.Group>
           </Form.Item>
         </div>
         <div>
@@ -225,11 +254,19 @@ const GetQuote = props => {
         >
           <TextArea rows={4} placeholder="Describe your requirement briefly." />
         </Form.Item>
-        <Form.Item className="submitBtn">
-          <Button type="primary" htmlType="submit" disabled={disabled}>
-            Submit
-          </Button>
-        </Form.Item>
+        {(!name || name.length < 3 || (!/\S+@\S+\.\S+/.test(email))) ? (
+          <Form.Item className="submitBtn">
+            <Button type="primary" onClick={signnn}>
+              Submit
+            </Button>
+          </Form.Item>
+        ) : (
+          <Form.Item className="submitBtn">
+            <Button type="primary" htmlType="submit" disabled={disabled}>
+              Submit
+            </Button>
+          </Form.Item>
+        )}
       </Form>
     </QuoteFormSection>
   )

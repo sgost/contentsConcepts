@@ -252,7 +252,7 @@ export const FooterPreviewSection = ({
         >
           <div id="tncpop">
             <div id="tncpop_top">
-              <img src={close} alt="img" onClick={handleCloses} />
+              <img src={close} alt="img" onClick={handleCloses} role="presentation"/>
             </div>
             <h1>Privacy Policy</h1>
             <p>We hold the confidentiality of your intellectual property, the documents and business

@@ -24,6 +24,9 @@ export const QuoteFormSection = styled.div`
     box-shadow: 0px 0px 5px rgba(25, 39, 67, 0.1);
     border-radius: 8px;
     padding: 18px 24px;
+    .ant-radio-inner {
+      border: 0.5px solid #666666;
+    }
     .categoryItem {
       padding: 8px 0px;
     }
@@ -57,9 +60,27 @@ export const QuoteFormSection = styled.div`
   .inlineInput {
     display: inline-block;
     width: calc(50% - 20px);
+    #inlineInput{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px !important;
+    color: #444444;
+    padding: 11px 24px;
+    background: #FFFFFF;
+    border: 0.5px solid #CCCCCC;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px rgb(25 39 67 / 10%);
+    border-radius: 8px;
+    outline:none;
+    }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       width: calc(50% - 12px);
     }
+    .PhoneInput {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
     @media (max-width: 576px) {
       width: 100%;
     }

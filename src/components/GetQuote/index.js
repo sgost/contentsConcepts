@@ -5,8 +5,11 @@ import { UploadOutlined, SmileOutlined } from '@ant-design/icons';
 import {
   QuoteFormSection
 } from './styles';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const GetQuote = props => {
+  const [value, setValue] = useState();
 
   const [form] = Form.useForm();
 
@@ -182,7 +185,10 @@ const GetQuote = props => {
             <Form.Item
               name='phone'
             >
-              <Input placeholder="Phone" />
+              <PhoneInput
+                placeholder="Enter phone number"
+                value={value}
+                onChange={setValue} id="inlineInput" />
             </Form.Item>
           </div>
           <div className="inlineInput emailInput">

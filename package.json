@@ -39,6 +39,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
+    "react-phone-number-input": "^3.1.25",
     "react-typed": "^1.2.0",
     "react-typography": "^0.16.19",
     "styled-components": "^5.1.0",

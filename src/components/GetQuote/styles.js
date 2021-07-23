@@ -60,18 +60,21 @@ export const QuoteFormSection = styled.div`
   .inlineInput {
     display: inline-block;
     width: calc(50% - 20px);
-    #inlineInput{
+    .PhoneInput{                    
     font-weight: normal;
     font-size: 16px;
     line-height: 24px !important;
     color: #444444;
-    padding: 11px 24px;
+    padding: 8px 24px 8px 15px;
     background: #FFFFFF;
     border: 0.5px solid #CCCCCC;
     box-sizing: border-box;
     box-shadow: 0px 0px 5px rgb(25 39 67 / 10%);
     border-radius: 8px;
-    outline:none;
+    }
+    #inlineInput{
+      outline:none;
+      border:none;
     }
     @media only screen and (min-width: 576px) and (max-width: 768px) {
       width: calc(50% - 12px);

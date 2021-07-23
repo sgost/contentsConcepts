@@ -186,6 +186,8 @@ const GetQuote = props => {
               name='phone'
             >
               <PhoneInput
+                international
+                defaultCountry="RU"
                 placeholder="Enter phone number"
                 value={value}
                 onChange={setValue} id="inlineInput" />

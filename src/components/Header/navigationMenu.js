@@ -139,10 +139,10 @@ const NavigationMenu = props => {
             <Link to="/pricing/" activeClassName="activeLink" onClick={props.onClick}>Pricing</Link>
           </NavLink>
           <div id="paybtndiv">
-            <p activeClassName="activeLink" onClick={showModalpay} id="paybtn">Payment</p>
+            <p activeClassName="activeLink" onClick={showModalpay} id="paybtn" role="presentation">Payment</p>
           </div>
           <NavLink key="contact">
-            <Link to="/contact/" activeClassName="activeLink" onClick={props.onClick}>Contact</Link>
+            <Link to="/contact/" activeClassName="activeLink" onClick={props.onClick} role="presentation">Contact</Link>
           </NavLink>
         </NavLinkContainer>
         <Modal title="Pay" visible={isModalVisible} onOk={handleOk} onCancel={handleCancelpay}>

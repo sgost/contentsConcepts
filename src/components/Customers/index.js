@@ -27,7 +27,7 @@ export const CustomersPreviewSection = ({
         <h2>{title}</h2>
       </SectionHeading>
       <CarouselContainer>
-        <a className="leftArrow" onClick={() => slider.current.prev()}>
+        <a className="leftArrow" onClick={() => slider.current.prev()} role="presentation">
           <LeftOutlined />
         </a>
         <Carousel ref={slider}>
@@ -62,7 +62,7 @@ export const CustomersPreviewSection = ({
             )
           }
         </Carousel>
-        <a className="rightArrow" onClick={() => slider.current.next()}>
+        <a className="rightArrow" onClick={() => slider.current.next()} role="presentation">
           <RightOutlined />
         </a>
       </CarouselContainer>

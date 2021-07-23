@@ -2,9 +2,7 @@ import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Form, Input, Radio, Row, Col, Upload, Button, InputNumber, message } from 'antd';
 import { UploadOutlined, SmileOutlined } from '@ant-design/icons';
-import {
-  QuoteFormSection
-} from './styles';
+import { QuoteFormSection } from './styles';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
@@ -264,7 +262,7 @@ const GetQuote = props => {
         </Form.Item>
         {(!name || name.length < 3 || (!/\S+@\S+\.\S+/.test(email))) ? (
           <Form.Item className="submitBtn">
-            <Button type="primary" onClick={signnn}>
+            <Button type="primary" onClick={signnn} htmlType="submit">
               Submit
             </Button>
           </Form.Item>

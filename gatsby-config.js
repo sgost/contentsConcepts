@@ -82,8 +82,8 @@ module.exports = {
     {
       resolve: `gatsby-source-git`,
       options: {
-        name: `contents-concepts-markdown`,
-        remote: `https://github.com/sgost/contents-concepts-markdown.git`,
+        name: `contentconcepts-data`,
+        remote: `https://github.com/fidisys/contentconcepts-data.git`,
         branch: `master`
       }
     },

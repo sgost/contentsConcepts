@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  repo: sgost/contents-concepts-markdown
+  name: github
+  repo: fidisys/contentconcepts-data
 
 publish_mode: editorial_workflow
 
@@ -13,9 +13,9 @@ collections:
     files:
       - label: Service Links
         name: Footer
-        file: 'home/footere.md'
+        file: 'home/footer.md'
         fields:
-          - { label: Services Links, name: sitemapList, widget: list, fields: [ { label: Title, name: title, widget: string }, { label: Links Editor, name: sitemap, widget: list }, { label: Menu Label, name: title }, { label: Link, name: link } ] }
+          - { label: Services Links, name: sitemapList, widget: list, fields: [ { label: Title, name: title, widget: string }, { label: Links Editor, name: sitemap, widget: list, fields: [ { label: Menu Label, name: title }, { label: Link, name: link } ] } ] }
       - label: Banner
         name: homeBanner
         file: 'home/banner.md'

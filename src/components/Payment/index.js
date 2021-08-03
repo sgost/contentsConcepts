@@ -1,5 +1,4 @@
 import React from "react";
-import "../Header/pay.css";
 import { PayContainer } from "./styles";
 import qr from "../../images/patnerqr.svg";
 

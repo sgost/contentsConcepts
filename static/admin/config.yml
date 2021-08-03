@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: fidisys/contentconcepts-data
 
 publish_mode: editorial_workflow
@@ -8,14 +8,17 @@ media_folder: 'assets'
 public_folder: '/'
 
 collections:
-  - label: Home
-    name: home
+  - label: Services
+    name: services
     files:
       - label: Service Links
         name: Footer
         file: 'home/footer.md'
         fields:
           - { label: Services Links, name: sitemapList, widget: list, fields: [ { label: Title, name: title, widget: string }, { label: Links Editor, name: sitemap, widget: list, fields: [ { label: Menu Label, name: title }, { label: Link, name: link } ] } ] }
+  - label: Home
+    name: home
+    files:
       - label: Banner
         name: homeBanner
         file: 'home/banner.md'

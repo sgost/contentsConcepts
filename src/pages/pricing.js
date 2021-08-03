@@ -6,6 +6,7 @@ import Pricing from "../components/Pricing"
 import Customers from "../components/Customers"
 import Contact from "../components/Contact"
 import PriceEstimate from "../components/PriceEstimate"
+import Pay from "../components/Payment"
 import QualityAssurance from "../components/QualityAssurance"
 import FAQ from "../components/FAQ"
 
@@ -19,7 +20,8 @@ const PricingPage = ({ data }) => {
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <Pricing content={pricingContent} />
-      <PriceEstimate/>
+      <PriceEstimate />
+      <Pay />
       <QualityAssurance />
       <Customers />
       <Contact />

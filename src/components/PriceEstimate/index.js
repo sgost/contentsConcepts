@@ -37,16 +37,19 @@ const PriceEstimate = () => {
     }
     const [pay, setpay] = useState(null)
     const [toggleState, setToggleState] = useState(0)
-    const [currency, setcurrency] = useState(0)
+    const [currency, setcurrency] = useState(1)
 
     const toggleTab = index => {
         setToggleState(index)
     }
 
-    const dayNumber = new Date().getDate();
-    const year = new Date().getFullYear();
-    const dayName = new Date().toLocaleString("default", { weekday: "long" });
-    const monthName = new Date().toLocaleString("default", { month: "long" });
+    const UpdateTime = pay <= 2000 ? 48 : pay === 2001 || pay <= 4000 ? 96 : pay === 4001 || pay <= 6000 ? 144 : pay > 6000 ? 192 : "";
+    var d = new Date();
+    const kk = d.setHours(UpdateTime);
+    const dayNumber = d.getDate();
+    const year = d.getFullYear();
+    const dayName = d.toLocaleString("default", { weekday: "long" });
+    const monthName = d.toLocaleString("default", { month: "long" });
 
     const normFile = e => {
         if (Array.isArray(e)) {
@@ -108,7 +111,7 @@ const PriceEstimate = () => {
                                                 : "pay_block2_container1"
                                         }
                                         onClick={() => toggleTab(i)}
-                                        >{paymap.title}</button>
+                                    >{paymap.title}</button>
                                 </>
                             )}
                         </div>
@@ -140,23 +143,16 @@ const PriceEstimate = () => {
                                 </div>
                                 <div id="p_b_top">
                                     <h1>Total Price</h1>
-                                    {(currency) ?
-                                        (
-                                            <>
-                                                {(currency === 1) ?
-                                                    <h2>₹ {paymap.rupees * pay}</h2>
-                                                    :
-                                                    <h2>$ {paymap.dollers * pay}</h2>
-                                                }
-                                            </>)
-                                        :
+                                    {(currency === 1) ?
                                         <h2>₹ {paymap.rupees * pay}</h2>
+                                        :
+                                        <h2>$ {paymap.dollers * pay}</h2>
                                     }
                                 </div>
-                                    <div id="p_b_middle">
-                                        <h1>Returned before</h1>
-                                        <h1>{dayName}, {monthName} {dayNumber}, {year}</h1>
-                                    </div>
+                                <div id="p_b_middle">
+                                    <h1>Returned before</h1>
+                                    <h1>{dayName}, {monthName} {dayNumber}, {year}</h1>
+                                </div>
                                 <div id="p_b_bottom">
                                     <button onClick={() => {
                                         proceedtopay(paymap)

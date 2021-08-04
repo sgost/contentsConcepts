@@ -91,7 +91,6 @@ transition:0.5s ease;
   color: #FFFFFF;
   box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
   box-shadow: none;
-  border:none;
 }
 `;
 
@@ -173,7 +172,7 @@ font-size: 1.00719424460432vw;
 line-height: 1.51079136690647vw;
 color: #FFFFFF;
 outline:none;
-border:none;
+border: 0.0359712230215827vw solid #CCCCCC;
 margin-top:3.7410071942446vw;
 cursor:pointer;
 box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);

@@ -74,24 +74,22 @@ border-radius: 0.575539568345324vw;
 padding: 0 2vw;
 text-align:center;
 }
-#slider_buttons button{
-background: #1976D2;
-box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
+#slider_buttons .pay_block2_container1{
+background: white;
+  color:black;
 border-radius: 0.575539568345324vw;
 font-weight: 600;
 font-size: 1.15107913669065vw;
 line-height: 1.72661870503597vw;
-color: #FFFFFF;
-border:none;
+border: 0.0359712230215827vw solid #CCCCCC;
 outline:none;
 cursor:pointer;
 transition:0.5s ease;
-box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
 }
-#slider_buttons button:hover{
-  background: white;
-  color:black;
-  border: 0.0359712230215827vw solid #CCCCCC;
+#slider_buttons .pay_block2_container2{
+  background: #1976D2;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
   box-shadow: none;
 }
 `;
@@ -109,44 +107,45 @@ border-left: 0.0359712230215827vw solid #CCCCCC;
   display: flex;
   margin-left:auto;
 }
-#p_b_top_main button{
+#p_b_top_main .currency1{
   width: 5.32374100719424vw;
 height: 3.16546762589928vw;
-background: #1976D2;
+background: white;
 border-radius: 0.575539568345324vw;
 cursor:pointer;
-border:none;
 outline:none;
 margin-right:0.863309352517986vw;
 font-style: normal;
 font-weight: normal;
 font-size: 1.29496402877698vw;
-color:white;
-box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
+color:black;
 transition:0.5s ease;
+border: 0.0359712230215827vw solid #CCCCCC;
 }
-#p_b_top_main button:hover{
-  background: white;
-  color:black;
-  border: 0.0359712230215827vw solid #CCCCCC;
-  box-shadow: none;
+#p_b_top_main .currency2{
+  background: #1976D2;
+  color:white;
+  box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
 }
 #p_b_top{
   text-align:center;
   margin:0;
   margin-top:3.7410071942446vw;
+  width:100%;
 }
 #p_b_top h1{
 font-weight: 600;
 font-size: 2.01438848920863vw;
 line-height: 3.02158273381295vw;
 color:black;
+text-align:center;
 }
 #p_b_top h2{
   font-weight: 600;
 font-size: 3.45323741007194vw;
 line-height: 5.17985611510791vw;
 color:black;
+text-align:center;
 }
 #p_b_middle{
   text-align:center;
@@ -173,7 +172,7 @@ font-size: 1.00719424460432vw;
 line-height: 1.51079136690647vw;
 color: #FFFFFF;
 outline:none;
-border:none;
+border: 0.0359712230215827vw solid #CCCCCC;
 margin-top:3.7410071942446vw;
 cursor:pointer;
 box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);

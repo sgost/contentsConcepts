@@ -7,6 +7,7 @@ import {
 } from './styles';
 import { Form, Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+import {Link} from "gatsby";
 
 const PriceEstimate = () => {
     //Prize array
@@ -154,9 +155,9 @@ const PriceEstimate = () => {
                                     <h1>{dayName}, {monthName} {dayNumber}, {year}</h1>
                                 </div>
                                 <div id="p_b_bottom">
-                                    <button onClick={() => {
+                                    <Link to = "/pricing/#pays"><button onClick={() => {
                                         proceedtopay(paymap)
-                                    }}>Make Payment</button>
+                                    }}>Make Payment</button></Link>
                                 </div>
                             </PriceEstimate_container_b2>
                         )}

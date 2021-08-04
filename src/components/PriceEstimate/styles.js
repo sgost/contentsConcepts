@@ -132,18 +132,21 @@ border: 0.0359712230215827vw solid #CCCCCC;
   text-align:center;
   margin:0;
   margin-top:3.7410071942446vw;
+  width:100%;
 }
 #p_b_top h1{
 font-weight: 600;
 font-size: 2.01438848920863vw;
 line-height: 3.02158273381295vw;
 color:black;
+text-align:center;
 }
 #p_b_top h2{
   font-weight: 600;
 font-size: 3.45323741007194vw;
 line-height: 5.17985611510791vw;
 color:black;
+text-align:center;
 }
 #p_b_middle{
   text-align:center;

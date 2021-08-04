@@ -44,7 +44,7 @@ const PriceEstimate = () => {
         setToggleState(index)
     }
 
-    const UpdateTime = pay <= 2000 ? 48 : pay === 2001 || pay <= 4000 ? 96 : pay === 4001 || pay <= 6000 ? 144 : pay > 6000 ? 192 : "";
+    const UpdateTime = pay <= 2000 ? 48 : pay === 2001 || pay <= 4000 ? 96 : pay === 4001 || pay <= 6000 ? 144 : pay > 6001 || pay <= 20000 ? 336 : pay > 20001 || pay <= 100000 ? 720 : "";
     var d = new Date();
     const kk = d.setHours(UpdateTime);
     const dayNumber = d.getDate();

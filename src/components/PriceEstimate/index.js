@@ -7,7 +7,7 @@ import {
 } from './styles';
 import { Form, Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 
 const PriceEstimate = () => {
     //Prize array
@@ -44,7 +44,7 @@ const PriceEstimate = () => {
         setToggleState(index)
     }
 
-    const UpdateTime = pay <= 2000 ? 48 : pay === 2001 || pay <= 4000 ? 96 : pay === 4001 || pay <= 6000 ? 144 : pay === 6001 || pay <= 20000 ? 336 : pay === 20001 || pay <= 100000 ? 720 : "";
+    const UpdateTime = !pay ? 0 : pay <= 2000 ? 48 : pay === 2001 || pay <= 4000 ? 96 : pay === 4001 || pay <= 6000 ? 144 : pay === 6001 || pay <= 20000 ? 336 : pay === 20001 || pay <= 100000 ? 720 : "";
     var d = new Date();
     const kk = d.setHours(UpdateTime);
     const dayNumber = d.getDate();
@@ -155,7 +155,7 @@ const PriceEstimate = () => {
                                     <h1>{dayName}, {monthName} {dayNumber}, {year}</h1>
                                 </div>
                                 <div id="p_b_bottom">
-                                    <Link to = "/pricing/#pays"><button onClick={() => {
+                                    <Link to="/pricing/#pays"><button onClick={() => {
                                         proceedtopay(paymap)
                                     }}>Make Payment</button></Link>
                                 </div>

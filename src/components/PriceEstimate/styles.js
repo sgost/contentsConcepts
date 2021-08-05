@@ -117,7 +117,7 @@ outline:none;
 margin-right:0.863309352517986vw;
 font-style: normal;
 font-weight: normal;
-font-size: 1.29496402877698vw;
+font-size: 1.1vw;
 color:black;
 transition:0.5s ease;
 border: 0.0359712230215827vw solid #CCCCCC;
@@ -150,6 +150,8 @@ text-align:center;
 #p_b_middle{
   text-align:center;
   margin-top:3.7410071942446vw;
+  width:100%;
+  height:4.5vw;
 }
 #p_b_middle h1{
   font-weight: 600;

@@ -44,7 +44,7 @@ const PriceEstimate = () => {
         setToggleState(index)
     }
 
-    const UpdateTime = !pay ? 0 : pay <= 2000 ? 48 : pay === 2001 || pay <= 4000 ? 96 : pay === 4001 || pay <= 6000 ? 144 : pay === 6001 || pay <= 20000 ? 336 : pay === 20001 || pay <= 100000 ? 720 : "";
+    const UpdateTime = !pay ? 0 : pay <= 2000 ? 48 : pay === 2001 || pay <= 4000 ? 96 : pay === 4001 || pay <= 6000 ? 144 : pay === 6001 || pay <= 20000 ? 336 : pay >= 20001 ? 720 : "";
     var d = new Date();
     const kk = d.setHours(UpdateTime);
     const dayNumber = d.getDate();
@@ -96,8 +96,8 @@ const PriceEstimate = () => {
                     <div id="slide_label">
                         <label htmlFor="firstName">How many words do you want to edit ?</label>
                         <div id="slider_buttons">
-                            <input type="text" id="peinput" value={pay}
-                                onChange={e => setpay(e.target.value)} />
+                            <input type="text" id="peinput" value={pay <= 100000 ? pay : 100000}
+                                onChange={e => setpay(e.target.value)} max="100000" />
                         </div>
                     </div>
                     <div id="slide_label">
@@ -152,7 +152,11 @@ const PriceEstimate = () => {
                                 </div>
                                 <div id="p_b_middle">
                                     <h1>Returned before</h1>
+                                    {pay === "" ? 
+                                    <h1>-</h1>
+                                    :
                                     <h1>{dayName}, {monthName} {dayNumber}, {year}</h1>
+                                    }
                                 </div>
                                 <div id="p_b_bottom">
                                     <Link to="/pricing/#pays"><button onClick={() => {

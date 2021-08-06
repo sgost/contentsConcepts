@@ -45,7 +45,7 @@ const PriceEstimate = () => {
     }
 
     var finalpay = pay <= 100000 ? pay : 100000;
-    const UpdateTime = !finalpay ? 0 : finalpay <= 2000 ? 48 : finalpay === 2001 || finalpay <= 4000 ? 96 : finalpay === 4001 || finalpay <= 6000 ? 144 : finalpay === 6001 || finalpay <= 20000 ? 336 : finalpay >= 20001 ? 720 : "";
+    const UpdateTime = !finalpay ? "" : finalpay <= 2000 ? 48 : finalpay === 2001 || finalpay <= 4000 ? 96 : finalpay === 4001 || finalpay <= 6000 ? 144 : finalpay === 6001 || finalpay <= 20000 ? 336 : finalpay >= 20001 ? 720 : "";
     var d = new Date();
     d.setHours(UpdateTime)
     const dayNumber = d.getDate();
@@ -153,10 +153,10 @@ const PriceEstimate = () => {
                                 </div>
                                 <div id="p_b_middle">
                                     <h1>Returned before</h1>
-                                    {finalpay === "" ? 
-                                    <h1>-</h1>
-                                    :
-                                    <h1>{dayName}, {monthName} {dayNumber}, {year}</h1>
+                                    {!finalpay ?
+                                        <h1>-</h1>
+                                        :
+                                        <h1>{dayName}, {monthName} {dayNumber}, {year}</h1>
                                     }
                                 </div>
                                 <div id="p_b_bottom">

@@ -44,9 +44,10 @@ const PriceEstimate = () => {
         setToggleState(index)
     }
 
-    const UpdateTime = !pay ? 0 : pay <= 2000 ? 48 : pay === 2001 || pay <= 4000 ? 96 : pay === 4001 || pay <= 6000 ? 144 : pay === 6001 || pay <= 20000 ? 336 : pay >= 20001 ? 720 : "";
+    var finalpay = pay <= 100000 ? pay : 100000;
+    const UpdateTime = !finalpay ? 0 : finalpay <= 2000 ? 48 : finalpay === 2001 || finalpay <= 4000 ? 96 : finalpay === 4001 || finalpay <= 6000 ? 144 : finalpay === 6001 || finalpay <= 20000 ? 336 : finalpay >= 20001 ? 720 : "";
     var d = new Date();
-    const kk = d.setHours(UpdateTime);
+    d.setHours(UpdateTime)
     const dayNumber = d.getDate();
     const year = d.getFullYear();
     const dayName = d.toLocaleString("default", { weekday: "long" });
@@ -96,7 +97,7 @@ const PriceEstimate = () => {
                     <div id="slide_label">
                         <label htmlFor="firstName">How many words do you want to edit ?</label>
                         <div id="slider_buttons">
-                            <input type="text" id="peinput" value={pay <= 100000 ? pay : 100000}
+                            <input type="text" id="peinput" value={finalpay}
                                 onChange={e => setpay(e.target.value)} max="100000" />
                         </div>
                     </div>
@@ -145,14 +146,14 @@ const PriceEstimate = () => {
                                 <div id="p_b_top">
                                     <h1>Total Price</h1>
                                     {(currency === 1) ?
-                                        <h2>₹ {paymap.rupees * pay}</h2>
+                                        <h2>₹ {paymap.rupees * finalpay}</h2>
                                         :
-                                        <h2>$ {paymap.dollers * pay}</h2>
+                                        <h2>$ {paymap.dollers * finalpay}</h2>
                                     }
                                 </div>
                                 <div id="p_b_middle">
                                     <h1>Returned before</h1>
-                                    {pay === "" ? 
+                                    {finalpay === "" ? 
                                     <h1>-</h1>
                                     :
                                     <h1>{dayName}, {monthName} {dayNumber}, {year}</h1>

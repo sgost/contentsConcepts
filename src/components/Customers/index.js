@@ -27,9 +27,9 @@ export const CustomersPreviewSection = ({
         <h2>{title}</h2>
       </SectionHeading>
       <CarouselContainer>
-        <a className="leftArrow" onClick={() => slider.current.prev()} role="presentation">
+        <div className="leftArrow" onClick={() => slider.current.prev()} role="presentation">
           <LeftOutlined />
-        </a>
+        </div>
         <Carousel ref={slider}>
           {
             customers && customers.map(dataItem =>

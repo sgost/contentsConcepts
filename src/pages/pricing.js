@@ -20,6 +20,8 @@ const PricingPage = ({ data }) => {
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <Pricing content={pricingContent} />
+      <PriceEstimate/>
+      <Pay/>
       <QualityAssurance />
       <Customers />
       <Contact />

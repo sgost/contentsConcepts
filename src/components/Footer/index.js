@@ -74,14 +74,14 @@ export const FooterPreviewSection = ({
         }
       </SitemapContainer>
       <div id="footer_minidiv">
-        <div id="footer_minidiv_block1">
+        <Link to="/pricing/#pays" id="footer_minidiv_block1">
           <img src={f1} alt="img" />
           <img src={f2} alt="img" />
           <img src={f3} alt="img" />
           <img src={f4} alt="img" />
           <img src={f5} alt="img" />
           <img src={f6} alt="img" />
-        </div>
+        </Link>
         <div id="footer_minidiv_block2">
           <h1 onClick={handleClickOpen('paper')} role="presentation">Terms of Service</h1>
           <h1 onClick={handleClickOpens('paper')} role="presentation">Privacy Policy</h1>

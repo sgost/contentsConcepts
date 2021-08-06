@@ -127,7 +127,7 @@ const PriceEstimate = () => {
                             <Upload name="category" listType="picture" id="categoryFile2" onChange={uploadChange} onRemove={removeUploadedFile} customRequest={customReqChange} transformFile={transformFile} >
                                 {
                                     showUpload &&
-                                    <Button className="uploadBtn2">
+                                    <Button className="uploadBtn2" disabled>
                                         <UploadOutlined /> Click to upload
                                     </Button>
                                 }

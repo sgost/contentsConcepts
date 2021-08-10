@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import * as palette from '../../styles/variables';
 
 export const PriceEstimate_main = styled.div`
 width:100%;
 height:fit-content;
-background: ${palette.WHITE_COLOR};
-padding:8.41726618705036vw 0;
+background: #F5FBFF;
+padding:3vw 0 9vw 0;
 h1{
   text-align:left;
 font-style: normal;
@@ -17,19 +16,20 @@ color: #333333;
 `;
 
 export const PriceEstimate_container = styled.div`
-width:88.9208633093525vw;
-height:43.1654676258993vw;
+width:85vw;
 display:flex;
 margin:auto;
 margin-top:4.02877697841727vw;
 border: 0.0359712230215827vw solid #CCCCCC;
 border-radius: 0.575539568345324vw;
-padding:3.09352517985611vw 0 3.09352517985611vw 3.9568345323741vw;
+padding:3vw 0 3vw 0;
+background:white;
 `;
 
 export const PriceEstimate_container_b1 = styled.div`
 width:57.5539568345324vw;
 height:fit-content;
+padding:2vw 3vw 2vw 4vw;
 #slide_label:nth-child(1){
   margin-top:0;
 }
@@ -59,7 +59,17 @@ height: 3.45323741007194vw;
   grid-template-columns:repeat(3, 1fr);
   gap:2.15827338129496vw;
   grid-template-rows:4.1726618705036vw;
-  margin-top:0.503597122302158vw;
+  margin-top:1vw;
+}
+#slider_input{
+  display:flex;
+  width:fit-content;
+  justify-content:center;
+  align-items:center;
+  margin:1vw 0 0 0;
+}
+#slider_input p{
+  margin-left:1vw;
 }
 #peinput{
   width: 8.99280575539568vw;
@@ -95,13 +105,13 @@ transition:0.5s ease;
 `;
 
 export const PriceEstimate_container_b2 = styled.div`
-width:25.6834532374101vw;
-height:37.0503597122302vw;
-margin-left:5.97122302158273vw;
+width:23vw;
+margin-left:auto;
 display:flex;
 flex-direction:column;
 align-items:center;
 border-left: 0.0359712230215827vw solid #CCCCCC;
+padding:1vw 2vw 2vw 0;
 #p_b_top_main{
   width:fit-content;
   display: flex;
@@ -130,42 +140,46 @@ border: 0.0359712230215827vw solid #CCCCCC;
 #p_b_top{
   text-align:center;
   margin:0;
-  margin-top:3.7410071942446vw;
   width:100%;
 }
 #p_b_top h1{
 font-weight: 600;
-font-size: 2.01438848920863vw;
+font-size: 18px;
 line-height: 3.02158273381295vw;
 color:black;
 text-align:center;
+margin-top:30px;
 }
 #p_b_top h2{
   font-weight: 600;
-font-size: 3.45323741007194vw;
-line-height: 5.17985611510791vw;
-color:black;
+font-size: 36px;
+line-height: 3vw;
+color: #333333;
 text-align:center;
 }
 #p_b_middle{
   text-align:center;
-  margin-top:3.7410071942446vw;
   width:100%;
   height:4.5vw;
+  margin-top:2vw;
 }
 #p_b_middle h1{
-  font-weight: 600;
-font-size: 1.15107913669065vw;
+  font-weight: 500;
+font-size: 16px;
 line-height: 1.72661870503597vw;
-color:black;
+color: #666666;
 text-align:center;
 }
-#p_b_middle h1:first-child{
-  color: #666666;
+#p_b_middle h1:nth-child(2) {
+  font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+color:black;
 }
 #p_b_bottom button{
   width: 12.9496402877698vw;
-height: 3.45323741007194vw;
+height: 3.9vw;
 background: #1565C0;
 border-radius: 0.575539568345324vw;
 font-style: normal;
@@ -175,10 +189,10 @@ line-height: 1.51079136690647vw;
 color: #FFFFFF;
 outline:none;
 border: 0.0359712230215827vw solid #CCCCCC;
-margin-top:3.7410071942446vw;
 cursor:pointer;
 box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
 transition:0.5s ease;
+margin-top:3vw;
 }
 #p_b_bottom button:hover{
   background: white;

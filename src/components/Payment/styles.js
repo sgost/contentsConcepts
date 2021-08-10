@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const PayContainer = styled.div`
 #pays {
-  background: #f5fbff;
+  background: white;
   width: 100%;
   height: 100%;
   left: 0;
@@ -20,7 +20,7 @@ export const PayContainer = styled.div`
   font-weight: 600;
   font-size: 2.01438848920863vw;
   line-height: 3.02158273381295vw;
-  color: #333333;
+  color: black;
 }
 #pay_containers {
   width: 80.2158273381295vw;

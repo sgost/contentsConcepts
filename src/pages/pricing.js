@@ -19,9 +19,9 @@ const PricingPage = ({ data }) => {
   return (
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
-      <Pricing content={pricingContent} />
       <PriceEstimate/>
       <Pay/>
+      <Pricing content={pricingContent} />
       <QualityAssurance />
       <Customers />
       <Contact />

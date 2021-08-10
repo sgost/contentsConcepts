@@ -1,12 +1,17 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Form, Input, Radio, Row, Col, Upload, Button, InputNumber, message } from 'antd';
-import { UploadOutlined, SmileOutlined } from '@ant-design/icons';
-import { QuoteFormSection } from './styles';
+import { Form, Input, Radio, Row, Col, Upload, Button, Modal } from 'antd';
+import { UploadOutlined, CheckCircleTwoTone } from '@ant-design/icons';
+import { QuoteFormSection, Quotepop } from './styles';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import Pay from "../Payment/index"
 
-const GetQuote = props => {
+const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, dayName, monthName }) => {
+  console.log(toggleState);
+  const MainPrize = toggleState === 0 ? currency === 4 ? 1.50 * wordcount : 0.020 * wordcount : toggleState === 1 ? currency === 4 ? 1.75 * wordcount : 0.024 * wordcount : toggleState === 2 ? currency === 4 ? 2.50 * wordcount : 0.034 * wordcount : ("");
+  const category = toggleState === 0 ? "Proof Reading & Editing" : toggleState === 1 ? "Substantive Editing" : toggleState === 2 ? "Plagarism Editing" : ("");
+  const currencyPrize = currency === 4 ? "₹" + MainPrize : currency === 5 ? "$" + MainPrize : "₹" + MainPrize;
   const [value, setValue] = useState();
 
   const [form] = Form.useForm();
@@ -50,6 +55,8 @@ const GetQuote = props => {
   }
 
   const [disabled, setDisabled] = useState(false);
+  //modal
+  const [success, setSuccess] = useState();
 
   const onFinish = async values => {
 
@@ -66,10 +73,16 @@ const GetQuote = props => {
       data.append("phone", values.phone);
     }
 
-    if (values.category === undefined) {
+    if (category === undefined) {
       data.append("category", '-');
     } else {
-      data.append("category", values.category);
+      data.append("category", category);
+    }
+
+    if (values.languageCategory === undefined) {
+      data.append("languageCategory", '-');
+    } else {
+      data.append("languageCategory", values.languageCategory);
     }
 
     if (values.categoryFile !== undefined) {
@@ -79,10 +92,16 @@ const GetQuote = props => {
       data.append("filename", '-');
     }
 
-    if (values.wordCount === undefined) {
+    if (wordcount === undefined) {
       data.append("wordCount", '-');
     } else {
-      data.append("wordCount", values.wordCount);
+      data.append("wordCount", wordcount);
+    }
+
+    if (MainPrize === undefined) {
+      data.append("prize", '-');
+    } else {
+      data.append("prize", MainPrize);
     }
 
     if (values.requirement === undefined) {
@@ -98,25 +117,19 @@ const GetQuote = props => {
       body: data,
       mode: 'no-cors',
     }).then(function (response) {
-      message.success({
-        content: 'Thank you. We will get back to you as quick as humanly possible.',
-        className: 'messageCont',
-        icon: <SmileOutlined />
-      });
+      setSuccess(true);
       setDisabled(false);
       form.resetFields();
       props.onSubmit();
     }).catch(function (err) {
-      message.error({
-        content: err.message,
-        className: 'messageCont',
-        icon: <SmileOutlined rotate={180} />
-      });
       setDisabled(false);
     });
     setShowUpload(true);
   };
 
+  const handelCancel = () => {
+    setSuccess(false);
+  }
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "quoteCategory.md"}) {
@@ -152,128 +165,149 @@ const GetQuote = props => {
   const signnn = () => {
     setErrors(validation())
   }
-
   return (
-    <QuoteFormSection>
-      <Form name="quote-form" onFinish={onFinish} className="quoteForm gform" form={form}>
-        <div>
-          <label className="formLabel" htmlFor="categoryFile">Name{(!name) ? (<span style={{ color: (errors.color) }}>*</span>) : (<span>*</span>)}</label>
-          <Form.Item
-            name='name'
-            rules={[
-              {
-                required: true,
-                message: `Can't be blank`,
-              },
-            ]}
-            value={name}
-            onChange={e => setName(e.target.value)}
-          >
-            <Input placeholder="Name" />
-          </Form.Item>
-        </div>
-        <Form.Item
-          style={{
-            marginBottom: 0,
-          }}
-          className="inputGroupBlock"
-        >
-          <div className="inlineInput">
-            <label className="formLabel" htmlFor="category">Phone Number</label>
+    <>
+      <QuoteFormSection>
+        <Form name="quote-form" onFinish={onFinish} className="quoteForm gform" form={form}>
+          <div>
+            <label className="formLabel" htmlFor="categoryFile">Name{(!name) ? (<span style={{ color: (errors.color) }}>*</span>) : (<span>*</span>)}</label>
             <Form.Item
-              name='phone'
-            >
-              <PhoneInput
-                defaultCountry="IN"
-                placeholder="Enter phone number"
-                value={value}
-                onChange={setValue} id="inlineInput" />
-            </Form.Item>
-          </div>
-          <div className="inlineInput emailInput">
-            <label className="formLabel" htmlFor="category">Email ID {(!email) ? (<span style={{ color: (errors.color) }}>*</span>) : (<span>*</span>)}</label>
-            <Form.Item
-              name='email'
+              name='name'
               rules={[
                 {
                   required: true,
                   message: `Can't be blank`,
                 },
-                {
-                  type: 'email',
-                  message: `Please enter valid Email ID`,
-                }
               ]}
-              value={email}
-              onChange={e => setEmail(e.target.value)}
+              value={name}
+              onChange={e => setName(e.target.value)}
             >
-              <Input placeholder="Email ID" />
+              <Input placeholder="Name" />
             </Form.Item>
           </div>
-        </Form.Item>
-        <div>
-          <label className="formLabel" htmlFor="category">Select Category</label>
           <Form.Item
-            name='category'
+            style={{
+              marginBottom: 0,
+            }}
+            className="inputGroupBlock"
           >
-            <Radio.Group style={{ width: '100%' }} className="categoryGroup" id="category">
-              <Row>
+            <div className="inlineInput">
+              <label className="formLabel" htmlFor="category">Phone Number</label>
+              <Form.Item
+                name='phone'
+              >
+                <PhoneInput
+                  international
+                  defaultCountry="IN"
+                  placeholder="Enter phone number"
+                  value={value}
+                  onChange={setValue} id="inlineInput" />
+              </Form.Item>
+            </div>
+            <div className="inlineInput emailInput">
+              <label className="formLabel" htmlFor="category">Email ID {(!email) ? (<span style={{ color: (errors.color) }}>*</span>) : (<span>*</span>)}</label>
+              <Form.Item
+                name='email'
+                rules={[
+                  {
+                    required: true,
+                    message: `Can't be blank`,
+                  },
+                  {
+                    type: 'email',
+                    message: `Please enter valid Email ID`,
+                  }
+                ]}
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              >
+                <Input placeholder="Email ID" />
+              </Form.Item>
+            </div>
+          </Form.Item>
+          <div>
+            <label className="formLabel" htmlFor="languageCategory">Select Category</label>
+            <Form.Item
+              name='languageCategory'
+            >
+              <Radio.Group style={{ width: '100%' }} className="categoryGroup" id="category">
+                <Row>
+                  {
+                    categoryData.categories && categoryData.categories.map(item =>
+                      <Col xs={24} sm={12} md={12} lg={12} xl={12} className="categoryItem" key={item.value}>
+                        <Radio value={item.value}>{item.label}</Radio>
+                      </Col>
+                    )
+                  }
+                </Row>
+              </Radio.Group>
+            </Form.Item>
+          </div>
+          <div>
+            <label className="formLabel" htmlFor="categoryFile">Select your file to upload</label>
+            <Form.Item
+              name='categoryFile'
+              valuePropName="fileList"
+              getValueFromEvent={normFile}
+            >
+              <Upload name="category" listType="picture" id="categoryFile" onChange={uploadChange} onRemove={removeUploadedFile} customRequest={customReqChange} transformFile={transformFile} >
                 {
-                  categoryData.categories && categoryData.categories.map(item =>
-                    <Col xs={24} sm={12} md={12} lg={12} xl={12} className="categoryItem" key={item.value}>
-                      <Radio value={item.value}>{item.label}</Radio>
-                    </Col>
-                  )
+                  showUpload &&
+                  <Button className="uploadBtn">
+                    <UploadOutlined /> Click to upload
+                  </Button>
                 }
-              </Row>
-            </Radio.Group>
-          </Form.Item>
-        </div>
-        <div>
-          <label className="formLabel" htmlFor="categoryFile">Select your file to upload</label>
-          <Form.Item
-            name='categoryFile'
-            valuePropName="fileList"
-            getValueFromEvent={normFile}
-          >
-            <Upload name="category" listType="picture" id="categoryFile" onChange={uploadChange} onRemove={removeUploadedFile} customRequest={customReqChange} transformFile={transformFile} >
-              {
-                showUpload &&
-                <Button className="uploadBtn">
-                  <UploadOutlined /> Click to upload
-                </Button>
-              }
-            </Upload>
-          </Form.Item>
-        </div>
-        <div>
-          <label className="formLabel" htmlFor="wordCount">Word Count</label>
-          <Form.Item
-            name='wordCount'
-          >
-            <InputNumber min={0} id="wordCount" placeholder="Word Count" />
-          </Form.Item>
-        </div>
-        <Form.Item
-          name="requirement"
-        >
-          <TextArea rows={4} placeholder="Describe your requirement briefly." />
-        </Form.Item>
-        {(!name || name.length < 3 || (!/\S+@\S+\.\S+/.test(email))) ? (
-          <Form.Item className="submitBtn">
-            <Button type="primary" onClick={signnn} htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
-        ) : (
-          <Form.Item className="submitBtn">
-            <Button type="primary" htmlType="submit" disabled={disabled}>
-              Submit
-            </Button>
-          </Form.Item>
-        )}
-      </Form>
-    </QuoteFormSection>
+              </Upload>
+            </Form.Item>
+          </div>
+          <div>
+            <label className="formLabel" htmlFor="wordCount">Word Count</label>
+            <div id="word_counter_cont">
+              <input type="text" value={wordcount} id="wordCount" />
+              <p>Total Price :  {currencyPrize}</p>
+            </div>
+          </div>
+          <div><label className="formLabel" htmlFor="wordCount" id="description_label">Description</label>
+            <Form.Item
+              name="requirement"
+            >
+              <TextArea rows={4} placeholder="Describe your requirement briefly." />
+            </Form.Item>
+          </div>
+          {(!name || name.length < 3 || (!/\S+@\S+\.\S+/.test(email))) ? (
+            <Form.Item className="submitBtn">
+              <Button type="primary" onClick={signnn} htmlType="submit">
+                Submit
+              </Button>
+            </Form.Item>
+          ) : (
+            <Form.Item className="submitBtn">
+              <Button type="primary" htmlType="submit" disabled={disabled}>
+                Submit
+              </Button>
+            </Form.Item>
+          )}
+        </Form>
+      </QuoteFormSection>
+      <Modal
+        centered
+        visible={success}
+        width={1000}
+        okButtonProps={{ style: { display: 'none' } }}
+        cancelButtonProps={{ style: { display: 'none' } }}
+        onCancel={handelCancel}
+      >
+        <Quotepop id="Quotepop">
+          <div id="pop_conteiner">
+            <p>Your order has been successfully placed.</p>
+            <CheckCircleTwoTone twoToneColor="#52c41a" />
+            <p id="Quotepop_t1">Expected Delivery Date</p>
+            <p id="Quotepop_t2">{dayName}, {monthName} {dayNumber}, {year}</p>
+          </div>
+          <Pay />
+        </Quotepop>
+      </Modal>
+    </>
   )
 }
 

@@ -89,18 +89,50 @@ background: white;
   color:black;
 border-radius: 0.575539568345324vw;
 font-weight: 600;
-font-size: 1.15107913669065vw;
+font-size: 16px;
 line-height: 1.72661870503597vw;
 border: 0.0359712230215827vw solid #CCCCCC;
 outline:none;
 cursor:pointer;
 transition:0.5s ease;
+display:flex;
+position:relative;
+justify-content:center;
+align-items:center;
+width: 249px;
+  height: 48px;
+}
+#slider_buttons .pay_block2_container1 #radio1{
+  display:none;
 }
 #slider_buttons .pay_block2_container2{
-  background: #1976D2;
   color: #FFFFFF;
-  box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
-  box-shadow: none;
+  border: 2px solid #1976D2;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 8px rgba(21, 39, 73, 0.15);
+  border-radius: 8px;
+  color: #1976D2;
+}
+#slider_buttons .pay_block2_container2:first-child{
+  padding-left:25px;
+}
+#slider_buttons .pay_block2_container2 #radio1{
+  width:16px;
+  height:16px;
+  border: 0.5px solid #666666;
+  position:absolute;
+  left:15px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+#slider_buttons .pay_block2_container2 #radio1 #radio2{
+  width:10px;
+  height:10px;
+  background: #1976D2;
+  border-radius:50%;
+  margin:auto;
 }
 `;
 

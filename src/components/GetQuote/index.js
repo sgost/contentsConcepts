@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import { Form, Input, Radio, Row, Col, Upload, Button, Modal } from 'antd';
 import { UploadOutlined, CheckCircleTwoTone } from '@ant-design/icons';
 import { QuoteFormSection, Quotepop } from './styles';
@@ -303,8 +303,10 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
             <CheckCircleTwoTone twoToneColor="#52c41a" />
             <p id="Quotepop_t1">Expected Delivery Date</p>
             <p id="Quotepop_t2">{dayName}, {monthName} {dayNumber}, {year}</p>
+            <p id="Quotepop_t3">Please complete your payment using below options</p>
           </div>
           <Pay />
+          <Link to="/"><button>Back to Home</button></Link>
         </Quotepop>
       </Modal>
     </>

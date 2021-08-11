@@ -89,7 +89,7 @@ const PriceEstimate = props => {
                                                     : "pay_block2_container1"
                                             }
                                             onClick={() => toggleTab(i)}
-                                        >{paymap.title}</button>
+                                        ><div id="radio1"><div id="radio2"></div></div>{paymap.title}</button>
                                     </>
                                 )}
                             </div>
@@ -124,11 +124,11 @@ const PriceEstimate = props => {
                                     </div>
                                     {finalpay ?
                                         <div id="p_b_bottom">
-                                            <button onClick={() => setVisible(true)}>Make Payment</button>
+                                            <button onClick={() => setVisible(true)}>Upload Document</button>
                                         </div>
                                         :
                                         <div id="p_b_bottom">
-                                            <button>Make Payment</button>
+                                            <button>Upload Document</button>
                                         </div>
                                     }
                                 </PriceEstimate_container_b2>

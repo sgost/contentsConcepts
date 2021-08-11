@@ -100,7 +100,7 @@ const NavigationMenu = props => {
             <Link to="/contact/" activeClassName="activeLink" onClick={props.onClick} role="presentation">Contact</Link>
           </NavLink>
         </NavLinkContainer>
-        <Link to="/pricing/"><Button type="primary">Get Quote</Button></Link>
+        <Link to="/pricing/"><Button type="primary">View Pricing & Order Now</Button></Link>
       </NavBarContainer>
     </Fragment>
   )

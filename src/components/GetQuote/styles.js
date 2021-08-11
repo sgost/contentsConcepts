@@ -138,14 +138,16 @@ margin-left:auto;
 export const Quotepop = styled.div`
 background:white;
 padding:50px 0 75px 0;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 #pays{
   background:white;
+  padding: 1vw 11.6546762589928vw 5.25179856115108vw 11.6546762589928vw;
 }
 #pays h1 {
   display:none
-}
-#pay_containers {
-  margin-top:2vw;
 }
 #pop_conteiner{
   width:573px;
@@ -154,8 +156,11 @@ padding:50px 0 75px 0;
   justify-content:center;
   align-items:center;
   margin:auto;
-  padding:50px 0 75px 0;
+  padding:50px 0 34px 0;
   border-bottom: 0.5px solid #CCCCCC;
+}
+#pop_conteiner #pay_containers {
+  margin-top:0;
 }
 .anticon svg {
     width:50px;
@@ -183,5 +188,27 @@ font-size: 16px;
 line-height: 24px;
 color: #333333;
 margin-top:8px;
+}
+#pop_conteiner #Quotepop_t3{
+  font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+color: #666666;
+margin-top:17px;
+}
+button{
+  width: 242px;
+height: 48px;
+background: #1565C0;
+border-radius: 8px;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+color: #FFFFFF;
+border:none;
+outline:none;
+cursor:pointer;
 }
 `;

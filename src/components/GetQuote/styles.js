@@ -196,6 +196,7 @@ font-size: 16px;
 line-height: 24px;
 color: #666666;
 margin-top:17px;
+text-align:center;
 }
 button{
   width: 242px;

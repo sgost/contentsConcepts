@@ -69,7 +69,7 @@ const PriceEstimate = props => {
                                 <input type="text" id="peinput" value={finalpay}
                                     onChange={e => setpay(e.target.value)} max="100000" />
                                 {!finalpay ?
-                                    ("")
+                                    <p></p>
                                     :
                                     <>
                                         <p>Returned before   {dayName}, {monthName} {dayNumber}, {year}</p>

@@ -36,6 +36,9 @@ padding:2vw 3vw 2vw 4vw;
 #slide_label{
   margin-top:3.45323741007194vw;
 }
+#slide_label:nth-child(2){
+  display:flex;
+}
 label{
 font-style: normal;
 font-weight: normal;
@@ -63,13 +66,13 @@ height: 3.45323741007194vw;
 }
 #slider_input{
   display:flex;
+  flex-direction:column;
   width:fit-content;
-  justify-content:center;
-  align-items:center;
-  margin:1vw 0 0 0;
+  margin:-0.8vw 0 0 0 ;
+  height:5vw;
 }
 #slider_input p{
-  margin-left:1vw;
+  margin:0.5vw 0 0 1vw;
 }
 #peinput{
   width: 8.99280575539568vw;
@@ -83,6 +86,7 @@ box-sizing: border-box;
 border-radius: 0.575539568345324vw;
 padding: 0 2vw;
 text-align:center;
+margin-left:1vw;
 }
 #slider_buttons .pay_block2_container1{
 background: white;

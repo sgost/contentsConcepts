@@ -8,11 +8,32 @@ export const BannerSection = styled.div`
     .resSection {
       position: relative;
     }
+    #view_prize Button{
+      margin-top:43px;
+      width: 277px;
+      height: 48px;
+      transition:0.5s ease;
+    }
+    #view_prize Button:hover{
+      width: 282px;
+    }
     @media only screen and (min-width: 320px) and (max-width: 768px) {
       flex-direction: column;
       .resSection {
         display: none;
       }
+      #view_prize{
+      margin:43px auto 0 auto;
+      }
+      #view_prize Button{
+      margin-top:0;
+      width: 277px;
+      height: 48px;
+      transition:0.5s ease;
+    }
+    #view_prize Button:hover{
+      width: 282px;
+    }
     }
     .mob-banner-illustration {
       display: none;

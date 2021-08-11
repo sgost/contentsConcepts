@@ -226,7 +226,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
             </div>
           </Form.Item>
           <div>
-            <label className="formLabel" htmlFor="languageCategory">Select Category</label>
+            <label className="formLabel" htmlFor="languageCategory">Select English Version</label>
             <Form.Item
               name='languageCategory'
             >
@@ -277,13 +277,13 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
           {(!name || name.length < 3 || (!/\S+@\S+\.\S+/.test(email))) ? (
             <Form.Item className="submitBtn">
               <Button type="primary" onClick={signnn} htmlType="submit">
-              Submit Document & Pay
+                Submit Document & Pay
               </Button>
             </Form.Item>
           ) : (
             <Form.Item className="submitBtn">
               <Button type="primary" htmlType="submit" disabled={disabled}>
-              Submit Document & Pay
+                Submit Document & Pay
               </Button>
             </Form.Item>
           )}
@@ -303,10 +303,10 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
             <CheckCircleTwoTone twoToneColor="#52c41a" />
             <p id="Quotepop_t1">Expected Delivery Date</p>
             <p id="Quotepop_t2">{dayName}, {monthName} {dayNumber}, {year}</p>
-            <p id="Quotepop_t3">Please complete your payment using below options</p>
+            <p id="Quotepop_t3">Thank you for submitting your document. Please proceed to make payment. You will receive a confirmation after payment is done.</p>
           </div>
           <Pay />
-          <Link to="/"><button>Back to Home</button></Link>
+          <Link to="/"><Button>Back to Home</Button></Link>
         </Quotepop>
       </Modal>
     </>

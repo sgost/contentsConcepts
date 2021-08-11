@@ -27,7 +27,7 @@ background:white;
 `;
 
 export const PriceEstimate_container_b1 = styled.div`
-width:57.5539568345324vw;
+width:fit-content;
 height:fit-content;
 padding:2vw 3vw 2vw 4vw;
 #slide_label:nth-child(1){
@@ -73,6 +73,8 @@ height: 3.45323741007194vw;
 }
 #slider_input p{
   margin:0.5vw 0 0 1vw;
+  font-size:1.00719424460432vw;
+  line-height:1.72661870503597vw;
 }
 #peinput{
   width: 8.99280575539568vw;
@@ -87,6 +89,7 @@ border-radius: 0.575539568345324vw;
 padding: 0 2vw;
 text-align:center;
 margin-left:1vw;
+font-size:1vw;
 }
 #slider_buttons .pay_block2_container1{
 background: white;
@@ -151,7 +154,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 border-left: 0.0359712230215827vw solid #CCCCCC;
-padding:1vw 2vw 2vw 0;
+padding:1vw 2vw 2vw 2vw;
 #p_b_top_main{
   width:fit-content;
   display: flex;
@@ -233,6 +236,7 @@ cursor:pointer;
 box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
 transition:0.5s ease;
 margin-top:3vw;
+padding:1vw 2vw;
 }
 #p_b_bottom Button:hover{
   background: white;

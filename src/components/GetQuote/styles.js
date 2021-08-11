@@ -14,14 +14,14 @@ text-align:center;
 margin-bottom:46px;
     }
   .quoteForm {
-    width:848px;
+    width:60.6474820143885vw;
     height:fit-content;
     margin: 0 auto;
     background:white;
-    padding:33px 85px 90px 85px;
+    padding:2.37410071942446vw 6.11510791366906vw 6.47482014388489vw 6.11510791366906vw;
     border-radius:1vw;
     @media (max-width: 768px) {
-      margin: 20px 45px;
+      width:90%;
     }
   }
   .formLabel {
@@ -58,6 +58,12 @@ font-size: 24px;
 line-height: 36px;
 color: #222222;
 margin-left:auto;
+@media (max-width: 768px) {
+  font-size: 15px;
+}
+@media (max-width: 500px) {
+  font-size: 9px;
+}
   }
   .categoryGroup {
     .ant-radio-inner {
@@ -85,6 +91,10 @@ margin-left:auto;
       line-height: 24px;
       height: 48px;
       padding: 8px 60px;
+      @media (max-width: 768px) {
+        width:100%;
+        padding: 1vw;
+      }
     }
   }
   .inputGroupBlock .ant-form-item-control-input-content {

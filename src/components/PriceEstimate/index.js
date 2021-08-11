@@ -6,7 +6,7 @@ import {
     PriceEstimate_container_b2
 } from './styles';
 import GetQuote from "../GetQuote/index";
-import { Modal } from 'antd';
+import { Modal, Button } from 'antd';
 
 const PriceEstimate = props => {
     //Prize array
@@ -61,7 +61,7 @@ const PriceEstimate = props => {
                 <PriceEstimate_container>
                     <PriceEstimate_container_b1>
                         <div id="slide_label">
-                            <h1>Calculate your price</h1>
+                            <h1>Calculate your editing fee</h1>
                         </div>
                         <div id="slide_label">
                             <label htmlFor="firstName">How many words do you want to edit ?</label>
@@ -124,11 +124,11 @@ const PriceEstimate = props => {
                                     </div>
                                     {finalpay ?
                                         <div id="p_b_bottom">
-                                            <button onClick={() => setVisible(true)}>Upload Document</button>
+                                            <Button onClick={() => setVisible(true)}>Upload Document</Button>
                                         </div>
                                         :
                                         <div id="p_b_bottom">
-                                            <button>Upload Document</button>
+                                            <Button>Upload Document</Button>
                                         </div>
                                     }
                                 </PriceEstimate_container_b2>

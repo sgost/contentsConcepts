@@ -277,13 +277,13 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
           {(!name || name.length < 3 || (!/\S+@\S+\.\S+/.test(email))) ? (
             <Form.Item className="submitBtn">
               <Button type="primary" onClick={signnn} htmlType="submit">
-                Submit
+              Submit Document & Pay
               </Button>
             </Form.Item>
           ) : (
             <Form.Item className="submitBtn">
               <Button type="primary" htmlType="submit" disabled={disabled}>
-                Submit
+              Submit Document & Pay
               </Button>
             </Form.Item>
           )}

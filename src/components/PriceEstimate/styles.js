@@ -96,14 +96,10 @@ outline:none;
 cursor:pointer;
 transition:0.5s ease;
 display:flex;
-position:relative;
 justify-content:center;
 align-items:center;
 width: 249px;
   height: 48px;
-}
-#slider_buttons .pay_block2_container1 #radio1{
-  display:none;
 }
 #slider_buttons .pay_block2_container2{
   color: #FFFFFF;
@@ -113,17 +109,25 @@ width: 249px;
   border-radius: 8px;
   color: #1976D2;
 }
-#slider_buttons .pay_block2_container2:first-child{
-  padding-left:25px;
+#slider_buttons .pay_block2_container1 #radio1{
+  width:16px;
+  height:16px;
+  border: 0.5px solid #666666;
+  left:15px;
+  border-radius:50%;
+  justify-content:center;
+  align-items:center;
+  margin-right:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 #slider_buttons .pay_block2_container2 #radio1{
   width:16px;
   height:16px;
   border: 0.5px solid #666666;
-  position:absolute;
   left:15px;
   border-radius:50%;
-  display:flex;
   justify-content:center;
   align-items:center;
 }
@@ -209,9 +213,9 @@ font-size: 16px;
 line-height: 24px;
 color:black;
 }
-#p_b_bottom button{
-  width: 12.9496402877698vw;
-height: 3.9vw;
+#p_b_bottom Button{
+  width: 220px;
+height: 48px;
 background: #1565C0;
 border-radius: 0.575539568345324vw;
 font-style: normal;
@@ -226,7 +230,7 @@ box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
 transition:0.5s ease;
 margin-top:3vw;
 }
-#p_b_bottom button:hover{
+#p_b_bottom Button:hover{
   background: white;
   color:black;
   border: 0.0359712230215827vw solid #CCCCCC;

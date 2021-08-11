@@ -14,7 +14,7 @@ const PriceEstimate = props => {
         [
             {
                 id: 1,
-                title: "Proof Reading & Editing",
+                title: "Proofreading",
                 dollers: "0.020",
                 rupees: "1.50",
             },
@@ -72,7 +72,7 @@ const PriceEstimate = props => {
                                     <p></p>
                                     :
                                     <>
-                                        <p>Returned before   {dayName}, {monthName} {dayNumber}, {year}</p>
+                                        <p>Estimated return on   {dayName}, {monthName} {dayNumber}, {year}</p>
                                     </>
                                 }
                             </div>
@@ -115,7 +115,7 @@ const PriceEstimate = props => {
                                         }
                                     </div>
                                     <div id="p_b_middle">
-                                        <h1>Returned before</h1>
+                                        <h1>Estimated return on</h1>
                                         {!finalpay ?
                                             <h1>-</h1>
                                             :

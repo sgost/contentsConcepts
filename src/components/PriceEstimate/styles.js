@@ -93,7 +93,7 @@ background: white;
   color:black;
 border-radius: 0.575539568345324vw;
 font-weight: 600;
-font-size: 16px;
+font-size: 1.15107913669065vw;
 line-height: 1.72661870503597vw;
 border: 0.0359712230215827vw solid #CCCCCC;
 outline:none;
@@ -102,42 +102,42 @@ transition:0.5s ease;
 display:flex;
 justify-content:center;
 align-items:center;
-width: 249px;
-  height: 48px;
+width: 17.9136690647482vw;
+  height: 3.45323741007194vw;
 }
 #slider_buttons .pay_block2_container2{
   color: #FFFFFF;
-  border: 2px solid #1976D2;
+  border: 0.143884892086331vw solid #1976D2;
   box-sizing: border-box;
-  box-shadow: 0px 0px 8px rgba(21, 39, 73, 0.15);
-  border-radius: 8px;
+  box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
+  border-radius: 0.575539568345324vw;
   color: #1976D2;
 }
 #slider_buttons .pay_block2_container1 #radio1{
-  width:16px;
-  height:16px;
-  border: 0.5px solid #666666;
-  left:15px;
+  width:1.15107913669065vw;
+  height:1.15107913669065vw;
+  border:0.0359712230215827vw solid #666666;
+  left:1.07913669064748vw;
   border-radius:50%;
   justify-content:center;
   align-items:center;
-  margin-right:10px;
+  margin-right:0.719424460431655vw;
   display:flex;
   justify-content:center;
   align-items:center;
 }
 #slider_buttons .pay_block2_container2 #radio1{
-  width:16px;
-  height:16px;
-  border: 0.5px solid #666666;
-  left:15px;
+  width:1.15107913669065vw;
+  height:1.15107913669065vw;
+  border: 0.0359712230215827vw solid #666666;
+  left:1.07913669064748vw;
   border-radius:50%;
   justify-content:center;
   align-items:center;
 }
 #slider_buttons .pay_block2_container2 #radio1 #radio2{
-  width:10px;
-  height:10px;
+  width:0.719424460431655vw;
+  height:0.719424460431655vw;
   background: #1976D2;
   border-radius:50%;
   margin:auto;
@@ -184,15 +184,15 @@ border: 0.0359712230215827vw solid #CCCCCC;
 }
 #p_b_top h1{
 font-weight: 600;
-font-size: 18px;
+font-size: 1.29496402877698vw;
 line-height: 3.02158273381295vw;
 color:black;
 text-align:center;
-margin-top:30px;
+margin-top:2.15827338129496vw;
 }
 #p_b_top h2{
   font-weight: 600;
-font-size: 36px;
+font-size: 2.58992805755396vw;
 line-height: 3vw;
 color: #333333;
 text-align:center;
@@ -205,7 +205,7 @@ text-align:center;
 }
 #p_b_middle h1{
   font-weight: 500;
-font-size: 16px;
+font-size: 1.15107913669065vw;
 line-height: 1.72661870503597vw;
 color: #666666;
 text-align:center;
@@ -213,13 +213,13 @@ text-align:center;
 #p_b_middle h1:nth-child(2) {
   font-style: normal;
 font-weight: 600;
-font-size: 16px;
-line-height: 24px;
+font-size: 1.15107913669065vw;
+line-height: 1.72661870503597vw;
 color:black;
 }
 #p_b_bottom Button{
-  width: 220px;
-height: 48px;
+  width: 15.8273381294964vw;
+height: 3.45323741007194vw;
 background: #1565C0;
 border-radius: 0.575539568345324vw;
 font-style: normal;

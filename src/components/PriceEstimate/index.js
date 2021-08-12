@@ -6,7 +6,7 @@ import {
     PriceEstimate_container_b2
 } from './styles';
 import GetQuote from "../GetQuote/index";
-import { Modal, Button } from 'antd';
+import { Modal } from 'antd';
 
 const PriceEstimate = props => {
     //Prize array
@@ -105,14 +105,20 @@ const PriceEstimate = props => {
                                     </div>
                                     <div id="p_b_top">
                                         <h1>Total Price</h1>
-                                        {(currency === 4) ?
-                                            <h2>₹ {paymap.rupees * finalpay}</h2>
-                                            :
-                                            (currency === 5) ?
-                                                <h2>$ {paymap.dollers * finalpay}</h2>
+                                        <div id="prize_box">
+                                            {(currency === 4) ?
+                                                <h2>{"₹" + paymap.rupees * finalpay}</h2>
                                                 :
-                                                <h2>₹ {paymap.rupees * finalpay}</h2>
-                                        }
+                                                (currency === 5) ?
+                                                    <h2>{"$" + paymap.dollers * finalpay}</h2>
+                                                    :
+                                                    <h2>{"₹" + paymap.rupees * finalpay}</h2>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div id="p_b_top_main2">
+                                        <button onClick={() => setcurrency(4)} className={currency === 4 ? "currency1 currency2" : "currency1"}>₹ INR </button>
+                                        <button onClick={() => setcurrency(5)} className={currency === 5 ? "currency1 currency2" : "currency1"}>$ USD</button>
                                     </div>
                                     <div id="p_b_middle">
                                         <h1>Estimated return on</h1>
@@ -124,11 +130,11 @@ const PriceEstimate = props => {
                                     </div>
                                     {finalpay ?
                                         <div id="p_b_bottom">
-                                            <Button onClick={() => setVisible(true)}>Upload Document</Button>
+                                            <button onClick={() => setVisible(true)}>Upload Document</button>
                                         </div>
                                         :
                                         <div id="p_b_bottom">
-                                            <Button>Upload Document</Button>
+                                            <button>Upload Document</button>
                                         </div>
                                     }
                                 </PriceEstimate_container_b2>
@@ -138,7 +144,7 @@ const PriceEstimate = props => {
                 </PriceEstimate_container>
             </PriceEstimate_main>
             <Modal
-                title="Get Quote"
+                title="Submit Document"
                 centered
                 visible={visible}
                 width={1000}

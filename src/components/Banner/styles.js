@@ -26,13 +26,13 @@ export const BannerSection = styled.div`
       margin:43px auto 0 auto;
       }
       #view_prize Button{
-      margin-top:0;
-      width: 277px;
-      height: 48px;
-      transition:0.5s ease;
+        width: 65vw;
+    height: 13vw;
+    font-size: 3.2vw;
+    margin:3vw 0 0 11.2vw;
     }
     #view_prize Button:hover{
-      width: 282px;
+      width: 69vw;
     }
     }
     .mob-banner-illustration {

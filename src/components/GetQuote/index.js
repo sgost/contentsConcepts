@@ -234,7 +234,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
                 <Row>
                   {
                     categoryData.categories && categoryData.categories.map(item =>
-                      <Col xs={24} sm={12} md={12} lg={12} xl={12} className="categoryItem" key={item.value}>
+                      <Col xl={5} className="categoryItem" key={item.value}>
                         <Radio value={item.value}>{item.label}</Radio>
                       </Col>
                     )
@@ -267,7 +267,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
               <p>Total Price :  {currencyPrize}</p>
             </div>
           </div>
-          <div><label className="formLabel" htmlFor="wordCount" id="description_label">Description</label>
+          <div><label className="formLabel" htmlFor="wordCount" id="description_label">Add instructions to the editor</label>
             <Form.Item
               name="requirement"
             >
@@ -299,11 +299,11 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
       >
         <Quotepop id="Quotepop">
           <div id="pop_conteiner">
-            <p>Your order has been successfully placed.</p>
+            <p>You have successfully submitted the document</p>
             <CheckCircleTwoTone twoToneColor="#52c41a" />
             <p id="Quotepop_t1">Expected Delivery Date</p>
             <p id="Quotepop_t2">{dayName}, {monthName} {dayNumber}, {year}</p>
-            <p id="Quotepop_t3">Thank you for submitting your document. Please proceed to make payment. You will receive a confirmation after payment is done.</p>
+            <p id="Quotepop_t3">Thank you for submitting the document. Please scroll below to make the payment. After you make the payment, you will receive a confirmation email</p>
           </div>
           <Pay />
           <Link to="/"><Button>Back to Home</Button></Link>

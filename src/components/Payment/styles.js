@@ -13,6 +13,9 @@ export const PayContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 5.25179856115108vw 11.6546762589928vw;
+  @media (max-width:750px){
+  background: #F5FBFF;
+}
 }
 #pays h1 {
   font-family: Poppins;
@@ -21,6 +24,9 @@ export const PayContainer = styled.div`
   font-size: 2.01438848920863vw;
   line-height: 3.02158273381295vw;
   color: black;
+  @media (max-width:750px){
+    display:none;
+  }
 }
 #pay_containers {
   width: 80.2158273381295vw;
@@ -31,17 +37,48 @@ export const PayContainer = styled.div`
   margin-top: 4.1726618705036vw;
   box-shadow: 0px 0px 0.575539568345324vw rgba(21, 39, 73, 0.15);
   border-radius: 0.575539568345324vw;
+  @media(max-width:750px){
+    flex-direction:column;
+    width:fit-content;
+    height:fit-content;
+    background: transparent;
+    box-shadow: none;
+    padding:0;
+  }
 }
 #pay_container_block1s {
   display: flex;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
   margin-top: 3vw;
+  @media(max-width:750px){
+    width: 90vw;
+    height:fit-content;
+    background:white;
+    padding:47px 35px;
+    box-shadow: 0px 0px 8px rgba(21, 39, 73, 0.15);
+border-radius: 8px;
+  }
 }
-#pays #pay_containers #pay_container_block1s #paysqr {
+ #pay_container_block1s #paysqr {
   width: 25vw;
   height: 25vw;
   border-radius: 1vw;
+}
+#pay_container_block1s #title{
+  display:none;
+  @media(max-width:750px){
+    font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 31px;
+color: #222222;
+display:block;
+text-align:center;
+color: #222222;
+margin-bottom:33px;
+  }
 }
 #pay_container_block2s {
   display: flex;
@@ -50,6 +87,9 @@ export const PayContainer = styled.div`
   height: fit-content;
   margin: auto auto auto 3.59712230215827vw;
   text-align: left;
+  @media(max-width:750px){
+  padding-top:10.2040816326531vw;
+  }
 }
 #pay_container_block2s h1 {
   font-family: Poppins;
@@ -59,6 +99,11 @@ export const PayContainer = styled.div`
   line-height: 3.45323741007194vw;
   width: 30.431654676259vw;
   color: #222222;
+  @media(max-width:750px){
+    font-size: 16px;
+    line-height: 30px;
+    width: 100%;
+  }
 }
 #pay_container_block2s p {
   font-family: Poppins;
@@ -68,7 +113,12 @@ export const PayContainer = styled.div`
   line-height: 2vw;
   color: #222222;
   font-weight: lighter;
-  width: 38.4172661870504vw;
+  width: 40vw;
+  @media(max-width:750px){
+    font-size: 16px;
+    line-height: 30px;
+    width: 100%;
+  }
 }
 #pay_container_block2s p span {
   font-family: Poppins;
@@ -77,6 +127,11 @@ export const PayContainer = styled.div`
   font-size: 1.19402985074627vw;
   line-height: 1.82926829268293vw;
   color: #222222;
+  @media(max-width:750px){
+    font-size: 16px;
+    line-height: 30px;
+    width: 100%;
+  }
 }
 #pay_container_block2s li {
   font-family: Poppins;
@@ -87,6 +142,11 @@ export const PayContainer = styled.div`
   color: #222222;
   font-weight: lighter;
   width: 38.4172661870504vw;
+  @media(max-width:750px){
+    font-size: 16px;
+    line-height: 30px;
+    width: 100%;
+  }
 }
 #pay_container_block2s li span {
   font-family: Poppins;
@@ -95,5 +155,10 @@ export const PayContainer = styled.div`
   font-size: 1.19402985074627vw;
   line-height: 1.82926829268293vw;
   color: #222222;
+  @media(max-width:750px){
+    font-size: 16px;
+    line-height: 30px;
+    width: 100%;
+  }
 }
 `;

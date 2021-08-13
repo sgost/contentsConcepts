@@ -1,7 +1,6 @@
 import { Link, graphql, useStaticQuery } from "gatsby"
 import React, { useState, useEffect, Fragment } from "react"
-import { Button, Modal, Popover } from "antd"
-import GetQuote from "../GetQuote"
+import { Button, Popover } from "antd"
 import {
   NavBarContainer,
   NavLinkContainer,
@@ -24,29 +23,6 @@ const NavigationMenu = props => {
       return url.indexOf('/services/') >= 0 ? { className: "activeLink" } : null;
     }
   }
-
-  //modal
-  const [showModal, setShowModal] = useState(false);
-
-  const handleCancel = e => {
-    setShowModal(false);
-  };
-
-  const getQuote = e => {
-    setShowModal(true);
-    if (props.onClick) {
-      props.onClick();
-    }
-  };
-
-  useEffect(() => {
-    if (showModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [showModal]);
-
   //popover
 
   const [popoverVisible, setPopoverVisible] = useState(false);
@@ -120,26 +96,12 @@ const NavigationMenu = props => {
           <NavLink key="blog">
             <Link to="/blog" partiallyActive={true} activeClassName="activeLink" onClick={props.onClick}>Blog</Link>
           </NavLink>
-          <NavLink key="pricing">
-            <Link to="/pricing/" activeClassName="activeLink" onClick={props.onClick}>Pricing</Link>
-          </NavLink>
           <NavLink key="contact">
             <Link to="/contact/" activeClassName="activeLink" onClick={props.onClick} role="presentation">Contact</Link>
           </NavLink>
         </NavLinkContainer>
-        <Button type="primary" onClick={getQuote}>Get Quote</Button>
+        <Link to="/pricing/"><Button type="primary">View Pricing & Order Now</Button></Link>
       </NavBarContainer>
-      <Modal
-        title="Get Quote"
-        visible={showModal}
-        okButtonProps={{ style: { display: 'none' } }}
-        cancelButtonProps={{ style: { display: 'none' } }}
-        onCancel={handleCancel}
-        getContainer={() => document.getElementById('___gatsby')}
-        destroyOnClose={true}
-      >
-        <GetQuote onSubmit={handleCancel} />
-      </Modal>
     </Fragment>
   )
 }

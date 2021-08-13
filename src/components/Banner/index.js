@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { Row, Col, Button } from "antd"
+import {ArrowRightOutlined} from '@ant-design/icons';
 
 import BannerImage from '../../images/banner_image.png';
 import {
@@ -53,6 +54,9 @@ export const HomeBannerSection = ({
               )
             }
           </ServicesList>
+          <Link to="/pricing/" id="view_prize">
+          <Button id="view_prize" type="primary">VIEW PRICING & ORDER NOW<ArrowRightOutlined /></Button>
+          </Link>
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12} className="resSection">
           <ImageContainer>

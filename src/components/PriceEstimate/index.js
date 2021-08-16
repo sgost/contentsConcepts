@@ -58,6 +58,7 @@ const PriceEstimate = props => {
     return (
         <>
             <PriceEstimate_main>
+            <div id="PrizeEstimation">
                 <PriceEstimate_container>
                     <PriceEstimate_container_b1>
                         <div id="slide_label">
@@ -142,6 +143,7 @@ const PriceEstimate = props => {
                         </>
                     ))}
                 </PriceEstimate_container>
+                </div>
             </PriceEstimate_main>
             <Modal
                 title="Submit Document"

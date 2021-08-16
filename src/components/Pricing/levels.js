@@ -1,6 +1,6 @@
-import React, { Fragment, useState, useEffect } from "react"
-import { Row, Col, Button, Modal } from "antd"
-import GetQuote from "../GetQuote"
+import React, { Fragment } from "react"
+import { Row, Col, Button } from "antd"
+import { Link } from "gatsby"
 import {
   LevelsCard,
   EditingServicesList,
@@ -9,21 +9,6 @@ import {
 
 const PricingLevels = ({ content }) => {
 
-  //modal
-  const[showModal, setShowModal] = useState(false);
-  const handleCancel = e => {
-    setShowModal(false);
-  };
-  const getQuote = e => {
-    setShowModal(true);
-  };
-  useEffect(() => {
-    if(showModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [showModal]);
 
   return (
     <Fragment>
@@ -55,7 +40,7 @@ const PricingLevels = ({ content }) => {
                         }
                       </PriceContainer>
                     }
-                    <Button type="primary" style={{background: level.themeColor}} className="cardBtn" onClick={getQuote}>Get Quote</Button>
+                    <Link to="/pricing/#PrizeEstimation"><Button type="primary" style={{background: level.themeColor}} className="cardBtn">Get Quote</Button></Link>
                   </div>
                 </div>
               </LevelsCard>
@@ -63,17 +48,6 @@ const PricingLevels = ({ content }) => {
           )
         }
       </Row>
-      <Modal
-        title="Get Quote"
-        visible={showModal}
-        okButtonProps={{ style: { display: 'none' } }}
-        cancelButtonProps={{ style: { display: 'none' } }}
-        onCancel={handleCancel}
-        getContainer={() => document.getElementById('___gatsby')}
-        destroyOnClose={true}
-      >
-        <GetQuote onSubmit={handleCancel} />
-      </Modal>
     </Fragment>
   )
 }

@@ -1,8 +1,7 @@
-import React, { Fragment, useState, useEffect} from 'react'
+import React, { Fragment } from 'react'
 import { Link } from "gatsby"
-import { Button, Modal } from 'antd'
+import { Button } from 'antd'
 import Marker from '../../images/tick_filled.svg';
-import GetQuote from "../GetQuote"
 import {
   HeadingContainer,
   TypesContainer,
@@ -15,25 +14,6 @@ import {
 const MenuContent = ({ content, description, preview }) => {
 
   // const content = props.content;
-
-  //modal
-  const[showModal, setShowModal] = useState(false);
-
-  const handleCancel = e => {
-    setShowModal(false);
-  };
-
-  const getQuote = e => {
-    setShowModal(true);
-  };
-
-  useEffect(() => {
-    if(showModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [showModal]);
 
   return (
     <Fragment>
@@ -68,23 +48,12 @@ const MenuContent = ({ content, description, preview }) => {
             <div dangerouslySetInnerHTML={{__html: content.message}} />
           </RefundSection>
           <ButtonContainer>
-            <Button type="primary" onClick={getQuote}>Get Quote</Button>
+            <Link to="/pricing/"><Button type="primary">Get Quote</Button></Link>
             <Button onClick={() => window.location.href="#editingSample"}>Check Sample</Button>
             <Button onClick={() => window.location.href="#editingProcess"}>Editing Process</Button>
           </ButtonContainer>
         </div>
       }
-      <Modal
-        title="Get Quote"
-        visible={showModal}
-        okButtonProps={{ style: { display: 'none' } }}
-        cancelButtonProps={{ style: { display: 'none' } }}
-        onCancel={handleCancel}
-        getContainer={() => document.getElementById('___gatsby')}
-        destroyOnClose={true}
-      >
-        <GetQuote onSubmit={handleCancel} />
-      </Modal>
     </Fragment>
   )
 }

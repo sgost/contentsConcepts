@@ -180,6 +180,9 @@ margin-top:10vw;
 #pays #pop_title {
   display:none
 }
+#pays #pop_description{
+  display:none;
+}
 #pop_conteiner{
   width:700px;
   display:flex;

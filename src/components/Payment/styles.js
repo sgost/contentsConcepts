@@ -28,8 +28,23 @@ export const PayContainer = styled.div`
     display:none;
   }
 }
+#pays #pop_description {
+font-family: Poppins;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 1.5vw;
+    line-height: 2.5vw;
+    color: #222222;
+    font-weight: lighter;
+    width: 48vw;
+    text-align: center;
+    margin-top: 0.5vw;
+      @media (max-width:750px){
+    display:none;
+  }
+}
 #pay_containers {
-  width: 80.2158273381295vw;
+  width: fit-content;
   height: 42.5179856115108vw;
   display: flex;
   background: white;
@@ -52,6 +67,7 @@ export const PayContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 3vw;
+  width:20vw;
   @media(max-width:750px){
     width: 90vw;
     height:fit-content;
@@ -62,7 +78,7 @@ border-radius: 8px;
   }
 }
  #pay_container_block1s #paysqr {
-  width: 25vw;
+  width: 100%;
   height: 25vw;
   border-radius: 1vw;
 }
@@ -95,10 +111,10 @@ margin-bottom:33px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 2.58992805755396vw;
+  font-size: 2.3vw;
   line-height: 3.45323741007194vw;
-  width: 30.431654676259vw;
   color: #222222;
+  margin:0 0 1vw 0;
   @media(max-width:750px){
     font-size: 16px;
     line-height: 30px;
@@ -133,32 +149,5 @@ margin-bottom:33px;
     width: 100%;
   }
 }
-#pay_container_block2s li {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: lighter;
-  font-size: 1.15107913669065vw;
-  line-height: 2.5vw;
-  color: #222222;
-  font-weight: lighter;
-  width: 38.4172661870504vw;
-  @media(max-width:750px){
-    font-size: 16px;
-    line-height: 30px;
-    width: 100%;
-  }
-}
-#pay_container_block2s li span {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.19402985074627vw;
-  line-height: 1.82926829268293vw;
-  color: #222222;
-  @media(max-width:750px){
-    font-size: 16px;
-    line-height: 30px;
-    width: 100%;
-  }
 }
 `;

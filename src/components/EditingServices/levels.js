@@ -1,7 +1,7 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import { Row, Col, List, Button, Modal } from 'antd';
+import React, { Fragment } from 'react'
+import { Row, Col, List, Button } from 'antd';
 import CheckMark from '../../images/check_mark.svg'
-import GetQuote from "../GetQuote"
+import { Link } from "gatsby"
 import {
   LevelsSection,
   SectionHeading,
@@ -13,24 +13,6 @@ const EditingLevels = ({ content }) => {
 
   // const content = props.content;
 
-  //modal
-  const[showModal, setShowModal] = useState(false);
-
-  const handleCancel = e => {
-    setShowModal(false);
-  };
-
-  const getQuote = e => {
-    setShowModal(true);
-  };
-
-  useEffect(() => {
-    if(showModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [showModal]);
 
   return (
     <Fragment>
@@ -61,7 +43,7 @@ const EditingLevels = ({ content }) => {
                   {
                     content.levelTypes && content.levelTypes.map(level =>
                       <FooterCol xs={5} sm={5} md={4} lg={4} xl={4} key={level.id} theme={level.themeColor} className="cardCol">
-                        <Button type="primary" onClick={getQuote}>Get Quote</Button>
+                        <Link to="/pricing/"><Button type="primary">Get Quote</Button></Link>
                       </FooterCol>
                     )
                   }
@@ -95,17 +77,6 @@ const EditingLevels = ({ content }) => {
           </LevelsListing>
         </LevelsSection>
       }
-      <Modal
-        title="Get Quote"
-        visible={showModal}
-        okButtonProps={{ style: { display: 'none' } }}
-        cancelButtonProps={{ style: { display: 'none' } }}
-        onCancel={handleCancel}
-        getContainer={() => document.getElementById('___gatsby')}
-        destroyOnClose={true}
-      >
-        <GetQuote onSubmit={handleCancel} />
-      </Modal>
     </Fragment>
   )
 }

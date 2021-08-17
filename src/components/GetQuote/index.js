@@ -10,7 +10,7 @@ import Pay from "../Payment/index"
 const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, dayName, monthName }) => {
   console.log(toggleState);
   const MainPrize = toggleState === 0 ? currency === 4 ? 1.50 * wordcount : 0.020 * wordcount : toggleState === 1 ? currency === 4 ? 1.75 * wordcount : 0.024 * wordcount : toggleState === 2 ? currency === 4 ? 2.50 * wordcount : 0.034 * wordcount : ("");
-  const category = toggleState === 0 ? "Proofreading" : toggleState === 1 ? "Substantive Editing" : toggleState === 2 ? "Plagarism Editing" : ("");
+  const category = toggleState === 0 ? "Proofreading" : toggleState === 1 ? "Substantive Editing" : toggleState === 2 ? "Plagiarism Editing" : ("");
   const currencyPrize = currency === 4 ? "₹" + MainPrize : currency === 5 ? "$" + MainPrize : "₹" + MainPrize;
   const [value, setValue] = useState();
 

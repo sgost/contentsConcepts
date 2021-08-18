@@ -222,6 +222,13 @@ color:black;
   border-radius:50%;
   margin:auto;
 }
+#slider_buttons label{
+  grid-column: 1/4;
+    text-align: center;
+    @media (max-width:750px){
+      display:none;
+    }
+}
 `;
 
 export const PriceEstimate_container_b2 = styled.div`

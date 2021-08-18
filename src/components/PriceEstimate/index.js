@@ -26,7 +26,7 @@ const PriceEstimate = props => {
             },
             {
                 id: 1,
-                title: "Plagarism Editing",
+                title: "Plagiarism Editing",
                 dollers: "0.034",
                 rupees: "2.50",
             },
@@ -93,6 +93,7 @@ const PriceEstimate = props => {
                                         ><div id="radio1"><div id="radio2"></div></div>{paymap.title}</button>
                                     </>
                                 )}
+                                <label htmlFor="firstName">For details on each service, check the Pricing Table below</label>
                             </div>
                         </div>
                     </PriceEstimate_container_b1>

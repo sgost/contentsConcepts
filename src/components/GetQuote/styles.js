@@ -173,7 +173,7 @@ margin-top:10vw;
 }
 #pays{
   background:white;
-  padding: 1vw 11.6546762589928vw 5.25179856115108vw 11.6546762589928vw;
+  padding: 0 11.6546762589928vw 5.25179856115108vw 11.6546762589928vw;
   margin-top:4vw;
   width:100vw;
 }

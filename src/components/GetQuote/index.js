@@ -110,7 +110,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
       data.append("requirement", values.requirement);
     }
 
-    var url = "https://script.google.com/macros/s/AKfycbxDqgcaV-iiIauoCPaQ4z6r6Sa-fcz94R0PxdZ2yKY8tW16HGA1IRv80VhsFrDt5br1/exec";
+    var url = "https://script.google.com/macros/s/AKfycbyjvx5eXRARy0zCov0_0LJoxFc6AImiwQXPNcZf-U0HIjFB79tI2z2iwecwdGXTaMTTZw/exec";
 
     await fetch(url, {
       method: 'POST',

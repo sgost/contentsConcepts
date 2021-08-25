@@ -54,7 +54,7 @@ export const ContactPreviewSection = ({
       mode: 'no-cors',
     }).then(function (response) {
       message.success({
-        content: 'Thank you. We will get back to you as quick as humanly possible.',
+        content: 'Hello there! Thank you for reaching out. We will get back to you as quick as humanly possible.',
         className: 'messageCont',
         icon: <SmileOutlined />
       });

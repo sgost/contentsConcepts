@@ -27,7 +27,7 @@ export const Pay = ({
             <PayContainer>
                 <div id="pays">
                     <h1 id="pop_title">{title}</h1>
-                    <p id="pop_description">{description} <a href="https://www.paypal.com/webapps/shoppingcart?flowlogging_id=f118608d37839&mfid=1628774383185_f118608d37839#/checkout/openButton" target="_blank" without rel="noreferrer" >Click here</a></p>
+                    <p id="pop_description">{description} <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4TBCSQSB7GVPW" target="_blank" without rel="noreferrer" >PayPal</a></p>
                     <div id="pay_containers">
                         <div id="pay_container_block1s">
                             <h1 id="title">{description1}</h1>

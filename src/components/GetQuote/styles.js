@@ -180,9 +180,6 @@ margin-top:10vw;
 #pays #pop_title {
   display:none
 }
-#pays #pop_description{
-  display:none;
-}
 #pop_conteiner{
   width:700px;
   display:flex;
@@ -197,7 +194,7 @@ margin-top:10vw;
   }
 }
  #pay_containers {
-  margin-top:0;
+  margin-top:3vw;
 }
 .anticon svg {
     width:50px;

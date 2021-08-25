@@ -65,7 +65,7 @@ const PriceEstimate = props => {
                             <h1>Calculate your editing fee</h1>
                         </div>
                         <div id="slide_label">
-                            <label htmlFor="firstName">How many words do you want us to edit?</label>
+                            <label htmlFor="firstName">How many words do you want us to edit? (exclude References)</label>
                             <div id="slider_input">
                                 <input type="text" id="peinput" value={finalpay}
                                     onChange={e => setpay(e.target.value)} max="100000" />

@@ -251,12 +251,9 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
               getValueFromEvent={normFile}
             >
               <Upload name="category" listType="picture" id="categoryFile" onChange={uploadChange} onRemove={removeUploadedFile} customRequest={customReqChange} transformFile={transformFile} >
-                {
-                  showUpload &&
                   <Button className="uploadBtn">
                     <UploadOutlined /> Click to upload
                   </Button>
-                }
               </Upload>
             </Form.Item>
           </div>

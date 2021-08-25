@@ -8,6 +8,32 @@ media_folder: 'assets'
 public_folder: '/'
 
 collections:
+  - label: Payment
+    name: payment
+    files:
+      - label: Payment
+        name: payment
+        file: 'payment/payment.md'
+        public_folder: '../assets/'
+        fields:
+          - { label: Title, name: title, widget: string, default: "Payment Options" }
+          - { label: Description, name: description }
+          - { label: QR title, name: description1 }
+          - { label: QR Description, name: description2 }
+          - { label: QR para1, name: description3 }
+          - { label: Mail Id, name: description4, default: contentconcepts@icici }
+          - { label: Payment Option Title, name: description5 }
+          - { label: Account Number Title, name: description6 }
+          - { label: Account Number, name: description7, default: 034201526268 }
+          - { label: Branch Title, name: description8, default: Branch }
+          - { label: Branch Name, name: description9, default: RS Puram Coimbatore }
+          - { label: Bank Title, name: description10, default: Bank }
+          - { label: Bank Name, name: description11, default: ICICI Bank }
+          - { label: Name Title, name: description12, default: Name }
+          - { label: Name, name: description13, default: DHANALAKSHMI N }
+          - { label: IFSC Title, name: description14, default: IFSC }
+          - { label: IFSC, name: description15, default: ICIC0000342 }
+          - { label: QR code, name: qrimage, widget: image }
   - label: Service Links
     name: service Links
     files:

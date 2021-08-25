@@ -173,15 +173,12 @@ margin-top:10vw;
 }
 #pays{
   background:white;
-  padding: 1vw 11.6546762589928vw 5.25179856115108vw 11.6546762589928vw;
+  padding: 0 11.6546762589928vw 5.25179856115108vw 11.6546762589928vw;
   margin-top:4vw;
   width:100vw;
 }
 #pays #pop_title {
   display:none
-}
-#pays #pop_description{
-  display:none;
 }
 #pop_conteiner{
   width:700px;
@@ -197,7 +194,7 @@ margin-top:10vw;
   }
 }
  #pay_containers {
-  margin-top:0;
+  margin-top:3vw;
 }
 .anticon svg {
     width:50px;

@@ -62,9 +62,9 @@ export const CustomersPreviewSection = ({
             )
           }
         </Carousel>
-        <a className="rightArrow" onClick={() => slider.current.next()} role="presentation">
+        <button className="rightArrow" onClick={() => slider.current.next()}>
           <RightOutlined />
-        </a>
+        </button>
       </CarouselContainer>
     </CustomersSection>
   );
@@ -72,7 +72,7 @@ export const CustomersPreviewSection = ({
 
 const Customers = props => {
 
-  const[customersContent, setCustomersContent] = useState({});
+  const [customersContent, setCustomersContent] = useState({});
 
   const data = useStaticQuery(graphql`
     query {
@@ -102,7 +102,7 @@ const Customers = props => {
   `);
 
   useEffect(() => {
-    if(data.file) {
+    if (data.file) {
       setCustomersContent(data.file.childMarkdownRemark.frontmatter);
     }
   }, [data.file]);

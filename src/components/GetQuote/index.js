@@ -110,7 +110,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
       data.append("requirement", values.requirement);
     }
 
-    var url = "https://script.google.com/macros/s/AKfycbxPQYfAmU27Vfted5BMWK3Rmn8t6NMWFORuB9Q0X6umaZEpE2Oz/exec";
+    var url = "https://script.google.com/macros/s/AKfycbyjvx5eXRARy0zCov0_0LJoxFc6AImiwQXPNcZf-U0HIjFB79tI2z2iwecwdGXTaMTTZw/exec";
 
     await fetch(url, {
       method: 'POST',
@@ -251,12 +251,9 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
               getValueFromEvent={normFile}
             >
               <Upload name="category" listType="picture" id="categoryFile" onChange={uploadChange} onRemove={removeUploadedFile} customRequest={customReqChange} transformFile={transformFile} >
-                {
-                  showUpload &&
                   <Button className="uploadBtn">
                     <UploadOutlined /> Click to upload
                   </Button>
-                }
               </Upload>
             </Form.Item>
           </div>

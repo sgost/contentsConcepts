@@ -8,7 +8,6 @@ import OfferImage from '../../images/offer.svg'
 import Header from "../Header"
 import Footer from "../Footer"
 import { GlobalStyle } from '../../styles/global-styles';
-import whatsappLogo from "../../images/whatsapp-logo.svg"
 
 const Layout = props => {
 
@@ -61,11 +60,6 @@ const Layout = props => {
       {
         showFooter &&  <Footer />
       }
-      <div className="whatsappContainer">
-        <a href="https://wa.me/message/W5S3ACZDRKHUF1" target="_blank" rel="noopener noreferrer">
-          <img src={whatsappLogo} alt="contact" />
-        </a>
-      </div>
     </>
   )
 }

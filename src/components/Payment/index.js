@@ -25,9 +25,10 @@ export const Pay = ({
     return (
         <>
             <PayContainer>
-                <div id="pays">
+                <div id="pay">
                     <h1 id="pop_title">{title}</h1>
-                    <p id="pop_description">{description} <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4TBCSQSB7GVPW" target="_blank" without rel="noreferrer" >PayPal</a></p>
+                    <p id="pop_description2">Customers in India - Scan the QR code below, or pay via<a href="https://pages.razorpay.com/contentconcepts" target="_blank" without rel="noreferrer" > RazorPay</a></p>
+                    <p id="pop_description">{description} <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4TBCSQSB7GVPW" target="_blank" without rel="noreferrer" > PayPal</a></p>
                     <div id="pay_containers">
                         <div id="pay_container_block1s">
                             <h1 id="title">{description1}</h1>

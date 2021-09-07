@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import * as palette from '../../styles/variables';
+import styled from "styled-components"
+import * as palette from "../../styles/variables"
 
 export const BannerSection = styled.div`
   overflow: hidden;
@@ -8,13 +8,13 @@ export const BannerSection = styled.div`
     .resSection {
       position: relative;
     }
-    #view_prize Button{
-      margin-top:43px;
+    #view_prize Button {
+      margin-top: 43px;
       width: 277px;
       height: 48px;
-      transition:0.5s ease;
+      transition: 0.5s ease;
     }
-    #view_prize Button:hover{
+    #view_prize Button:hover {
       width: 282px;
     }
     @media only screen and (min-width: 320px) and (max-width: 768px) {
@@ -22,18 +22,18 @@ export const BannerSection = styled.div`
       .resSection {
         display: none;
       }
-      #view_prize{
-      margin:43px auto 0 auto;
+      #view_prize {
+        margin: 43px auto 0 auto;
       }
-      #view_prize Button{
+      #view_prize Button {
+        width: 69vw;
+        height: 10vw;
+        font-size: 3.2vw;
+        margin: 3vw 0 0 9.5vw;
+      }
+      #view_prize Button:hover {
         width: 65vw;
-    height: 13vw;
-    font-size: 3.2vw;
-    margin:3vw 0 0 11.2vw;
-    }
-    #view_prize Button:hover{
-      width: 69vw;
-    }
+      }
     }
     .mob-banner-illustration {
       display: none;
@@ -59,13 +59,13 @@ export const BannerSection = styled.div`
       max-width: 700px;
     }
   }
-`;
+`
 
 export const ContentContainer = styled.div`
   @media only screen and (min-width: 320px) and (max-width: 768px) {
     text-align: center;
   }
-`;
+`
 
 export const Content = styled.p`
   font-weight: 500;
@@ -84,7 +84,7 @@ export const Content = styled.p`
       margin-left: 0px;
     }
   }
-`;
+`
 
 export const ServicesList = styled.ul`
   display: flex;
@@ -125,7 +125,7 @@ export const ServicesList = styled.ul`
       margin: 10px 0px;
     }
   }
-`;
+`
 
 export const ImageContainer = styled.div`
   position: absolute;
@@ -135,4 +135,4 @@ export const ImageContainer = styled.div`
   @media only screen and (min-width: 320px) and (max-width: 768px) {
     position: unset;
   }
-`;
+`

@@ -11,7 +11,7 @@ padding:3vw 0 9vw 0;
 `;
 
 export const PriceEstimate_container = styled.div`
-width:fit-content;
+width:97vw;
 display:flex;
 margin:auto;
 margin-top:4.02877697841727vw;

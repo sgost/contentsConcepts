@@ -6,6 +6,8 @@ import { QuoteFormSection, Quotepop } from './styles';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import Pay from "../Payment/index"
+import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 
 const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, dayName, monthName }) => {
   console.log(toggleState);
@@ -26,6 +28,8 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
   };
 
   const [showUpload, setShowUpload] = useState(true);
+
+  console.log(showUpload);
 
   const uploadChange = (data) => {
     if (data.fileList.length > 0) {
@@ -55,8 +59,11 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
   }
 
   const [disabled, setDisabled] = useState(false);
+  console.log(disabled);
   //modal
   const [success, setSuccess] = useState();
+
+  const [loading, setLoading] = useState(false);
 
   const onFinish = async values => {
 
@@ -125,10 +132,12 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
       setDisabled(false);
     });
     setShowUpload(true);
+    setLoading(true)
   };
 
   const handelCancel = () => {
     setSuccess(false);
+    setLoading(false);
   }
   const data = useStaticQuery(graphql`
     query {
@@ -165,6 +174,10 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
   const signnn = () => {
     setErrors(validation())
   }
+
+  const antIcon = <LoadingOutlined style={{ fontSize: 24, color: 'white', marginLeft: `15px` }} spin />;
+
+  
   return (
     <>
       <QuoteFormSection>
@@ -279,8 +292,11 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
             </Form.Item>
           ) : (
             <Form.Item className="submitBtn">
-              <Button type="primary" htmlType="submit" disabled={disabled}>
-                Submit Document & Pay
+              <Button type="primary" htmlType="submit">
+                Submit Document & Pay  
+                {
+                  loading ? <Spin indicator={antIcon} /> : ("")
+                }
               </Button>
             </Form.Item>
           )}

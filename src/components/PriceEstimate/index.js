@@ -7,6 +7,7 @@ import {
 } from './styles';
 import GetQuote from "../GetQuote/index";
 import { Modal } from 'antd';
+import {Link} from "gatsby";
 
 const PriceEstimate = props => {
     //Prize array
@@ -93,7 +94,7 @@ const PriceEstimate = props => {
                                         ><div id="radio1"><div id="radio2"></div></div>{paymap.title}</button>
                                     </>
                                 )}
-                                <label htmlFor="firstName">For details on each service, check the Pricing Table below</label>
+                                <label htmlFor="firstName"><Link to="/pricing/#pricing">For details on each service, check the Pricing Table below</Link></label>
                             </div>
                         </div>
                     </PriceEstimate_container_b1>

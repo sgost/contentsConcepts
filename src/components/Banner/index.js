@@ -55,7 +55,7 @@ export const HomeBannerSection = ({
             }
           </ServicesList>
           <Link to="/pricing/" id="view_prize">
-          <Button id="view_prize" type="primary">VIEW PRICING & ORDER NOW<ArrowRightOutlined /></Button>
+          <Button id="view_prize" type="primary">GET QUOTE & UPLOAD<ArrowRightOutlined /></Button>
           </Link>
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12} className="resSection">

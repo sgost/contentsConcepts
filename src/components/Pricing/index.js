@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { Tabs } from 'antd';
 import PricingLevels from './levels';
 import {
@@ -11,7 +11,7 @@ const { TabPane } = Tabs;
 
 const Pricing = ({ content }) => {
   return (
-    <Fragment>
+    <div id="pricing">
       <LevelsSection>
         <SectionHeading>
           <h2>{content.heading}</h2>
@@ -29,7 +29,7 @@ const Pricing = ({ content }) => {
           </Tabs>
         </TabsContainer>
       </LevelsSection>
-    </Fragment>
+    </div>
   )
 }
 

@@ -60,6 +60,7 @@ const Layout = props => {
       {
         showFooter &&  <Footer />
       }
+      
     </>
   )
 }

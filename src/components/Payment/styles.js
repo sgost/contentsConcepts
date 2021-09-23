@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const PayContainer = styled.div`
-#pays {
+#pay {
   background: white;
   width: 100%;
   height: 100%;
@@ -17,7 +17,7 @@ export const PayContainer = styled.div`
   background: #F5FBFF;
 }
 }
-#pays h1 {
+#pay h1 {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
@@ -28,7 +28,7 @@ export const PayContainer = styled.div`
     display:none;
   }
 }
-#pays #pop_description {
+#pay #pop_description {
 font-family: Poppins;
     font-style: normal;
     font-weight: lighter;
@@ -40,9 +40,28 @@ font-family: Poppins;
     text-align: center;
     margin-top: 0.5vw;
       @media (max-width:750px){
-    display:none;
+        font-size: 2.8vw;
+        line-height: 3.6vw;
+        width:85vw;
   }
 }
+#pay #pop_description2 {
+  font-family: Poppins;
+      font-style: normal;
+      font-weight: lighter;
+      font-size: 1.5vw;
+      line-height: 2.5vw;
+      color: #222222;
+      font-weight: lighter;
+      width: 48vw;
+      text-align: center;
+      margin-top: 0.5vw;
+        @media (max-width:750px){
+          font-size: 2.8vw;
+          line-height: 3.6vw;
+          width:85vw;
+    }
+  }
 #pay_containers {
   width: fit-content;
   height: 42.5179856115108vw;
@@ -150,4 +169,4 @@ margin-bottom:33px;
   }
 }
 }
-`;
+`

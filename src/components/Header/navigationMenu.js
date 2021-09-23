@@ -94,13 +94,16 @@ const NavigationMenu = props => {
             </Link>
           </NavLink>
           <NavLink key="blog">
-            <Link to="/blog" partiallyActive={true} activeClassName="activeLink" onClick={props.onClick}>Blog</Link>
+            <Link to="/blog" partiallyActive={true} activeClassName="activeLink" onClick={props.onClick}>Resources</Link>
           </NavLink>
           <NavLink key="contact">
             <Link to="/contact/" activeClassName="activeLink" onClick={props.onClick} role="presentation">Contact</Link>
           </NavLink>
+          <NavLink key="contact">
+            <Link to="/pricing/#pricing" activeClassName="activeLink" onClick={props.onClick} role="presentation">Pricing</Link>
+          </NavLink>
         </NavLinkContainer>
-        <Link to="/pricing/"><Button type="primary">View Pricing & Order Now</Button></Link>
+        <Link to="/pricing/"><Button type="primary">VIEW QUOTE & UPLOAD</Button></Link>
       </NavBarContainer>
     </Fragment>
   )

@@ -25,14 +25,14 @@ function SEO({ description, lang, meta, title, keywords }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || site.siteMetadata.description
 
-  let allKeywords;
+  let allKeywords
 
-  if(keywords.length > 0) {
-    allKeywords = keywords;
+  if (keywords.length > 0) {
+    allKeywords = keywords
   } else {
-    allKeywords = site.siteMetadata.keywords;
+    allKeywords = site.siteMetadata.keywords
   }
 
   return (
@@ -84,7 +84,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-  keywords: []
+  keywords: [],
 }
 
 SEO.propTypes = {
@@ -92,7 +92,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  keywords: PropTypes.array
+  keywords: PropTypes.array,
 }
 
 export default SEO

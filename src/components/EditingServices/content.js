@@ -25,6 +25,11 @@ const MenuContent = ({ content, description, preview }) => {
               content.highlight && <span>({content.highlight})</span>
             }
           </HeadingContainer>
+          <ButtonContainer>
+            <Link to="/pricing/"><Button type="primary">Get Quote</Button></Link>
+            <Button onClick={() => window.location.href="#editingSample"}>Check Sample</Button>
+            <Button onClick={() => window.location.href="#editingProcess"}>Editing Process</Button>
+          </ButtonContainer>
           <TypesContainer>
             {
               preview ? <div>{description}</div> : <div dangerouslySetInnerHTML={{ __html: description }} />

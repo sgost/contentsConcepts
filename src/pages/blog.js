@@ -14,7 +14,7 @@ const BlogPage = ({ data }) => {
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <div className="blogListContainer">
-        <h2>Blog</h2>
+        <h2>Effective Writing: Tips & Techniques</h2>
         {
           blogList && blogList.map(blogItem => {
             return (

@@ -84,7 +84,7 @@ module.exports = {
       options: {
         name: `contentconcepts-data`,
         remote: `https://github.com/fidisys/contentconcepts-data.git`,
-        branch: `master`
+        branch: `newFeatures2`
       }
     },
     `gatsby-remark-reading-time`,

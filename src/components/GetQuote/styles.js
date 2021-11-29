@@ -239,4 +239,12 @@ width: 55vw;
 width:100%;
 }
 }
+#pop_conteiner #Quotepop_t4{
+  font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+color: #333333;
+margin-top:8px;
+}
 `;

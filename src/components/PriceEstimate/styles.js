@@ -388,8 +388,7 @@ margin-top:0px;
 }
 }
 #p_b_bottom Button{
-  width: 15.8273381294964vw;
-height: 3.45323741007194vw;
+  padding:1vw;
 background: #1565C0;
 border-radius: 0.575539568345324vw;
 font-style: normal;

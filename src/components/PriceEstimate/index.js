@@ -63,7 +63,8 @@ const PriceEstimate = props => {
                 <PriceEstimate_container>
                     <PriceEstimate_container_b1>
                         <div id="slide_label">
-                            <h1>Calculate your editing fee</h1>
+                        <h1>Add the text here</h1>
+                            <h1>Enter wordcount</h1>
                         </div>
                         <div id="slide_label">
                             <label htmlFor="firstName">How many words do you want us to edit? (exclude References)</label>
@@ -80,7 +81,7 @@ const PriceEstimate = props => {
                             </div>
                         </div>
                         <div id="slide_label">
-                            <label htmlFor="firstName">Choose your service</label>
+                            <label htmlFor="firstName">Select Service </label>
                             <div id="slider_buttons">
                                 {array && array.map((paymap, i) =>
                                     <>
@@ -133,11 +134,11 @@ const PriceEstimate = props => {
                                     </div>
                                     {finalpay ?
                                         <div id="p_b_bottom">
-                                            <button onClick={() => setVisible(true)}>Upload Document</button>
+                                            <button onClick={() => setVisible(true)}>Check pricing & upload</button>
                                         </div>
                                         :
                                         <div id="p_b_bottom">
-                                            <button>Upload Document</button>
+                                            <button>Check pricing & upload</button>
                                         </div>
                                     }
                                 </PriceEstimate_container_b2>

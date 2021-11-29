@@ -346,6 +346,8 @@ const GetQuote = ( { props, wordcount, currency, toggleState, dayNumber, year, d
           <div id="pop_conteiner">
             <p>You have successfully submitted the document</p>
             <CheckCircleTwoTone twoToneColor="#52c41a" />
+            <p id="Quotepop_t2">Word Count :  { wordcount }</p>
+            <p id="Quotepop_t2">Total Price :  { currencyPrize }</p>
             <p id="Quotepop_t1">Expected Delivery Date</p>
             <p id="Quotepop_t2">{ dayName }, { monthName } { dayNumber }, { year }</p>
             <p id="Quotepop_t3">Thank you for submitting the document. Please scroll below to make the payment. After you make the payment, you will receive a confirmation email</p>

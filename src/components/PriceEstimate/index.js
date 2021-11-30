@@ -7,6 +7,7 @@ import {
 } from './styles';
 import GetQuote from "../GetQuote/index";
 import { Modal } from 'antd';
+import { ArrowRightOutlined } from '@ant-design/icons';
 import {Link} from "gatsby";
 
 const PriceEstimate = props => {
@@ -61,10 +62,10 @@ const PriceEstimate = props => {
             <PriceEstimate_main>
             <div id="PrizeEstimation">
                 <PriceEstimate_container>
+                <p id="map">Enter wordcount <ArrowRightOutlined className="icon"/> Select Service <ArrowRightOutlined className="icon"/> Check pricing & upload</p>
                     <PriceEstimate_container_b1>
                         <div id="slide_label">
-                        <h1>Add the text here</h1>
-                            <h1>Enter wordcount</h1>
+                            <h1>Calculate your editing fee</h1>
                         </div>
                         <div id="slide_label">
                             <label htmlFor="firstName">How many words do you want us to edit? (exclude References)</label>
@@ -81,7 +82,7 @@ const PriceEstimate = props => {
                             </div>
                         </div>
                         <div id="slide_label">
-                            <label htmlFor="firstName">Select Service </label>
+                            <label htmlFor="firstName">Choose your service</label>
                             <div id="slider_buttons">
                                 {array && array.map((paymap, i) =>
                                     <>
@@ -134,11 +135,11 @@ const PriceEstimate = props => {
                                     </div>
                                     {finalpay ?
                                         <div id="p_b_bottom">
-                                            <button onClick={() => setVisible(true)}>Check pricing & upload</button>
+                                            <button onClick={() => setVisible(true)}>Proceed to Upload</button>
                                         </div>
                                         :
                                         <div id="p_b_bottom">
-                                            <button>Check pricing & upload</button>
+                                            <button>Proceed to Upload</button>
                                         </div>
                                     }
                                 </PriceEstimate_container_b2>

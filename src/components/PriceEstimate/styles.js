@@ -19,11 +19,28 @@ border: 0.0359712230215827vw solid #CCCCCC;
 border-radius: 0.575539568345324vw;
 padding:3vw 0 3vw 0;
 background:white;
+position: relative;
 @media (max-width:750px){
   width:100%;
   flex-direction:column;
   padding:4vw 8vw;
   border:none;
+}
+#map{
+  position: absolute;
+  top: 2vw;
+  left: 4vw;
+  font-weight: 500;
+  font-size: 0.95vw;
+  line-height: 1.72661870503597vw;
+  color: #666666;
+  text-align:center;
+  @media(max-width:750px){
+    display: none;
+  }
+}
+#map .icon{
+  margin: 0 0.5vw;
 }
 `;
 

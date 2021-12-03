@@ -36,7 +36,7 @@ const PriceEstimate = props =>
             },
         ]
     const [ pay, setpay ] = useState( null )
-    const [ toggleState, setToggleState ] = useState( 0 )
+    const [ toggleState, setToggleState ] = useState( "" )
     const [ currency, setcurrency ] = useState( 4 )
 
     const toggleTab = index =>

@@ -31,7 +31,7 @@ position: relative;
   top: 2vw;
   left: 4vw;
   font-weight: 500;
-  font-size: 0.95vw;
+  font-size: 1.1vw;
   line-height: 1.72661870503597vw;
   color: #666666;
   text-align:center;

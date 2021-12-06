@@ -33,7 +33,7 @@ position: relative;
   font-weight: 500;
   font-size: 1.1vw;
   line-height: 1.72661870503597vw;
-  color: #666666;
+  color: #27AE60;
   text-align:center;
   @media(max-width:750px){
     display: none;

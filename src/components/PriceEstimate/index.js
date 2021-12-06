@@ -66,7 +66,7 @@ const PriceEstimate = props =>
             <PriceEstimate_main>
                 <div id="PrizeEstimation">
                     <PriceEstimate_container>
-                        <p id="map">Enter wordcount <ArrowRightOutlined className="icon" /> Select Service <ArrowRightOutlined className="icon" /> Check pricing & upload</p>
+                        <p id="map">1)Enter wordcount <ArrowRightOutlined className="icon" /> 2)Select Service <ArrowRightOutlined className="icon" /> 3)Check pricing & upload</p>
                         <PriceEstimate_container_b1>
                             <div id="slide_label">
                                 <h1>Calculate your editing fee</h1>

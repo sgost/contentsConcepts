@@ -54,12 +54,21 @@ text-align:center;
 padding:1vw 1.2vw;
   }
   #word_counter_cont p{
+    display: flex;
+    align-items: center;
     font-style: normal;
 font-weight: 500;
-font-size: 24px;
-line-height: 36px;
+font-size: 2vw;
+line-height: 3vw;
 color: #222222;
 margin-left:auto;
+#count {
+  width: 11vw;
+  height: 3vw;
+  overflow: hidden;
+  margin: 0 0 0 1vw;
+  color: rgb(5, 226, 156);
+}
 @media (max-width: 768px) {
   font-size: 15px;
 }

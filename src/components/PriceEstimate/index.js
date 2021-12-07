@@ -19,19 +19,19 @@ const PriceEstimate = props =>
             {
                 id: 1,
                 title: "Proofreading",
-                dollers: "0.020",
-                rupees: "1.50",
+                dollers: "0.017",
+                rupees: "1.30",
             },
             {
                 id: 2,
                 title: "Substantive Editing",
-                dollers: "0.024",
-                rupees: "1.75",
+                dollers: "0.021",
+                rupees: "1.60",
             },
             {
-                id: 1,
+                id: 3,
                 title: "Plagiarism Editing",
-                dollers: "0.034",
+                dollers: "0.033",
                 rupees: "2.50",
             },
         ]
@@ -66,7 +66,7 @@ const PriceEstimate = props =>
             <PriceEstimate_main>
                 <div id="PrizeEstimation">
                     <PriceEstimate_container>
-                        <p id="map">1)Enter wordcount <ArrowRightOutlined className="icon" /> 2)Select Service <ArrowRightOutlined className="icon" /> 3)Check pricing & upload</p>
+                        <p id="map">1. Enter wordcount <ArrowRightOutlined className="icon" /> 2. Select Service <ArrowRightOutlined className="icon" /> 3. Check pricing & upload</p>
                         <PriceEstimate_container_b1>
                             <div id="slide_label">
                                 <h1>Calculate your editing fee</h1>

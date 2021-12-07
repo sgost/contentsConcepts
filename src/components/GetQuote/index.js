@@ -12,7 +12,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 const GetQuote = ( { props, wordcount, currency, toggleState, dayNumber, year, dayName, monthName } ) =>
 {
   console.log( toggleState );
-  const MainPrize = toggleState === 0 ? currency === 4 ? 1.50 * wordcount : 0.020 * wordcount : toggleState === 1 ? currency === 4 ? 1.75 * wordcount : 0.024 * wordcount : toggleState === 2 ? currency === 4 ? 2.50 * wordcount : 0.034 * wordcount : ( "" );
+  const MainPrize = toggleState === 0 ? currency === 4 ? 1.30 * wordcount : 0.017 * wordcount : toggleState === 1 ? currency === 4 ? 1.60 * wordcount : 0.021 * wordcount : toggleState === 2 ? currency === 4 ? 2.50 * wordcount : 0.033 * wordcount : ( "" );
   const category = toggleState === 0 ? "Proofreading" : toggleState === 1 ? "Substantive Editing" : toggleState === 2 ? "Plagiarism Editing" : ( "" );
   const currencyPrize = currency === 4 ? "₹" + MainPrize : currency === 5 ? "$" + MainPrize : "₹" + MainPrize;
   const [ value, setValue ] = useState();
@@ -309,7 +309,7 @@ const GetQuote = ( { props, wordcount, currency, toggleState, dayNumber, year, d
             <label className="formLabel" htmlFor="wordCount">Word Count</label>
             <div id="word_counter_cont">
               <input type="text" value={ wordcount } id="wordCount" />
-              <p>Total Price :  { currencyPrize }</p>
+              <p><span>Total Price :</span> <span id="count">{ "" + currencyPrize }</span></p>
             </div>
           </div>
           <div><label className="formLabel" htmlFor="wordCount" id="description_label">Add instructions to the editor</label>

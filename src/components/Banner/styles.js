@@ -9,13 +9,12 @@ export const BannerSection = styled.div`
       position: relative;
     }
     #view_prize Button {
-      margin-top: 43px;
-      width: 277px;
       height: 48px;
-      transition: 0.5s ease;
-    }
-    #view_prize Button:hover {
-      width: 282px;
+      font-size: 16px;
+      margin-top: 35px;
+      .icon {
+        margin: 0 0 0 10px;
+      }
     }
     @media only screen and (min-width: 320px) and (max-width: 768px) {
       flex-direction: column;
@@ -62,6 +61,10 @@ export const BannerSection = styled.div`
 `
 
 export const ContentContainer = styled.div`
+ width: 630px;
+ @media (max-width: 1020px){
+  width: fit-content;
+ }
   @media only screen and (min-width: 320px) and (max-width: 768px) {
     text-align: center;
   }

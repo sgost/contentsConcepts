@@ -46,7 +46,7 @@ const PriceEstimate = props =>
 
     var finalpay = pay <= 100000 ? pay : 100000;
 
-    const UpdateTime = !finalpay ? "" : finalpay <= 2000 ? 48 : finalpay === 2001 || finalpay <= 4000 ? 96 : finalpay === 4001 || finalpay <= 6000 ? 144 : finalpay === 6001 || finalpay <= 20000 ? 336 : finalpay >= 20001 ? 720 : "";
+    const UpdateTime = !finalpay ? "" : finalpay <= 2000 ? 48 : finalpay === 2001 || finalpay <= 4000 ? 72 : finalpay === 4001 || finalpay <= 6000 ? 72 : finalpay === 6001 || finalpay <= 10000 ? 96 : finalpay >= 10001 ? 120 : "";
     var d = new Date();
     d.setHours( UpdateTime )
     const dayNumber = d.getDate();

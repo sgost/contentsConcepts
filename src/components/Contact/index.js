@@ -134,10 +134,6 @@ export const ContactPreviewSection = ({
         </Form>
       </FormContainer>
       <ContactDetails>
-        <a href={'tel:' + call}>
-          <img src={Call} alt="phone number" />
-          <span>{call}</span>
-        </a>
         <a href={'mailto:' + email}>
           <img src={Email} alt="email" />
           <span>{email}</span>

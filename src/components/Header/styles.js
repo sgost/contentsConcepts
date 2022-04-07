@@ -62,6 +62,7 @@ export const NavBarContainer = styled.div`
   @media (max-width: 768px) {
     .ant-btn {
       margin: 5px 0px 20px;
+      font-size: 11px;
     }
   }
   @media (max-width: 768px) {

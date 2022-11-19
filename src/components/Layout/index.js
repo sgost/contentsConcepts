@@ -8,6 +8,7 @@ import OfferImage from '../../images/offer.svg'
 import Header from "../Header"
 import Footer from "../Footer"
 import { GlobalStyle } from '../../styles/global-styles';
+import whatsappLogo from "../../images/whatsapp-logo.svg"
 
 const Layout = props => {
 
@@ -30,7 +31,7 @@ const Layout = props => {
   const offerData = data.file.childMarkdownRemark.frontmatter;
 
   useEffect(() => {
-    if(offerData) {
+    if (offerData) {
       Notification({
         description: offerData.offer,
         image: OfferImage,
@@ -40,10 +41,10 @@ const Layout = props => {
     }
   }, [offerData]);
 
-  const[showFooter, setShowFooter] = useState(true);
+  const [showFooter, setShowFooter] = useState(true);
   useEffect(() => {
-    if(typeof window !== 'undefined') {
-      if(window.location.pathname === '/sitemap/') {
+    if (typeof window !== 'undefined') {
+      if (window.location.pathname === '/sitemap/') {
         setShowFooter(false);
       } else {
         setShowFooter(true);
@@ -58,9 +59,13 @@ const Layout = props => {
       <Header />
       <main>{props.children}</main>
       {
-        showFooter &&  <Footer />
+        showFooter && <Footer />
       }
-      
+      <div className="whatsappContainer">
+        <a href="https://wa.me/+919840903949" target="_blank" rel="noopener noreferrer">
+          <img src={whatsappLogo} alt="contact" />
+        </a>
+      </div>
     </>
   )
 }

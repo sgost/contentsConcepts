@@ -76,7 +76,7 @@ function SEO({ description, lang, meta, title, keywords }) {
           content: metaDescription,
         },
       ].concat(meta)}
-      ><script src='//in.fw-cdn.com/30146357/93017.js' chat='true'></script></Helmet>
+    />
   )
 }
 

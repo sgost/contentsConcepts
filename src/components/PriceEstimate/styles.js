@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-export const PriceEstimate_main = styled.div`
+export const PriceEstimateMain = styled.div`
 width:100%;
 height:fit-content;
 background: #F5FBFF;
-padding:3vw 0 9vw 0;
+padding:3vw 0 0 0;
 @media (max-width:750px){
   background:white;
 }
 `;
 
-export const PriceEstimate_container = styled.div`
+export const PriceEstimateContainer = styled.div`
 width:97vw;
 display:flex;
 margin:auto;
@@ -44,7 +44,7 @@ position: relative;
 }
 `;
 
-export const PriceEstimate_container_b1 = styled.div`
+export const PriceEstimateContainerb1 = styled.div`
 width:fit-content;
 height:fit-content;
 padding:2vw 3vw 2vw 4vw;
@@ -248,7 +248,7 @@ color:black;
 }
 `;
 
-export const PriceEstimate_container_b2 = styled.div`
+export const PriceEstimateContainerb2 = styled.div`
 width:23vw;
 margin-left:auto;
 display:flex;

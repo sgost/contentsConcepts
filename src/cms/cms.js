@@ -30,8 +30,6 @@ import BlogPreview from "./preview-templates/BlogPreview";
 
 import PricingPreview from "./preview-templates/PricingPreview";
 
-import PayPreview from "./preview-templates/PayPreview";
-
 function StyleInjector({ children }) {
   const [iframeRef, setIframeRef] = useState(null);
 
@@ -45,7 +43,7 @@ function StyleInjector({ children }) {
     iframeRef && (
       <StyleSheetManager target={iframeRef}>
         <>
-        {children}<GlobalStyle />
+          {children}<GlobalStyle />
         </>
       </StyleSheetManager>
     )
@@ -86,5 +84,3 @@ CMS.registerPreviewTemplate("services", withStyledComponentsRendered(ServicePrev
 CMS.registerPreviewTemplate("blog", withStyledComponentsRendered(BlogPreview));
 
 CMS.registerPreviewTemplate("pricing", withStyledComponentsRendered(PricingPreview));
-
-CMS.registerPreviewTemplate("pay", withStyledComponentsRendered(PayPreview));

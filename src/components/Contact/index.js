@@ -2,7 +2,6 @@ import React, { Fragment, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Form, Input, Button, Select, message } from 'antd'
 import { CaretDownOutlined, SmileOutlined } from '@ant-design/icons';
-import Call from '../../images/call.svg'
 import Email from '../../images/email.svg'
 
 import {
@@ -14,7 +13,6 @@ import {
 
 export const ContactPreviewSection = ({
   title,
-  call,
   email,
   categories
 }) => {
@@ -23,36 +21,36 @@ export const ContactPreviewSection = ({
 
   const [form] = Form.useForm();
 
-  const[disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const onFinish = async values => {
 
     setDisabled(true);
 
-    var saveData = values;
+    let saveData = values;
 
     const data = new FormData();
 
     data.append("name", saveData.name);
     data.append("email", saveData.email);
-    if(values.category === undefined) {
+    if (values.category === undefined) {
       data.append("category", '-');
     } else {
       data.append("category", saveData.category);
     }
-    if(values.description === undefined) {
+    if (values.description === undefined) {
       data.append("description", '-');
     } else {
       data.append("description", saveData.description);
     }
 
-    var url= "https://script.google.com/macros/s/AKfycbzpvMlIAKKxyKwgYIigLFc7ygM7CRHAVxhtw1guvVkFme7qEoewmMCfHo_GOXA6ocZw_g/exec";
+    let url = "https://script.google.com/macros/s/AKfycbzpvMlIAKKxyKwgYIigLFc7ygM7CRHAVxhtw1guvVkFme7qEoewmMCfHo_GOXA6ocZw_g/exec";
 
     await fetch(url, {
       method: 'POST',
       body: data,
       mode: 'no-cors',
-    }).then(function (response) {
+    }).then(function (_response) {
       message.success({
         content: 'Hello there! Thank you for reaching out. We will get back to you as quick as humanly possible.',
         className: 'messageCont',
@@ -145,7 +143,7 @@ export const ContactPreviewSection = ({
 
 const Contact = props => {
 
-  const[contactContent, setContactContent] = useState({});
+  const [contactContent, setContactContent] = useState({});
 
   const data = useStaticQuery(graphql`
     query {
@@ -167,7 +165,7 @@ const Contact = props => {
   `);
 
   useEffect(() => {
-    if(data.file) {
+    if (data.file) {
       setContactContent(data.file.childMarkdownRemark.frontmatter);
     }
   }, [data.file]);
@@ -178,7 +176,6 @@ const Contact = props => {
         data.file &&
         <ContactPreviewSection
           title={contactContent.title}
-          call={contactContent.call}
           email={contactContent.email}
           categories={contactContent.categories}
         />

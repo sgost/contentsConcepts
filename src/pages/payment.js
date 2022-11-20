@@ -14,8 +14,6 @@ const GetQuote = ({ props, location }) => {
         wordCount = location.state.wordCount
         category = location.state.category
     }
-    console.log(wordCount)
-    console.log(category)
 
 
     const [value, setValue] = useState();

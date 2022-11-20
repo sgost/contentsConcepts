@@ -107,6 +107,9 @@ margin-left:auto;
         padding: 1vw;
       }
     }
+    .ant-btn:nth-child(2) {
+      margin-left: 1rem;
+    }
   }
   .inputGroupBlock .ant-form-item-control-input-content {
     @media (max-width: 576px) {
@@ -157,6 +160,7 @@ margin-left:auto;
   }
 `;
 export const Quotepop = styled.div`
+height: 100vh;
 background:white;
 padding:50px 0 75px 0;
 display:flex;
@@ -195,11 +199,20 @@ margin-top:10vw;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  margin:auto;
+  margin:0 auto 30px auto;
   padding:50px 0 34px 0;
   border-bottom: 0.5px solid #CCCCCC;
   @media(max-width:580px){
     width:100vw;
+  }
+}
+.button_container {
+  display: flex;
+  gap: 1rem;
+  button {
+    background: white !important;
+    color: black !important;
+    border: 1px solid black;
   }
 }
  #pay_containers {
@@ -226,6 +239,7 @@ font-weight: 500;
 font-size: 16px;
 line-height: 24px;
 color: #666666;
+margin-top: 20px;
 }
 #pop_conteiner #Quotepop_t2{
   font-style: normal;
@@ -234,6 +248,14 @@ font-size: 16px;
 line-height: 24px;
 color: #333333;
 margin-top:8px;
+}
+#pop_conteiner #Quotepop_date{
+  font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+color: #333333;
+margin-top:0;
 }
 #pop_conteiner #Quotepop_t3{
   font-style: normal;
@@ -244,6 +266,8 @@ color: #666666;
 margin-top:17px;
 text-align:center;
 width: 55vw;
+display: flex;
+flex-direction: column;
 @media(max-width:750px){
 width:100%;
 }

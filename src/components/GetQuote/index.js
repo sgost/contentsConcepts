@@ -9,6 +9,7 @@ import { Spin } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import razorpayLogo from "../../images/razorpayLogo.png"
 import logoSVG from "../../images/logo.svg"
+import paypal from "../../images/paypal.png"
 
 
 const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, dayName, monthName }) => {
@@ -399,8 +400,8 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
                   Razorpay
                 </Button>
                 :
-                <a href="https://www.paypal.com/webapps/shoppingcart?flowlogging_id=089b188063b70&mfid=1668932336103_089b188063b70#/checkout/openButton" target="_blank" rel="noopener noreferrer">
-                  <Button>
+                <a href="https://www.paypal.com/webapps/shoppingcart?flowlogging_id=0501149082b84&mfid=1668962958680_0501149082b84#/checkout/openButton" target="_blank" rel="noopener noreferrer">
+                  <Button type="primary" icon={<img src={paypal} style={{ width: `20px`, height: `20px`, marginRight: `10px` }} alt="razorpayLogo" />}>
                     PayPal
                   </Button>
                 </a>

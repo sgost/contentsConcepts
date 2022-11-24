@@ -400,7 +400,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
                   Razorpay
                 </Button>
                 :
-                <a href="https://www.paypal.com/webapps/shoppingcart?flowlogging_id=022137717a6ba&mfid=1669181054917_022137717a6ba#/checkout/openButton" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4TBCSQSB7GVPW" target="_blank" rel="noopener noreferrer">
                   <Button type="primary" icon={<img src={paypal} style={{ width: `20px`, height: `20px`, marginRight: `10px` }} alt="razorpayLogo" />}>
                     PayPal
                   </Button>

@@ -62,7 +62,7 @@ const Layout = props => {
         showFooter && <Footer />
       }
       <div className="whatsappContainer">
-        <a href="https://wa.me/+919840903949" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/+917010709536" target="_blank" rel="noopener noreferrer">
           <img src={whatsappLogo} alt="contact" />
         </a>
       </div>

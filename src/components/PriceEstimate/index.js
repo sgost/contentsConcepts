@@ -136,12 +136,12 @@ const PriceEstimate = () => {
                                                         <h1>Total Price</h1>
                                                         <div id="prize_box">
                                                             {(currency === 4) ?
-                                                                <h2>{"₹" + paymap.rupees * finalpay}</h2>
+                                                                <h2>{"₹" + Math.round(paymap.rupees * finalpay)}</h2>
                                                                 :
                                                                 (currency === 5) ?
-                                                                    <h2>{"$" + paymap.dollers * finalpay}</h2>
+                                                                    <h2>{"$" + Math.round(paymap.dollers * finalpay)}</h2>
                                                                     :
-                                                                    <h2>{"₹" + paymap.rupees * finalpay}</h2>
+                                                                    <h2>{"₹" + Math.round(paymap.rupees * finalpay)}</h2>
                                                             }
                                                         </div>
                                                     </div>

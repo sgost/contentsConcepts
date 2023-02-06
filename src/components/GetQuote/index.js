@@ -19,7 +19,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
   };
   const MainPrize = toggleState === 0 ? currency === 4 ? 1.30 * wordcount : 0.017 * wordcount : toggleState === 1 ? currency === 4 ? 1.60 * wordcount : 0.021 * wordcount : toggleState === 2 ? currency === 4 ? 2.50 * wordcount : 0.033 * wordcount : ("");
   const category = toggleState === 0 ? "Proofreading" : toggleState === 1 ? "Substantive Editing" : toggleState === 2 ? "Plagiarism Editing" : ("");
-  const currencyPrize = currency === 4 ? "₹" + MainPrize : currency === 5 ? "$" + MainPrize : "₹" + MainPrize;
+  const currencyPrize = currency === 4 ? "₹" + Math.round(MainPrize) : currency === 5 ? "$" + Math.round(MainPrize) : "₹" + Math.round(MainPrize);
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
 
@@ -92,7 +92,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
   }
 
   const [razorSuccess, setRazorSuccess] = useState(false)
-
+  const currPrice = Math.round(MainPrize)
   // function for razorpayment gateway
   const payRazorpay = async () => {
     const razorpayRes = await loadscript("https://checkout.razorpay.com/v1/checkout.js")
@@ -102,7 +102,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
       const options = {
         key: "rzp_live_h3HQKK2XFgJopO",
         currency: "INR",
-        amount: MainPrize * 100,
+        amount: parseInt(currPrice * 100),
         name: "Content Concepts",
         description: "Adding value to the lives",
         handler: async function (response) {

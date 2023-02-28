@@ -1,22 +1,34 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
   siteMetadata: {
     title: `English Editing and Proofreading Services in India`,
     description: `English Editing and proofreading services in India. Truly affordable and top-quality services for manuscript authors and publishers.`,
-    keywords: ['english editing', 'editing english', 'editing manuscripts', 'editing service', 'manuscript editor', 
-    'editing a manuscript', 'manuscript editing', 'manuscript edit', 'manuscript editing services free online english language editing service', 'english language editing service india', 'manuscript editing services', 'cheap english editing services'],
-    siteUrl: `https://contentconcepts.in/`,
+    keywords: [
+      "english editing",
+      "editing english",
+      "editing manuscripts",
+      "editing service",
+      "manuscript editor",
+      "editing a manuscript",
+      "manuscript editing",
+      "manuscript edit",
+      "manuscript editing services free online english language editing service",
+      "english language editing service india",
+      "manuscript editing services",
+      "cheap english editing services",
+    ],
+    siteUrl: `https://contentconcepts.com/`,
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || "none",
-        head: true
-      }
+        head: true,
+      },
     },
     `gatsby-plugin-sitemap`,
     {
@@ -50,19 +62,19 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
-        omitGoogleFont: true
+        omitGoogleFont: true,
       },
     },
     {
-      resolve: 'gatsby-plugin-antd',
+      resolve: "gatsby-plugin-antd",
       options: {
-        style: true
-      }
+        style: true,
+      },
     },
     {
       resolve: `gatsby-plugin-less`,
       options: {
-        javascriptEnabled: true
+        javascriptEnabled: true,
       },
     },
     `gatsby-plugin-styled-components`,
@@ -84,8 +96,8 @@ module.exports = {
       options: {
         name: `contentconcepts-data`,
         remote: `https://github.com/fidisys/contentconcepts-data.git`,
-        branch: `master`
-      }
+        branch: `master`,
+      },
     },
     `gatsby-remark-reading-time`,
     {
@@ -94,7 +106,7 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

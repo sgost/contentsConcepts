@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: fidisys/contentconcepts-data
+  name: git-gateway
+  branch: master
 
 publish_mode: editorial_workflow
 

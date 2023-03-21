@@ -129,8 +129,8 @@ const PriceEstimate = () => {
                                             {toggleState === i && (
                                                 <PriceEstimateContainerb2 key={i}>
                                                     <div id="p_b_top_main">
-                                                        <button onClick={() => setcurrency(4)} className={currency === 4 ? "currency1 currency2" : "currency1"}>₹ INR </button>
-                                                        <button onClick={() => setcurrency(5)} className={currency === 5 ? "currency1 currency2" : "currency1"}>$ USD</button>
+                                                        <button onClick={() => setcurrency(5)} className={currency === 5 ? "currency1 currency2" : "currency1"}>₹ USD </button>
+                                                        <button onClick={() => setcurrency(4)} className={currency === 4 ? "currency1 currency2" : "currency1"}>$ INR</button>
                                                     </div>
                                                     <div id="p_b_top">
                                                         <h1>Total Price</h1>
@@ -146,8 +146,8 @@ const PriceEstimate = () => {
                                                         </div>
                                                     </div>
                                                     <div id="p_b_top_main2">
-                                                        <button onClick={() => setcurrency(4)} className={currency === 4 ? "currency1 currency2" : "currency1"}>₹ INR </button>
-                                                        <button onClick={() => setcurrency(5)} className={currency === 5 ? "currency1 currency2" : "currency1"}>$ USD</button>
+                                                        <button onClick={() => setcurrency(5)} className={currency === 5 ? "currency1 currency2" : "currency1"}>₹ USD </button>
+                                                        <button onClick={() => setcurrency(4)} className={currency === 4 ? "currency1 currency2" : "currency1"}>$ INR</button>
                                                     </div>
                                                     <div id="p_b_middle">
                                                         <h1>Estimated return on</h1>

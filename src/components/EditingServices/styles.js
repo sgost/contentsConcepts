@@ -539,3 +539,13 @@ export const FooterCol = styled(Col)`
     }
   }
 `;
+
+export const BreadCrumps = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  .active {
+    font-weight: bold;
+    color: #1976D2;
+  }
+`

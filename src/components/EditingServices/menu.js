@@ -40,7 +40,7 @@ const MenuSection = props => {
                   {
                     data.priceCard.pricing.price &&
                     <div className="priceSec">
-                      {getCountry == "Asia/Calcutta" ?
+                      {getCountry === "Asia/Calcutta" ?
                         data.priceCard.pricing.price.inr && <span className="priceValue" dangerouslySetInnerHTML={{ __html: data.priceCard.pricing.price.inr }} />
                         :
                         data.priceCard.pricing.price.usd && <span className="priceValue" dangerouslySetInnerHTML={{ __html: data.priceCard.pricing.price.usd }} />

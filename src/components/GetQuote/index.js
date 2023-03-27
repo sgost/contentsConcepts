@@ -1,12 +1,10 @@
 import React, { useState } from "react"
-import { graphql, useStaticQuery, navigate } from "gatsby"
-import { Form, message, Input, Radio, Row, Col, Upload, Button, Modal } from 'antd';
-import { SmileOutlined, UploadOutlined, ArrowLeftOutlined } from '@ant-design/icons';
+import { graphql, useStaticQuery } from "gatsby"
+import { Form, message, Input, Radio, Row, Col, Upload, Button, Modal, Spin } from 'antd';
+import { SmileOutlined, UploadOutlined, LoadingOutlined } from '@ant-design/icons';
 import { QuoteFormSection, Quotepop } from './styles';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import { Spin } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
 import razorpayLogo from "../../images/razorpayLogo.png"
 import logoSVG from "../../images/logo.svg"
 import paypal from "../../images/paypal.png"

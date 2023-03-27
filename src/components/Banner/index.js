@@ -20,6 +20,7 @@ export const HomeBannerSection = ({
   services
 }) => {
 
+  console.log("typedWords", typedWords)
 
   return (
     <BannerSection>

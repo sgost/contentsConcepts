@@ -12,7 +12,7 @@ import { Link } from "gatsby";
 
 const PriceEstimate = () => {
     const getCountry = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const checkCurrency = getCountry == "Asia/Calcutta" ? 4 : 5;
+    const checkCurrency = getCountry === "Asia/Calcutta" ? 4 : 5;
     //Prize array
     const array =
         [
@@ -37,7 +37,7 @@ const PriceEstimate = () => {
         ]
     const [pay, setpay] = useState(null);
     const [toggleState, setToggleState] = useState("");
-    const [currency, _setcurrency] = useState(checkCurrency);
+    const [currency] = useState(checkCurrency);
 
     const toggleTab = index => {
         setToggleState(index)

@@ -31,7 +31,7 @@ const PricingLevels = ({ content }) => {
                     {
                       level.price &&
                       <PriceContainer>
-                        {getCountry == "Asia/Calcutta" ?
+                        {getCountry === "Asia/Calcutta" ?
                           level.price.usd && <span className="usdPrice" dangerouslySetInnerHTML={{ __html: level.price.usd }} />
                           :
                           level.price.inr && <span className="inrPrice" dangerouslySetInnerHTML={{ __html: level.price.inr }} />

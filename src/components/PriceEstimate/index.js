@@ -11,6 +11,8 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import { Link } from "gatsby";
 
 const PriceEstimate = () => {
+    const getCountry = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const checkCurrency = getCountry == "Asia/Calcutta" ? 4 : 5;
     //Prize array
     const array =
         [
@@ -33,9 +35,9 @@ const PriceEstimate = () => {
                 rupees: "2.50",
             },
         ]
-    const [pay, setpay] = useState(null)
-    const [toggleState, setToggleState] = useState("")
-    const [currency, setcurrency] = useState(4)
+    const [pay, setpay] = useState(null);
+    const [toggleState, setToggleState] = useState("");
+    const [currency, _setcurrency] = useState(checkCurrency);
 
     const toggleTab = index => {
         setToggleState(index)
@@ -57,6 +59,7 @@ const PriceEstimate = () => {
     const handelCancel = () => {
         setVisible(false)
     }
+
     return (
         <>
             <PriceEstimateMain>
@@ -103,10 +106,13 @@ const PriceEstimate = () => {
                         {
                             toggleState === "" ?
                                 <PriceEstimateContainerb2 >
-                                    <div id="p_b_top_main">
-                                        <button onClick={() => setcurrency(4)} className={currency === 4 ? "currency1 currency2" : "currency1"}>₹ INR </button>
-                                        <button onClick={() => setcurrency(5)} className={currency === 5 ? "currency1 currency2" : "currency1"}>$ USD</button>
-                                    </div>
+                                    {/* <div id="p_b_top_main">
+                                        {getCountry === "Asia/Calcutta" ?
+                                            <button onClick={() => setcurrency(4)} className={currency === 4 ? "currency1 currency2" : "currency1"}>₹ INR </button>
+                                            :
+                                            <button onClick={() => setcurrency(5)} className={currency === 5 ? "currency1 currency2" : "currency1"}>$ USD</button>
+                                        }
+                                    </div> */}
                                     <div id="p_b_top">
                                         <h1>Total Price</h1>
                                         <div id="prize_box">
@@ -128,27 +134,24 @@ const PriceEstimate = () => {
                                         <>
                                             {toggleState === i && (
                                                 <PriceEstimateContainerb2 key={i}>
-                                                    <div id="p_b_top_main">
+                                                    {/* <div id="p_b_top_main">
                                                         <button onClick={() => setcurrency(5)} className={currency === 5 ? "currency1 currency2" : "currency1"}>₹ USD </button>
                                                         <button onClick={() => setcurrency(4)} className={currency === 4 ? "currency1 currency2" : "currency1"}>$ INR</button>
-                                                    </div>
+                                                    </div> */}
                                                     <div id="p_b_top">
                                                         <h1>Total Price</h1>
                                                         <div id="prize_box">
                                                             {(currency === 4) ?
                                                                 <h2>{"₹" + Math.round(paymap.rupees * finalpay)}</h2>
                                                                 :
-                                                                (currency === 5) ?
-                                                                    <h2>{"$" + Math.round(paymap.dollers * finalpay)}</h2>
-                                                                    :
-                                                                    <h2>{"₹" + Math.round(paymap.rupees * finalpay)}</h2>
+                                                                <h2>{"$" + Math.round(paymap.dollers * finalpay)}</h2>
                                                             }
                                                         </div>
                                                     </div>
-                                                    <div id="p_b_top_main2">
+                                                    {/* <div id="p_b_top_main2">
                                                         <button onClick={() => setcurrency(5)} className={currency === 5 ? "currency1 currency2" : "currency1"}>₹ USD </button>
                                                         <button onClick={() => setcurrency(4)} className={currency === 4 ? "currency1 currency2" : "currency1"}>$ INR</button>
-                                                    </div>
+                                                    </div> */}
                                                     <div id="p_b_middle">
                                                         <h1>Estimated return on</h1>
                                                         {!finalpay ?

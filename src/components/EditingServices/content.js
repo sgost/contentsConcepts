@@ -8,16 +8,21 @@ import {
   FeaturesListContainer,
   FeatureSecList,
   RefundSection,
-  ButtonContainer
+  ButtonContainer,
+  BreadCrumps
 } from './styles';
 
 const MenuContent = ({ content, description, preview }) => {
 
   // const content = props.content;
+  console.log("content", content)
 
   return (
     <Fragment>
-      { content &&
+      <BreadCrumps>
+        <p>Services</p> / <p className='active'>{content.title}</p>
+      </BreadCrumps>
+      {content &&
         <div>
           <HeadingContainer>
             <h2>{content.title}</h2>
@@ -27,8 +32,8 @@ const MenuContent = ({ content, description, preview }) => {
           </HeadingContainer>
           <ButtonContainer>
             <Link to="/pricing/"><Button type="primary">Get Quote</Button></Link>
-            <Button onClick={() => window.location.href="#editingSample"}>Check Sample</Button>
-            <Button onClick={() => window.location.href="#editingProcess"}>Editing Process</Button>
+            <Button onClick={() => window.location.href = "#editingSample"}>Check Sample</Button>
+            <Button onClick={() => window.location.href = "#editingProcess"}>Editing Process</Button>
           </ButtonContainer>
           <TypesContainer>
             {
@@ -50,12 +55,12 @@ const MenuContent = ({ content, description, preview }) => {
             }
           </FeaturesListContainer>
           <RefundSection>
-            <div dangerouslySetInnerHTML={{__html: content.message}} />
+            <div dangerouslySetInnerHTML={{ __html: content.message }} />
           </RefundSection>
           <ButtonContainer>
             <Link to="/pricing/"><Button type="primary">Get Quote</Button></Link>
-            <Button onClick={() => window.location.href="#editingSample"}>Check Sample</Button>
-            <Button onClick={() => window.location.href="#editingProcess"}>Editing Process</Button>
+            <Button onClick={() => window.location.href = "#editingSample"}>Check Sample</Button>
+            <Button onClick={() => window.location.href = "#editingProcess"}>Editing Process</Button>
           </ButtonContainer>
         </div>
       }

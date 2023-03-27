@@ -44,7 +44,7 @@ export const HomeServicesSection = ({
 
 const Services = props => {
 
-  const[servicesContent, setServicesContent] = useState({});
+  const [servicesContent, setServicesContent] = useState({});
 
   const data = useStaticQuery(graphql`
     query {
@@ -68,7 +68,7 @@ const Services = props => {
   `);
 
   useEffect(() => {
-    if(data.file) {
+    if (data.file) {
       setServicesContent(data.file.childMarkdownRemark.frontmatter);
     }
   }, [data.file]);

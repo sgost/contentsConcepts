@@ -61,7 +61,7 @@ export const BannerSection = styled.div`
 `
 
 export const ContentContainer = styled.div`
- width: 630px;
+ width: 750px;
  @media (max-width: 1020px){
   width: fit-content;
  }

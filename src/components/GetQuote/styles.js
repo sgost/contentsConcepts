@@ -167,6 +167,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+
 Button{
   width: 242px;
 height: 48px;
@@ -209,11 +210,29 @@ margin-top:10vw;
 .button_container {
   display: flex;
   gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   button {
     background: white !important;
     color: black !important;
     border: 1px solid black;
   }
+   #Quotepop_t3{
+  font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+color: #666666;
+margin-top:17px;
+text-align:center;
+width: 55vw;
+display: flex;
+flex-direction: column;
+@media(max-width:750px){
+width:100%;
+}
+}
 }
  #pay_containers {
   margin-top:3vw;
@@ -257,21 +276,7 @@ line-height: 24px;
 color: #333333;
 margin-top:0;
 }
-#pop_conteiner #Quotepop_t3{
-  font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 24px;
-color: #666666;
-margin-top:17px;
-text-align:center;
-width: 55vw;
-display: flex;
-flex-direction: column;
-@media(max-width:750px){
-width:100%;
-}
-}
+
 #pop_conteiner #Quotepop_t4{
   font-style: normal;
 font-weight: 600;

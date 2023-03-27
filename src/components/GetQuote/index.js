@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery, navigate } from "gatsby"
 import { Form, message, Input, Radio, Row, Col, Upload, Button, Modal } from 'antd';
-import { SmileOutlined, UploadOutlined } from '@ant-design/icons';
+import { SmileOutlined, UploadOutlined, ArrowLeftOutlined } from '@ant-design/icons';
 import { QuoteFormSection, Quotepop } from './styles';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
@@ -190,7 +190,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
       data.append("requirement", values.requirement);
     }
 
-    var url = "https://script.google.com/macros/s/AKfycbygojKHSwn9_gezvlykVhcfnJ-Vm_I6MCIQ1-wRbJ0Y__cDWX9ButKAMEGZR8lNnKm25Q/exec";
+    var url = "https://script.google.com/macros/s/AKfycbwTiXqbdqSOqDAetXv-ImpnJ3W7A9R874oNuViALZ-GNdemyp_tHmRRRTXNIp647JmukQ/exec";
 
     await fetch(url, {
       method: 'POST',
@@ -199,7 +199,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
     }).then(function (_response) {
       setSuccess(true);
       setDisabled(false);
-      form.resetFields();
+      // form.resetFields();
       props.onSubmit();
     }).catch(function (_err) {
       setDisabled(false);
@@ -208,7 +208,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
   };
 
   const handelCancel = () => {
-    navigate("/")
+    // navigate("/")
     setSuccess(false);
     setLoading(false);
   }
@@ -386,15 +386,15 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
             <p id="Quotepop_t2" style={{ color: `#32cd32` }}>Total Price to Pay :  {currencyPrize}</p>
             <p id="Quotepop_t1" >Expected Delivery Date</p>
             <p id="Quotepop_date">{dayName}, {monthName} {dayNumber}, {year}</p>
-            {razorSuccess ?
-              <p id="Quotepop_t3">Your payment was successful!, you will receive a confirmation email.</p>
-              :
-              <p id="Quotepop_t3">Proceed to pay via {currency === 4 ? "Razorpay" : "PayPal"}</p>
-            }
           </div>
           {razorSuccess ? <Button onClick={handelCancel}>Back to Home</Button>
             :
             <div className="button_container">
+              {razorSuccess ?
+                <p id="Quotepop_t3">Your payment was successful!, you will receive a confirmation email.</p>
+                :
+                <p id="Quotepop_t3">Proceed to pay via {currency === 4 ? "Razorpay" : "PayPal"}</p>
+              }
               {currency === 4 ?
                 <Button type="primary" icon={<img src={razorpayLogo} style={{ width: `20px`, height: `20px`, marginRight: `10px` }} alt="razorpayLogo" />} onClick={payRazorpay}>
                   Razorpay

@@ -195,11 +195,5 @@ export const PriceContainer = styled.div`
       font-weight: bold;
       font-size: 18px;
     }
-    &:before {
-      content: '(';
-    }
-    &:after {
-        content: ')';
-    }
   }
 `;

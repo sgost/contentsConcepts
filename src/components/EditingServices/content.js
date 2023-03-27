@@ -14,9 +14,6 @@ import {
 
 const MenuContent = ({ content, description, preview }) => {
 
-  // const content = props.content;
-  console.log("content", content)
-
   return (
     <Fragment>
       <BreadCrumps>

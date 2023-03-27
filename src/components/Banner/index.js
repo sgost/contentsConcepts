@@ -12,12 +12,15 @@ import {
   ImageContainer
 } from './styles';
 import Typed from 'react-typed';
+import { textChangeFun } from "../../utils/utils";
 
 export const HomeBannerSection = ({
   title,
   typedWords,
   services
 }) => {
+
+
   return (
     <BannerSection>
       <Row>
@@ -26,14 +29,14 @@ export const HomeBannerSection = ({
             <img src={BannerImage} alt="banner" />
           </ImageContainer>
         </Col>
-        <Col xs={24} sm={24} md={12} lg={12} xl={12} className="contentSection">
+        <Col xs={24} sm={24} md={16} lg={16} xl={16} className="contentSection">
           <ContentContainer>
             <Content>
               {title}
               {
                 typedWords &&
                 <Typed
-                  strings={typedWords && typedWords}
+                  strings={typedWords && typedWords.map((item) => textChangeFun(item))}
                   typeSpeed={60}
                   backSpeed={60}
                   backDelay={1200}
@@ -58,7 +61,7 @@ export const HomeBannerSection = ({
             <Button id="view_prize" type="primary">Get Quote / See Price<ArrowRightOutlined className="icon" /></Button>
           </Link>
         </Col>
-        <Col xs={24} sm={24} md={12} lg={12} xl={12} className="resSection">
+        <Col xs={24} sm={24} md={12} lg={12} xl={10} className="resSection">
           <ImageContainer>
             <img src={BannerImage} alt="banner" />
           </ImageContainer>

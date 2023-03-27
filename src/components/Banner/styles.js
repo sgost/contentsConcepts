@@ -43,9 +43,9 @@ export const BannerSection = styled.div`
   }
   .contentSection {
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 653px;
     padding-left: 50px;
-    padding: 9% 0 9% 4%;
+    padding: 9% 0 9% 2%;
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       max-width: 400px;
     }

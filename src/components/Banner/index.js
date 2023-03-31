@@ -12,7 +12,7 @@ import {
   ImageContainer
 } from './styles';
 import Typed from 'react-typed';
-import { textChangeFun } from "../../utils/utils";
+import { textChangeFun, amountChangeFun } from "../../utils/utils";
 
 export const HomeBannerSection = ({
   title,
@@ -37,7 +37,7 @@ export const HomeBannerSection = ({
               {
                 typedWords &&
                 <Typed
-                  strings={typedWords && typedWords.map((item) => textChangeFun(item))}
+                  strings={typedWords && typedWords.map((item) => amountChangeFun(textChangeFun(item)))}
                   typeSpeed={60}
                   backSpeed={60}
                   backDelay={1200}

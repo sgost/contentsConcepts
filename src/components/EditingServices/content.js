@@ -65,4 +65,4 @@ const MenuContent = ({ content, description, preview }) => {
   )
 }
 
-export default MenuContent
+export default MenuContent;

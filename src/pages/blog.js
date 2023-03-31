@@ -75,6 +75,32 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    serviceData: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(services)\\/.*\\\\.md$/"}}, sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            excerpt
+            author
+            author_image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+              extension
+              publicURL
+            }
+            date(formatString: "MMMM DD, YYYY")
+          }
+        }
+      }
+    }
     seoData: file(relativePath: {eq: "seoBlog.md"}) {
       childMarkdownRemark {
         frontmatter {

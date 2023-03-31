@@ -45,6 +45,33 @@ const NavigationMenu = props => {
           }
         }
       }
+
+      
+    serviceData: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(services)\\/.*\\\\.md$/"}}, sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            excerpt
+            author
+            author_image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+              extension
+              publicURL
+            }
+            date(formatString: "MMMM DD, YYYY")
+          }
+        }
+      }
+    }
     }
   `);
 
@@ -66,7 +93,7 @@ const NavigationMenu = props => {
           <NavLink key="services">
             <Popover
               overlayClassName="navPopover"
-              content={<PopoverContent content={data.file.childMarkdownRemark.frontmatter} onClick={popoverLink} />}
+              content={<PopoverContent content={data.file.childMarkdownRemark.frontmatter} serviceData={data?.serviceData?.edges} onClick={popoverLink} />}
               visible={popoverVisible}
               onVisibleChange={onVisibleChange}
               placement="bottom"

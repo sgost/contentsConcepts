@@ -40,7 +40,7 @@ export const AboutBannerSection = ({
 
 const AboutBanner = () => {
 
-  const[content, setContent] = useState({
+  const [content, setContent] = useState({
     title: '',
     html: ''
   });
@@ -59,7 +59,7 @@ const AboutBanner = () => {
   `);
 
   useEffect(() => {
-    if(data.file) {
+    if (data.file) {
       setContent({
         title: data.file.childMarkdownRemark.frontmatter.title,
         html: data.file.childMarkdownRemark.html

@@ -3,7 +3,8 @@ import { graphql } from "gatsby"
 import SEO from "../seo"
 import MenuSection from './menu';
 import Customers from "../Customers"
-import Contact from "../Contact"
+import Contact from "../Contact";
+// import GoogleReviews from "../GoogleReviews/index";
 import { FAQPreviewSection } from "../FAQ"
 
 const EditingServices = ({ data }) => {
@@ -14,6 +15,7 @@ const EditingServices = ({ data }) => {
       }
       <MenuSection content={data.markdownRemark.frontmatter} description={data.markdownRemark.html} />
       <Customers />
+      {/* <GoogleReviews /> */}
       <Contact />
       {
         data.markdownRemark.frontmatter.faq &&

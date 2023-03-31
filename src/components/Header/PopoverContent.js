@@ -64,25 +64,25 @@ const PopoverContent = props => {
         <SitemapList>
           <h5>Academic Editing</h5>
           {dataArr?.filter((itm) => itm?.category === "Academic Editing").map((dataItem) =>
-            <Link to={dataItem.link} key={dataItem.id} className="linkItem">{dataItem.title}</Link>
+            <Link to={dataItem.link} key={dataItem.id} onClick={props.onClick} className="linkItem">{dataItem.title}</Link>
           )}
         </SitemapList>
         <SitemapList>
           <h5>Plagarism Check</h5>
           {dataArr?.filter((itm) => itm?.category === "Plagarism Check").map((dataItem) =>
-            <Link to={dataItem.link} key={dataItem.id} className="linkItem">{dataItem.title}</Link>
+            <Link to={dataItem.link} key={dataItem.id} onClick={props.onClick} className="linkItem">{dataItem.title}</Link>
           )}
         </SitemapList>
         <SitemapList>
           <h5>Business Editing</h5>
           {dataArr?.filter((itm) => itm?.category === "Business Editing").map((dataItem) =>
-            <Link to={dataItem.link} key={dataItem.id} className="linkItem">{dataItem.title}</Link>
+            <Link to={dataItem.link} key={dataItem.id} onClick={props.onClick} className="linkItem">{dataItem.title}</Link>
           )}
         </SitemapList>
         <SitemapList>
           <h5>Publication Support</h5>
           {dataArr?.filter((itm) => itm?.category === "Publication Support").map((dataItem) =>
-            <Link to={dataItem.link} key={dataItem.id} className="linkItem">{dataItem.title}</Link>
+            <Link to={dataItem.link} key={dataItem.id} onClick={props.onClick} className="linkItem">{dataItem.title}</Link>
           )}
         </SitemapList>
       </SitemapContainer>

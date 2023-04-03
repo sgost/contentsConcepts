@@ -1,7 +1,10 @@
 import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import { Layout, Button } from "antd"
+import ConnectPreviewSection from "../ConnectTeams";
+import EditingLabel from './editingLabel';
 import MenuContent from './content';
+import GoogleReviews from "../GoogleReviews/index";
 import EditingLevels from './levels';
 import EditingSamples from './samples';
 import Highlights from './highlights';
@@ -69,6 +72,9 @@ const MenuSection = props => {
           </Sider>
         </Layout>
       </MenuContainer>
+      {/* <ConnectPreviewSection />
+      <EditingLabel />
+      <GoogleReviews /> */}
       <EditingLevels content={data.editingLevels} />
       <EditingSamples content={data.editingSample} />
       <Highlights content={data.editingHighlights} />

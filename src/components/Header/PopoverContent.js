@@ -19,7 +19,7 @@ const PopoverContent = props => {
       link: item?.node?.fields?.slug,
       title: item?.node?.frontmatter?.navTitle || item?.node?.frontmatter?.title,
       category: getNameFun(item?.node?.fields?.slug),
-      id: item?.node?.frontmatter?.position || 0
+      id: item?.node?.frontmatter?.navIndex || 0
     }))?.filter((item) => item?.category !== undefined);
     setDataArr(testArr);
   }

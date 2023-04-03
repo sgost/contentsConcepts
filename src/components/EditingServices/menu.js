@@ -1,10 +1,10 @@
 import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import { Layout, Button } from "antd"
-import ConnectPreviewSection from "../ConnectTeams";
-import EditingLabel from './editingLabel';
+// import ConnectPreviewSection from "../ConnectTeams";
+// import EditingLabel from './editingLabel';
 import MenuContent from './content';
-import GoogleReviews from "../GoogleReviews/index";
+// import GoogleReviews from "../GoogleReviews/index";
 import EditingLevels from './levels';
 import EditingSamples from './samples';
 import Highlights from './highlights';

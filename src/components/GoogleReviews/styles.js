@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import * as palette from "../../styles/variables"
+// import * as palette from "../../styles/variables"
 
 export const GoogleReviewsSection = styled.div`
 padding: 75px 39px;

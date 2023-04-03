@@ -10,7 +10,7 @@ export const textChangeFun = (text) => {
 
 export const amountChangeFun = (text) => {
     const getCountry = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    if (getCountry == "Asia/Calcutta") {
+    if (getCountry === "Asia/Calcutta") {
         return text.replace(0.02, 1.3)
     } else {
         return text

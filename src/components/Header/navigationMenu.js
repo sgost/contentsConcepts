@@ -56,6 +56,8 @@ const NavigationMenu = props => {
           }
           frontmatter {
             title
+            navTitle
+            position
             excerpt
             author
             author_image {

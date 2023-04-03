@@ -15,11 +15,11 @@ const PopoverContent = props => {
   // });
 
   const newArrFun = () => {
-    const testArr = props.serviceData?.map((item, index) => ({
+    const testArr = props.serviceData?.map((item) => ({
       link: item?.node?.fields?.slug,
-      title: item?.node?.frontmatter?.title,
+      title: item?.node?.frontmatter?.navTitle || item?.node?.frontmatter?.title,
       category: getNameFun(item?.node?.fields?.slug),
-      id: index
+      id: item?.node?.frontmatter?.position || 0
     }))?.filter((item) => item?.category !== undefined);
     setDataArr(testArr);
   }
@@ -40,6 +40,13 @@ const PopoverContent = props => {
   useEffect(() => {
     newArrFun();
   }, [])
+
+
+  const sortArrFun = (type) => {
+    return dataArr?.filter((itm) => itm?.category === type)?.sort((a, b) => {
+      return a.id - b.id;
+    })
+  }
 
   return (
     <Fragment>
@@ -63,25 +70,25 @@ const PopoverContent = props => {
 
         <SitemapList>
           <h5>Academic Editing</h5>
-          {dataArr?.filter((itm) => itm?.category === "Academic Editing").map((dataItem) =>
+          {sortArrFun("Academic Editing").map((dataItem) =>
             <Link to={dataItem.link} key={dataItem.id} onClick={props.onClick} className="linkItem">{dataItem.title}</Link>
           )}
         </SitemapList>
         <SitemapList>
           <h5>Plagarism Check</h5>
-          {dataArr?.filter((itm) => itm?.category === "Plagarism Check").map((dataItem) =>
+          {sortArrFun("Plagarism Check").map((dataItem) =>
             <Link to={dataItem.link} key={dataItem.id} onClick={props.onClick} className="linkItem">{dataItem.title}</Link>
           )}
         </SitemapList>
         <SitemapList>
           <h5>Business Editing</h5>
-          {dataArr?.filter((itm) => itm?.category === "Business Editing").map((dataItem) =>
+          {sortArrFun("Business Editing").map((dataItem) =>
             <Link to={dataItem.link} key={dataItem.id} onClick={props.onClick} className="linkItem">{dataItem.title}</Link>
           )}
         </SitemapList>
         <SitemapList>
           <h5>Publication Support</h5>
-          {dataArr?.filter((itm) => itm?.category === "Publication Support").map((dataItem) =>
+          {sortArrFun("Publication Support").map((dataItem) =>
             <Link to={dataItem.link} key={dataItem.id} onClick={props.onClick} className="linkItem">{dataItem.title}</Link>
           )}
         </SitemapList>

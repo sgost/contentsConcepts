@@ -44,7 +44,7 @@ export const ContactPreviewSection = ({
       data.append("description", saveData.description);
     }
 
-    let url = "https://script.google.com/macros/s/AKfycbzpvMlIAKKxyKwgYIigLFc7ygM7CRHAVxhtw1guvVkFme7qEoewmMCfHo_GOXA6ocZw_g/exec";
+    let url = "https://script.google.com/macros/s/AKfycbweaieT25bW31WwJNHO4FkFoxYbi4--RBHcvWxY_9gQ5NfaWRdgzsmQ0VcawjPxC-cShA/exec";
 
     await fetch(url, {
       method: 'POST',

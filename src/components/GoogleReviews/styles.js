@@ -2,7 +2,7 @@ import styled from "styled-components"
 import * as palette from "../../styles/variables"
 
 export const GoogleReviewsSection = styled.div`
-padding: 46px 39px;
+padding: 75px 39px;
   .review_title {
     display: flex;
     align-items: center;
@@ -16,6 +16,7 @@ padding: 46px 39px;
 
   .review_card {
     display: flex;
+    align-items: center;
     gap: 20px;
     margin-top: 60px;
     .review_card_user_container {
@@ -74,6 +75,13 @@ padding: 46px 39px;
           color: #1f173a;
         }
       }
+    }
+
+    .review_card_user_container:nth-child(1) {
+      padding: 20px 16px;
+    }
+    .review_card_user_container:nth-child(3) {
+      padding: 20px 16px;
     }
   }
 `

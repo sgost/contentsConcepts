@@ -76,17 +76,23 @@ const MenuSection = props => {
         </Layout>
       </MenuContainer>
       <ConnectPreviewSection />
-      <EditingLabel />
+      <EditingLabel content={data.quoteTitle} />
       <GoogleReviews />
-      <ServiceCardSec />
-      <EditingLinks />
+      {data?.editingCard?.map((item) => {
+        return (
+          <div key={item?.title}>
+            <ServiceCardSec content={item} />
+            <EditingLinks content={item?.editingCardLinks} />
+          </div>
+        )
+      })}
       {
         data.serviceProcess && <ProcessPreviewSection title={data.serviceProcess.title} process={data.serviceProcess.steps} />
       }
-      <EditingLabel />
+      <EditingLabel content={data.quoteTitle} />
       <Highlights content={data.editingHighlights} />
-      <NativeEditorsSec />
-      <EditingLabel />
+      <NativeEditorsSec content={data.editorSecCards} title={data?.editorSecTitle} />
+      <EditingLabel content={data.quoteTitle} />
       <EditingSamples content={data.editingSample} />
       <EditingLevels content={data.editingLevels} />
     </Fragment>

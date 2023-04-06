@@ -1,37 +1,24 @@
 import React from "react";
-import userAvatar from "../../images/userAvatar.png";
 import { NativeEditorPreview } from "./styles";
 
 
-const NativeEditorsSec = () => {
+const NativeEditorsSec = ({ content, title }) => {
     return (
         <NativeEditorPreview>
-            <h1 className="native_editor_preview_title">Manuscript Editors & Native English Editors</h1>
+            <h1 className="native_editor_preview_title">{title}</h1>
             <div className="nativeEditor_div">
-                <div className="native_editor_card">
-                    <div className="native_editor_img">
-                        <img src={userAvatar} alt="userAvatar" />
-                    </div>
-                    <h1 className="user_card_title">Victor Rice</h1>
-                    <p className="user_card_description">Customer Engagement Manager CADD Centre</p>
-                    <p className="card_desc_main">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium scelerisque neque amet consectetur adipiscing elit. Nunc pretium scelerisque neque amet </p>
-                </div>
-                <div className="native_editor_card">
-                    <div className="native_editor_img">
-                        <img src={userAvatar} alt="userAvatar" />
-                    </div>
-                    <h1 className="user_card_title">Victor Rice</h1>
-                    <p className="user_card_description">Customer Engagement Manager CADD Centre</p>
-                    <p className="card_desc_main">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium scelerisque neque amet consectetur adipiscing elit. Nunc pretium scelerisque neque amet </p>
-                </div>
-                <div className="native_editor_card">
-                    <div className="native_editor_img">
-                        <img src={userAvatar} alt="userAvatar" />
-                    </div>
-                    <h1 className="user_card_title">Victor Rice</h1>
-                    <p className="user_card_description">Customer Engagement Manager CADD Centre</p>
-                    <p className="card_desc_main">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium scelerisque neque amet consectetur adipiscing elit. Nunc pretium scelerisque neque amet </p>
-                </div>
+                {content?.map((itm) => {
+                    return (
+                        <div className="native_editor_card" key={itm?.name}>
+                            <div className="native_editor_img">
+                                <img src={itm?.image?.publicURL ? itm?.image?.publicURL : itm?.image} alt="userAvatar" />
+                            </div>
+                            <h1 className="user_card_title">{itm?.name}</h1>
+                            <p className="user_card_description">{itm?.designation}</p>
+                            <p className="card_desc_main">{itm?.description}</p>
+                        </div>
+                    )
+                })}
             </div>
         </NativeEditorPreview>
     )

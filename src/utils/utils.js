@@ -16,3 +16,9 @@ export const amountChangeFun = (text) => {
         return text
     }
 }
+
+
+export const desktopPix = (num) => {
+    let sample = num * 13.8;
+    return sample + 'vw'
+}

@@ -19,7 +19,8 @@ export const MenuContainer = styled.div`
     padding: 30px;
   }
   .ant-layout {
-    background: ${palette.WHITE_COLOR};
+    background: ${palette.WHITE_COLOR
+  };
     @media (max-width: 576px) {
       flex-direction: column;
     }
@@ -68,7 +69,8 @@ export const HeadingContainer = styled.div`
     font-weight: normal;
     font-size: 16px;
     line-height: 40px;
-    color: ${palette.BUTTON_PRIMARY};
+    color: ${palette.BUTTON_PRIMARY
+  };
   }
   @media only screen and (min-width: 320px) and (max-width: 992px) {
     flex-direction: column;
@@ -89,7 +91,8 @@ export const TypesContainer = styled.div`
     font-weight: normal;
     font-size: 16px;
     line-height: 30px;
-    color: ${palette.PRIMARY_TXT_COLOR};
+    color: ${palette.PRIMARY_TXT_COLOR
+  };
     margin-bottom: 5px;
   }
 `
@@ -205,7 +208,8 @@ export const LevelsListing = styled.div`
     .cardCol {
       padding: 10px;
       font-weight: 500;
-      color: ${palette.WHITE_COLOR};
+      color: ${palette.WHITE_COLOR
+  };
       border-radius: 8px 8px 0px 0px;
     }
   }
@@ -229,7 +233,8 @@ export const LevelsListing = styled.div`
       font-weight: normal;
       font-size: 14px;
       line-height: 20px;
-      color: ${palette.PRIMARY_TXT_COLOR};
+      color: ${palette.PRIMARY_TXT_COLOR
+  };
       @media (max-width: 576px) {
         font-size: 12px;
       }
@@ -240,18 +245,21 @@ export const LevelsListing = styled.div`
       }
     }
     .cardCol {
-      background: ${palette.WHITE_COLOR};
+      background: ${palette.WHITE_COLOR
+  };
     }
     &:nth-child(odd) {
       .cardCol {
-        background: ${palette.HAWKES_BLUE};
+        background: ${palette.HAWKES_BLUE
+  };
       }
     }
   }
 `
 
 export const LevelsSection = styled.div`
-  background: ${palette.PRIMARY_SECTION_BACKGROUND};
+  background: ${palette.PRIMARY_SECTION_BACKGROUND
+  };
   padding: 60px 80px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     padding: 45px;
@@ -273,9 +281,10 @@ export const SectionHeading = styled.div`
   }
 `
 
-//samples section
+// samples section
 export const SamplesSection = styled.div`
-  background: ${palette.WHITE_COLOR};
+  background: ${palette.WHITE_COLOR
+  };
   padding: 60px 80px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     padding: 45px;
@@ -296,7 +305,8 @@ export const TabsContainer = styled.div`
     max-width: 1300px;
   }
   .ant-tabs-top > .ant-tabs-nav::before {
-    border-bottom: 1px solid ${palette.DARK_GREY};
+    border-bottom: 1px solid ${palette.DARK_GREY
+  };
   }
   .ant-tabs-nav-list {
     width: 100%;
@@ -309,7 +319,8 @@ export const TabsContainer = styled.div`
       font-weight: 600;
       font-size: 16px;
       line-height: 35px;
-      color: ${palette.CHARCOAL};
+      color: ${palette.CHARCOAL
+  };
       opacity: 0.6;
       justify-content: center;
       @media only screen and (min-width: 320px) and (max-width: 992px) {
@@ -318,12 +329,14 @@ export const TabsContainer = styled.div`
       }
     }
     .ant-tabs-tab-active {
-      color: ${palette.BUTTON_PRIMARY};
+      color: ${palette.BUTTON_PRIMARY
+  };
       opacity: 1;
     }
   }
   .ant-tabs-ink-bar {
-    background: ${palette.BUTTON_PRIMARY};
+    background: ${palette.BUTTON_PRIMARY
+  };
   }
 `
 
@@ -332,14 +345,17 @@ export const TabContent = styled.div`
   p {
     font-size: 18px;
     line-height: 40px;
-    color: ${palette.CHARCOAL};
+    color: ${palette.CHARCOAL
+  };
   }
   .sampleImage {
-    background: ${palette.WHITE_COLOR};
+    background: ${palette.WHITE_COLOR
+  };
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     padding: 30px;
-    margin: 30px 0px;
+    margin: 30px auto 0 auto;
+    width: 95%;
   }
   @media (max-width: 576px) {
     padding: 30px 20px 0px;
@@ -352,9 +368,10 @@ export const TabContent = styled.div`
   }
 `
 
-//highlights section
+// highlights section
 export const HighlightsSection = styled.div`
-  background: ${palette.PRIMARY_SECTION_BACKGROUND};
+  background: ${palette.PRIMARY_SECTION_BACKGROUND
+  };
   padding: 60px 80px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     padding: 45px;
@@ -389,7 +406,8 @@ export const HighlightsSection = styled.div`
 `
 
 export const HighlightCard = styled.div`
-  background: ${palette.WHITE_COLOR};
+  background: ${palette.WHITE_COLOR
+  };
   box-shadow: 2px 2px 16px rgba(16, 50, 101, 0.15);
   border-radius: 8px;
   padding: 30px 50px;
@@ -412,9 +430,10 @@ export const HighlightCard = styled.div`
   }
 `
 
-//quality section
+// quality section
 export const QualitySection = styled.div`
-  background: ${palette.SECONDARY_SECTION_BACKGROUND};
+  background: ${palette.SECONDARY_SECTION_BACKGROUND
+  };
   padding: 60px 80px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     padding: 45px;
@@ -449,11 +468,13 @@ export const QualitySection = styled.div`
       h2 {
         font-size: 28px;
         line-height: 42px;
-        color: ${palette.SPRING_GREEN};
+        color: ${palette.SPRING_GREEN
+  };
       }
       p {
         font-size: 16px;
-        color: ${palette.LIGHT_GREY};
+        color: ${palette.LIGHT_GREY
+  };
         margin-top: 12px;
       }
       @media (max-width: 576px) {
@@ -467,7 +488,7 @@ export const QualitySection = styled.div`
   }
 `
 
-//service card
+// service card
 export const ServiceCard = styled.div`
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
   background: rgb(255, 255, 255);
@@ -534,11 +555,13 @@ export const ButtonSection = styled.div`
 
 export const FooterCol = styled(Col)`
   .ant-btn {
-    background-color: ${props => props.theme} !important;
+    background-color: ${props => props.theme
+  } !important;
     &:hover,
     &:focus,
     &:active {
-      background-color: ${props => props.theme} !important;
+      background-color: ${props => props.theme
+  } !important;
     }
   }
 `
@@ -559,7 +582,8 @@ export const EditingLabelConteiner = styled.div`
   justify-content: center;
   gap: 60px;
   padding: 30px 0;
-  background-color: ${palette.SECONDARY_SECTION_BACKGROUND};
+  background-color: ${palette.SECONDARY_SECTION_BACKGROUND
+  };
   .editing_title {
     font-family: "Poppins";
     font-style: normal;
@@ -582,5 +606,179 @@ export const EditingLabelConteiner = styled.div`
     border: none;
     outline: none;
     cursor: pointer;
+  }
+`
+
+export const ServiceCardPreview = styled.div`
+  background: linear-gradient(
+    93.02deg,
+    #4187ff -7.15%,
+    #1161ea 48.2%,
+    #1444ec 98.16%
+  );
+  .service_card_container {
+    .service_card {
+      display: flex;
+      gap: 50px;
+      padding: 70px 50px;
+      align-items: center;
+      .service_image {
+        width: 608px;
+        height: 406px;
+      }
+      .service_desc_div {
+        display: flex;
+        flex-direction: column;
+        .service_card_title {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 40px;
+          color: #fff;
+          margin-bottom: 30px;
+        }
+        .service_points {
+          margin-top: 10px;
+          .nib {
+            width: 16px;
+            height: 16px;
+            margin-top: 10px;
+          }
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 36px;
+          color: #fff;
+          opacity: 0.9;
+        }
+
+        .more_details_btn {
+          width: 225px;
+          height: 56px;
+          padding-left: 20px;
+          background: #0038bc;
+          border-radius: 8px;
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 40px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          color: #ffffff;
+          border: none;
+          outline: none;
+          gap: 10px;
+          margin-top: 30px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+`
+
+export const EditingLinksPreview = styled.div`
+  padding: 88px 120px;
+  .editing_links_main {
+    .editing_links_title {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 40px;
+      color: #333333;
+    }
+    .editing_links_desc {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #1f173a;
+      margin: 20px 0;
+    }
+    .editing_links_points {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 52px;
+      color: #171717;
+      opacity: 0.9;
+      .links_editing {
+        color: #0038bc;
+      }
+    }
+  }
+`
+
+export const NativeEditorPreview = styled.div`
+  background-color: white;
+  padding: 94px 100px;
+  .native_editor_preview_title {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: center;
+    color: #333333;
+  }
+
+  .nativeEditor_div {
+    display: grid;
+    width: fit-content;
+    gap: 120px;
+    margin: 100px auto 0 auto;
+    grid-template-columns: 271px 271px 271px;
+    .native_editor_card {
+      background: #FFFFFF;
+box-shadow: 0px 0px 8px rgba(21, 39, 73, 0.15);
+border-radius: 8px;
+padding: 20px 25px;
+position: relative;
+      .native_editor_img {
+        width: 100px;
+        height: 100px;
+        background: #ffffff;
+        box-shadow: 0px 0px 16px rgba(21, 39, 73, 0.25);
+        border-radius: 50%;
+        padding: 4px;
+        position: absolute;
+        top: -50px;
+      }
+      .user_card_title {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        color: #1565c0;
+        margin-top: 50px;
+      }
+      .user_card_description {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 24px;
+        color: #666666;
+      }
+      .card_desc_main {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #333333;
+        margin-top: 10px;
+      }
+    }
   }
 `

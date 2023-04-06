@@ -1,10 +1,13 @@
 import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import { Layout, Button } from "antd"
-// import ConnectPreviewSection from "../ConnectTeams";
-// import EditingLabel from './editingLabel';
+import ConnectPreviewSection from "../ConnectTeams";
+import EditingLabel from './editingLabel';
 import MenuContent from './content';
-// import GoogleReviews from "../GoogleReviews/index";
+import GoogleReviews from "../GoogleReviews/index";
+import ServiceCardSec from "./serviceCard";
+import EditingLinks from "./editingLinks";
+import NativeEditorsSec from "./nativeEditors";
 import EditingLevels from './levels';
 import EditingSamples from './samples';
 import Highlights from './highlights';
@@ -72,15 +75,20 @@ const MenuSection = props => {
           </Sider>
         </Layout>
       </MenuContainer>
-      {/* <ConnectPreviewSection />
+      <ConnectPreviewSection />
       <EditingLabel />
-      <GoogleReviews /> */}
-      <EditingLevels content={data.editingLevels} />
-      <EditingSamples content={data.editingSample} />
-      <Highlights content={data.editingHighlights} />
+      <GoogleReviews />
+      <ServiceCardSec />
+      <EditingLinks />
       {
         data.serviceProcess && <ProcessPreviewSection title={data.serviceProcess.title} process={data.serviceProcess.steps} />
       }
+      <EditingLabel />
+      <Highlights content={data.editingHighlights} />
+      <NativeEditorsSec />
+      <EditingLabel />
+      <EditingSamples content={data.editingSample} />
+      <EditingLevels content={data.editingLevels} />
     </Fragment>
   )
 }

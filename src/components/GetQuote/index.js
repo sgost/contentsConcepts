@@ -7,7 +7,8 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import razorpayLogo from "../../images/razorpayLogo.png"
 import logoSVG from "../../images/logo.svg"
-import paypal from "../../images/paypal.png"
+// import paypal from "../../images/paypal.png"
+import PaypalGateWayBtn from "../PaypalBtn/index";
 
 
 const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, dayName, monthName }) => {
@@ -91,6 +92,7 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
 
   const [razorSuccess, setRazorSuccess] = useState(false)
   const currPrice = Math.round(MainPrize)
+
   // function for razorpayment gateway
   const payRazorpay = async () => {
     const razorpayRes = await loadscript("https://checkout.razorpay.com/v1/checkout.js")
@@ -398,11 +400,12 @@ const GetQuote = ({ props, wordcount, currency, toggleState, dayNumber, year, da
                   Razorpay
                 </Button>
                 :
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4TBCSQSB7GVPW" target="_blank" rel="noopener noreferrer">
-                  <Button type="primary" icon={<img src={paypal} style={{ width: `20px`, height: `20px`, marginRight: `10px` }} alt="razorpayLogo" />}>
-                    PayPal
-                  </Button>
-                </a>
+                <PaypalGateWayBtn product={{
+                  description: `Word Count:  ${wordcount}`,
+                  price: currPrice
+                }}
+                  handelCancel={handelCancel}
+                />
               }
             </div>
           }

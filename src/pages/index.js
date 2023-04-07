@@ -13,6 +13,7 @@ import Customers from "../components/Customers"
 import Contact from "../components/Contact"
 import MediumArticles from "../components/MediumArticles"
 import FAQ from "../components/FAQ"
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 const IndexPage = () => {
 
@@ -33,20 +34,24 @@ const IndexPage = () => {
   const seoData = data.file.childMarkdownRemark.frontmatter;
 
   return (
-    <Fragment>
-      <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
-      <Banner />
-      <Features />
-      <Clients />
-      <Services />
-      <Specialization />
-      <Testimonial />
-      <Process />
-      <Customers />
-      <Contact />
-      <MediumArticles />
-      <FAQ path="home" />
-    </Fragment>
+    <PayPalScriptProvider
+      options={{ "client-id": "AR_91GIac11DOZex5XHw9vYSjGmHPXTM3LbhIX0bbPShcUHlgTdwcT7jPgWdQt-ocJR67nXXOYDwtxSz" }}
+    >
+      <Fragment>
+        <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
+        <Banner />
+        <Features />
+        <Clients />
+        <Services />
+        <Specialization />
+        <Testimonial />
+        <Process />
+        <Customers />
+        <Contact />
+        <MediumArticles />
+        <FAQ path="home" />
+      </Fragment>
+    </PayPalScriptProvider>
   )
 }
 

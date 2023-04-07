@@ -2,7 +2,7 @@ import styled from "styled-components"
 // import * as palette from "../../styles/variables"
 
 export const GoogleReviewsSection = styled.div`
-padding: 5.5vw 2.8vw;
+padding: 75px 39px;
   .review_title {
     display: flex;
     align-items: center;
@@ -10,29 +10,29 @@ padding: 5.5vw 2.8vw;
     gap: 0.9vw;
     width: fit-content;
     .google_icons {
-      width: 2.6vw;
+      width: 36px;
     }
   }
 
   .review_card {
     display: flex;
     align-items: center;
-    gap: 1.4vw;
-    margin-top: 4.4vw;
+    gap: 20px;
+    margin-top: 60px;
     .review_card_user_container {
-      padding: 2.3vw 1.18vw;
-      max-width: 37.4vw;
+      padding: 32px 16px;
+      max-width: 505px;
       height: fit-content;
       background: #ffffff;
-      box-shadow: 0px 0px 0.5vw rgba(21, 39, 73, 0.15);
-      border-radius: 0.5vw;
+      box-shadow: 0px 0px 8px rgba(21, 39, 73, 0.15);
+      border-radius: 8px;
       .review_card_name_container {
         display: flex;
         align-items: center;
         position: relative;
         gap: 1.5rem;
         .user_avatar {
-          width: 5.9vw;
+          width: 80px;
         }
         .name_container {
           gap: 2vw;
@@ -40,29 +40,29 @@ padding: 5.5vw 2.8vw;
             font-family: "Poppins";
             font-style: normal;
             font-weight: 600;
-            font-size: 1.3vw;
-            line-height: 2vw;
+            font-size: 18px;
+            line-height: 27px;
             color: #1565c0;
           }
           .date {
             font-weight: 400;
-            font-size: 0.8vw;
-            line-height: 1.2vw;
+            font-size: 12px;
+            line-height: 17px;
             color: #200e32;
           }
         }
 
         .user_google_icon {
-          width: 2.2vw;
+          width: 30px;
           position: absolute;
-          top: 0.7vw;
-          right: 0.7vw;
+          top: 10px;
+          right: 10px;
         }
       }
 
       .review_card_rating {
         color: #f6bb06;
-        margin-top: 0.8vw;
+        margin-top: 12px;
       }
 
       .card_desc {
@@ -70,18 +70,18 @@ padding: 5.5vw 2.8vw;
           font-family: "Poppins";
           font-style: normal;
           font-weight: 400;
-          font-size: 1.1vw;
-          line-height: 1.7vw;
+          font-size: 16px;
+          line-height: 24px;
           color: #1f173a;
         }
       }
     }
 
     .review_card_user_container:nth-child(1) {
-      padding: 1.4vw 1.1vw;
+      padding: 20px 16px;
     }
     .review_card_user_container:nth-child(3) {
-      padding: 1.4vw 1.1vw;
+      padding: 20px 16px;
     }
   }
 `

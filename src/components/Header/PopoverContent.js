@@ -39,7 +39,6 @@ const PopoverContent = props => {
 
   useEffect(() => {
     newArrFun();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 
